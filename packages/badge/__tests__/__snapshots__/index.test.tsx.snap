@@ -4,7 +4,7 @@ exports[`renders with 10 1`] = `
 <span
   style={
     Object {
-      "background": "whitesmoke",
+      "background": "pink",
       "border": "1px solid silver",
       "borderRadius": "9em",
       "padding": "5px 10px",

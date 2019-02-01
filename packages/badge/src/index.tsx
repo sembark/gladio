@@ -11,10 +11,10 @@ export const Badge = ({ children, ...props }: Props) =>
   !children ? null : (
     <span
       style={{
-        padding: "5px 10px",
         background: "pink",
         border: "1px solid silver",
         borderRadius: "9em",
+        padding: "5px 10px",
       }}
       {...props}
     >

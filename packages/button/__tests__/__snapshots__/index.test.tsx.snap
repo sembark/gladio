@@ -2,6 +2,7 @@
 
 exports[`renders with a default type of button 1`] = `
 <button
+  disabled={false}
   type="button"
 />
 `;
