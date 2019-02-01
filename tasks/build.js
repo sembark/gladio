@@ -14,5 +14,5 @@ const exec = (command, extraEnv) =>
 
 console.log("\nBuilding ES modules ...")
 exec(
-  `${compiler} src/*.tsx --outDir lib -m CommonJS --jsx react --moduleResolution node`
+  `${compiler} src/*.tsx --outDir lib -m CommonJS --jsx react --moduleResolution node --declaration true`
 )
