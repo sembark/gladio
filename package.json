@@ -12,7 +12,7 @@
     "test": "lerna run test --stream",
     "build:changed": "lerna run build --parallel --since origin/master",
     "release": "lerna run test --since origin/master && yarn build:changed && lerna publish && yarn docs",
-    "docs": "storybook-to-ghpages"
+    "docs": "storybook-to-ghpages --out=.out"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
