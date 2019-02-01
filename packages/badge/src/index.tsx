@@ -12,7 +12,7 @@ export const Badge = ({ children, ...props }: Props) =>
     <span
       style={{
         padding: "5px 10px",
-        background: "whitesmoke",
+        background: "pink",
         border: "1px solid silver",
         borderRadius: "9em",
       }}

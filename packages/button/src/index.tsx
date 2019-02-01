@@ -17,6 +17,7 @@ export const Button = (props: Props) => <button {...props} />
 
 Button.defaultProps = {
   type: "button",
+  disabled: false,
 }
 
 export default Button
