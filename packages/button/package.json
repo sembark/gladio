@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/button",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Button Component for Tourepedia Apps",
   "main": "index.js",
   "repository": "https://github.com/tourepedia/tp-ui",
