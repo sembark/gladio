@@ -11,8 +11,8 @@
     "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build --parallel",
     "test": "lerna run test --stream",
-    "build:changed": "lerna run build --parallel --since origin/master",
-    "release": "lerna run test --since origin/master && yarn build:changed && lerna publish --since origin/master"
+    "build:changed": "lerna run build --parallel --since upstream/master",
+    "release": "lerna run test --since upstream/master && yarn build:changed && lerna publish"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

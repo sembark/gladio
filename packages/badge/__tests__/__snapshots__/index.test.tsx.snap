@@ -1,7 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders with a default type of button 1`] = `
-<button
-  type="button"
-/>
+exports[`renders with 10 1`] = `
+<span
+  style={
+    Object {
+      "background": "whitesmoke",
+      "border": "1px solid silver",
+      "borderRadius": "9em",
+      "padding": "5px 10px",
+    }
+  }
+>
+  10
+</span>
 `;

@@ -3,7 +3,7 @@ import * as renderer from "react-test-renderer"
 import Badge from "./../src/index"
 
 describe("renders", () => {
-  it("with a default type of button", () => {
+  it("with 10", () => {
     const wrapper = renderer.create(<Badge>10</Badge>)
     expect(wrapper.toJSON()).toMatchSnapshot()
   })
