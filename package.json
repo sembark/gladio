@@ -11,12 +11,14 @@
     "build": "lerna run build --parallel",
     "test": "lerna run test --stream",
     "build:changed": "lerna run build --parallel --since origin/master",
-    "release": "lerna run test --since origin/master && yarn build:changed && lerna publish"
+    "release": "lerna run test --since origin/master && yarn build:changed && lerna publish && yarn docs",
+    "docs": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@storybook/addon-info": "^4.1.11",
     "@storybook/react": "^4.1.11",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@types/jest": "^23.3.13",
     "@types/react": "^16.7.22",
     "@types/react-dom": "^16.0.11",
