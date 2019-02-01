@@ -1,4 +1,20 @@
 {
-  "packages": ["packages/*"],
-  "version": "independent"
+  "lerna": "3.10.7",
+  "npmClient": "yarn",
+  "publishConfig": { "access": "public" },
+  "useWorkspaces": true,
+  "version": "independent",
+  "changelog": {
+    "repo": "tourepedia/tp-ui",
+    "labels": {
+      "tag: breaking change": ":boom: Breaking Change",
+      "tag: bug fix": ":bug: Bug Fix",
+      "tag: documentation": ":memo: Documentation",
+      "tag: enhancement": ":nail_care: Enhancement",
+      "tag: internal": ":house: Internal",
+      "tag: new feature": ":rocket: New Feature",
+      "tag: underlying tools": ":hammer: Underlying Tools"
+    },
+    "cacheDir": ".changelog"
+  }
 }
