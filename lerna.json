@@ -1,8 +1,7 @@
 {
   "lerna": "3.10.7",
-  "npmClient": "yarn",
+  "packages": ["packages/*"],
   "publishConfig": { "access": "public" },
-  "useWorkspaces": true,
   "version": "independent",
   "changelog": {
     "repo": "tourepedia/tp-ui",

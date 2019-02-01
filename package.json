@@ -1,9 +1,5 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
   "name": "tourepedia-ui",
-  "version": "0.1.0",
   "description": "Tourepedia UI Components",
   "main": "index.js",
   "repository": "https://github.com/tourepedia/tp-ui",
