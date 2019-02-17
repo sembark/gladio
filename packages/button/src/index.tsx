@@ -11,6 +11,11 @@ export interface Props {
    * @default button
    */
   type?: "button" | "submit" | "reset"
+
+  /**
+   * Children to render inside button
+   */
+  children?: React.ReactNode
 }
 
 export const Button = (props: Props) => <button {...props} />
