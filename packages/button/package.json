@@ -2,11 +2,10 @@
   "name": "@tourepedia/button",
   "version": "0.1.5",
   "description": "Button Component for Tourepedia Apps",
-  "main": "index.js",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
-  "module": "lib/index.js",
+  "main": "lib/index.js",
   "peerDependencies": {
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
