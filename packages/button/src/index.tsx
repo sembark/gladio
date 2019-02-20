@@ -16,13 +16,22 @@ export interface Props {
    * Children to render inside button
    */
   children?: React.ReactNode
+
+  /**
+   * Onclick handler for button
+   */
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+
+  /**
+   * className for rendered button element
+   */
+  className?: string
 }
 
 export const Button = (props: Props) => <button {...props} />
 
 Button.defaultProps = {
   type: "button",
-  disabled: false,
 }
 
 export default Button
