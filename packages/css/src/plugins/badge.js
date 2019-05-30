@@ -7,6 +7,7 @@ module.exports = function addBadgeComponentPlugin({ addComponents, config }) {
       whiteSpace: "nowrap",
       textAlign: "center",
       borderRadius: config("theme.borderRadius.full"),
+      display: "inline-block",
     },
     ".badge-primary": {
       backgroundColor: config("theme.backgroundColor.primary.500"),
