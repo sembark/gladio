@@ -36,3 +36,10 @@ npm run commit # to commit the changes
 ```bash
 npx lerna
 ```
+
+**Publish a new package**
+
+```bash
+cd packages/new-packages
+npm publish --access public
+```
