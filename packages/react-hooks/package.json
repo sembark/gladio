@@ -1,15 +1,15 @@
 {
   "name": "@tourepedia/react-hooks",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React hooks for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "peerDependencies": {
+    "@tourepedia/dom-helpers": "^0.1.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "@tourepedia/dom-helpers": "^0.1.0"
+    "react-dom": "^16.4.0"
   },
   "scripts": {
     "test": "jest",
@@ -42,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "@tourepedia/dom-helpers": "0.1.0"
+    "@tourepedia/dom-helpers": "^0.2.0"
   }
 }

@@ -1,0 +1,11 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 0.2.0 (2019-05-30)
+
+
+### Features
+
+* **dialog:** add dialog component ([1be9c5a](https://github.com/tourepedia/tp-ui/commit/1be9c5a))
