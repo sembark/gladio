@@ -5,3 +5,4 @@ lerna-debug.log*
 /packages/*/lib
 .out
 .env
+/packages/*/package-lock.json
