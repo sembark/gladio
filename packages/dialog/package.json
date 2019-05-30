@@ -1,0 +1,48 @@
+{
+  "name": "@tourepedia/dialog",
+  "version": "0.1.0",
+  "description": "Dialog Component for Tourepedia Apps",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "peerDependencies": {
+    "classnames": "2.2.6",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "@tourepedia/react-hooks": "^0.1.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "node ../../tasks/build"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "flow": false,
+          "typescript": true
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "devDependencies": {
+    "@tourepedia/react-hooks": "0.1.0"
+  }
+}
