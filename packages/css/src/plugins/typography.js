@@ -1,24 +1,25 @@
 module.exports = function addTypography({ addBase, config }) {
-  const headingMargins = {
+  const headingCommonStyles = {
+    fontWeight: config("theme.fontWeight.semibold"),
     marginTop: config("theme.margin.2"),
     marginBottom: config("theme.margin.1"),
   }
   const typography = {
     h1: {
       fontSize: config("theme.fontSize.2xl"),
-      ...headingMargins,
+      ...headingCommonStyles,
     },
     h2: {
       fontSize: config("theme.fontSize.xl"),
-      ...headingMargins,
+      ...headingCommonStyles,
     },
     h3: {
       fontSize: config("theme.fontSize.lg"),
-      ...headingMargins,
+      ...headingCommonStyles,
     },
     h4: {
       fontSize: config("theme.fontSize.base"),
-      ...headingMargins,
+      ...headingCommonStyles,
     },
     p: {
       marginTop: config("theme.margin.0"),
