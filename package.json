@@ -14,7 +14,8 @@
     "build:changed": "lerna run build --parallel --since origin/master",
     "release": "lerna run test --since origin/master && npm run build:changed && env-cmd -f .env lerna publish && npm run docs",
     "docs": "storybook-to-ghpages --out=.out",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "outdated": "lerna exec --no-bail --stream -- npm outdated"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",
