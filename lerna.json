@@ -6,7 +6,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "message": "chore(release): %s :tada: :rocket:"
+      "message": "chore(release): :tada: :rocket:"
     },
     "version": {
       "conventionalCommits": true,
