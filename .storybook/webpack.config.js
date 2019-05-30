@@ -1,15 +1,20 @@
 const path = require("path")
-const DocGen = require("react-docgen-typescript-webpack-plugin")
-
-module.exports = (baseConfig, env, defaultConfig) => {
-  defaultConfig.module.rules.push({
+module.exports = ({ config }) => {
+  config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve("awesome-typescript-loader"),
+    include: path.resolve(__dirname, "../packages"),
+    use: [
+      {
+        loader: require.resolve("babel-loader"),
+        options: {
+          presets: [["react-app", { flow: false, typescript: true }]],
+        },
+      },
+      {
+        loader: require.resolve("react-docgen-typescript-loader"),
+      },
+    ],
   })
-
-  defaultConfig.plugins.push(new DocGen())
-
-  defaultConfig.resolve.extensions.push(".ts", ".tsx")
-
-  return defaultConfig
+  config.resolve.extensions.push(".ts", ".tsx")
+  return config
 }

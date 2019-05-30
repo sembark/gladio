@@ -1,7 +1,14 @@
-import React from "react"
-import { configure, addDecorator } from "@storybook/react"
-import { getStorybook, storiesOf } from "@storybook/react"
+import { configure, addDecorator, addParameters } from "@storybook/react"
+import { getStorybook } from "@storybook/react"
 import { withInfo } from "@storybook/addon-info"
+
+import "./../packages/css/lib/styles.css"
+
+addParameters({
+  options: {
+    panelPosition: "right",
+  },
+})
 
 addDecorator(
   withInfo({
