@@ -1,35 +1,28 @@
 import * as React from "react"
-export interface Props {
-  /**
-   * Weather or not button is disabled
-   * @default false
-   */
-  disabled?: boolean
+import { Omit } from "utility-types"
+import classNames from "classnames"
 
-  /**
-   * Type of the button
-   * @default button
-   */
+type Button = Omit<React.HTMLProps<HTMLButtonElement>, "type" | "as"> & {
   type?: "button" | "submit" | "reset"
-
-  /**
-   * Children to render inside button
-   */
-  children?: React.ReactNode
-
-  /**
-   * Onclick handler for button
-   */
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-
-  /**
-   * className for rendered button element
-   */
-  className?: string
+  primary?: boolean
 }
 
-export const Button = (props: Props) => <button {...props} />
+const Button = React.forwardRef(
+  (
+    { className, primary, ...props }: Button,
+    ref: React.Ref<HTMLButtonElement>
+  ) => {
+    return (
+      <button
+        className={classNames("btn", primary && "btn-primary", className)}
+        ref={ref}
+        {...props}
+      />
+    )
+  }
+)
 
+Button.displayName = "Button"
 Button.defaultProps = {
   type: "button",
 }
