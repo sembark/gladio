@@ -26,6 +26,7 @@ npm build # build the packages
 npm release # publish the updated packages to npm
 npm run test # run test for all the packages
 npm run test:watch # run the changes test in watch mode
+npm run commit # to commit the changes
 ```
 
 ## How to
