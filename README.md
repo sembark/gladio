@@ -7,22 +7,31 @@ Clone the repo and initialize the stuff
 ```bash
 git clone git@github.com:tourepedia/tp-ui.git
 cd tp-ui
-yarn install
-yarn bootstrap
-yarn build
+npm install
+npm bootstrap
+npm build
 ```
 
 ## Directory Structure
 
 ```bash
 packages - contains all the packages
-www - contains the design systems website
 ```
 
 ## Scripts
 
 ```bash
-yarn start # start the development server (storybook)
-yarn build # build the packages
-yarn release # publish the updated packages to npm
+npm start # start the development server (storybook)
+npm build # build the packages
+npm release # publish the updated packages to npm
+npm run test # run test for all the packages
+npm run test:watch # run the changes test in watch mode
+```
+
+## How to
+
+**Use lerna command**
+
+```bash
+npx lerna
 ```
