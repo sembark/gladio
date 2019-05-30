@@ -1,0 +1,20 @@
+{
+  "name": "@tourepedia/css",
+  "version": "0.0.1",
+  "description": "Css for Tourepedia",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tailwind build src/index.css -o lib/styles.css",
+    "build:css": "tailwind build src/index.css -o lib/styles.css"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "devDependencies": {
+    "tailwindcss": "1.0.2"
+  }
+}
