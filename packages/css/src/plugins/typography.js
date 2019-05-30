@@ -16,6 +16,10 @@ module.exports = function addTypography({ addBase, config }) {
       fontSize: config("theme.fontSize.lg"),
       ...headingMargins,
     },
+    h4: {
+      fontSize: config("theme.fontSize.base"),
+      ...headingMargins,
+    },
     p: {
       marginTop: config("theme.margin.0"),
       marginBottom: config("theme.margin.1"),
