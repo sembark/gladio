@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.2.0...@tourepedia/css@0.2.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **css:** badge component should be displayed as inline block ([bebc418](https://github.com/tourepedia/tp-ui/commit/bebc418))
+
+
+
+
+
 # [0.2.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.1.0...@tourepedia/css@0.2.0) (2019-05-30)
 
 
