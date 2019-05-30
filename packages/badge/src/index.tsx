@@ -1,25 +1,24 @@
 import * as React from "react"
+import classNames from "classnames"
 
-export interface Props {
-  /**
-   * Whatever need to be rendered, null will be rendered if nothing is passed
-   */
-  children?: React.ReactNode
+export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
+  primary?: boolean
 }
 
-export const Badge = ({ children, ...props }: Props) =>
-  !children ? null : (
-    <span
-      style={{
-        background: "pink",
-        border: "1px solid silver",
-        borderRadius: "9em",
-        padding: "5px 10px",
-      }}
-      {...props}
-    >
-      {children}
-    </span>
-  )
+export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
+  ({ children, className, primary, ...props }, ref) => {
+    if (!children) return null
+    return (
+      <span
+        className={classNames("badge", primary && "badge-primary", className)}
+        ref={ref}
+        children={children}
+        {...props}
+      />
+    )
+  }
+)
+
+Badge.displayName = "Badge"
 
 export default Badge

@@ -5,4 +5,9 @@ import Badge from "./../src/index"
 
 const stories = storiesOf("Components/Badge", module)
 
-stories.add("Basic Badge", () => <Badge>12</Badge>)
+stories.add("Badges", () => (
+  <div>
+    <Badge>12</Badge>
+    <Badge primary>43</Badge>
+  </div>
+))
