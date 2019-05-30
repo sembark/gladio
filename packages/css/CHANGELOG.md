@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.3.0...@tourepedia/css@0.3.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **css:** heading should have semi bold font weights ([7f2af81](https://github.com/tourepedia/tp-ui/commit/7f2af81))
+
+
+
+
+
 # [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.2.1...@tourepedia/css@0.3.0) (2019-05-30)
 
 
