@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.2.1...@tourepedia/css@0.3.0) (2019-05-30)
+
+
+### Features
+
+* **css:** add h4 typography styles ([e991ee0](https://github.com/tourepedia/tp-ui/commit/e991ee0))
+
+
+
+
+
 ## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.2.0...@tourepedia/css@0.2.1) (2019-05-30)
 
 
