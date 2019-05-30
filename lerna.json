@@ -5,10 +5,12 @@
   "version": "independent",
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "message": "chore(release): new release :rocket:"
     },
     "version": {
-      "message": "chore(release): new release :rocket:"
+      "conventionalCommits": true,
+      "githubRelease": true
     }
   }
 }

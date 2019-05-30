@@ -22,8 +22,8 @@ packages - contains all the packages
 
 ```bash
 npm start # start the development server (storybook)
-npm build # build the packages
-npm release # publish the updated packages to npm
+npm run build # build the packages
+npm run release # publish the updated packages to npm
 npm run test # run test for all the packages
 npm run test:watch # run the changes test in watch mode
 npm run commit # to commit the changes
