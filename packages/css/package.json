@@ -16,5 +16,6 @@
   ],
   "devDependencies": {
     "tailwindcss": "1.0.2"
-  }
+  },
+  "gitHead": "514db73ff4913868825fb94da7bd86453281d485"
 }

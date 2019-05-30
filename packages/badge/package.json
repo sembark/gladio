@@ -41,7 +41,7 @@
       "node"
     ]
   },
-  "gitHead": "25b89bb03775d0a44a751eada49ac7dabdf59192",
+  "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
   "dependencies": {
     "utility-types": "3.7.0"
   }
