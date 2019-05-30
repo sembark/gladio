@@ -21,7 +21,7 @@ describe("dom-helpers", () => {
     })
   })
   describe("activeElement", () => {
-    it("return the current activeElement element from the dom", () => {
+    it("returns the current activeElement element from the dom", () => {
       const { getByTestId } = render(<input data-testid="child" autoFocus />)
       const input = getByTestId("child")
       expect(activeElement()).toBe(input)
@@ -29,7 +29,7 @@ describe("dom-helpers", () => {
   })
 
   describe("ownerDocument", () => {
-    it("return the document containing the element", () => {
+    it("returns the document containing the element", () => {
       const { getByTestId } = render(<span data-testid="child" />)
       const elm = getByTestId("child")
       expect(ownerDocument(elm)).toBe(document)
