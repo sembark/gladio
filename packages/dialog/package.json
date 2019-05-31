@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/dialog",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Dialog Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -23,7 +23,7 @@
     "preset": "ts-jest"
   },
   "dependencies": {
-    "@tourepedia/react-hooks": "^0.2.4",
+    "@tourepedia/react-hooks": "^0.2.5",
     "classnames": "^2.2.6"
   }
 }
