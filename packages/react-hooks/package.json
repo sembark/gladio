@@ -7,9 +7,8 @@
   "license": "MIT",
   "main": "lib/index.js",
   "peerDependencies": {
-    "@tourepedia/dom-helpers": "^0.1.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "scripts": {
     "test": "jest",
@@ -41,7 +40,7 @@
       "node"
     ]
   },
-  "devDependencies": {
-    "@tourepedia/dom-helpers": "^0.2.2"
+  "dependencies": {
+    "@tourepedia/dom-helpers": "0.2.2"
   }
 }
