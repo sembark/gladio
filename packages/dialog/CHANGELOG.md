@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.2.1...@tourepedia/dialog@0.2.2) (2019-05-31)
+
+**Note:** Version bump only for package @tourepedia/dialog
+
+
+
+
+
 ## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.2.0...@tourepedia/dialog@0.2.1) (2019-05-30)
 
 **Note:** Version bump only for package @tourepedia/dialog
