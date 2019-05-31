@@ -13,7 +13,7 @@
     "test:watch": "lerna run test --parallel -- -- --watch",
     "test:changed": "lerna run test --since origin/master",
     "build:changed": "lerna run build --parallel --since origin/master",
-    "prepublishOnly": "npm run test:changed && npm run build:changed",
+    "prerelease": "npm run test:changed && npm run build:changed",
     "release": "env-cmd -f .env lerna publish",
     "docs": "storybook-to-ghpages --out=.out",
     "commit": "git-cz",
