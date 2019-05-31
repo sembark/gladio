@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.3.0...@tourepedia/dialog@0.4.0) (2019-05-31)
+
+
+### Features
+
+* **dialog:** add installation and usage instructions ([22fe9e9](https://github.com/tourepedia/tp-ui/commit/22fe9e9))
+
+
+
+
+
 # [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.2.3...@tourepedia/dialog@0.3.0) (2019-05-31)
 
 
