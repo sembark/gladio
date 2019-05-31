@@ -7,8 +7,7 @@
   "license": "MIT",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tailwind build src/index.css -o lib/styles.css",
-    "build:css": "tailwind build src/index.css -o lib/styles.css"
+    "build": "tailwind build src/index.css -o lib/styles.css"
   },
   "files": [
     "src",

@@ -12,33 +12,15 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "node ../../tasks/build"
+    "build": "node ../../shared/build"
   },
   "files": [
     "src",
-    "lib"
+    "lib",
+    "es"
   ],
-  "babel": {
-    "presets": [
-      [
-        "react-app",
-        {
-          "flow": false,
-          "typescript": true
-        }
-      ]
-    ]
-  },
   "jest": {
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "preset": "ts-jest"
   },
   "dependencies": {
     "@tourepedia/react-hooks": "^0.2.4",

@@ -12,34 +12,16 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "node ../../tasks/build"
+    "build": "node ../../shared/build"
+  },
+  "jest": {
+    "preset": "ts-jest"
   },
   "files": [
     "src",
-    "lib"
+    "lib",
+    "es"
   ],
-  "babel": {
-    "presets": [
-      [
-        "react-app",
-        {
-          "flow": false,
-          "typescript": true
-        }
-      ]
-    ]
-  },
-  "jest": {
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
-  },
   "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
   "dependencies": {
     "classnames": "^2.2.6",

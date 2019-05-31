@@ -1,5 +1,5 @@
 import * as React from "react"
-import { render, cleanup, queryByText } from "react-testing-library"
+import { render, cleanup } from "react-testing-library"
 import "jest-dom/extend-expect"
 
 import Dialog from "./../src/index"

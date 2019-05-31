@@ -3,6 +3,8 @@ npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
 /packages/*/lib
+/packages/*/es
+/packages/*/types
 .out
 .env.tokens
 /packages/*/package-lock.json
