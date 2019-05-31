@@ -15,6 +15,7 @@
     "build:changed": "lerna run build --parallel --since origin/master",
     "prerelease": "npm run test:changed && npm run build:changed",
     "release": "env-cmd -f .env.tokens lerna publish",
+    "postrelease": "npm run docs",
     "docs": "storybook-to-ghpages --out=.out",
     "commit": "git-cz",
     "outdated": "lerna exec --no-bail --stream -- npm outdated"
