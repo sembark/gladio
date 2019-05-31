@@ -8,8 +8,8 @@ Clone the repo and initialize the stuff
 git clone git@github.com:tourepedia/tp-ui.git
 cd tp-ui
 npm install
-npm bootstrap
-npm build
+npm run bootstrap
+npm run build
 ```
 
 ## Directory Structure
