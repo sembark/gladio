@@ -11,14 +11,18 @@ export function useDialog(
   return [isOpen, () => set(true), () => set(false)]
 }
 
-const DIALOG_OPEN_CONTAINER_CLASS_NAME = "dialog-open"
+const DIALOG_BASE_CLASS_NAME = "dialog"
+const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
 
 export function DialogDocument({
   className,
   children,
 }: React.HTMLProps<HTMLElement>) {
   return (
-    <div role="document" className={classNames("dialog__document", className)}>
+    <div
+      role="document"
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-document`, className)}
+    >
       {children}
     </div>
   )
@@ -31,7 +35,7 @@ export const DialogHeader = forwardRef(
   ) => (
     <div
       ref={ref}
-      className={classNames("dialog__header", className)}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-header`, className)}
       {...props}
     />
   )
@@ -41,11 +45,11 @@ DialogHeader.displayName = "DialogHeader"
 export const DialogTitle = forwardRef(
   (
     { className, ...props }: React.HTMLProps<HTMLDivElement>,
-    ref: React.Ref<HTMLDivElement>
+    ref: React.Ref<HTMLHeadingElement>
   ) => (
-    <div
+    <h3
       ref={ref}
-      className={classNames("dialog__title", className)}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-title`, className)}
       {...props}
     />
   )
@@ -59,7 +63,7 @@ export const DialogBody = forwardRef(
   ) => (
     <div
       ref={ref}
-      className={classNames("dialog__body", className)}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-body`, className)}
       {...props}
     />
   )
@@ -73,7 +77,7 @@ export const DialogFooter = forwardRef(
   ) => (
     <div
       ref={ref}
-      className={classNames("dialog__footer", className)}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-footer`, className)}
       {...props}
     />
   )
@@ -158,10 +162,13 @@ export function Dialog({
       role="dialog"
       tabIndex={-1}
       aria-modal={true}
-      className={classNames("dialog", className)}
+      className={classNames(DIALOG_BASE_CLASS_NAME, className)}
     >
       {closeButton ? (
-        <button onClick={onClose} className="dialog__close">
+        <button
+          onClick={onClose}
+          className={`${DIALOG_BASE_CLASS_NAME}-close-btn`}
+        >
           &times;
         </button>
       ) : null}
