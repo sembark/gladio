@@ -94,5 +94,6 @@ export function useEnforceFocus(
         ownerDocument().removeEventListener("keydown", handleKeyDown)
       }
     }
+    return
   }, [open])
 }

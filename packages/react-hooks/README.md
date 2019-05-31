@@ -1,23 +1,92 @@
-# Badge component
+# React Hooks
 
-Use it to show `state` or `count` into the UI
+Some helper react hooks
 
-## Installation
+## Install
 
-```bash
-yarn add @tourepedia/badge
+```
+npm install --save @tourepedia/react-hooks
 ```
 
 ## Usage
 
-```js
-// import the badge component
-import Badge from "@tourepedia/badge"
+### useDidMount
 
-const MyComponent = () => {
+Call a function on component's didMount Lifecycle
+
+```js
+import { useDidMount } from "@tourepedia/react-hooks"
+
+function App() {
+  useDidMount(() => {
+    // only called on mount
+    fetchTheData()
+  })
+}
+```
+
+### useDidUpdate
+
+Call a function only in component's didUpdate Lifecycle.
+
+```js
+import { useDidUpdate } from "@tourepedia/react-hooks"
+
+function App({ count }) {
+  useDidUpdate(() => {
+    // called when the count changes
+  }, [count])
+}
+```
+
+### useOnce
+
+Only call a function once in a component's Lifecycle
+
+```js
+import { useOnce } from "@tourepedia/react-hooks"
+
+function App() {
+  useOnce(() => {
+    // only called once
+    fetchTheData()
+  })
+}
+```
+
+### useEnforceFocus
+
+Enforces focus to be contained in a container and return back to last focused element based on a condition
+
+```js
+useEnforceFocus(
+  containerRef, // React.Ref: of the container
+  shouldBeFocused, // boolean: (true) to toggle the focus enforcement
+  config: {
+    autoFocus // boolean: (true) should the container be autoFocus
+    enforceFocus // boolean: (true) should return the focus to the last focused element
+  }
+)
+```
+
+```js
+import { useRef, useState } from "react"
+import { useEnforceFocus } from "@tourepedia/react-hooks"
+
+function App() {
+  const containerRef = useRef()
+  const [shouldBeFocused, toggleShouldFocus] = useState(false)
+  // will focus the form container when shouldBeFocused is set to true
+  useEnforceFocus(containerRef, shouldBeFocused)
   return (
     <div>
-      Notifications <Badge>10</Badge>
+      <form className="container" ref={containerRef}>
+        <input type="email" autoFocus />
+        <button type="submit">Save</button>
+      </form>
+      <button onClick={() => toggleShouldFocus(!shouldBeFocused)}>
+        Toggle Focus
+      </button>
     </div>
   )
 }
