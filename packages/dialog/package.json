@@ -7,10 +7,8 @@
   "license": "MIT",
   "main": "lib/index.js",
   "peerDependencies": {
-    "@tourepedia/react-hooks": "^0.1.0",
-    "classnames": "2.2.6",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "scripts": {
     "test": "jest",
@@ -42,7 +40,8 @@
       "node"
     ]
   },
-  "devDependencies": {
-    "@tourepedia/react-hooks": "^0.2.3"
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "@tourepedia/react-hooks": "0.2.3"
   }
 }
