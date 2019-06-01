@@ -6,6 +6,7 @@
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "types": "types/index.d.ts",
   "module": "es/index.js",
   "publishConfig": {
     "access": "public"
