@@ -6,8 +6,6 @@ import "./../src/icon.css"
 
 const stories = storiesOf("Components/Icons", module)
 
-console.log(Icons)
-
 stories.add("Icons", () => {
   const size = "50px"
   return (
