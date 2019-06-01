@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.13](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.1.12...@tourepedia/badge@0.1.13) (2019-06-01)
+
+
+### Bug Fixes
+
+* **module:** add module key for package ([0cc31c8](https://github.com/tourepedia/tp-ui/commit/0cc31c8))
+
+
+
+
+
 ## [0.1.12](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.1.11...@tourepedia/badge@0.1.12) (2019-05-31)
 
 **Note:** Version bump only for package @tourepedia/badge

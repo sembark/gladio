@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/react-hooks",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "React hooks for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -28,6 +28,6 @@
     "preset": "ts-jest"
   },
   "dependencies": {
-    "@tourepedia/dom-helpers": "^0.2.4"
+    "@tourepedia/dom-helpers": "^0.2.5"
   }
 }
