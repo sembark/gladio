@@ -6,6 +6,10 @@
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
@@ -20,7 +24,8 @@
   "files": [
     "src",
     "lib",
-    "es"
+    "es",
+    "types"
   ],
   "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
   "dependencies": {

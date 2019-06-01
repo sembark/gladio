@@ -6,6 +6,10 @@
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "module": "es/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
@@ -17,7 +21,8 @@
   "files": [
     "src",
     "lib",
-    "es"
+    "es",
+    "types"
   ],
   "jest": {
     "preset": "ts-jest"

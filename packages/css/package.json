@@ -6,6 +6,9 @@
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tailwind build src/index.css -o lib/styles.css"
   },
