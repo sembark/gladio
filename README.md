@@ -43,3 +43,18 @@ npx lerna
 cd packages/new-packages
 npm publish --access public
 ```
+
+**run test for a specific package only**
+
+Use `--scope` from lerna
+
+```bash
+npm run test -- --scope=@tourepedia/button
+```
+
+**run build for a specific package only**
+Use `--scope` from lerna
+
+```bash
+npm run build -- --scope=@tourepedia/button
+```
