@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.2.6...@tourepedia/react-hooks@0.2.7) (2019-06-01)
+
+
+### Bug Fixes
+
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/tourepedia/tp-ui/commit/ab5d5b1))
+
+
+
+
+
 ## [0.2.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.2.5...@tourepedia/react-hooks@0.2.6) (2019-06-01)
 
 
