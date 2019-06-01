@@ -1,0 +1,31 @@
+{
+  "name": "@tourepedia/icons",
+  "version": "0.1.0",
+  "description": "Icons for Tourepedia Apps",
+  "repository": "https://github.com/tourepedia/tp-ui/packages/icons",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "scripts": {
+    "prebuild": "svgr -d src/icons src/svgs --ext tsx && node ./add-imports && mkdir -p styles && cp src/icon.css styles/icon.css",
+    "build": "node ../../shared/build"
+  },
+  "files": [
+    "lib",
+    "es",
+    "styles",
+    "types"
+  ],
+  "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
+  "devDependencies": {
+    "@svgr/cli": "^4.3.0"
+  }
+}
