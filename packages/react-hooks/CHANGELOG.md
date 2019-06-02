@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.2.7...@tourepedia/react-hooks@0.3.0) (2019-06-02)
+
+
+### Features
+
+* **react-hooks:** add fetch state hook for async data ([956a27e](https://github.com/tourepedia/tp-ui/commit/956a27e))
+
+
+
+
+
 ## [0.2.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.2.6...@tourepedia/react-hooks@0.2.7) (2019-06-01)
 
 
