@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.4.3...@tourepedia/css@0.5.0) (2019-06-02)
+
+
+### Bug Fixes
+
+* **css:** add transparent to the theme colors ([d2b4c40](https://github.com/tourepedia/tp-ui/commit/d2b4c40))
+
+
+### Features
+
+* **css:** add styles for select component ([38f5f08](https://github.com/tourepedia/tp-ui/commit/38f5f08))
+
+
+
+
+
 ## [0.4.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.4.2...@tourepedia/css@0.4.3) (2019-06-01)
 
 
