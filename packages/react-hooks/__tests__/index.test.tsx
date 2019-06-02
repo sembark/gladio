@@ -2,16 +2,22 @@ import * as React from "react"
 import { render, cleanup, fireEvent } from "react-testing-library"
 import "jest-dom/extend-expect"
 
-import { useDidMount, useDidUpdate, useOnce } from "./../src/index"
+import {
+  useDidMount,
+  useDidUpdate,
+  useOnce,
+  useFetchState,
+} from "./../src/index"
 
 afterEach(cleanup)
+
+jest.useFakeTimers()
 
 describe("react-hooks", () => {
   describe("Lifecycle hooks", () => {
     const didMountFn = jest.fn()
     const didUpdateFn = jest.fn()
     const onceFn = jest.fn()
-    jest.useFakeTimers()
 
     const Lifecycle = ({ count }: { count: number }) => {
       useDidMount(didMountFn)
@@ -43,6 +49,47 @@ describe("react-hooks", () => {
       expect(didMountFn).toBeCalledTimes(1)
       expect(didUpdateFn).toBeCalledTimes(2)
       expect(onceFn).toBeCalledTimes(1)
+    })
+  })
+  describe("useFetchState", () => {
+    type IData = string
+    function Fetch({ loadData }: { loadData: () => Promise<IData> }) {
+      const [data, fetch, { isFetching, errors }] = useFetchState<IData>(
+        loadData
+      )
+      return (
+        <div>
+          <div data-testid="isFetching">{isFetching.toString()}</div>
+          <div data-testid="data">{JSON.stringify(data)}</div>
+          <div data-testid="error">{JSON.stringify(errors)}</div>
+          <button data-testid="load" onClick={() => fetch()}>
+            Load Data
+          </button>
+        </div>
+      )
+    }
+    it("should let us store the async data fetch state", async () => {
+      const fetchFn = jest.fn(() => {
+        return new Promise<IData>(resolve => {
+          setTimeout(() => {
+            resolve("hi")
+          }, 0)
+        })
+      })
+      const { getByTestId } = render(<Fetch loadData={fetchFn} />)
+      expect(getByTestId("isFetching").innerHTML).toBe("false")
+      expect(getByTestId("data").innerHTML).toBe("null")
+      expect(getByTestId("error").innerHTML).toBe("null")
+
+      // now fetch the data
+      fireEvent.click(getByTestId("load"))
+      expect(getByTestId("isFetching").innerHTML).toBe("true")
+      expect(getByTestId("data").innerHTML).toBe("null")
+      expect(getByTestId("error").innerHTML).toBe("null")
+      expect(fetchFn).toHaveBeenCalledTimes(1)
+
+      // TODO: test the updation code
+      // I don't know how to do it ;p
     })
   })
 })

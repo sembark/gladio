@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react"
+import { useRef, useEffect, useState } from "react"
 import { ownerDocument, activeElement, contains } from "@tourepedia/dom-helpers"
 
 export function useDidUpdate(fn: () => void, conditions: any = []): void {
@@ -96,4 +96,59 @@ export function useEnforceFocus(
     }
     return
   }, [open])
+}
+
+export function useFetchState<ReturnType, ParamsType = any>(
+  fetchFn: (data?: ParamsType) => Promise<ReturnType>,
+  initialValues: {
+    isFetching?: boolean
+  } = {
+    isFetching: false,
+  }
+): [
+  ReturnType | null,
+  (data?: ParamsType) => Promise<ReturnType>,
+  { isFetching: boolean; errors: any }
+] {
+  const [{ isFetching, data, errors }, changeData] = useState<{
+    data: ReturnType | null
+    isFetching: boolean
+    errors?: any
+  }>({
+    isFetching: initialValues.isFetching || false,
+    data: null,
+    errors: null,
+  })
+  return [
+    data,
+    (...args: any) => {
+      changeData({
+        isFetching: true,
+        errors: null,
+        data: data,
+      })
+
+      return fetchFn(args)
+        .then(data => {
+          changeData({
+            isFetching: false,
+            data,
+            errors: null,
+          })
+          return data
+        })
+        .catch(error => {
+          changeData({
+            isFetching: false,
+            data,
+            errors: error,
+          })
+          return Promise.reject(error)
+        })
+    },
+    {
+      isFetching,
+      errors,
+    },
+  ]
 }
