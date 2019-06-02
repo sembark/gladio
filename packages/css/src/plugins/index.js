@@ -3,4 +3,5 @@ module.exports = [
   require("./badge"),
   require("./typography"),
   require("./dialog"),
+  require("./select"),
 ]
