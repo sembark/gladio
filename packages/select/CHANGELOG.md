@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.1.2...@tourepedia/select@0.2.0) (2019-06-04)
+
+
+### Bug Fixes
+
+* **select:** revert back to any type as type inheritance is not working ([11c517f](https://github.com/tourepedia/tp-ui/commit/11c517f))
+
+
+### Features
+
+* **select:** add docs for installation ([a8f883c](https://github.com/tourepedia/tp-ui/commit/a8f883c))
+
+
+
+
+
 ## [0.1.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.1.1...@tourepedia/select@0.1.2) (2019-06-04)
 
 
