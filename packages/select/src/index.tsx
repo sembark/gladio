@@ -23,7 +23,7 @@ export interface SelectProps<
   name?: string
   onBlur?: (e: any) => void
   onChange: (
-    value: IsMultiple extends true ? Array<Option> : Option,
+    value: IsMultiple extends (false | undefined) ? Option : Array<Option>,
     name: string
   ) => void
   onFocus?: (e: any) => void
@@ -33,7 +33,7 @@ export interface SelectProps<
   query?: string
   required?: boolean
   searchable?: boolean
-  value?: IsMultiple extends true ? Array<Option> : Option
+  value?: IsMultiple extends (false | undefined) ? Option : Array<Option>
 }
 
 export function Select<
@@ -214,7 +214,7 @@ export interface AsyncProps<Option extends IOption, IsMultiple extends boolean>
 }
 
 export function Async<
-  Option extends IOption = IOption,
+  Option extends IOption,
   IsMultiple extends boolean = false
 >({ fetch, ...otherProps }: AsyncProps<Option, IsMultiple>) {
   const [query, setQuery] = useState<string>("")

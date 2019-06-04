@@ -27,7 +27,9 @@ stories.add("Multi Select", () => (
       value={[{ id: 1, name: "India" }]}
       label="Select Places"
       name="name"
-      onChange={(value, name) => {}}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
       options={[{ id: 1, name: "India" }, { id: 2, name: "USA" }]}
       onQuery={query => {}}
     />
@@ -40,7 +42,9 @@ stories.add("Single Select Async", () => (
       value={{ id: 1, name: "India" }}
       label="Select Places"
       name="name"
-      onChange={(value, name) => {}}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
       fetch={() => {
         return Promise.resolve([
           { id: 1, name: "India" },
@@ -51,14 +55,16 @@ stories.add("Single Select Async", () => (
   </div>
 ))
 
-stories.add("Async", () => (
+stories.add("Multi Async", () => (
   <div className="max-w-lg mx-auto">
     <Async
       multiple
       value={[{ id: 1, name: "India" }]}
       label="Select Places"
       name="name"
-      onChange={(value, name) => {}}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
       fetch={() => {
         return Promise.resolve([
           { id: 1, name: "India" },
