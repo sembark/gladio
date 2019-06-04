@@ -1,23 +1,36 @@
-# Badge component
+# Select component
 
-Use it to show `state` or `count` into the UI
+Use a custom select to enhance UX for input fields that requires selection of items
 
 ## Installation
 
 ```bash
-yarn add @tourepedia/badge
+yarn add @tourepedia/select
 ```
 
 ## Usage
 
 ```js
-// import the badge component
-import Badge from "@tourepedia/badge"
+import Select, { Async } from "@tourepedia/select"
 
 const MyComponent = () => {
+  const [query, setQuery] = useState("")
+  const [value, setValue] = useState()
   return (
     <div>
-      Notifications <Badge>10</Badge>
+      <Select
+        value={value}
+        onChange={selectedValue => {
+          setValue(selectedValue)
+        }}
+        onQuery={setQuery}
+      />
+      <Async
+        onChange={selectedValue => {
+          setValue(selectedValue)
+        }}
+        fetch={query => Promise.resolve([])}
+      />
     </div>
   )
 }
