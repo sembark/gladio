@@ -5,41 +5,27 @@ import classNames from "classnames"
 
 const { useState, useEffect, useRef } = React
 
-export interface IOption {
-  id: number | string
-  [key: string]: any
-}
-
-export interface SelectProps<
-  Option extends IOption,
-  IsMultiple extends boolean
-> {
+export interface SelectProps {
   className?: string
   creatable?: boolean
   fetchOnMount?: boolean
   label?: React.ReactNode
   labelKey?: string
-  multiple?: IsMultiple
+  multiple?: boolean
   name?: string
   onBlur?: (e: any) => void
-  onChange: (
-    value: IsMultiple extends (false | undefined) ? Option : Array<Option>,
-    name: string
-  ) => void
+  onChange: (value: any | Array<any>, name: string) => void
   onFocus?: (e: any) => void
   onQuery: (query: string) => void
-  options?: Array<Option>
+  options?: Array<any>
   placeholder?: string
   query?: string
   required?: boolean
   searchable?: boolean
-  value?: IsMultiple extends (false | undefined) ? Option : Array<Option>
+  value?: any | Array<any>
 }
 
-export function Select<
-  Option extends IOption = IOption,
-  IsMultiple extends boolean = false
->({
+export function Select({
   className = "",
   creatable = false,
   fetchOnMount,
@@ -57,7 +43,7 @@ export function Select<
   required,
   searchable = true,
   value,
-}: SelectProps<Option, IsMultiple>) {
+}: SelectProps) {
   const name: string = propName || (multiple ? "select[]" : "select")
   if (value) {
     let moreOptions = []
@@ -75,11 +61,11 @@ export function Select<
   }
   if (creatable && options.length === 0 && query && query.trim()) {
     options = options.concat([
-      ({
+      {
         id: query,
         name: query,
         created: true,
-      } as any) as Option,
+      },
     ])
   }
   const groupRef = useRef<HTMLDivElement>(null)
@@ -202,25 +188,17 @@ export function Select<
   )
 }
 
-export interface AsyncProps<Option extends IOption, IsMultiple extends boolean>
-  extends Omit<
-      SelectProps<Option, IsMultiple>,
-      "onQuery" | "options" | "query"
-    >,
-    Partial<
-      Pick<SelectProps<Option, IsMultiple>, "onQuery" | "options" | "query">
-    > {
-  fetch: (query: string) => Promise<Option[]>
+export interface AsyncProps
+  extends Omit<SelectProps, "onQuery" | "options" | "query">,
+    Partial<Pick<SelectProps, "onQuery" | "options" | "query">> {
+  fetch: (query: string) => Promise<any[]>
 }
 
-export function Async<
-  Option extends IOption,
-  IsMultiple extends boolean = false
->({ fetch, ...otherProps }: AsyncProps<Option, IsMultiple>) {
+export function Async({ fetch, ...otherProps }: AsyncProps) {
   const [query, setQuery] = useState<string>("")
-  const [options, setOptions] = useState<Array<Option>>([])
+  const [options, setOptions] = useState<Array<any>>([])
   return (
-    <Select<IOption, IsMultiple>
+    <Select
       options={options}
       query={query}
       onQuery={query => {
