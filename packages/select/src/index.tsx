@@ -10,16 +10,22 @@ export interface IOption {
   [key: string]: any
 }
 
-export interface SelectProps<Option extends IOption = IOption> {
+export interface SelectProps<
+  Option extends IOption,
+  IsMultiple extends boolean
+> {
   className?: string
   creatable?: boolean
   fetchOnMount?: boolean
   label?: React.ReactNode
   labelKey?: string
-  multiple?: boolean
+  multiple?: IsMultiple
   name?: string
   onBlur?: (e: any) => void
-  onChange: (value: Array<Option> | Option, name: string) => void
+  onChange: (
+    value: IsMultiple extends true ? Array<Option> : Option,
+    name: string
+  ) => void
   onFocus?: (e: any) => void
   onQuery: (query: string) => void
   options?: Array<Option>
@@ -27,10 +33,13 @@ export interface SelectProps<Option extends IOption = IOption> {
   query?: string
   required?: boolean
   searchable?: boolean
-  value?: Option | Array<Option>
+  value?: IsMultiple extends true ? Array<Option> : Option
 }
 
-export function Select<Option extends IOption = IOption>({
+export function Select<
+  Option extends IOption = IOption,
+  IsMultiple extends boolean = false
+>({
   className = "",
   creatable = false,
   fetchOnMount,
@@ -48,9 +57,8 @@ export function Select<Option extends IOption = IOption>({
   required,
   searchable = true,
   value,
-}: SelectProps<Option>) {
+}: SelectProps<Option, IsMultiple>) {
   const name: string = propName || (multiple ? "select[]" : "select")
-  value = value || (multiple ? [] : undefined)
   if (value) {
     let moreOptions = []
     if (Array.isArray(value)) {
@@ -155,7 +163,7 @@ export function Select<Option extends IOption = IOption>({
             const checked = value
               ? Array.isArray(value)
                 ? value.some(v => v.id === option.id)
-                : value.id === option.id
+                : (value as any).id === option.id
               : false
             return (
               <li
@@ -182,10 +190,7 @@ export function Select<Option extends IOption = IOption>({
               title="Click to unselect"
               role="button"
               onClick={() =>
-                onChange(
-                  value && value.filter((val: any) => val.id !== v.id),
-                  name
-                )
+                onChange(value.filter(val => val.id !== v.id) as any, name)
               }
             >
               {v[labelKey]}
@@ -197,20 +202,25 @@ export function Select<Option extends IOption = IOption>({
   )
 }
 
-export interface AsyncProps<Option extends IOption = IOption>
-  extends Omit<SelectProps<Option>, "onQuery" | "options" | "query">,
-    Partial<Pick<SelectProps<Option>, "onQuery" | "options" | "query">> {
+export interface AsyncProps<Option extends IOption, IsMultiple extends boolean>
+  extends Omit<
+      SelectProps<Option, IsMultiple>,
+      "onQuery" | "options" | "query"
+    >,
+    Partial<
+      Pick<SelectProps<Option, IsMultiple>, "onQuery" | "options" | "query">
+    > {
   fetch: (query: string) => Promise<Option[]>
 }
 
-export function Async<Option extends IOption = IOption>({
-  fetch,
-  ...otherProps
-}: AsyncProps<Option>) {
+export function Async<
+  Option extends IOption = IOption,
+  IsMultiple extends boolean = false
+>({ fetch, ...otherProps }: AsyncProps<Option, IsMultiple>) {
   const [query, setQuery] = useState<string>("")
   const [options, setOptions] = useState<Array<Option>>([])
   return (
-    <Select
+    <Select<IOption, IsMultiple>
       options={options}
       query={query}
       onQuery={query => {
