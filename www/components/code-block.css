@@ -1,0 +1,35 @@
+.react-live {
+  border: 2px solid #f7fafc;
+  position: relative;
+  margin: 60px 10px;
+}
+
+.react-live:before {
+  content: "Editable Code Example";
+  font-size: 0.9rem;
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  width: 100%;
+  padding: 6px;
+  text-transform: uppercase;
+  color: gray;
+}
+
+.react-live > *:not(:first-child) {
+  border-top: 2px solid #f7fafc;
+  padding: 10px;
+}
+.react-live > .editor {
+  font-size: 1.3rem;
+}
+.react-live > .error {
+  background: #fc8181;
+}
+
+.only-preview {
+  padding: 15px 10px;
+  border-radius: 0.25em;
+  background: #f7fafc;
+  margin-bottom: 1em;
+}

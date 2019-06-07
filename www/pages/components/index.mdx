@@ -1,0 +1,89 @@
+import Header from "../../components/Header"
+import CodeBlock from "../../components/CodeBlock"
+
+<Header />
+
+<div className="max-w-4xl px-4 mx-auto">
+<div className="text-center mt-16">
+  <h1 className="text-4xl md:text-6xl font-light">Components</h1>
+  <h2 className="text-2xl md:text-3xl font-light">
+    React components for the Tourepedia Design System
+  </h2>
+</div>
+
+<div className="mt-20">
+
+## Introduction
+
+Using our designs system, we have built some reusable component for easily creating markup in React. Bellow is the
+list of components and live editor to play with them.
+
+### Button
+
+#### Installation
+
+```bash
+npm install --save @tourepedia/button
+```
+
+#### Usage
+
+```jsx
+import Button from "@tourepedia/button"
+
+function App () {
+  return <Button>Button</Button>
+}
+```
+
+```jsx live=true
+<Button primary type="button">Click Me!</Button>
+```
+
+### Dialog
+
+#### Installation
+
+```bash
+npm install --save @tourepedia/dialog
+```
+
+#### Usage
+
+```jsx
+import Dialog, { useDialog } from "@tourepedia/dialog"
+
+function App () {
+  const [isOpen, open, close] = useDialog(false)
+  return <>
+    <Dialog open={isOpen} onClose={close}>
+      Dialog Content Here
+    </Dialog>
+    <Button onClick={open}>Open</Button>
+  </>
+}
+```
+
+```jsx live=true
+function () {
+  const [isOpen, open, close] = useDialog(false)
+  return <div>
+    <Dialog open={isOpen} onClose={close}>
+      <Dialog.Header>
+        <Dialog.Title>Dialog Title</Dialog.Title>
+      </Dialog.Header>
+      <Dialog.Body>
+        <h2>Here is some stuff inside the dialog</h2>
+        <p>Some lorem ipsum text</p>
+      </Dialog.Body>
+      <Dialog.Footer>
+        <Button primary onClick={close}>OK! Close Now</Button>
+      </Dialog.Footer>
+    </Dialog>
+    <Button onClick={open}>Open Dialog</Button>
+  </div>
+}
+```
+
+</div>
+</div>
