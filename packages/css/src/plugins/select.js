@@ -12,7 +12,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     ".select [type='search']": {
       width: "100%",
       borderRadius: theme("borderRadius.default"),
-      padding: `${theme("padding.2")} ${theme("padding.4")}`,
+      padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
       border: `${theme("borderWidth.default")} solid ${theme(
         "borderColor.gray.300"
       )}`,

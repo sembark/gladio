@@ -1,10 +1,16 @@
-const { colors } = require("tailwindcss/defaultTheme")
+const { colors, spacing } = require("tailwindcss/defaultTheme")
 
 const plugins = require("./src/plugins")
 
 module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        // spacing for interactive elements like buttons, inputs
+        "ie-y": spacing[3],
+        "ie-x": spacing[4],
+      },
+    },
     colors: {
       transparent: colors.transparent,
       black: colors.black,

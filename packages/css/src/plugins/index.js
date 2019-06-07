@@ -4,4 +4,5 @@ module.exports = [
   require("./typography"),
   require("./dialog"),
   require("./select"),
+  require("./input"),
 ]
