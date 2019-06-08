@@ -9,7 +9,7 @@
     "bootstrap": "lerna bootstrap --hoist",
     "build": "lerna run build --parallel",
     "build:changed": "lerna run build --parallel --since origin/master",
-    "build:watch": "chokidar \"./packages/**/*.js\" -c \"npm run build:changed\"",
+    "build:watch": "chokidar \"./packages/*/src/**/*.(ts|js|tsx|jsx)\" -c \"npm run build:changed\"",
     "test": "lerna run test --parallel",
     "test:watch": "lerna run test --parallel -- -- --watch",
     "test:changed": "lerna run test --since origin/master",
