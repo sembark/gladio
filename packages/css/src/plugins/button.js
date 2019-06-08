@@ -10,13 +10,19 @@ module.exports = function addButtonComponentPlugin({ addComponents, config }) {
         "theme.borderColor.gray.300"
       )}`,
       lineHeight: 1,
+      "&:disabled": {
+        opacity: 0.8,
+        cursor: "not-allowed",
+      },
     },
     ".btn-primary": {
       backgroundColor: config("theme.backgroundColor.primary.500"),
       borderColor: config("theme.borderColor.primary.500"),
       color: config("theme.textColor.white"),
-      "&:hover": {
-        backgroundColor: config("theme.backgroundColor.primary.600"),
+      "&:not(:disabled)": {
+        "&:hover": {
+          backgroundColor: config("theme.backgroundColor.primary.600"),
+        },
       },
     },
   }

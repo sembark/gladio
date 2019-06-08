@@ -23,6 +23,10 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
           )} ${theme("borderColor.primary.400")}`,
         },
       },
+      "&[type='email'], &[type='text'], &[type='password']": {
+        width: "100%",
+        maxWidth: theme("maxWidth.sm"),
+      },
       "textarea&": {
         lineHeight: "1.5",
         height: "auto",
