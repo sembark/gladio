@@ -124,7 +124,7 @@ interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
   closeButton?: boolean
 }
 export function Dialog({
-  container = document.body,
+  container = typeof document !== "undefined" ? document.body : undefined,
   children = null,
   open,
   onClose,
@@ -137,6 +137,9 @@ export function Dialog({
   const wrapperRef = useRef<HTMLDialogElement>(null)
   // set the styles for the container
   useEffect(() => {
+    if (!container) {
+      return
+    }
     if (open) {
       container.classList.add(DIALOG_OPEN_CONTAINER_CLASS_NAME)
     } else {
@@ -148,6 +151,7 @@ export function Dialog({
   }, [open])
   useEnforceFocus(wrapperRef, open, { enforceFocus, autoFocus })
   if (!open) return null
+  if (!container) return null
   return ReactDOM.createPortal(
     <dialog
       open={open}
