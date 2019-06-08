@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Omit } from "utility-types"
-import { contains } from "@tourepedia/dom-helpers"
+import { contains, ownerDocument } from "@tourepedia/dom-helpers"
 import classNames from "classnames"
 
 const { useState, useEffect, useRef } = React
@@ -8,6 +8,7 @@ const { useState, useEffect, useRef } = React
 export interface SelectProps {
   className?: string
   creatable?: boolean
+  disabled?: boolean
   fetchOnMount?: boolean
   label?: React.ReactNode
   labelKey?: string
@@ -28,6 +29,7 @@ export interface SelectProps {
 export function Select({
   className = "",
   creatable = false,
+  disabled = false,
   fetchOnMount,
   label,
   labelKey = "name",
@@ -95,6 +97,10 @@ export function Select({
         }
       }
     }
+    const document = ownerDocument()
+    if (!document || disabled) {
+      return () => {}
+    }
     document.addEventListener("click", handleClick)
     document.addEventListener("keyup", handleClick)
     return () => {
@@ -126,6 +132,7 @@ export function Select({
           value={
             isFocused ? query : !multiple && value ? value[labelKey] : query
           }
+          disabled={disabled}
           onChange={e => {
             onQuery(e.target.value)
           }}
@@ -159,7 +166,7 @@ export function Select({
                 title={option.title || option.description}
                 tabIndex={-1}
                 onClick={() => {
-                  handleChange(option, !checked)
+                  !disabled && handleChange(option, !checked)
                 }}
               >
                 {option[labelKey]}
@@ -176,6 +183,7 @@ export function Select({
               title="Click to unselect"
               role="button"
               onClick={() =>
+                !disabled &&
                 onChange(value.filter(val => val.id !== v.id) as any, name)
               }
             >

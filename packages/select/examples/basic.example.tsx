@@ -19,6 +19,21 @@ stories.add("Single Select", () => (
     />
   </div>
 ))
+stories.add("Disabled Select", () => (
+  <div className="max-w-lg mx-auto">
+    <Select
+      disabled
+      value={{ id: 1, name: "India" }}
+      label="Select Places"
+      name="name"
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
+      options={[{ id: 1, name: "India" }, { id: 2, name: "USA" }]}
+      onQuery={query => {}}
+    />
+  </div>
+))
 
 stories.add("Multi Select", () => (
   <div className="max-w-lg mx-auto">
