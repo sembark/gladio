@@ -36,14 +36,18 @@ export function contains(
 }
 
 // get the container document
-export function ownerDocument(node?: HTMLElement): Document {
-  return (node && node.ownerDocument) || document
+export function ownerDocument(node?: HTMLElement): Document | null {
+  return (node && node.ownerDocument) || (isDom ? document : null)
 }
 
 // get the active element
 export function activeElement(
-  doc: Document = ownerDocument()
+  doc: Document | null = ownerDocument()
 ): HTMLElement | null {
+  if (!doc || !ownerDocument) {
+    return null
+  }
+  doc = doc || ownerDocument()
   try {
     return (doc.activeElement as any) as HTMLElement
   } catch (e) {
