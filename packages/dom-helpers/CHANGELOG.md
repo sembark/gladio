@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dom-helpers@0.2.6...@tourepedia/dom-helpers@0.2.7) (2019-06-08)
+
+
+### Bug Fixes
+
+* **dom-helpers:** need to handle ssr ([42bf960](https://github.com/tourepedia/tp-ui/commit/42bf960))
+
+
+
+
+
 ## [0.2.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dom-helpers@0.2.5...@tourepedia/dom-helpers@0.2.6) (2019-06-01)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.3.0...@tourepedia/react-hooks@0.3.1) (2019-06-08)
+
+
+### Bug Fixes
+
+* **react-hooks:** handle where document may be null ([ff312e9](https://github.com/tourepedia/tp-ui/commit/ff312e9))
+
+
+
+
+
 # [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.2.7...@tourepedia/react-hooks@0.3.0) (2019-06-02)
 
 

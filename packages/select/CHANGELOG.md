@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.2.0...@tourepedia/select@0.3.0) (2019-06-08)
+
+
+### Features
+
+* **select:** add disable prop and check for ssr ([4eca972](https://github.com/tourepedia/tp-ui/commit/4eca972))
+
+
+
+
+
 # [0.2.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.1.2...@tourepedia/select@0.2.0) (2019-06-04)
 
 

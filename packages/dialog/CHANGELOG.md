@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.4.5...@tourepedia/dialog@0.4.6) (2019-06-08)
+
+
+### Bug Fixes
+
+* **dialog:** document not availble in ssr ([f6cc0d9](https://github.com/tourepedia/tp-ui/commit/f6cc0d9))
+
+
+
+
+
 ## [0.4.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.4.4...@tourepedia/dialog@0.4.5) (2019-06-02)
 
 **Note:** Version bump only for package @tourepedia/dialog
