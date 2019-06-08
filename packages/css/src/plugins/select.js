@@ -13,10 +13,13 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       width: "100%",
       borderRadius: theme("borderRadius.default"),
       padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
-      border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.300"
-      )}`,
+      border: `${theme("borderWidth.default")} solid ${borderColor}`,
       outline: "none",
+      "&:disabled": {
+        background: theme("backgroundColor.gray.100"),
+        cursor: "not-allowed",
+        opacity: 0.8,
+      },
     },
     ".select label + [type='search']": {
       marginTop: theme("margin.2"),
