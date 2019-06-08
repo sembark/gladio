@@ -88,10 +88,11 @@ export function useEnforceFocus(
   }
 
   useDidUpdate(() => {
+    const document = ownerDocument()
     if (open) {
-      ownerDocument().addEventListener("keydown", handleKeyDown)
+      document && document.addEventListener("keydown", handleKeyDown)
       return () => {
-        ownerDocument().removeEventListener("keydown", handleKeyDown)
+        document && document.removeEventListener("keydown", handleKeyDown)
       }
     }
     return
