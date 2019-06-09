@@ -1,0 +1,35 @@
+{
+  "name": "@tourepedia/table",
+  "version": "0.1.0",
+  "description": "Table Component for Tourepedia Apps",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "node ../../shared/build"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "files": [
+    "src",
+    "lib",
+    "es",
+    "types"
+  ],
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "utility-types": "^3.7.0"
+  }
+}
