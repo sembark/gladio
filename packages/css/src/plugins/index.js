@@ -5,4 +5,5 @@ module.exports = [
   require("./dialog"),
   require("./select"),
   require("./input"),
+  require("./output-theme"),
 ]
