@@ -13,6 +13,7 @@ import {
   ErrorMessage,
 } from "@tourepedia/input"
 import * as Icons from "@tourepedia/icons"
+import Table from "@tourepedia/table"
 
 import Select, { Async as AsyncSelect } from "@tourepedia/select"
 
@@ -33,4 +34,5 @@ export {
   Select,
   AsyncSelect,
   Icons,
+  Table,
 }
