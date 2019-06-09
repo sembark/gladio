@@ -1,8 +1,19 @@
 import Badge from "@tourepedia/badge"
 import Button from "@tourepedia/button"
 import Dialog, { useDialog } from "@tourepedia/dialog"
-import * as domHelpers from "@tourepedia/dom-helpers"
-import * as hooks from "@tourepedia/react-hooks"
+import {
+  ownerDocument,
+  activeElement,
+  isDom,
+  contains,
+} from "@tourepedia/dom-helpers"
+import {
+  useDidMount,
+  useDidUpdate,
+  useOnce,
+  useFetchState,
+  useEnforceFocus,
+} from "@tourepedia/react-hooks"
 import {
   Input,
   Select as SelectInput,
@@ -22,8 +33,6 @@ export {
   Button,
   Dialog,
   useDialog,
-  domHelpers,
-  hooks,
   Input,
   SelectInput,
   TextArea,
@@ -35,4 +44,13 @@ export {
   AsyncSelect,
   Icons,
   Table,
+  ownerDocument,
+  activeElement,
+  isDom,
+  contains,
+  useDidMount,
+  useDidUpdate,
+  useOnce,
+  useFetchState,
+  useEnforceFocus,
 }
