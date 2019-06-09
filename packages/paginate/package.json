@@ -1,0 +1,37 @@
+{
+  "name": "@tourepedia/paginate",
+  "version": "0.0.0",
+  "description": "Paginate Component for Tourepedia Apps",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "node ../../shared/build"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "files": [
+    "src",
+    "lib",
+    "es",
+    "types"
+  ],
+  "dependencies": {
+    "@tourepedia/button": "^0.1.16",
+    "@tourepedia/icons": "^0.2.2",
+    "classnames": "^2.2.6",
+    "utility-types": "^3.7.0"
+  }
+}
