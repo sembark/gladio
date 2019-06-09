@@ -6,5 +6,6 @@ module.exports = [
   require("./select"),
   require("./input"),
   require("./table"),
+  require("./paginate"),
   require("./output-theme"),
 ]
