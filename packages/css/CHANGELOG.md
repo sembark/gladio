@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.9.0...@tourepedia/css@0.10.0) (2019-06-09)
+
+
+### Features
+
+* **css:** add styles for paginate component ([ce33460](https://github.com/tourepedia/tp-ui/commit/ce33460))
+
+
+
+
+
 # [0.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.8.1...@tourepedia/css@0.9.0) (2019-06-09)
 
 
