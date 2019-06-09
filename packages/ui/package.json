@@ -17,7 +17,7 @@
   },
   "scripts": {
     "build:css": "node-sass-chokidar --include-path ./node_modules/ ./src/index.scss ./styles/index.css",
-    "build": "npm run build:css & node ../../shared/build"
+    "build:ui": "npm run build:css & node ../../shared/build"
   },
   "files": [
     "src",

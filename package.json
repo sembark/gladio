@@ -16,9 +16,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "prestart": "npm-run-all bootstrap build",
     "start": "npm-run-all -l -p build:watch storybook",
-    "prerelease": "npm run test:changed && npm run build:changed",
+    "prerelease": "npm run test:changed && npm run build:changed && lerna run build:ui",
     "release": "env-cmd -f .env.tokens lerna publish",
-    "postrelease": "npm run docs",
     "docs": "storybook-to-ghpages --out=.out",
     "commit": "git-cz",
     "outdated": "lerna exec --no-bail --stream -- npm outdated"
