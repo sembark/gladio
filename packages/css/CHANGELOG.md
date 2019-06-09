@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.7.0...@tourepedia/css@0.8.0) (2019-06-09)
+
+
+### Features
+
+* **css:** export theme along with css ([2a2062f](https://github.com/tourepedia/tp-ui/commit/2a2062f))
+
+
+
+
+
 # [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.6.0...@tourepedia/css@0.7.0) (2019-06-08)
 
 
