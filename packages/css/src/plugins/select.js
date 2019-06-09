@@ -22,7 +22,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       },
     },
     ".select label + [type='search']": {
-      marginTop: theme("margin.2"),
+      marginTop: theme("margin.1"),
     },
     ".select [role='listbox']": {
       position: "absolute",
