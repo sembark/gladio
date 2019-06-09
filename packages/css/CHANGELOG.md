@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.8.0...@tourepedia/css@0.8.1) (2019-06-09)
+
+
+### Bug Fixes
+
+* **css:** reduce label and input spacing ([a85bf6a](https://github.com/tourepedia/tp-ui/commit/a85bf6a))
+
+
+
+
+
 # [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.7.0...@tourepedia/css@0.8.0) (2019-06-09)
 
 
