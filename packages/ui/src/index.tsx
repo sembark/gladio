@@ -1,5 +1,5 @@
-import Badge from "@tourepedia/badge"
-import Button from "@tourepedia/button"
+import Badge, { BadgeList } from "@tourepedia/badge"
+import Button, { ButtonGroup } from "@tourepedia/button"
 import Dialog, { useDialog } from "@tourepedia/dialog"
 import {
   ownerDocument,
@@ -30,7 +30,9 @@ import Paginate from "@tourepedia/paginate"
 
 export {
   Badge,
+  BadgeList,
   Button,
+  ButtonGroup,
   Dialog,
   useDialog,
   Input,
