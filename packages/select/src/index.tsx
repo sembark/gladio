@@ -48,6 +48,20 @@ export function Select({
   value,
 }: SelectProps) {
   const name: string = propName || (multiple ? "select[]" : "select")
+  if (
+    creatable &&
+    (!options || options.length === 0) &&
+    query &&
+    query.trim()
+  ) {
+    options = (options || []).concat([
+      {
+        id: query.trim(),
+        name: query.trim(),
+        created: true,
+      },
+    ])
+  }
   if (value) {
     let moreOptions = []
     if (Array.isArray(value)) {
@@ -61,15 +75,6 @@ export function Select({
       moreOption => !options.some(option => option.id === moreOption.id)
     )
     options = options.concat(moreOptions)
-  }
-  if (creatable && options.length === 0 && query && query.trim()) {
-    options = options.concat([
-      {
-        id: query,
-        name: query,
-        created: true,
-      },
-    ])
   }
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
