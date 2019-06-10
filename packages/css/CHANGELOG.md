@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.11.1...@tourepedia/css@0.12.0) (2019-06-10)
+
+
+### Bug Fixes
+
+* **css:** active button should have a higher zindex value ([6b75c19](https://github.com/tourepedia/tp-ui/commit/6b75c19))
+
+
+### Features
+
+* **css:** add button group styles ([c24847d](https://github.com/tourepedia/tp-ui/commit/c24847d))
+* **css:** add rounded and list styles to badges ([d204e50](https://github.com/tourepedia/tp-ui/commit/d204e50))
+
+
+
+
+
 ## [0.11.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.11.0...@tourepedia/css@0.11.1) (2019-06-10)
 
 

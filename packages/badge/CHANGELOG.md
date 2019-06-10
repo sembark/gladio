@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.1.14...@tourepedia/badge@0.2.0) (2019-06-10)
+
+
+### Features
+
+* **badge:** add list and rounded full props ([9f1aa2f](https://github.com/tourepedia/tp-ui/commit/9f1aa2f))
+
+
+
+
+
 ## [0.1.14](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.1.13...@tourepedia/badge@0.1.14) (2019-06-01)
 
 

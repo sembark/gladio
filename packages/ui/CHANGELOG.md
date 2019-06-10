@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.1.2...@tourepedia/ui@1.2.0) (2019-06-10)
+
+
+### Features
+
+* **ui:** export the button group and badge list components ([dd87313](https://github.com/tourepedia/tp-ui/commit/dd87313))
+
+
+
+
+
 ## [1.1.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.1.1...@tourepedia/ui@1.1.2) (2019-06-10)
 
 **Note:** Version bump only for package @tourepedia/ui
