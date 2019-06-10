@@ -12,6 +12,10 @@ module.exports = function addPaginateStyles({ addComponents, theme }) {
       "> ul": {
         "> li": {
           display: "inline-block",
+          "> .btn:focus": {
+            position: "relative",
+            zIndex: 2,
+          },
           "&:not(:first-child)": {
             "> .btn": {
               borderTopLeftRadius: 0,
