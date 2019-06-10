@@ -10,19 +10,18 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       display: "block",
       lineHeight: 1,
       maxWidth: "100%",
+      boxShadow: theme("boxShadow.inner"),
       "&:focus": {
         outline: "none",
         borderColor: theme("borderColor.primary.400"),
+        boxShadow: `${theme("boxShadow.inner")}, ${theme("boxShadow.outline")}`,
       },
       "&[type='checkbox'], &[type='radio']": {
         display: "inline-block",
-        border: "none",
         padding: 0,
-        "&:focus": {
-          boxShadow: `0 ${theme("borderWidth.default")} 0 ${theme(
-            "borderWidth.2"
-          )} ${theme("borderColor.primary.400")}`,
-        },
+      },
+      "&[type='radio']": {
+        borderRadius: "100%",
       },
       "&[type='email'], &[type='text'], &[type='password']": {
         width: "100%",
@@ -84,7 +83,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       },
     },
     ".form-group": {
-      marginBottom: theme("margin.5"),
+      marginBottom: theme("margin.6"),
       "& > label": {
         fontSize: theme("fontSize.sm"),
       },

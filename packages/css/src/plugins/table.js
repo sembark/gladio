@@ -2,7 +2,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
   const table = {
     ".table": {
       borderCollapse: "collapse",
-      marginBottom: theme("margin.5"),
+      marginBottom: theme("margin.6"),
       background: theme("backgroundColor.white"),
       width: "100%",
       "th, td": {
