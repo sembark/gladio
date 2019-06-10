@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.11.0...@tourepedia/css@0.11.1) (2019-06-10)
+
+
+### Bug Fixes
+
+* **css:** update styles for select to match the input css ([2bc3b16](https://github.com/tourepedia/tp-ui/commit/2bc3b16))
+
+
+
+
+
 # [0.11.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.10.0...@tourepedia/css@0.11.0) (2019-06-10)
 
 

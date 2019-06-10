@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.3.0...@tourepedia/select@0.3.1) (2019-06-10)
+
+
+### Bug Fixes
+
+* **select:** select should the input component instead of native ([5d9d476](https://github.com/tourepedia/tp-ui/commit/5d9d476))
+
+
+
+
+
 # [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.2.0...@tourepedia/select@0.3.0) (2019-06-08)
 
 
