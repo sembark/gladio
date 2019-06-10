@@ -1,17 +1,33 @@
-module.exports = function addBadgeComponentPlugin({ addComponents, config }) {
+module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
   const badges = {
     ".badge": {
-      padding: `${config("theme.padding.1")} ${config("theme.padding.2")}`,
-      fontSize: config("theme.fontSize.sm"),
-      fontWeight: config("theme.fontWeight.bold"),
+      lineHeight: 1,
+      padding: `${theme("padding.1")} ${theme("padding.2")}`,
+      fontSize: theme("fontSize.sm"),
+      fontWeight: theme("fontWeight.bold"),
       whiteSpace: "nowrap",
       textAlign: "center",
-      borderRadius: config("theme.borderRadius.full"),
       display: "inline-block",
-    },
-    ".badge-primary": {
-      backgroundColor: config("theme.backgroundColor.primary.500"),
-      color: config("theme.textColor.white"),
+      backgroundColor: theme("backgroundColor.gray.100"),
+      border: `${theme("borderWidth.default")} solid ${theme(
+        "borderColor.gray.200"
+      )}`,
+      minWidth: "2.2em",
+      borderRadius: theme("borderRadius.default"),
+      "&-list": {
+        display: "inline-block",
+      },
+      "&-list &": {
+        margin: "5px",
+      },
+      "&-full-rounded, &-list-full-rounded &": {
+        borderRadius: theme("borderRadius.full"),
+      },
+      "&-primary, &-list-primary &": {
+        borderColor: theme("borderColor.primary.700"),
+        backgroundColor: theme("backgroundColor.primary.600"),
+        color: theme("textColor.white"),
+      },
     },
   }
   addComponents(badges)
