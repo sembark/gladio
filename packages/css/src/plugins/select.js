@@ -1,5 +1,4 @@
 module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
-  const borderColor = theme("borderColor.gray.300")
   const select = {
     ".select": {
       display: "block",
@@ -11,15 +10,6 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     },
     ".select [type='search']": {
       width: "100%",
-      borderRadius: theme("borderRadius.default"),
-      padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
-      border: `${theme("borderWidth.default")} solid ${borderColor}`,
-      outline: "none",
-      "&:disabled": {
-        background: theme("backgroundColor.gray.100"),
-        cursor: "not-allowed",
-        opacity: 0.8,
-      },
     },
     ".select label + [type='search']": {
       marginTop: theme("margin.1"),
@@ -40,14 +30,11 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       display: "none",
       overflow: "auto",
       maxHeight: "200px",
-      borderRadius: "0 0 5px 5px",
+      borderRadius: theme("borderRadius.default"),
+      boxShadow: theme("boxShadow.default"),
     },
     ".select[data-focused='true'] [role='listbox']": {
       display: "block",
-    },
-    ".select[data-focused='true'] [type='search'] ": {
-      borderBottomRightRadius: 0,
-      borderBottomLeftRadius: 0,
     },
     ".select [role='listbox'] [role='option']": {
       whiteSpace: "nowrap",
@@ -82,8 +69,8 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       display: "inline-block",
       margin: "0 5px 5px 0",
       padding: "3px 8px",
-      borderRadius: "0.4em",
-      fontSize: "0.9em",
+      borderRadius: theme("borderRadius.default"),
+      fontSize: theme("fontSize.sm"),
       cursor: "pointer",
       background: theme("backgroundColor.gray.300"),
     },
