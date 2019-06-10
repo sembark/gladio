@@ -14,7 +14,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
         cursor: "not-allowed",
       },
       "&:not(:disabled)": {
-        "&:hover": {
+        "&:hover, &:focus": {
           borderColor: theme("borderColor.gray.500"),
         },
       },
@@ -22,16 +22,31 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
         outline: "none",
         boxShadow: theme("boxShadow.outline"),
       },
-    },
-    ".btn-primary": {
-      backgroundColor: theme("backgroundColor.primary.500"),
-      borderColor: theme("borderColor.primary.600"),
-      color: theme("textColor.white"),
-      "&:not(:disabled)": {
-        "&:hover, &:focus": {
-          backgroundColor: theme("backgroundColor.primary.600"),
-          borderColor: theme("backgroundColor.primary.700"),
+      "&-primary": {
+        backgroundColor: theme("backgroundColor.primary.500"),
+        borderColor: theme("borderColor.primary.600"),
+        color: theme("textColor.white"),
+        "&:not(:disabled)": {
+          "&:hover, &:focus": {
+            backgroundColor: theme("backgroundColor.primary.600"),
+            borderColor: theme("backgroundColor.primary.700"),
+          },
         },
+      },
+      "&-group": {
+        display: "inline-block",
+      },
+      "&-group > &:focus": {
+        zIndex: 2,
+        position: "relative",
+      },
+      "&-group &:not(:first-child)": {
+        borderTopLeftRadius: 0,
+        borderBottomLeftRadius: 0,
+      },
+      "&-group &:not(:last-child)": {
+        borderTopRightRadius: 0,
+        borderBottomRightRadius: 0,
       },
     },
   }
