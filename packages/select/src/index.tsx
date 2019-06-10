@@ -2,6 +2,7 @@ import * as React from "react"
 import { Omit } from "utility-types"
 import { contains, ownerDocument } from "@tourepedia/dom-helpers"
 import classNames from "classnames"
+import { Input } from "@tourepedia/input"
 
 const { useState, useEffect, useRef } = React
 
@@ -127,14 +128,14 @@ export function Select({
     <div className={classNames("select", className)} data-focused={isFocused}>
       <div role="group" ref={groupRef}>
         {label ? <label htmlFor={name}>{label}</label> : null}
-        <input
+        <Input
           type="search"
           value={
             isFocused ? query : !multiple && value ? value[labelKey] : query
           }
           disabled={disabled}
           onChange={e => {
-            onQuery(e.target.value)
+            onQuery(e.currentTarget.value)
           }}
           id={name}
           onFocus={onFocus}
