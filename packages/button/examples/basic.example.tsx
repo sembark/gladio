@@ -1,7 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
-import Button from "./../src/index"
+import Button, { ButtonGroup } from "./../src/index"
 
 const stories = storiesOf("Components/Button", module)
 
@@ -18,4 +18,10 @@ stories.add("Disabled Buttons", () => (
       Primary
     </Button>
   </div>
+))
+stories.add("Button Group", () => (
+  <ButtonGroup>
+    <Button>Default</Button>
+    <Button primary>Primary</Button>
+  </ButtonGroup>
 ))

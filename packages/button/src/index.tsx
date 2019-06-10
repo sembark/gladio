@@ -9,13 +9,14 @@ type Button = Omit<React.HTMLProps<HTMLButtonElement>, "type" | "as"> & {
 
 const Button = React.forwardRef(
   (
-    { className, primary, ...props }: Button,
+    { className, primary, type = "button", ...props }: Button,
     ref: React.Ref<HTMLButtonElement>
   ) => {
     return (
       <button
         className={classNames("btn", primary && "btn-primary", className)}
         ref={ref}
+        type="button"
         {...props}
       />
     )
@@ -23,8 +24,12 @@ const Button = React.forwardRef(
 )
 
 Button.displayName = "Button"
-Button.defaultProps = {
-  type: "button",
-}
 
 export default Button
+
+export function ButtonGroup({
+  className,
+  ...props
+}: React.HTMLProps<HTMLSpanElement>) {
+  return <span className={classNames("btn-group", className)} {...props} />
+}
