@@ -16,7 +16,7 @@ const Button = React.forwardRef(
       <button
         className={classNames("btn", primary && "btn-primary", className)}
         ref={ref}
-        type="button"
+        type={type}
         {...props}
       />
     )
