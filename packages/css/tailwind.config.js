@@ -7,8 +7,8 @@ module.exports = {
     extend: {
       spacing: {
         // spacing for interactive elements like buttons, inputs
-        "ie-y": spacing[3],
-        "ie-x": spacing[4],
+        "ie-y": spacing[2],
+        "ie-x": spacing[3],
       },
     },
     colors: {

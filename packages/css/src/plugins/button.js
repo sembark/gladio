@@ -8,7 +8,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
         "borderColor.gray.300"
       )}`,
       backgroundColor: theme("backgroundColor.white"),
-      lineHeight: 1,
+      lineHeight: 1.5,
       "&:disabled": {
         opacity: 0.8,
         cursor: "not-allowed",

@@ -8,7 +8,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         "borderColor.gray.300"
       )}`,
       display: "block",
-      lineHeight: 1,
+      lineHeight: 1.5,
       maxWidth: "100%",
       boxShadow: theme("boxShadow.inner"),
       "&:focus": {
@@ -35,7 +35,8 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         width: "100%",
       },
       "select&": {
-        height: `calc(2 * ${theme("padding.ie-y")} + 1rem + 4px)`,
+        height: `calc(2 * ${theme("padding.ie-y")} + 1.5rem + 2px)`,
+        lineHeight: 1,
       },
       "&.has-error": {
         borderColor: theme("borderColor.red.700"),
@@ -48,38 +49,38 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       "&[readonly]": {
         pointerEvents: "none",
       },
-    },
-    ".input-group": {
-      borderRadius: theme("borderRadius.default"),
-      width: "fit-content",
-      display: "flex",
-      alignItems: "stretch",
-      "& > *": {
-        borderRadius: 0,
-      },
-      "& > * + *": {
-        marginLeft: `-${theme("borderWidth.default")}`,
-      },
-      "& > *:focus": {
-        zIndex: 2,
-      },
-      "& > *:first-child": {
-        borderTopLeftRadius: theme("borderRadius.default"),
-        borderBottomLeftRadius: theme("borderRadius.default"),
-      },
-      "& > *:last-child": {
-        borderTopRightRadius: theme("borderRadius.default"),
-        borderBottomRightRadius: theme("borderRadius.default"),
-      },
-      [`&-addon`]: {
-        lineHeight: 1,
-        padding: theme("padding.ie-y"),
-        border: `${theme("borderWidth.default")} solid ${theme(
-          "borderColor.gray.300"
-        )}`,
-      },
-      "&.has-error > *": {
-        borderColor: "red",
+      "&-group": {
+        borderRadius: theme("borderRadius.default"),
+        width: "fit-content",
+        display: "flex",
+        alignItems: "stretch",
+        lineHeight: 1.5,
+        "& > *": {
+          borderRadius: 0,
+        },
+        "& > * + *": {
+          marginLeft: `-${theme("borderWidth.default")}`,
+        },
+        "& > *:focus": {
+          zIndex: 2,
+        },
+        "& > *:first-child": {
+          borderTopLeftRadius: theme("borderRadius.default"),
+          borderBottomLeftRadius: theme("borderRadius.default"),
+        },
+        "& > *:last-child": {
+          borderTopRightRadius: theme("borderRadius.default"),
+          borderBottomRightRadius: theme("borderRadius.default"),
+        },
+        [`&-addon`]: {
+          padding: theme("padding.ie-y"),
+          border: `${theme("borderWidth.default")} solid ${theme(
+            "borderColor.gray.300"
+          )}`,
+        },
+        "&.has-error > *": {
+          borderColor: "red",
+        },
       },
     },
     ".form-group": {
