@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.12.0...@tourepedia/css@0.12.1) (2019-06-11)
+
+
+### Bug Fixes
+
+* **css:** fix the line height issue for input and buttons ([f17a572](https://github.com/tourepedia/tp-ui/commit/f17a572))
+
+
+
+
+
 # [0.12.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.11.1...@tourepedia/css@0.12.0) (2019-06-10)
 
 
