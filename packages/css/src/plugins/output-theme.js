@@ -1,6 +1,15 @@
 const fs = require("fs")
 const path = require("path")
 
+function ensureDirectoryExistence(filePath) {
+  var dirname = path.dirname(filePath)
+  if (fs.existsSync(dirname)) {
+    return true
+  }
+  ensureDirectoryExistence(dirname)
+  fs.mkdirSync(dirname)
+}
+
 module.exports = function outputTheme({ config }) {
   const pkgRoot = process.env.PWD || process.cwd()
   const theme = config("theme")
@@ -19,12 +28,14 @@ module.exports = function outputTheme({ config }) {
       .split("/")
       .slice(0, -1)
       .join("/"),
-    "theme.json"
+    "theme.js"
   )
   process.stdout.write(`Exporting theme to ${outputFile}...`)
+  const filePath = path.join(pkgRoot, outputFile)
+  ensureDirectoryExistence(filePath)
   fs.writeFileSync(
-    path.join(pkgRoot, outputFile),
-    JSON.stringify(theme, null, 2)
+    filePath,
+    `module.exports = ${JSON.stringify(theme, null, 2)}`
   )
   process.stdout.write("Done\n")
 }

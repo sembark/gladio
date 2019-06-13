@@ -5,7 +5,7 @@
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
-  "main": "lib/styles.css",
+  "main": "lib/theme.js",
   "publishConfig": {
     "access": "public"
   },
