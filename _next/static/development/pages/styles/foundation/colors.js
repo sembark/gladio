@@ -14780,7 +14780,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fstyles%2Ffoundation%2Fcolors&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Ffoundation%2Fcolors.mdx ***!
   \************************************************************************************************************************************************************************************************************/
@@ -14803,5 +14803,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=colors.js.map

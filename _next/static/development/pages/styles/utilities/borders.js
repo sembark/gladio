@@ -14920,7 +14920,7 @@ function MDXContent(_ref) {
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_4__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
   }, {
-    "className": "language-jsx",
+    "className": "language-html",
     "metastring": "live=true",
     "live": "true"
   }, {
@@ -14929,7 +14929,7 @@ function MDXContent(_ref) {
       lineNumber: 61
     },
     __self: this
-  }), "<div>\n  <div className=\"border\">.border</div>\n  <hr />\n  <div className=\"border-2\">.border-2</div>\n</div>\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_4__["mdx"])("h3", {
+  }), "<div>\n  <div class=\"border\">.border</div>\n  <hr />\n  <div class=\"border-2\">.border-2</div>\n</div>\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_4__["mdx"])("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 71
@@ -15026,7 +15026,7 @@ function MDXContent(_ref) {
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_4__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
   }, {
-    "className": "language-jsx",
+    "className": "language-html",
     "metastring": "live=true",
     "live": "true"
   }, {
@@ -15035,13 +15035,13 @@ function MDXContent(_ref) {
       lineNumber: 80
     },
     __self: this
-  }), "<div className=\"rounded border\">.border .rounded</div>\n")));
+  }), "<div class=\"rounded border\">.border .rounded</div>\n")));
 }
 MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fstyles%2Futilities%2Fborders&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Futilities%2Fborders.mdx ***!
   \************************************************************************************************************************************************************************************************************/
@@ -15064,5 +15064,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=borders.js.map
