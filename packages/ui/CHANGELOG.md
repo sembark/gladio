@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.2.2...@tourepedia/ui@1.2.3) (2019-06-13)
+
+
+### Bug Fixes
+
+* **ui:** export the theme from css ([5c3af56](https://github.com/tourepedia/tp-ui/commit/5c3af56))
+
+
+
+
+
 ## [1.2.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.2.1...@tourepedia/ui@1.2.2) (2019-06-11)
 
 **Note:** Version bump only for package @tourepedia/ui
