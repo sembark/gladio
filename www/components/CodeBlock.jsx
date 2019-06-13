@@ -1,9 +1,10 @@
 import React from "react"
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import * as ReactLive from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import editorTheme from "prism-react-renderer/themes/dracula"
 import { github as theme } from "./themes"
 import * as UI from "@tourepedia/ui"
+import * as HtmlLive from "./HtmlLive"
 
 import "./code-block.css"
 
@@ -16,9 +17,13 @@ export default function CodeBlock({
 }) {
   language = language || className.replace(/language-/, "")
   if (live) {
+    let Live = ReactLive
+    if (language === "html") {
+      Live = HtmlLive
+    }
     return (
       <div className="react-live">
-        <LiveProvider
+        <Live.LiveProvider
           code={children}
           language={language}
           noInline={noInline}
@@ -28,10 +33,10 @@ export default function CodeBlock({
             ...UI,
           }}
         >
-          <LiveEditor className="editor" tabIndex="-1" />
-          <LiveError className="error" />
-          <LivePreview className="preview" />
-        </LiveProvider>
+          <Live.LiveEditor className="editor" tabIndex="-1" />
+          <Live.LiveError className="error" />
+          <Live.LivePreview className="preview" />
+        </Live.LiveProvider>
       </div>
     )
   }
