@@ -1,5 +1,6 @@
 .react-live {
   border: 2px solid #f7fafc;
+  border-radius: 0.25rem;
   position: relative;
   margin: 60px 10px;
 }
@@ -8,17 +9,19 @@
   content: "Editable Code Example";
   font-size: 0.9rem;
   display: block;
-  position: absolute;
   bottom: 100%;
   width: 100%;
-  padding: 6px;
+  padding: 1rem;
   text-transform: uppercase;
-  color: gray;
+  color: #4d4c4c;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .react-live > *:not(:first-child) {
   border-top: 2px solid #f7fafc;
-  padding: 10px;
+  padding: 1rem;
 }
 .react-live > .editor {
   font-size: 1.3rem;
@@ -28,8 +31,9 @@
 }
 
 .only-preview {
-  padding: 15px 10px;
-  border-radius: 0.25em;
-  background: #f7fafc;
-  margin-bottom: 1em;
+  border: 2px solid #f7fafc;
+  border-radius: 0.25rem;
+  position: relative;
+  padding: 1rem;
+  margin: 10px;
 }

@@ -1,29 +1,23 @@
-import Link from "next/link"
+import Link from "./Link"
 
 export default function Header() {
   return (
-    <nav className="flex justify-between items-center border-b-2 border-gray-100">
+    <header className="flex justify-between items-center bg-gray-100 border-b">
       <div>
         <Link href="/">
           <a className="p-4 inline-block hover:bg-gray-100">
-            Tourepedia Design System
+            {process.env.appName}
           </a>
         </Link>
       </div>
-      <div>
-        <ul className="inline-block">
-          <li className="inline-block">
-            <Link href="/components">
-              <a className="p-4 inline-block hover:bg-gray-100">Components</a>
-            </Link>
-          </li>
-          <li className="inline-block">
-            <Link href="/css">
-              <a className="p-4 inline-block hover:bg-gray-100">CSS</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <nav>
+        <Link href="/styles">
+          <a className="p-4 inline-block hover:text-gray-800">Styles</a>
+        </Link>
+        <Link href="/components">
+          <a className="p-4 inline-block hover:text-gray-800">Components</a>
+        </Link>
+      </nav>
+    </header>
   )
 }

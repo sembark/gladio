@@ -2,6 +2,7 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 })
 const withCSS = require("@zeit/next-css")
+const withOffline = require("next-offline")
 
 function compose(...funcs) {
   if (funcs.length === 0) {
@@ -13,9 +14,35 @@ function compose(...funcs) {
   return funcs.reduce((a, b) => (...args) => a(b(...args)))
 }
 
+const isProd = process.env.NODE_ENV === "production"
+
+const publishBasePath = isProd ? "/tp-ui" : ""
+
 module.exports = compose(
   withMDX,
-  withCSS
+  withCSS,
+  withOffline
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
+  assetPrefix: publishBasePath,
+  env: {
+    hrefPrefix: publishBasePath,
+    appName: "Tourepedia Design System",
+  },
+  registerSwPrefix: publishBasePath,
+  scope: publishBasePath + "/",
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            svgo: false,
+          },
+        },
+      ],
+    })
+    return config
+  },
 })

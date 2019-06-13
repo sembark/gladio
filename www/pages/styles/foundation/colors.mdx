@@ -1,0 +1,39 @@
+import Layout from "../../../components/StylesLayout"
+import { theme } from "@tourepedia/ui"
+
+export const meta = {
+    title: "Color System",
+    description: "Color System"
+};
+
+export default Layout
+
+export function Palette ({value, shade}) {
+  return <div className="inline-block w-20 m-2 text-gray-700 text-sm text-center">
+    <div className="uppercase">{value}</div>
+    <div className="w-12 h-12 shadow rounded-full my-2 mx-auto" style={{
+      backgroundColor: value
+    }} />
+    {shade ? <div className="text-xs">{shade}</div> :null}
+  </div>
+}
+
+export function ColorPalette () {
+  return <div>
+    {Object.keys(theme.colors).map((name) => {
+      const value = theme.colors[name]
+      return <div key={name}>
+        <h4 className="capitalize mt-4">
+          {name}
+        </h4>
+        {!value ? null : typeof value === "string" ? <Palette value={value} /> : typeof value === "object" ?
+        Object.keys(value).map(shade => {
+        return <Palette value={value[shade]} key={shade} shade={shade} />
+        }) : null}
+      </div>
+    })}
+  </div>
+}
+
+<ColorPalette />
+

@@ -1,0 +1,25 @@
+import Layout from "../../../components/StylesLayout"
+import { theme } from "@tourepedia/ui"
+
+export const meta = {
+    title: "Breakpoints",
+    description: "Breakpoints for different screen sizes"
+};
+
+export default Layout
+
+Following screen sizes are supported for different utilities.
+
+export function Screens () {
+  const { screens } = theme
+  return <table className="table max-w-sm table-bordered table-striped"><thead><tr><th>Scale</th><th>Screen Size</th></tr></thead><tbody>{Object.keys(screens).map((screen) => {
+    const size = screens[screen]
+    if (typeof size === "string") {
+      return <tr key={screen}><td>{screen}</td><td>{size}</td></tr>
+    }
+    return null
+    })}</tbody>
+  </table>
+}
+
+<Screens />

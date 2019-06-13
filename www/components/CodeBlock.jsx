@@ -3,8 +3,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import editorTheme from "prism-react-renderer/themes/dracula"
 import { github as theme } from "./themes"
-import Button from "@tourepedia/button"
-import Dialog, { useDialog } from "@tourepedia/dialog"
+import * as UI from "@tourepedia/ui"
 
 import "./code-block.css"
 
@@ -26,9 +25,7 @@ export default function CodeBlock({
           theme={editorTheme}
           scope={{
             ...React,
-            Button,
-            Dialog,
-            useDialog,
+            ...UI,
           }}
         >
           <LiveEditor className="editor" tabIndex="-1" />
@@ -46,7 +43,7 @@ export default function CodeBlock({
       language={language}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "20px" }}>
+        <pre className={className + " only-preview"} style={{ ...style }}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (

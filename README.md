@@ -8,8 +8,7 @@ Clone the repo and initialize the stuff
 git clone git@github.com:tourepedia/tp-ui.git
 cd tp-ui
 npm install
-npm run bootstrap
-npm run build
+npm run prestart
 ```
 
 ## Directory Structure
@@ -27,6 +26,8 @@ npm run release # publish the updated packages to npm
 npm run test # run test for all the packages
 npm run test:watch # run the changes test in watch mode
 npm run commit # to commit the changes
+npm run www # development for www
+npm run deploy # deploy the www to gh-pages
 ```
 
 ## How to
@@ -57,4 +58,5 @@ Use `--scope` from lerna
 
 ```bash
 npm run build -- --scope=@tourepedia/button
+npx lerna add @tourepedia/button --exact --scope=@tourepedia/button-group
 ```

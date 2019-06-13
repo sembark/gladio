@@ -1,0 +1,68 @@
+import Layout from "../../../components/StylesLayout"
+import { theme } from "@tourepedia/ui"
+
+export const meta = {
+    title: "Borders Utilities",
+    description: "Utilities for applying borders to elements"
+};
+
+export default Layout
+
+### Border Width
+
+Following border width utilities can be used to add border radius to elements. Class names are prefixed with `.border`
+and any `scale` as suffix can be added e.g. `.border-1`, `.border`. To add border to some specific corners, use first character of the corners in
+between the prefix and scale e.g. `.border-l-2`, `.border-t`.
+
+> The `default` scale will be used if no scaling is provided and `default` can not be explicitly used as scaling
+
+export function BorderWidth () {
+  const { borderWidth } = theme
+  return <table className="table max-w-sm table-bordered table-striped"><thead><tr><th>Scale</th><th>Border Width</th></tr></thead><tbody>{Object.keys(borderWidth).map((scale) => {
+    const value = borderWidth[scale]
+    if (typeof value === "string") {
+      return <tr key={scale}><td>{scale}</td><td>{value}</td></tr>
+    }
+    return null
+    })}</tbody>
+  </table>
+}
+
+<BorderWidth />
+
+
+```jsx live=true
+<div>
+  <div className="border">.border</div>
+  <hr />
+  <div className="border-2">.border-2</div>
+</div>
+```
+
+
+### Border Radius
+
+Following border radius utilities can be used to add border radius to elements. Class names are prefixed with `.rounded`
+and any `scale` as suffix can be added e.g. `.rounded-sm`, `.rounded-full`. To add border radius to some specific corners, use first character of the corners in
+between the prefix and scale e.g. `.rounded-tl-lg`, `.rounded-t-none`
+
+> The `default` scale will be used if no scaling is provided and `default` can not be explicitly used as scaling
+
+export function BorderRadius () {
+  const { borderRadius } = theme
+  return <table className="table max-w-sm table-bordered table-striped"><thead><tr><th>Scale</th><th>Border Radius</th></tr></thead><tbody>{Object.keys(borderRadius).map((scale) => {
+    const value = borderRadius[scale]
+    if (typeof value === "string") {
+      return <tr key={scale}><td>{scale}</td><td>{value}</td></tr>
+    }
+    return null
+    })}</tbody>
+  </table>
+}
+
+<BorderRadius />
+
+```jsx live=true
+<div className="rounded border">.border .rounded</div>
+```
+

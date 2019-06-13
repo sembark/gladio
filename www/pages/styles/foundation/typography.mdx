@@ -1,0 +1,25 @@
+import Layout from "../../../components/StylesLayout"
+import { theme } from "@tourepedia/ui"
+
+export const meta = {
+    title: "Typography",
+    description: "Typography scaling"
+};
+
+export default Layout
+
+Typography scaling is used to design different text-sizes for different screens.
+
+export function FontSizes () {
+  const { fontSize } = theme
+  return <table className="table max-w-sm table-bordered table-striped"><thead><tr><th>Scale</th><th>Font Size</th></tr></thead><tbody>{Object.keys(fontSize).map((scale) => {
+    const size = fontSize[scale]
+    if (typeof size === "string") {
+      return <tr key={scale}><td>{scale}</td><td>{size}</td></tr>
+    }
+    return null
+    })}</tbody>
+  </table>
+}
+
+<FontSizes />
