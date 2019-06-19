@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build:css": "tailwind build src/index.css -o lib/styles.css",
-    "build:theme": "../../node_modules/.bin/tsc src/theme.ts --outDir lib --module commonjs  --declaration true --allowSyntheticDefaultImports true",
+    "build:theme": "../../node_modules/.bin/tsc lib/theme.ts --outDir lib --module commonjs  --declaration true --allowSyntheticDefaultImports true",
     "build": "npm run build:css && npm run build:theme"
   },
   "files": [

@@ -3,6 +3,7 @@ module.exports = function addPaginateStyles({ addComponents, theme }) {
     ".paginate": {
       display: "inline-flex",
       alignItems: "center",
+      whiteSpace: "pre",
       "> mark": {
         background: "transparent",
         padding: 0,

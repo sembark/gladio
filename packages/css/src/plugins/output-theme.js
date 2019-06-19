@@ -13,8 +13,8 @@ function ensureDirectoryExistence(filePath) {
 module.exports = function outputTheme({ config }) {
   const pkgRoot = process.env.PWD || process.cwd()
   const theme = config("theme")
-  const outputFile = path.join(pkgRoot, "src/theme.ts")
-  process.stdout.write(`Exporting theme to src/theme.ts...`)
+  const outputFile = path.join(pkgRoot, "lib/theme.ts")
+  process.stdout.write(`Exporting theme to lib/theme.ts...`)
   ensureDirectoryExistence(outputFile)
   fs.writeFileSync(
     outputFile,
