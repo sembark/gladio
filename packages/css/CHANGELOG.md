@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.13.0...@tourepedia/css@0.13.1) (2019-06-20)
+
+
+### Bug Fixes
+
+* **css:** make sure pagination stays on one line ([503e5ae](https://github.com/tourepedia/tp-ui/commit/503e5ae))
+
+
+
+
+
 # [0.13.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.12.1...@tourepedia/css@0.13.0) (2019-06-13)
 
 
