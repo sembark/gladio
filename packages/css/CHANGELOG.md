@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.13.1...@tourepedia/css@0.14.0) (2019-06-22)
+
+
+### Features
+
+* **css:** add link styles and add more button states ([f646022](https://github.com/tourepedia/tp-ui/commit/f646022))
+
+
+
+
+
 ## [0.13.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.13.0...@tourepedia/css@0.13.1) (2019-06-20)
 
 

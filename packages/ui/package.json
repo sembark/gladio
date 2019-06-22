@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/ui",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "UI Components for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -28,13 +28,13 @@
   ],
   "dependencies": {
     "@tourepedia/badge": "^0.2.0",
-    "@tourepedia/button": "^0.2.0",
-    "@tourepedia/css": "^0.13.1",
+    "@tourepedia/button": "^0.3.0",
+    "@tourepedia/css": "^0.14.0",
     "@tourepedia/dialog": "^0.4.6",
     "@tourepedia/dom-helpers": "^0.2.7",
     "@tourepedia/icons": "^0.2.2",
     "@tourepedia/input": "^0.2.0",
-    "@tourepedia/paginate": "^0.1.1",
+    "@tourepedia/paginate": "^0.1.2",
     "@tourepedia/react-hooks": "^0.3.1",
     "@tourepedia/select": "^0.3.2",
     "@tourepedia/table": "^0.2.0"
