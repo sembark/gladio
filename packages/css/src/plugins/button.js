@@ -1,37 +1,49 @@
 module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
+  function stateStyles(color = "secondary") {
+    return {
+      "&": {
+        border: `${theme("borderWidth.default")} solid ${theme(
+          "borderColor." + color + ".500"
+        )}`,
+        backgroundColor: theme(`backgroundColor.${color}.100`),
+        backgroundImage: `linear-gradient(to bottom, ${theme(
+          "backgroundColor." + color + ".100"
+        )}, ${theme("backgroundColor." + color + ".300")} 90%)`,
+        color: theme(`textColor.${color}.900`),
+      },
+      "&:not(:disabled)": {
+        "&:hover, &:focus": {
+          backgroundColor: theme(`backgroundColor.${color}.200`),
+          backgroundImage: `linear-gradient(to bottom, ${theme(
+            "backgroundColor." + color + ".200"
+          )}, ${theme("backgroundColor." + color + ".400")} 90%)`,
+          borderColor: theme(`borderColor.${color}.600`),
+        },
+      },
+      "&:disabled": {
+        cursor: "default",
+        backgroundColor: theme(`backgroundColor.${color}.100`),
+        borderColor: theme(`borderColor.${color}.300`),
+        backgroundImage: "none",
+        color: theme(`textColor.gray.600`),
+      },
+    }
+  }
   const buttons = {
     ".btn": {
       padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
       borderRadius: theme("borderRadius.default"),
       fontWeight: theme("fontWeight.semibold"),
-      border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.300"
-      )}`,
-      backgroundColor: theme("backgroundColor.white"),
       lineHeight: 1.5,
-      "&:disabled": {
-        opacity: 0.8,
-        cursor: "not-allowed",
-      },
-      "&:not(:disabled)": {
-        "&:hover, &:focus": {
-          borderColor: theme("borderColor.gray.500"),
-        },
-      },
+      ...stateStyles(),
+      "&-primary": stateStyles("primary"),
+      "&-success": stateStyles("green"),
+      "&-error": stateStyles("red"),
+      "&-warning": stateStyles("yellow"),
+      "&-accent": stateStyles("accent"),
       "&:focus": {
         outline: "none",
         boxShadow: theme("boxShadow.outline"),
-      },
-      "&-primary": {
-        backgroundColor: theme("backgroundColor.primary.500"),
-        borderColor: theme("borderColor.primary.600"),
-        color: theme("textColor.white"),
-        "&:not(:disabled)": {
-          "&:hover, &:focus": {
-            backgroundColor: theme("backgroundColor.primary.600"),
-            borderColor: theme("backgroundColor.primary.700"),
-          },
-        },
       },
       "&-group": {
         display: "inline-block",
@@ -47,6 +59,12 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       "&-group &:not(:last-child)": {
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
+      },
+      "&-toolbar": {
+        display: "inline-block",
+      },
+      "&-toolbar > & + &, &-toolbar & + &-group, &-toolbar &-group + &-group, &-toolbar &-group + &, &-toolbar + &-toolbar, & + &-toolbar, &-group + &-toolbar, &-toolbar + &, &-toolbar + &-group": {
+        marginLeft: theme("margin.2"),
       },
     },
   }
