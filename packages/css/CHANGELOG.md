@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.14.0...@tourepedia/css@0.14.1) (2019-06-22)
+
+
+### Bug Fixes
+
+* **css:** button not keeping color when applied to link tag ([159eafd](https://github.com/tourepedia/tp-ui/commit/159eafd))
+
+
+
+
+
 # [0.14.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.13.1...@tourepedia/css@0.14.0) (2019-06-22)
 
 
