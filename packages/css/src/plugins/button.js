@@ -18,6 +18,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
             "backgroundColor." + color + ".200"
           )}, ${theme("backgroundColor." + color + ".400")} 90%)`,
           borderColor: theme(`borderColor.${color}.600`),
+          color: theme(`textColor.${color}.900`),
         },
       },
       "&:disabled": {
@@ -35,6 +36,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       borderRadius: theme("borderRadius.default"),
       fontWeight: theme("fontWeight.semibold"),
       lineHeight: 1.5,
+      display: "inline-block",
       ...stateStyles(),
       "&-primary": stateStyles("primary"),
       "&-success": stateStyles("green"),

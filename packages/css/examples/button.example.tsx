@@ -13,6 +13,9 @@ stories.add("Basic Buttons", () => (
     <button className="btn btn-error">Error</button>
     <button className="btn btn-warning">Warning</button>
     <button className="btn btn-accent">Accent</button>
+    <a href="#" className="btn btn-accent">
+      Anchor Button
+    </a>
   </div>
 ))
 
