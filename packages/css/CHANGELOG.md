@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.14.1...@tourepedia/css@0.14.2) (2019-06-23)
+
+
+### Bug Fixes
+
+* **css:** make input border as of buttons ([6d144bf](https://github.com/tourepedia/tp-ui/commit/6d144bf))
+
+
+
+
+
 ## [0.14.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.14.0...@tourepedia/css@0.14.1) (2019-06-22)
 
 
