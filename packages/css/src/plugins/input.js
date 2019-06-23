@@ -5,7 +5,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
       borderRadius: theme("borderRadius.default"),
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.300"
+        "borderColor.gray.500"
       )}`,
       display: "block",
       lineHeight: 1.5,
@@ -13,7 +13,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       boxShadow: theme("boxShadow.inner"),
       "&:focus": {
         outline: "none",
-        borderColor: theme("borderColor.primary.400"),
+        borderColor: theme("borderColor.primary.600"),
         boxShadow: `${theme("boxShadow.inner")}, ${theme("boxShadow.outline")}`,
       },
       "&[type='checkbox'], &[type='radio']": {
@@ -75,7 +75,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         [`&-addon`]: {
           padding: theme("padding.ie-y"),
           border: `${theme("borderWidth.default")} solid ${theme(
-            "borderColor.gray.300"
+            "borderColor.gray.500"
           )}`,
         },
         "&.has-error > *": {
