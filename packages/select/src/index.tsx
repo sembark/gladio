@@ -47,7 +47,7 @@ export interface SelectProps {
   onBlur?: (e: any) => void
   onChange: (value: any | Array<any>, name: string) => void
   onFocus?: (e: any) => void
-  onQuery: (query: string) => void
+  onQuery?: (query: string) => void
   options?: Array<any>
   placeholder?: string
   query?: string
@@ -112,7 +112,7 @@ export function Select({
   const [isFocused, changeFocusState] = useState<boolean>(false)
   useEffect(() => {
     if (fetchOnMount) {
-      onQuery(query || "")
+      onQuery && onQuery(query || "")
     }
   }, [])
   function setIsFouced(isFocused: boolean) {
@@ -171,7 +171,7 @@ export function Select({
           }
           disabled={disabled}
           onChange={e => {
-            onQuery(e.currentTarget.value)
+            onQuery && onQuery(e.currentTarget.value)
           }}
           id={name}
           onFocus={onFocus}
