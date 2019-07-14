@@ -25,6 +25,7 @@ export interface SelectProps {
   required?: boolean
   searchable?: boolean
   value?: any | Array<any>
+  isLoading?: boolean
 }
 
 export function Select({
@@ -46,6 +47,7 @@ export function Select({
   required,
   searchable = true,
   value,
+  isLoading,
 }: SelectProps) {
   const name: string = propName || (multiple ? "select[]" : "select")
   if (
@@ -206,18 +208,40 @@ export interface AsyncProps
   extends Omit<SelectProps, "onQuery" | "options" | "query">,
     Partial<Pick<SelectProps, "onQuery" | "options" | "query">> {
   fetch: (query: string) => Promise<any[]>
+  debounceBy?: number
 }
 
-export function Async({ fetch, ...otherProps }: AsyncProps) {
+export function Async({ fetch, debounceBy = 300, ...otherProps }: AsyncProps) {
   const [query, setQuery] = useState<string>("")
+  const [isLoading, changeLoading] = useState<boolean>(false)
   const [options, setOptions] = useState<Array<any>>([])
+  const lastDeboundeHandler = useRef<number>()
+  useEffect(() => {
+    return () => {
+      typeof window !== "undefined" &&
+        window.clearTimeout(lastDeboundeHandler.current)
+    }
+  }, [lastDeboundeHandler])
   return (
     <Select
       options={options}
       query={query}
       onQuery={query => {
-        fetch(query).then(setOptions)
+        changeLoading(true)
         setQuery(query)
+        clearTimeout(lastDeboundeHandler.current)
+        lastDeboundeHandler.current = window.setTimeout(() => {
+          fetch(query)
+            .then(setOptions)
+            .then(resp => {
+              changeLoading(false)
+              return resp
+            })
+            .catch(error => {
+              isLoading && changeLoading(false)
+              return Promise.reject(error)
+            })
+        }, debounceBy)
       }}
       {...otherProps}
     />

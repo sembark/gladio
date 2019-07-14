@@ -80,6 +80,7 @@ stories.add("Multi Async", () => (
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
+      debounceBy={300}
       fetch={() => {
         return Promise.resolve([
           { id: 1, name: "India" },
