@@ -72,7 +72,7 @@ export function Select({
   onQuery,
   options = [],
   placeholder = "Type to search...",
-  query,
+  query = "",
   required,
   searchable = true,
   value,
