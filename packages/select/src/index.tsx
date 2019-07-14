@@ -6,6 +6,35 @@ import { Input } from "@tourepedia/input"
 
 const { useState, useEffect, useRef } = React
 
+function Loader({ duration = 500 }: { duration?: number }) {
+  const [deg, setDeg] = useState<number>(0)
+  useEffect(() => {
+    const handler = requestAnimationFrame(() => {
+      setDeg((deg + (360 / (duration || 150)) * 16) % 360)
+    })
+    return () => {
+      cancelAnimationFrame(handler)
+    }
+  }, [deg])
+  return (
+    <div
+      style={{
+        position: "absolute",
+        right: "10px",
+        bottom: "10px",
+        width: "20px",
+        height: "20px",
+        borderRadius: "50%",
+        overflow: "hidden",
+        border: "2px solid #a0aec0",
+        borderTop: "none",
+        borderLeft: "none",
+        transform: `rotate(${deg}deg)`,
+      }}
+    />
+  )
+}
+
 export interface SelectProps {
   className?: string
   creatable?: boolean
@@ -154,6 +183,7 @@ export function Select({
           autoComplete="off"
           ref={inputRef}
         />
+        {isLoading ? <Loader /> : null}
         <ol role="listbox" aria-multiselectable={multiple}>
           {isFocused && options.length === 0 ? (
             <li role="option" aria-readonly={true}>
@@ -226,6 +256,7 @@ export function Async({ fetch, debounceBy = 300, ...otherProps }: AsyncProps) {
     <Select
       options={options}
       query={query}
+      isLoading={isLoading}
       onQuery={query => {
         changeLoading(true)
         setQuery(query)
