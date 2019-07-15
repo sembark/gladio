@@ -51,8 +51,11 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
         "borderColor.gray.300"
       )}`,
     },
-    ".select [role='listbox'] [aria-selected='true']": {
+    ".select [role='listbox'] [role='option']:hover, .select [role='listbox'] [role='option'][data-focused='true']": {
       background: theme("backgroundColor.gray.100"),
+    },
+    ".select [role='listbox'] [aria-selected='true']": {
+      background: theme("backgroundColor.gray.300"),
     },
     ".select [role='listbox'] [aria-selected='true']:before": {
       content: "'\\2713 '",
