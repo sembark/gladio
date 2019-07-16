@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.14.2...@tourepedia/css@0.15.0) (2019-07-16)
+
+
+### Features
+
+* **select:** add hover state for select option ([a60cc3c](https://github.com/tourepedia/tp-ui/commit/a60cc3c))
+
+
+
+
+
 ## [0.14.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.14.1...@tourepedia/css@0.14.2) (2019-06-23)
 
 

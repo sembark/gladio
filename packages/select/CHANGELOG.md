@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.3.2...@tourepedia/select@0.4.0) (2019-07-16)
+
+
+### Bug Fixes
+
+* **select:** add a loading state ([0ba16f7](https://github.com/tourepedia/tp-ui/commit/0ba16f7)), closes [#3](https://github.com/tourepedia/tp-ui/issues/3)
+* **select:** controlled input error for query change ([396b880](https://github.com/tourepedia/tp-ui/commit/396b880))
+* **select:** remove onquery from required attributes ([46cb6d0](https://github.com/tourepedia/tp-ui/commit/46cb6d0))
+
+
+### Features
+
+* **select:** add debouncer to the async select ([1742f27](https://github.com/tourepedia/tp-ui/commit/1742f27)), closes [#2](https://github.com/tourepedia/tp-ui/issues/2)
+* **select:** add keyboard navigation support ([e4f57c4](https://github.com/tourepedia/tp-ui/commit/e4f57c4)), closes [#4](https://github.com/tourepedia/tp-ui/issues/4)
+
+
+
+
+
 ## [0.3.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.3.1...@tourepedia/select@0.3.2) (2019-06-10)
 
 
