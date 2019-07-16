@@ -5,16 +5,39 @@ import Select, { Async } from "./../src/index"
 
 const stories = storiesOf("Components/Select", module)
 
+const countries = [
+  {
+    id: 1,
+    name: "India",
+  },
+  {
+    id: 2,
+    name: "US",
+  },
+  {
+    id: 3,
+    name: "China",
+  },
+  {
+    id: 4,
+    name: "Bhutan",
+  },
+  {
+    id: 5,
+    name: "Nepal",
+  },
+]
+
 stories.add("Single Select", () => (
   <div className="max-w-lg mx-auto">
     <Select
-      value={{ id: 1, name: "India" }}
+      value={countries[2]}
       label="Select Places"
       name="name"
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
-      options={[{ id: 1, name: "India" }, { id: 2, name: "USA" }]}
+      options={countries}
       onQuery={query => {}}
     />
   </div>
@@ -23,13 +46,13 @@ stories.add("Disabled Select", () => (
   <div className="max-w-lg mx-auto">
     <Select
       disabled
-      value={{ id: 1, name: "India" }}
+      value={countries[2]}
       label="Select Places"
       name="name"
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
-      options={[{ id: 1, name: "India" }, { id: 2, name: "USA" }]}
+      options={countries}
       onQuery={query => {}}
     />
   </div>
@@ -39,13 +62,13 @@ stories.add("Multi Select", () => (
   <div className="max-w-lg mx-auto">
     <Select
       multiple
-      value={[{ id: 1, name: "India" }]}
+      value={countries.slice(2, 4)}
       label="Select Places"
       name="name"
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
-      options={[{ id: 1, name: "India" }, { id: 2, name: "USA" }]}
+      options={countries}
       onQuery={query => {}}
     />
   </div>
@@ -54,17 +77,14 @@ stories.add("Multi Select", () => (
 stories.add("Single Select Async", () => (
   <div className="max-w-lg mx-auto">
     <Async
-      value={{ id: 1, name: "India" }}
+      value={countries[2]}
       label="Select Places"
       name="name"
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
-      fetch={() => {
-        return Promise.resolve([
-          { id: 1, name: "India" },
-          { id: 2, name: "USA" },
-        ])
+      fetch={q => {
+        return Promise.resolve(countries.filter(c => c.name.indexOf(q) !== -1))
       }}
     />
   </div>
@@ -74,17 +94,15 @@ stories.add("Multi Async", () => (
   <div className="max-w-lg mx-auto">
     <Async
       multiple
-      value={[{ id: 1, name: "India" }]}
+      value={countries.slice(1, 3)}
       label="Select Places"
       name="name"
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
-      fetch={() => {
-        return Promise.resolve([
-          { id: 1, name: "India" },
-          { id: 2, name: "USA" },
-        ])
+      debounceBy={300}
+      fetch={q => {
+        return Promise.resolve(countries.filter(c => c.name.indexOf(q) !== -1))
       }}
     />
   </div>
