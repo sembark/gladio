@@ -33,5 +33,6 @@
     "@tourepedia/input": "^0.2.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
-  }
+  },
+  "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01"
 }

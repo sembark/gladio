@@ -41,5 +41,6 @@
   },
   "devDependencies": {
     "node-sass-chokidar": "^1.3.5"
-  }
+  },
+  "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01"
 }

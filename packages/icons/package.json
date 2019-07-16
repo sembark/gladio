@@ -25,7 +25,7 @@
     "styles",
     "types"
   ],
-  "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
+  "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01",
   "devDependencies": {
     "@svgr/cli": "^4.3.0"
   }
