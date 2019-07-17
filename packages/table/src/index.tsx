@@ -72,7 +72,7 @@ export const Table = React.forwardRef(
         className={classNames(
           "table",
           fixedLayout ? "table-fixed" : undefined,
-          autoWidth ? "table-auto" : undefined,
+          autoWidth ? "table-w-auto" : undefined,
           striped ? "table-striped" : undefined,
           bordered ? "table-bordered" : undefined,
           className
