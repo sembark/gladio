@@ -1,0 +1,72 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Paginate",
+    description: "Pagination component"
+};
+
+export default Layout
+
+
+## Installation
+
+```bash
+npm install --save @tourepedia/paginate
+```
+
+## Usage
+
+```jsx
+import Paginate from "@tourepedia/paginate"
+
+function App () {
+  return <Paginate
+    from={1}
+    to={10}
+    total={20}
+    currentPage={1}
+    lastPage={2}
+    isFetching={false}
+    onChange={page => {}}
+  />
+}
+```
+
+```jsx live=true
+function () {
+  const perPage = 10
+  const total = 25
+  const lastPage = Math.ceil(total / perPage)
+  const [isFetching, changeIsFetching] = useState(false)
+  const [current, changeCurrent] = useState({
+    currentPage: 1,
+    from: Math.min(1, total),
+    to: Math.min(perPage, total)
+  })
+  function onPageChange(currentPage) {
+    changeIsFetching(true)
+    setTimeout(() => {
+      const from = Math.min((currentPage - 1 ) * perPage + 1, total)
+      const to = Math.min(from + perPage, total)
+      changeCurrent({
+        currentPage,
+        from,
+        to
+      })
+      changeIsFetching(false)
+    }, 1000)
+  }
+  const { currentPage, from, to} = current
+  return <Paginate
+    lastPage={lastPage}
+    total={total}
+    from={from}
+    to={to}
+    currentPage={currentPage}
+    isFetching={isFetching}
+    onChange={page => {
+      onPageChange(page)
+    }}
+  />
+}
+```

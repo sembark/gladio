@@ -1,0 +1,45 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Table",
+    description: "Styled table component"
+};
+
+export default Layout
+
+
+## Installation
+
+```bash
+npm install --save @tourepedia/table
+```
+
+## Usage
+
+```jsx
+import Table from "@tourepedia/table"
+
+function App () {
+  return <Table>
+    <thead><tr><th>Title 1</th></tr></thead>
+    <tbody><tr><td>Row 1</td></tr></tbody>
+  </Table>
+}
+```
+
+```jsx live=true
+function () {
+  const headers = ["#", "Transaction ID", "Amount"]
+  const rows = [
+    [1, "Ref-123123", "12,000"],
+    [2, "AIU123123", "1,12,000"]
+  ]
+  return <Table
+    bordered
+    striped
+    headers={headers}
+    rows={rows}
+    autoWidth
+    alignCols={{0: "right", 2: "right"}} />
+}
+```

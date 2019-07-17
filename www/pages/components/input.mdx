@@ -1,0 +1,84 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Input",
+    description: "Form inputs with styles"
+};
+
+export default Layout
+
+
+## Installation
+
+```bash
+npm install --save @tourepedia/input
+```
+
+## Usage
+
+```jsx
+import { Input } from "@tourepedia/input"
+
+function App () {
+  return <Input />
+}
+```
+
+```jsx live=true
+function () {
+  const [name, changeName] = useState("")
+  const [errors, setErrors] = useState({})
+  function setFieldError(field, error = null) {
+    setErrors({
+      ...errors,
+      [field]: error
+    })
+  }
+  return <form>
+    <FormGroup hasError={errors.name}>
+      <label>Name</label>
+      <Input
+        type="text"
+        placeholder="John Doe"
+        name="name" value={name} onChange={e => {
+          const value = (e.target.value || "").trim()
+          const fieldName = e.target.name
+          if (!value || value.length < 4) {
+            setFieldError(fieldName, "Name must contain atleast 4 characters")
+          } else {
+            setFieldError(fieldName, null)
+          }
+          changeName(value)
+        }} />
+      {errors.name ? <ErrorMessage>{errors.name}</ErrorMessage> : null}
+    </FormGroup>
+    <FormGroup>
+      <label>Payment Mode</label>
+      <SelectInput placeholder="Select a value...">
+        <option value="1">Cash</option>
+        <option value="2">NetBanking</option>
+      </SelectInput>
+    </FormGroup>
+    <FormGroup hasError>
+      <label>Price</label>
+      <InputGroup>
+        <InputGroupAddon>INR</InputGroupAddon>
+        <Input type="number" placeholder="1200" />
+      </InputGroup>
+      <ErrorMessage>Price field is required</ErrorMessage>
+    </FormGroup>
+    <FormGroup>
+      <label>Comments</label>
+      <TextArea placeholder="Please write comments regarding payment..." />
+    </FormGroup>
+    <FormGroup hasError>
+      <Input type="checkbox" />
+      <label>I agree with terms and conditions</label>
+      <ErrorMessage>Please select this checkbox before continue</ErrorMessage>
+    </FormGroup>
+    <Button type="submit" disabled primary>
+      Make Transaction
+    </Button>
+  </form>
+}
+```

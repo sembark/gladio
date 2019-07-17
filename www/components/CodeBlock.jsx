@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import * as ReactLive from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import editorTheme from "prism-react-renderer/themes/dracula"
@@ -10,19 +10,22 @@ import "./code-block.css"
 
 export default function CodeBlock({
   live,
+  preview,
   noInline,
   className,
   children,
   language,
 }) {
   language = language || className.replace(/language-/, "")
-  if (live) {
+  if (live || preview) {
     let Live = ReactLive
     if (language === "html") {
       Live = HtmlLive
     }
     return (
-      <div className="react-live">
+      <div
+        className={"react-live" + (preview && !live ? " react-preview" : "")}
+      >
         <Live.LiveProvider
           code={children}
           language={language}
@@ -33,8 +36,12 @@ export default function CodeBlock({
             ...UI,
           }}
         >
-          <Live.LiveEditor className="editor" tabIndex="-1" />
-          <Live.LiveError className="error" />
+          {live ? (
+            <Fragment>
+              <Live.LiveEditor className="editor" tabIndex="-1" />
+              <Live.LiveError className="error" />
+            </Fragment>
+          ) : null}
           <Live.LivePreview className="preview" />
         </Live.LiveProvider>
       </div>

@@ -1,0 +1,51 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Icons",
+    description: "Available Icons"
+};
+
+export default Layout
+
+
+## Installation
+
+```bash
+npm install --save @tourepedia/icons
+```
+
+## Usage
+
+```jsx
+import { AddressBookIcon } from "@tourepedia/icons"
+
+function App () {
+  return <AddressBookIcon />
+}
+```
+
+## Available Icons
+
+Bellow is the list of available icons. Each icon has a label which represents the `import` name for that icon.
+
+```jsx preview=true
+function () {
+  return <div>
+  {Object.keys(Icons).map(key => {
+    if (!Icons.hasOwnProperty(key)) return null
+    const Icon = Icons[key]
+    if (typeof Icon !== "object") return null
+    return <div key={key} className="inline-block w-32 my-4 text-center">
+      <span
+        className="w-12 h-12 border rounded inline-flex justify-center items-center">
+        <Icon />
+      </span>
+      <br />
+      <div className="text-xs mt-2 tracking-wider text-gray-700 hover:text-gray-900">
+        {Icon.displayName}
+      </div>
+    </div>
+  })}
+  </div>
+}
+```

@@ -1,0 +1,54 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Select",
+    description: "A custom select component that supports searching with multi select"
+};
+
+export default Layout
+
+
+## Installation
+
+```bash
+npm install --save @tourepedia/select
+```
+
+## Usage
+
+```jsx
+import Select from "@tourepedia/select"
+
+function App () {
+  return <Select value={null} options={[{
+    id: 1, name: "Apple"
+  }]} />
+}
+```
+
+```jsx live=true
+function () {
+  const fruits = useMemo(() => [
+    { id: 1, name: "Apple" },
+    { id: 2, name: "Orange" },
+    { id: 3, name: "Banana" },
+    { id: 4, name: "Pineapple" },
+    { id: 5, name: "Mango" }
+  ], [])
+  const [value, setValue] = useState([])
+  const [query, setQuery] = useState("")
+  const [options, changeOptions] = useState(fruits)
+  return <Select
+    label="Select a fruit"
+    value={value}
+    onChange={val => setValue(val)}
+    multiple
+    options={options}
+    query={query}
+    onQuery={(q) => {
+      setQuery(q)
+      changeOptions(fruits.filter(o => (o.name.toLowerCase()).indexOf((q || "").toLowerCase()) !== -1))
+    }}
+    />
+}
+```
