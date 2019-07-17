@@ -2,7 +2,6 @@ const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 })
 const withCSS = require("@zeit/next-css")
-const withOffline = require("next-offline")
 
 function compose(...funcs) {
   if (funcs.length === 0) {
@@ -20,8 +19,7 @@ const publishBasePath = isProd ? "/tp-ui" : ""
 
 module.exports = compose(
   withMDX,
-  withCSS,
-  withOffline
+  withCSS
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   assetPrefix: publishBasePath,
