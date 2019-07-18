@@ -5,6 +5,7 @@ import { MDXProvider } from "@mdx-js/react"
 import CodeBlock from "./../components/CodeBlock"
 import "@tourepedia/ui/styles/index.css"
 
+// unregister serviceWorker worker
 if (typeof window !== "undefined")
   if ("serviceWorker" in window.navigator) {
     navigator.serviceWorker.ready.then(registration => {
@@ -32,25 +33,14 @@ const components = {
 }
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return { pageProps }
-  }
-
   render() {
-    const { Component, pageProps } = this.props
-
+    const { Component } = this.props
     return (
-      <Container>
-        <MDXProvider components={components}>
-          <Component {...pageProps} />
-        </MDXProvider>
-      </Container>
+      <MDXProvider components={components}>
+        <Container>
+          <Component />
+        </Container>
+      </MDXProvider>
     )
   }
 }
