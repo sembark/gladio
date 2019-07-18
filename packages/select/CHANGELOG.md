@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.0...@tourepedia/select@0.5.1) (2019-07-18)
+
+
+### Bug Fixes
+
+* **select:** respect multiple prop and navigation fixes ([acd4c2c](https://github.com/tourepedia/tp-ui/commit/acd4c2c)), closes [#8](https://github.com/tourepedia/tp-ui/issues/8)
+
+
+
+
+
 # [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.4.0...@tourepedia/select@0.5.0) (2019-07-16)
 
 
