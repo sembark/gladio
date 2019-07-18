@@ -131,10 +131,17 @@ export function Select({
       return () => {}
     }
     function handleClick(e: any) {
+      console.log(e)
       const container = groupRef.current
       if (contains(container, e.target)) {
-        if (!isFocused) {
-          setIsFouced(true)
+        switch (e.key) {
+          case undefined:
+          case "Tab":
+          case "ArrowDown":
+          case "ArrowUp":
+            if (!isFocused) {
+              setIsFouced(true)
+            }
         }
       } else if (isFocused) {
         setIsFouced(false)
@@ -142,9 +149,11 @@ export function Select({
     }
     document.addEventListener("click", handleClick)
     document.addEventListener("keyup", handleClick)
+    document.addEventListener("focus", handleClick)
     return () => {
       document.removeEventListener("click", handleClick)
       document.removeEventListener("keyup", handleClick)
+      document.removeEventListener("focus", handleClick)
     }
   }, [isFocused, groupRef.current])
   // handle the keyboad navigation
@@ -158,12 +167,13 @@ export function Select({
     // if no option is focused
     // focus the first selected option or first option if no option is selected
     if (focusedOption === undefined) {
-      const firstSelectedValue = Array.isArray(value) ? value[0] : value
-      if (!firstSelectedValue) {
+      if (!value) {
         changeFocusedOption(0)
       } else {
-        const selectedOptionIndex = options.findIndex(
-          o => o.id === firstSelectedValue.id
+        const selectedOptionIndex = options.findIndex(o =>
+          Array.isArray(value)
+            ? value.some(v => v.id === o.id)
+            : value.id === o.id
         )
         changeFocusedOption(selectedOptionIndex)
       }
@@ -185,6 +195,7 @@ export function Select({
           break
         case "Enter":
           e.preventDefault()
+          e.stopPropagation()
           const option = options[focusedOption || 0]
           const checked = value
             ? Array.isArray(value)
@@ -204,11 +215,11 @@ export function Select({
   }, [isFocused, focusedOption, options, value])
   function handleOptionClick(option: any, checked: boolean) {
     const newValues = checked
-      ? Array.isArray(value)
-        ? value.concat([option])
+      ? multiple
+        ? (value || []).concat([option])
         : option
-      : Array.isArray(value)
-      ? value.filter(v => v.id !== option.id)
+      : multiple
+      ? (value || []).filter((v: any) => v.id !== option.id)
       : undefined
     onChange(newValues, name)
     if (!multiple && newValues) {
@@ -249,38 +260,43 @@ export function Select({
           ) : null}
           {options.map((option, i) => {
             const checked = value
-              ? Array.isArray(value)
-                ? value.some(v => v.id === option.id)
+              ? multiple
+                ? (value || []).some((v: any) => v.id === option.id)
                 : (value as any).id === option.id
               : false
             return (
-              <li
+              <Option
                 key={option.id}
-                role="option"
-                aria-selected={checked}
-                data-focused={i === focusedOption}
+                checked={checked}
+                focused={i === focusedOption}
                 title={option.title || option.description}
-                tabIndex={-1}
-                onClick={() => {
-                  !disabled && handleOptionClick(option, !checked)
+                disabled={disabled}
+                onClick={checked => {
+                  handleOptionClick(option, checked)
+                }}
+                onMouseOver={() => {
+                  changeFocusedOption(i)
                 }}
               >
                 {option[labelKey]}
-              </li>
+              </Option>
             )
           })}
         </ol>
       </div>
-      {value && Array.isArray(value) ? (
+      {value && multiple ? (
         <ul className="selected-list">
-          {value.map(v => (
+          {value.map((v: any) => (
             <li
               key={v.id}
               title="Click to unselect"
               role="button"
               onClick={() =>
                 !disabled &&
-                onChange(value.filter(val => val.id !== v.id) as any, name)
+                onChange(
+                  value.filter((val: any) => val.id !== v.id) as any,
+                  name
+                )
               }
             >
               {v[labelKey]}
@@ -289,6 +305,43 @@ export function Select({
         </ul>
       ) : null}
     </div>
+  )
+}
+
+interface OptionProps extends Omit<React.HTMLProps<HTMLLIElement>, "onClick"> {
+  focused?: boolean
+  checked?: boolean
+  disabled?: boolean
+  onClick?: (checked: boolean) => void
+}
+
+function Option({
+  focused,
+  checked,
+  onClick,
+  disabled,
+  ...props
+}: OptionProps) {
+  const ref = useRef<HTMLLIElement>(null)
+  useEffect(() => {
+    if (ref.current && focused) {
+      ref.current.scrollIntoView &&
+        ref.current.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        })
+    }
+  }, [focused, ref.current])
+  return (
+    <li
+      ref={ref}
+      role="option"
+      aria-selected={checked}
+      data-focused={focused}
+      tabIndex={-1}
+      onClick={() => !disabled && onClick && onClick(!checked)}
+      {...props}
+    />
   )
 }
 

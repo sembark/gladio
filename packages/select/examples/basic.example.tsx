@@ -26,22 +26,42 @@ const countries = [
     id: 5,
     name: "Nepal",
   },
+  {
+    id: 6,
+    name: "Pakisthan",
+  },
+  {
+    id: 7,
+    name: "England",
+  },
+  {
+    id: 8,
+    name: "New Zealand",
+  },
 ]
 
-stories.add("Single Select", () => (
-  <div className="max-w-lg mx-auto">
-    <Select
-      value={countries[2]}
-      label="Select Places"
-      name="name"
-      onChange={(value, name) => {
-        alert(`You selected ` + JSON.stringify(value))
-      }}
-      options={countries}
-      onQuery={query => {}}
-    />
-  </div>
-))
+stories.add("Single Select", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries[0] | null>(
+      null
+    )
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Places"
+          name="name"
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countries}
+          onQuery={query => {}}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
 stories.add("Disabled Select", () => (
   <div className="max-w-lg mx-auto">
     <Select
@@ -58,21 +78,27 @@ stories.add("Disabled Select", () => (
   </div>
 ))
 
-stories.add("Multi Select", () => (
-  <div className="max-w-lg mx-auto">
-    <Select
-      multiple
-      value={countries.slice(2, 4)}
-      label="Select Places"
-      name="name"
-      onChange={(value, name) => {
-        alert(`You selected ` + JSON.stringify(value))
-      }}
-      options={countries}
-      onQuery={query => {}}
-    />
-  </div>
-))
+stories.add("Multi Select", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries>([])
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          multiple
+          value={value}
+          label="Select Places"
+          name="name"
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countries}
+          onQuery={query => {}}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
 
 stories.add("Single Select Async", () => (
   <div className="max-w-lg mx-auto">
