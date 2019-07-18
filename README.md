@@ -38,25 +38,18 @@ npm run deploy # deploy the www to gh-pages
 npx lerna
 ```
 
-**Publish a new package**
-
-```bash
-cd packages/new-packages
-npm publish --access public
-```
-
-**run test for a specific package only**
+**Execute a command for a specific package only**
 
 Use `--scope` from lerna
 
 ```bash
-npm run test -- --scope=@tourepedia/button
+npm run test -- --scope=@tourepedia/button # to run the tests inside buton only
+npm run build -- --scope=@tourepedia/button # to build the button package
 ```
 
-**run build for a specific package only**
-Use `--scope` from lerna
+**Install a dependency for a package**
+Use `--scope` from lerna with `lerna add`
 
 ```bash
-npm run build -- --scope=@tourepedia/button
 npx lerna add @tourepedia/button --exact --scope=@tourepedia/button-group
 ```
