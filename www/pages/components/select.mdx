@@ -35,7 +35,7 @@ function () {
     { id: 4, name: "Pineapple" },
     { id: 5, name: "Mango" }
   ], [])
-  const [value, setValue] = useState([])
+  const [value, setValue] = useState(null)
   const [query, setQuery] = useState("")
   const [options, changeOptions] = useState(fruits)
   return <Select
