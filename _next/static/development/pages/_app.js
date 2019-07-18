@@ -36,13 +36,14 @@ var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/compo
 
 function CodeBlock(_ref) {
   var live = _ref.live,
+      preview = _ref.preview,
       noInline = _ref.noInline,
       className = _ref.className,
       children = _ref.children,
       language = _ref.language;
   language = language || className.replace(/language-/, "");
 
-  if (live) {
+  if (live || preview) {
     var Live = react_live__WEBPACK_IMPORTED_MODULE_3__;
 
     if (language === "html") {
@@ -50,10 +51,10 @@ function CodeBlock(_ref) {
     }
 
     return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-      className: "react-live",
+      className: "react-live" + (preview && !live ? " react-preview" : ""),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 26
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Live.LiveProvider, {
@@ -64,7 +65,13 @@ function CodeBlock(_ref) {
       scope: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, react__WEBPACK_IMPORTED_MODULE_2___default.a, _tourepedia_ui__WEBPACK_IMPORTED_MODULE_7__),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 29
+      },
+      __self: this
+    }, live ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2__["Fragment"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 40
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Live.LiveEditor, {
@@ -72,21 +79,21 @@ function CodeBlock(_ref) {
       tabIndex: "-1",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 41
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Live.LiveError, {
       className: "error",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 42
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Live.LivePreview, {
+    })) : null, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Live.LivePreview, {
       className: "preview",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 45
       },
       __self: this
     })));
@@ -98,7 +105,7 @@ function CodeBlock(_ref) {
     language: language,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 51
     },
     __self: this
   }), function (_ref2) {
@@ -112,7 +119,7 @@ function CodeBlock(_ref) {
       style: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_1__["default"])({}, style),
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51
+        lineNumber: 58
       },
       __self: this
     }, tokens.map(function (line, i) {
@@ -124,7 +131,7 @@ function CodeBlock(_ref) {
       }), {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 60
         },
         __self: this
       }), line.map(function (token, key) {
@@ -136,7 +143,7 @@ function CodeBlock(_ref) {
         }), {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 55
+            lineNumber: 62
           },
           __self: this
         }));
@@ -1326,12 +1333,13 @@ function BadgeList(_ref2) {
 /*!*****************************************************!*\
   !*** ./node_modules/@tourepedia/button/es/index.js ***!
   \*****************************************************/
-/*! exports provided: default, ButtonGroup */
+/*! exports provided: default, ButtonGroup, ButtonToolbar */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonGroup", function() { return ButtonGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ButtonToolbar", function() { return ButtonToolbar; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
@@ -1348,12 +1356,22 @@ const Button = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((_ref, ref) => {
   let {
     className,
     primary,
+    success,
+    error,
+    warning,
+    accent,
     type = "button"
   } = _ref,
-      props = _objectWithoutProperties(_ref, ["className", "primary", "type"]);
+      props = _objectWithoutProperties(_ref, ["className", "primary", "success", "error", "warning", "accent", "type"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", _extends({
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("btn", primary && "btn-primary", className),
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("btn", {
+      "btn-primary": primary,
+      "btn-success": success,
+      "btn-error": error,
+      "btn-warning": warning,
+      "btn-accent": accent
+    }, className),
     ref: ref,
     type: type
   }, props));
@@ -1368,6 +1386,16 @@ function ButtonGroup(_ref2) {
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", _extends({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("btn-group", className)
+  }, props));
+}
+function ButtonToolbar(_ref3) {
+  let {
+    className
+  } = _ref3,
+      props = _objectWithoutProperties(_ref3, ["className"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", _extends({
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("btn-toolbar", className)
   }, props));
 }
 
@@ -1468,15 +1496,15 @@ var theme = {
             "900": "#3c366b"
         },
         "primary": {
-            "100": "#ebf4ff",
-            "200": "#c3dafe",
-            "300": "#a3bffa",
-            "400": "#7f9cf5",
-            "500": "#667eea",
-            "600": "#5a67d8",
-            "700": "#4c51bf",
-            "800": "#434190",
-            "900": "#3c366b"
+            "100": "#ebf8ff",
+            "200": "#bee3f8",
+            "300": "#90cdf4",
+            "400": "#63b3ed",
+            "500": "#4299e1",
+            "600": "#3182ce",
+            "700": "#2b6cb0",
+            "800": "#2c5282",
+            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -1612,15 +1640,15 @@ var theme = {
             "900": "#3c366b"
         },
         "primary": {
-            "100": "#ebf4ff",
-            "200": "#c3dafe",
-            "300": "#a3bffa",
-            "400": "#7f9cf5",
-            "500": "#667eea",
-            "600": "#5a67d8",
-            "700": "#4c51bf",
-            "800": "#434190",
-            "900": "#3c366b"
+            "100": "#ebf8ff",
+            "200": "#bee3f8",
+            "300": "#90cdf4",
+            "400": "#63b3ed",
+            "500": "#4299e1",
+            "600": "#3182ce",
+            "700": "#2b6cb0",
+            "800": "#2c5282",
+            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -1743,15 +1771,15 @@ var theme = {
             "900": "#3c366b"
         },
         "primary": {
-            "100": "#ebf4ff",
-            "200": "#c3dafe",
-            "300": "#a3bffa",
-            "400": "#7f9cf5",
-            "500": "#667eea",
-            "600": "#5a67d8",
-            "700": "#4c51bf",
-            "800": "#434190",
-            "900": "#3c366b"
+            "100": "#ebf8ff",
+            "200": "#bee3f8",
+            "300": "#90cdf4",
+            "400": "#63b3ed",
+            "500": "#4299e1",
+            "600": "#3182ce",
+            "700": "#2b6cb0",
+            "800": "#2c5282",
+            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -2146,15 +2174,15 @@ var theme = {
             "900": "#3c366b"
         },
         "primary": {
-            "100": "#ebf4ff",
-            "200": "#c3dafe",
-            "300": "#a3bffa",
-            "400": "#7f9cf5",
-            "500": "#667eea",
-            "600": "#5a67d8",
-            "700": "#4c51bf",
-            "800": "#434190",
-            "900": "#3c366b"
+            "100": "#ebf8ff",
+            "200": "#bee3f8",
+            "300": "#90cdf4",
+            "400": "#63b3ed",
+            "500": "#4299e1",
+            "600": "#3182ce",
+            "700": "#2b6cb0",
+            "800": "#2c5282",
+            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -2203,8 +2231,8 @@ var theme = {
         "ie-y": "0.5rem",
         "ie-x": "0.75rem",
         "1/2": "50%",
-        "1/3": "33.33333%",
-        "2/3": "66.66667%",
+        "1/3": "33.333333%",
+        "2/3": "66.666667%",
         "1/4": "25%",
         "2/4": "50%",
         "3/4": "75%",
@@ -2212,22 +2240,22 @@ var theme = {
         "2/5": "40%",
         "3/5": "60%",
         "4/5": "80%",
-        "1/6": "16.66667%",
-        "2/6": "33.33333%",
+        "1/6": "16.666667%",
+        "2/6": "33.333333%",
         "3/6": "50%",
-        "4/6": "66.66667%",
-        "5/6": "83.33333%",
-        "1/12": "8.33333%",
-        "2/12": "16.66667%",
+        "4/6": "66.666667%",
+        "5/6": "83.333333%",
+        "1/12": "8.333333%",
+        "2/12": "16.666667%",
         "3/12": "25%",
-        "4/12": "33.33333%",
-        "5/12": "41.66667%",
+        "4/12": "33.333333%",
+        "5/12": "41.666667%",
         "6/12": "50%",
-        "7/12": "58.33333%",
-        "8/12": "66.66667%",
+        "7/12": "58.333333%",
+        "8/12": "66.666667%",
         "9/12": "75%",
-        "10/12": "83.33333%",
-        "11/12": "91.66667%",
+        "10/12": "83.333333%",
+        "11/12": "91.666667%",
         "full": "100%",
         "screen": "100vw"
     },
@@ -2680,6 +2708,58 @@ const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((props, ref)
 }, props)));
 /* harmony default export */ __webpack_exports__["default"] = (ForwardRef);
 ForwardRef.displayName = "BusIcon";
+
+/***/ }),
+
+/***/ "./node_modules/@tourepedia/icons/es/icons/Calendar.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@tourepedia/icons/es/icons/Calendar.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+const SvgCalendar = (_ref) => {
+  let {
+    svgRef,
+    title,
+    className = ""
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["svgRef", "title", "className"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: "1em",
+    height: "1em",
+    viewBox: "0 0 26 28",
+    className: "tp-icon tp-icon-calendar " + className,
+    "aria-label": title,
+    "aria-hidden": !title ? "true" : "false",
+    ref: svgRef
+  }, props), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("title", null, title), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+    d: "M2 26h4.5v-4.5H2V26zm5.5 0h5v-4.5h-5V26zM2 20.5h4.5v-5H2v5zm5.5 0h5v-5h-5v5zm-5.5-6h4.5V10H2v4.5zM13.5 26h5v-4.5h-5V26zm-6-11.5h5V10h-5v4.5zm12 11.5H24v-4.5h-4.5V26zm-6-5.5h5v-5h-5v5zM8 7V2.5c0-.266-.234-.5-.5-.5h-1c-.266 0-.5.234-.5.5V7c0 .266.234.5.5.5h1c.266 0 .5-.234.5-.5zm11.5 13.5H24v-5h-4.5v5zm-6-6h5V10h-5v4.5zm6 0H24V10h-4.5v4.5zM20 7V2.5c0-.266-.234-.5-.5-.5h-1c-.266 0-.5.234-.5.5V7c0 .266.234.5.5.5h1c.266 0 .5-.234.5-.5zm6-1v20c0 1.094-.906 2-2 2H2c-1.094 0-2-.906-2-2V6c0-1.094.906-2 2-2h2V2.5C4 1.125 5.125 0 6.5 0h1C8.875 0 10 1.125 10 2.5V4h6V2.5C16 1.125 17.125 0 18.5 0h1C20.875 0 22 1.125 22 2.5V4h2c1.094 0 2 .906 2 2z"
+  }));
+};
+
+const ForwardRef = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((props, ref) => react__WEBPACK_IMPORTED_MODULE_0__["createElement"](SvgCalendar, _objectSpread({
+  svgRef: ref
+}, props)));
+/* harmony default export */ __webpack_exports__["default"] = (ForwardRef);
+ForwardRef.displayName = "CalendarIcon";
 
 /***/ }),
 
@@ -3831,7 +3911,7 @@ ForwardRef.displayName = "UsersIcon";
 /*!****************************************************!*\
   !*** ./node_modules/@tourepedia/icons/es/index.js ***!
   \****************************************************/
-/*! exports provided: AddressBookIcon, AttentionIcon, BedIcon, BusIcon, CancelIcon, ChevronDownIcon, ChildIcon, CogAltIcon, FilePdfIcon, FoodIcon, MailIcon, MapIcon, MinusIcon, OffIcon, OkIcon, PhoneIcon, PlusIcon, RefreshIcon, RupeeIcon, SearchIcon, SpinnerIcon, StarIcon, StarEmptyIcon, TagsIcon, TrashEmptyIcon, UsersIcon */
+/*! exports provided: AddressBookIcon, AttentionIcon, BedIcon, BusIcon, CalendarIcon, CancelIcon, ChevronDownIcon, ChildIcon, CogAltIcon, FilePdfIcon, FoodIcon, MailIcon, MapIcon, MinusIcon, OffIcon, OkIcon, PhoneIcon, PlusIcon, RefreshIcon, RupeeIcon, SearchIcon, SpinnerIcon, StarIcon, StarEmptyIcon, TagsIcon, TrashEmptyIcon, UsersIcon */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3848,76 +3928,80 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icons_Bus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./icons/Bus */ "./node_modules/@tourepedia/icons/es/icons/Bus.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "BusIcon", function() { return _icons_Bus__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _icons_Cancel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./icons/Cancel */ "./node_modules/@tourepedia/icons/es/icons/Cancel.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CancelIcon", function() { return _icons_Cancel__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+/* harmony import */ var _icons_Calendar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./icons/Calendar */ "./node_modules/@tourepedia/icons/es/icons/Calendar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CalendarIcon", function() { return _icons_Calendar__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
-/* harmony import */ var _icons_ChevronDown__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icons/ChevronDown */ "./node_modules/@tourepedia/icons/es/icons/ChevronDown.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChevronDownIcon", function() { return _icons_ChevronDown__WEBPACK_IMPORTED_MODULE_5__["default"]; });
+/* harmony import */ var _icons_Cancel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./icons/Cancel */ "./node_modules/@tourepedia/icons/es/icons/Cancel.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CancelIcon", function() { return _icons_Cancel__WEBPACK_IMPORTED_MODULE_5__["default"]; });
 
-/* harmony import */ var _icons_Child__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./icons/Child */ "./node_modules/@tourepedia/icons/es/icons/Child.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChildIcon", function() { return _icons_Child__WEBPACK_IMPORTED_MODULE_6__["default"]; });
+/* harmony import */ var _icons_ChevronDown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./icons/ChevronDown */ "./node_modules/@tourepedia/icons/es/icons/ChevronDown.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChevronDownIcon", function() { return _icons_ChevronDown__WEBPACK_IMPORTED_MODULE_6__["default"]; });
 
-/* harmony import */ var _icons_CogAlt__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./icons/CogAlt */ "./node_modules/@tourepedia/icons/es/icons/CogAlt.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CogAltIcon", function() { return _icons_CogAlt__WEBPACK_IMPORTED_MODULE_7__["default"]; });
+/* harmony import */ var _icons_Child__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./icons/Child */ "./node_modules/@tourepedia/icons/es/icons/Child.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ChildIcon", function() { return _icons_Child__WEBPACK_IMPORTED_MODULE_7__["default"]; });
 
-/* harmony import */ var _icons_FilePdf__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./icons/FilePdf */ "./node_modules/@tourepedia/icons/es/icons/FilePdf.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilePdfIcon", function() { return _icons_FilePdf__WEBPACK_IMPORTED_MODULE_8__["default"]; });
+/* harmony import */ var _icons_CogAlt__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./icons/CogAlt */ "./node_modules/@tourepedia/icons/es/icons/CogAlt.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "CogAltIcon", function() { return _icons_CogAlt__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
-/* harmony import */ var _icons_Food__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./icons/Food */ "./node_modules/@tourepedia/icons/es/icons/Food.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FoodIcon", function() { return _icons_Food__WEBPACK_IMPORTED_MODULE_9__["default"]; });
+/* harmony import */ var _icons_FilePdf__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./icons/FilePdf */ "./node_modules/@tourepedia/icons/es/icons/FilePdf.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FilePdfIcon", function() { return _icons_FilePdf__WEBPACK_IMPORTED_MODULE_9__["default"]; });
 
-/* harmony import */ var _icons_Mail__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./icons/Mail */ "./node_modules/@tourepedia/icons/es/icons/Mail.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MailIcon", function() { return _icons_Mail__WEBPACK_IMPORTED_MODULE_10__["default"]; });
+/* harmony import */ var _icons_Food__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./icons/Food */ "./node_modules/@tourepedia/icons/es/icons/Food.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "FoodIcon", function() { return _icons_Food__WEBPACK_IMPORTED_MODULE_10__["default"]; });
 
-/* harmony import */ var _icons_Map__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./icons/Map */ "./node_modules/@tourepedia/icons/es/icons/Map.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MapIcon", function() { return _icons_Map__WEBPACK_IMPORTED_MODULE_11__["default"]; });
+/* harmony import */ var _icons_Mail__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./icons/Mail */ "./node_modules/@tourepedia/icons/es/icons/Mail.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MailIcon", function() { return _icons_Mail__WEBPACK_IMPORTED_MODULE_11__["default"]; });
 
-/* harmony import */ var _icons_Minus__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./icons/Minus */ "./node_modules/@tourepedia/icons/es/icons/Minus.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MinusIcon", function() { return _icons_Minus__WEBPACK_IMPORTED_MODULE_12__["default"]; });
+/* harmony import */ var _icons_Map__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./icons/Map */ "./node_modules/@tourepedia/icons/es/icons/Map.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MapIcon", function() { return _icons_Map__WEBPACK_IMPORTED_MODULE_12__["default"]; });
 
-/* harmony import */ var _icons_Off__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./icons/Off */ "./node_modules/@tourepedia/icons/es/icons/Off.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OffIcon", function() { return _icons_Off__WEBPACK_IMPORTED_MODULE_13__["default"]; });
+/* harmony import */ var _icons_Minus__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./icons/Minus */ "./node_modules/@tourepedia/icons/es/icons/Minus.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MinusIcon", function() { return _icons_Minus__WEBPACK_IMPORTED_MODULE_13__["default"]; });
 
-/* harmony import */ var _icons_Ok__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./icons/Ok */ "./node_modules/@tourepedia/icons/es/icons/Ok.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OkIcon", function() { return _icons_Ok__WEBPACK_IMPORTED_MODULE_14__["default"]; });
+/* harmony import */ var _icons_Off__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./icons/Off */ "./node_modules/@tourepedia/icons/es/icons/Off.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OffIcon", function() { return _icons_Off__WEBPACK_IMPORTED_MODULE_14__["default"]; });
 
-/* harmony import */ var _icons_Phone__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./icons/Phone */ "./node_modules/@tourepedia/icons/es/icons/Phone.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PhoneIcon", function() { return _icons_Phone__WEBPACK_IMPORTED_MODULE_15__["default"]; });
+/* harmony import */ var _icons_Ok__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./icons/Ok */ "./node_modules/@tourepedia/icons/es/icons/Ok.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "OkIcon", function() { return _icons_Ok__WEBPACK_IMPORTED_MODULE_15__["default"]; });
 
-/* harmony import */ var _icons_Plus__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./icons/Plus */ "./node_modules/@tourepedia/icons/es/icons/Plus.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlusIcon", function() { return _icons_Plus__WEBPACK_IMPORTED_MODULE_16__["default"]; });
+/* harmony import */ var _icons_Phone__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./icons/Phone */ "./node_modules/@tourepedia/icons/es/icons/Phone.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PhoneIcon", function() { return _icons_Phone__WEBPACK_IMPORTED_MODULE_16__["default"]; });
 
-/* harmony import */ var _icons_Refresh__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./icons/Refresh */ "./node_modules/@tourepedia/icons/es/icons/Refresh.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RefreshIcon", function() { return _icons_Refresh__WEBPACK_IMPORTED_MODULE_17__["default"]; });
+/* harmony import */ var _icons_Plus__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./icons/Plus */ "./node_modules/@tourepedia/icons/es/icons/Plus.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PlusIcon", function() { return _icons_Plus__WEBPACK_IMPORTED_MODULE_17__["default"]; });
 
-/* harmony import */ var _icons_Rupee__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./icons/Rupee */ "./node_modules/@tourepedia/icons/es/icons/Rupee.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RupeeIcon", function() { return _icons_Rupee__WEBPACK_IMPORTED_MODULE_18__["default"]; });
+/* harmony import */ var _icons_Refresh__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./icons/Refresh */ "./node_modules/@tourepedia/icons/es/icons/Refresh.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RefreshIcon", function() { return _icons_Refresh__WEBPACK_IMPORTED_MODULE_18__["default"]; });
 
-/* harmony import */ var _icons_Search__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./icons/Search */ "./node_modules/@tourepedia/icons/es/icons/Search.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SearchIcon", function() { return _icons_Search__WEBPACK_IMPORTED_MODULE_19__["default"]; });
+/* harmony import */ var _icons_Rupee__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./icons/Rupee */ "./node_modules/@tourepedia/icons/es/icons/Rupee.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "RupeeIcon", function() { return _icons_Rupee__WEBPACK_IMPORTED_MODULE_19__["default"]; });
 
-/* harmony import */ var _icons_Spinner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./icons/Spinner */ "./node_modules/@tourepedia/icons/es/icons/Spinner.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SpinnerIcon", function() { return _icons_Spinner__WEBPACK_IMPORTED_MODULE_20__["default"]; });
+/* harmony import */ var _icons_Search__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./icons/Search */ "./node_modules/@tourepedia/icons/es/icons/Search.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SearchIcon", function() { return _icons_Search__WEBPACK_IMPORTED_MODULE_20__["default"]; });
 
-/* harmony import */ var _icons_Star__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./icons/Star */ "./node_modules/@tourepedia/icons/es/icons/Star.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StarIcon", function() { return _icons_Star__WEBPACK_IMPORTED_MODULE_21__["default"]; });
+/* harmony import */ var _icons_Spinner__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./icons/Spinner */ "./node_modules/@tourepedia/icons/es/icons/Spinner.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SpinnerIcon", function() { return _icons_Spinner__WEBPACK_IMPORTED_MODULE_21__["default"]; });
 
-/* harmony import */ var _icons_StarEmpty__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./icons/StarEmpty */ "./node_modules/@tourepedia/icons/es/icons/StarEmpty.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StarEmptyIcon", function() { return _icons_StarEmpty__WEBPACK_IMPORTED_MODULE_22__["default"]; });
+/* harmony import */ var _icons_Star__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./icons/Star */ "./node_modules/@tourepedia/icons/es/icons/Star.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StarIcon", function() { return _icons_Star__WEBPACK_IMPORTED_MODULE_22__["default"]; });
 
-/* harmony import */ var _icons_Tags__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./icons/Tags */ "./node_modules/@tourepedia/icons/es/icons/Tags.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagsIcon", function() { return _icons_Tags__WEBPACK_IMPORTED_MODULE_23__["default"]; });
+/* harmony import */ var _icons_StarEmpty__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./icons/StarEmpty */ "./node_modules/@tourepedia/icons/es/icons/StarEmpty.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "StarEmptyIcon", function() { return _icons_StarEmpty__WEBPACK_IMPORTED_MODULE_23__["default"]; });
 
-/* harmony import */ var _icons_TrashEmpty__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./icons/TrashEmpty */ "./node_modules/@tourepedia/icons/es/icons/TrashEmpty.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrashEmptyIcon", function() { return _icons_TrashEmpty__WEBPACK_IMPORTED_MODULE_24__["default"]; });
+/* harmony import */ var _icons_Tags__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./icons/Tags */ "./node_modules/@tourepedia/icons/es/icons/Tags.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TagsIcon", function() { return _icons_Tags__WEBPACK_IMPORTED_MODULE_24__["default"]; });
 
-/* harmony import */ var _icons_Users__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./icons/Users */ "./node_modules/@tourepedia/icons/es/icons/Users.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UsersIcon", function() { return _icons_Users__WEBPACK_IMPORTED_MODULE_25__["default"]; });
+/* harmony import */ var _icons_TrashEmpty__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./icons/TrashEmpty */ "./node_modules/@tourepedia/icons/es/icons/TrashEmpty.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "TrashEmptyIcon", function() { return _icons_TrashEmpty__WEBPACK_IMPORTED_MODULE_25__["default"]; });
+
+/* harmony import */ var _icons_Users__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./icons/Users */ "./node_modules/@tourepedia/icons/es/icons/Users.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UsersIcon", function() { return _icons_Users__WEBPACK_IMPORTED_MODULE_26__["default"]; });
 
 /**
 * ======    DO NOT MODIFY THIS FILE DIRECTLY   =========
 * This is an autogenerated file with 'add-imports' and will be overwritten with each build
 **/
+
 
 
 
@@ -4325,6 +4409,36 @@ const {
   useEffect,
   useRef
 } = react__WEBPACK_IMPORTED_MODULE_0__;
+
+function Loader({
+  duration = 500
+}) {
+  const [deg, setDeg] = useState(0);
+  useEffect(() => {
+    const handler = requestAnimationFrame(() => {
+      setDeg((deg + 360 / (duration || 150) * 16) % 360);
+    });
+    return () => {
+      cancelAnimationFrame(handler);
+    };
+  }, [deg]);
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+    style: {
+      position: "absolute",
+      right: "10px",
+      bottom: "10px",
+      width: "20px",
+      height: "20px",
+      borderRadius: "50%",
+      overflow: "hidden",
+      border: "2px solid #a0aec0",
+      borderTop: "none",
+      borderLeft: "none",
+      transform: `rotate(${deg}deg)`
+    }
+  });
+}
+
 function Select({
   className = "",
   creatable = false,
@@ -4340,11 +4454,21 @@ function Select({
   onQuery,
   options = [],
   placeholder = "Type to search...",
-  query,
+  query = "",
   required,
   searchable = true,
-  value
+  value,
+  isLoading
 }) {
+  const groupRef = useRef(null);
+  const inputRef = useRef(null);
+  const [isFocused, changeFocusState] = useState(false);
+  useEffect(() => {
+    if (fetchOnMount) {
+      onQuery && onQuery(query || "");
+    }
+  }, [fetchOnMount]);
+  const [focusedOption, changeFocusedOption] = useState(undefined);
   const name = propName || (multiple ? "select[]" : "select");
 
   if (creatable && (!options || options.length === 0) && query && query.trim()) {
@@ -4370,15 +4494,6 @@ function Select({
     options = options.concat(moreOptions);
   }
 
-  const groupRef = useRef(null);
-  const inputRef = useRef(null);
-  const [isFocused, changeFocusState] = useState(false);
-  useEffect(() => {
-    if (fetchOnMount) {
-      onQuery(query || "");
-    }
-  }, []);
-
   function setIsFouced(isFocused) {
     changeFocusState(isFocused);
 
@@ -4389,39 +4504,104 @@ function Select({
         }
       });
     }
-  }
+  } // handle the focused state
+
 
   useEffect(() => {
-    function handleClick(e) {
-      if (groupRef.current) {
-        const container = groupRef.current;
-
-        if (Object(_tourepedia_dom_helpers__WEBPACK_IMPORTED_MODULE_1__["contains"])(container, e.target)) {
-          if (!isFocused) {
-            setIsFouced(true);
-          }
-        } else if (isFocused) {
-          setIsFouced(false);
-        }
-      }
-    }
-
     const document = Object(_tourepedia_dom_helpers__WEBPACK_IMPORTED_MODULE_1__["ownerDocument"])();
 
-    if (!document || disabled) {
+    if (!document || disabled || !groupRef.current) {
       return () => {};
+    }
+
+    function handleClick(e) {
+      console.log(e);
+      const container = groupRef.current;
+
+      if (Object(_tourepedia_dom_helpers__WEBPACK_IMPORTED_MODULE_1__["contains"])(container, e.target)) {
+        switch (e.key) {
+          case undefined:
+          case "Tab":
+          case "ArrowDown":
+          case "ArrowUp":
+            if (!isFocused) {
+              setIsFouced(true);
+            }
+
+        }
+      } else if (isFocused) {
+        setIsFouced(false);
+      }
     }
 
     document.addEventListener("click", handleClick);
     document.addEventListener("keyup", handleClick);
+    document.addEventListener("focus", handleClick);
     return () => {
       document.removeEventListener("click", handleClick);
       document.removeEventListener("keyup", handleClick);
+      document.removeEventListener("focus", handleClick);
     };
-  }, [isFocused]);
+  }, [isFocused, groupRef.current]); // handle the keyboad navigation
 
-  function handleChange(option, checked) {
-    const newValues = checked ? Array.isArray(value) ? value.concat([option]) : option : Array.isArray(value) ? value.filter(v => v.id !== option.id) : undefined;
+  useEffect(() => {
+    const document = Object(_tourepedia_dom_helpers__WEBPACK_IMPORTED_MODULE_1__["ownerDocument"])(); // handle the base cases where no need to manage the keyboad focus stuff
+
+    if (!isFocused || !document || disabled || !options || !options.length) {
+      changeFocusedOption(undefined);
+      return () => {};
+    } // if no option is focused
+    // focus the first selected option or first option if no option is selected
+
+
+    if (focusedOption === undefined) {
+      if (!value) {
+        changeFocusedOption(0);
+      } else {
+        const selectedOptionIndex = options.findIndex(o => Array.isArray(value) ? value.some(v => v.id === o.id) : value.id === o.id);
+        changeFocusedOption(selectedOptionIndex);
+      }
+    }
+
+    function handleKeyDown(e) {
+      const {
+        key
+      } = e;
+      const numberOfOptions = options.length;
+
+      switch (key) {
+        case "ArrowDown":
+          changeFocusedOption(((focusedOption || 0) + 1) % numberOfOptions);
+          break;
+
+        case "ArrowUp":
+          changeFocusedOption((() => {
+            const x = ((focusedOption || 0) - 1) % numberOfOptions;
+            return x < 0 ? x + numberOfOptions : x;
+          })());
+          break;
+
+        case "Enter":
+          e.preventDefault();
+          e.stopPropagation();
+          const option = options[focusedOption || 0];
+          const checked = value ? Array.isArray(value) ? value.some(v => v.id === option.id) : value.id === option.id : false;
+          handleOptionClick(option, !checked);
+          break;
+
+        default:
+          break;
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isFocused, focusedOption, options, value]);
+
+  function handleOptionClick(option, checked) {
+    const newValues = checked ? multiple ? (value || []).concat([option]) : option : multiple ? (value || []).filter(v => v.id !== option.id) : undefined;
     onChange(newValues, name);
 
     if (!multiple && newValues) {
@@ -4444,7 +4624,7 @@ function Select({
     value: isFocused ? query : !multiple && value ? value[labelKey] : query,
     disabled: disabled,
     onChange: e => {
-      onQuery(e.currentTarget.value);
+      onQuery && onQuery(e.currentTarget.value);
     },
     id: name,
     onFocus: onFocus,
@@ -4455,25 +4635,28 @@ function Select({
     "aria-autocomplete": searchable ? "inline" : "list",
     autoComplete: "off",
     ref: inputRef
-  }), react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ol", {
+  }), isLoading ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Loader, null) : null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ol", {
     role: "listbox",
     "aria-multiselectable": multiple
   }, isFocused && options.length === 0 ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
     role: "option",
     "aria-readonly": true
-  }, "Type to search...") : null, options.map(option => {
-    const checked = value ? Array.isArray(value) ? value.some(v => v.id === option.id) : value.id === option.id : false;
-    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
+  }, "Type to search...") : null, options.map((option, i) => {
+    const checked = value ? multiple ? (value || []).some(v => v.id === option.id) : value.id === option.id : false;
+    return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Option, {
       key: option.id,
-      role: "option",
-      "aria-selected": checked,
+      checked: checked,
+      focused: i === focusedOption,
       title: option.title || option.description,
-      tabIndex: -1,
-      onClick: () => {
-        !disabled && handleChange(option, !checked);
+      disabled: disabled,
+      onClick: checked => {
+        handleOptionClick(option, checked);
+      },
+      onMouseOver: () => {
+        changeFocusedOption(i);
       }
     }, option[labelKey]);
-  }))), value && Array.isArray(value) ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
+  }))), value && multiple ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("ul", {
     className: "selected-list"
   }, value.map(v => react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", {
     key: v.id,
@@ -4482,20 +4665,68 @@ function Select({
     onClick: () => !disabled && onChange(value.filter(val => val.id !== v.id), name)
   }, v[labelKey]))) : null);
 }
-function Async(_ref) {
+
+function Option(_ref) {
   let {
-    fetch
+    focused,
+    checked,
+    onClick,
+    disabled
   } = _ref,
-      otherProps = _objectWithoutProperties(_ref, ["fetch"]);
+      props = _objectWithoutProperties(_ref, ["focused", "checked", "onClick", "disabled"]);
+
+  const ref = useRef(null);
+  useEffect(() => {
+    if (ref.current && focused) {
+      ref.current.scrollIntoView && ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+    }
+  }, [focused, ref.current]);
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("li", _extends({
+    ref: ref,
+    role: "option",
+    "aria-selected": checked,
+    "data-focused": focused,
+    tabIndex: -1,
+    onClick: () => !disabled && onClick && onClick(!checked)
+  }, props));
+}
+
+function Async(_ref2) {
+  let {
+    fetch,
+    debounceBy = 300
+  } = _ref2,
+      otherProps = _objectWithoutProperties(_ref2, ["fetch", "debounceBy"]);
 
   const [query, setQuery] = useState("");
+  const [isLoading, changeLoading] = useState(false);
   const [options, setOptions] = useState([]);
+  const lastDeboundeHandler = useRef();
+  useEffect(() => {
+    return () => {
+      typeof window !== "undefined" && window.clearTimeout(lastDeboundeHandler.current);
+    };
+  }, [lastDeboundeHandler]);
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Select, _extends({
     options: options,
     query: query,
+    isLoading: isLoading,
     onQuery: query => {
-      fetch(query).then(setOptions);
+      changeLoading(true);
       setQuery(query);
+      clearTimeout(lastDeboundeHandler.current);
+      lastDeboundeHandler.current = window.setTimeout(() => {
+        fetch(query).then(setOptions).then(resp => {
+          changeLoading(false);
+          return resp;
+        }).catch(error => {
+          isLoading && changeLoading(false);
+          return Promise.reject(error);
+        });
+      }, debounceBy);
     }
   }, otherProps));
 }
@@ -4543,7 +4774,7 @@ const Table = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((_ref, ref) => {
 
   const $table = react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("table", _extends({
     ref: ref,
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("table", fixedLayout ? "table-fixed" : undefined, autoWidth ? "table-auto" : undefined, striped ? "table-striped" : undefined, bordered ? "table-bordered" : undefined, className)
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("table", fixedLayout ? "table-fixed" : undefined, autoWidth ? "table-w-auto" : undefined, striped ? "table-striped" : undefined, bordered ? "table-bordered" : undefined, className)
   }, otherProps), caption ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("caption", null, caption) : null, headers ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("thead", null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("tr", null, headers.map((header, h) => react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("th", {
     key: h,
     style: {
@@ -46969,24 +47200,51 @@ var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages
 
 
 
+if (typeof window !== "undefined") if ("serviceWorker" in window.navigator) {
+  navigator.serviceWorker.ready.then(function (registration) {
+    registration.unregister();
+  });
+}
 var components = {
   pre: function pre(props) {
     return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 9
+        lineNumber: 16
       },
       __self: this
     }));
   },
   code: _components_CodeBlock__WEBPACK_IMPORTED_MODULE_11__["default"],
+  h2: function h2(props) {
+    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
+      className: "mt-12 mb-4"
+    }, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }));
+  },
+  h3: function h3(props) {
+    return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h3", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
+      className: "mt-8 mb-4"
+    }, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }));
+  },
   inlineCode: function inlineCode(props) {
     return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({
       className: "bg-gray-100 text-red-500 px-1 py-1px rounded leading-loose"
     }, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 12
+        lineNumber: 21
       },
       __self: this
     }));
@@ -46997,7 +47255,7 @@ var components = {
     }, props, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 18
+        lineNumber: 27
       },
       __self: this
     }));
@@ -47024,20 +47282,20 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_10__["MDXProvider"], {
         components: components,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 50
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_7__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 51
         },
         __self: this
       }))));
