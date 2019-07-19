@@ -131,7 +131,6 @@ export function Select({
       return () => {}
     }
     function handleClick(e: any) {
-      console.log(e)
       const container = groupRef.current
       if (contains(container, e.target)) {
         switch (e.key) {

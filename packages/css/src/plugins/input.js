@@ -41,13 +41,13 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       "&.has-error": {
         borderColor: theme("borderColor.red.700"),
       },
-      "&:disabled, &[readonly]": {
+      "&:disabled": {
         background: theme("backgroundColor.gray.100"),
         cursor: "not-allowed",
-        opacity: 0.8,
+        opacity: ".8",
       },
       "&[readonly]": {
-        pointerEvents: "none",
+        cursor: "default",
       },
       "&-group": {
         borderRadius: theme("borderRadius.default"),

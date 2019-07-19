@@ -133,3 +133,18 @@ stories.add("Multi Async", () => (
     />
   </div>
 ))
+
+stories.add("Without searching", () => (
+  <div className="max-w-lg mx-auto">
+    <Select
+      value={countries[3]}
+      label="Select Places"
+      name="name"
+      searchable={false}
+      options={countries}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
+    />
+  </div>
+))
