@@ -42,6 +42,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       display: "block",
       padding: `${theme("padding.2")} ${theme("padding.4")}`,
       outline: "none !important",
+      cursor: "pointer",
     },
     ".select [aria-readonly='true']": {
       color: "silver",
