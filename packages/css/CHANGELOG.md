@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.16.0...@tourepedia/css@0.16.1) (2019-07-19)
+
+
+### Bug Fixes
+
+* **css:** change readonly behaviour for inputs ([432bebc](https://github.com/tourepedia/tp-ui/commit/432bebc))
+
+
+
+
+
 # [0.16.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.15.0...@tourepedia/css@0.16.0) (2019-07-16)
 
 
