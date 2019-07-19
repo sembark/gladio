@@ -163,7 +163,6 @@ export function Select({
       changeFocusedOption(undefined)
       return () => {}
     }
-    console.log(options)
     // if no option is focused
     // focus the first selected option or first option if no option is selected
     if (focusedOption === undefined) {
