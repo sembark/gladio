@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.16.1...@tourepedia/css@0.16.2) (2019-07-19)
+
+
+### Bug Fixes
+
+* **css:** add pointer cursor to the select option ([135c105](https://github.com/tourepedia/tp-ui/commit/135c105))
+
+
+
+
+
 ## [0.16.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.16.0...@tourepedia/css@0.16.1) (2019-07-19)
 
 
