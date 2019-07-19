@@ -134,6 +134,32 @@ stories.add("Multi Async", () => (
   </div>
 ))
 
+stories.add("Creatable Select", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries[0] | null>(
+      null
+    )
+    const [query, setQuery] = React.useState<string>("")
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Places"
+          creatable
+          query={query}
+          onChange={value => {
+            changeValue(value)
+          }}
+          onQuery={query => {
+            setQuery(query)
+          }}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
+
 stories.add("Without searching", () => (
   <div className="max-w-lg mx-auto">
     <Select

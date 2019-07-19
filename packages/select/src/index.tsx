@@ -163,10 +163,11 @@ export function Select({
       changeFocusedOption(undefined)
       return () => {}
     }
+    console.log(options)
     // if no option is focused
     // focus the first selected option or first option if no option is selected
     if (focusedOption === undefined) {
-      if (!value) {
+      if (!value || (Array.isArray(value) && !value.length)) {
         changeFocusedOption(0)
       } else {
         const selectedOptionIndex = options.findIndex(o =>
@@ -234,7 +235,11 @@ export function Select({
         <Input
           type="search"
           value={
-            isFocused ? query : !multiple && value ? value[labelKey] : query
+            (isFocused
+              ? query
+              : !multiple && value
+              ? value[labelKey]
+              : query) || ""
           }
           disabled={disabled}
           onChange={e => {
