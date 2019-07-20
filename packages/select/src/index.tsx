@@ -45,7 +45,7 @@ export interface SelectProps {
   multiple?: boolean
   name?: string
   onBlur?: (e: any) => void
-  onChange: (value: any | Array<any>, name: string) => void
+  onChange?: (value: any | Array<any>, name: string) => void
   onFocus?: (e: any) => void
   onQuery?: (query: string) => void
   options?: Array<any>
@@ -213,18 +213,20 @@ export function Select({
     }
   }, [isFocused, focusedOption, options, value])
   function handleOptionClick(option: any, checked: boolean) {
-    const newValues = checked
-      ? multiple
-        ? (value || []).concat([option])
-        : option
-      : multiple
-      ? (value || []).filter((v: any) => v.id !== option.id)
-      : undefined
-    onChange(newValues, name)
-    if (!multiple && newValues) {
-      setTimeout(() => {
-        setIsFouced(false)
-      })
+    if (onChange) {
+      const newValues = checked
+        ? multiple
+          ? (value || []).concat([option])
+          : option
+        : multiple
+        ? (value || []).filter((v: any) => v.id !== option.id)
+        : undefined
+      onChange(newValues, name)
+      if (!multiple && newValues) {
+        setTimeout(() => {
+          setIsFouced(false)
+        })
+      }
     }
   }
   return (
@@ -296,6 +298,7 @@ export function Select({
               role="button"
               onClick={() =>
                 !disabled &&
+                onChange &&
                 onChange(
                   value.filter((val: any) => val.id !== v.id) as any,
                   name
