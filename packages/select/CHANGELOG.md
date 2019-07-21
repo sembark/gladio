@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.4...@tourepedia/select@0.5.5) (2019-07-21)
+
+
+### Bug Fixes
+
+* **select:** make onchange prop optional ([f3605d3](https://github.com/tourepedia/tp-ui/commit/f3605d3))
+
+
+
+
+
 ## [0.5.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.3...@tourepedia/select@0.5.4) (2019-07-19)
 
 
