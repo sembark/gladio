@@ -3,7 +3,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
     return {
       "&": {
         border: `${theme("borderWidth.default")} solid ${theme(
-          "borderColor." + color + ".500"
+          "borderColor." + color + ".400"
         )}`,
         backgroundColor: theme(`backgroundColor.${color}.100`),
         backgroundImage: `linear-gradient(to bottom, ${theme(
@@ -15,34 +15,49 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
         "&:hover, &:focus": {
           backgroundColor: theme(`backgroundColor.${color}.200`),
           backgroundImage: `linear-gradient(to bottom, ${theme(
-            "backgroundColor." + color + ".200"
+            "backgroundColor." + color + ".100"
           )}, ${theme("backgroundColor." + color + ".400")} 90%)`,
-          borderColor: theme(`borderColor.${color}.600`),
+          borderColor: theme(`borderColor.${color}.500`),
           color: theme(`textColor.${color}.900`),
         },
       },
       "&:disabled": {
-        cursor: "default",
         backgroundColor: theme(`backgroundColor.${color}.100`),
         borderColor: theme(`borderColor.${color}.300`),
-        backgroundImage: "none",
         color: theme(`textColor.gray.600`),
+        cursor: "default",
+        // Repeat `background-position` because `:hover`
+        backgroundPosition: "0 0",
+        backgroundImage: "none",
       },
     }
   }
   const buttons = {
     ".btn": {
-      padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
+      appearance: "none",
+      backgroundPosition: "-1px -1px",
+      backgroundRepeat: "repeat-x",
+      backgroundSize: "110% 110%",
       borderRadius: theme("borderRadius.default"),
+      cursor: "pointer",
+      display: "inline-block",
       fontWeight: theme("fontWeight.semibold"),
       lineHeight: 1.5,
-      display: "inline-block",
+      padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
+      position: "relative",
+      userSelect: "none",
+      verticalAlign: "middle",
+      whiteSpace: "nowrap",
       ...stateStyles(),
       "&-primary": stateStyles("primary"),
       "&-success": stateStyles("green"),
       "&-error": stateStyles("red"),
       "&-warning": stateStyles("yellow"),
       "&-accent": stateStyles("accent"),
+      "&:hover": {
+        textDecoration: "none",
+        backgroundRepeat: "repeat-x",
+      },
       "&:focus": {
         outline: "none",
         boxShadow: theme("boxShadow.outline"),

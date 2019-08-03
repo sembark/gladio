@@ -1,9 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
-import "./../lib/styles.css"
-
-const stories = storiesOf("Styles/Button", module)
+const stories = storiesOf("Styles/Components/Button", module)
 
 stories.add("Basic Buttons", () => (
   <div>
@@ -13,8 +11,28 @@ stories.add("Basic Buttons", () => (
     <button className="btn btn-error">Error</button>
     <button className="btn btn-warning">Warning</button>
     <button className="btn btn-accent">Accent</button>
+  </div>
+))
+
+stories.add("Link Buttons", () => (
+  <div>
+    <a href="#" className="btn">
+      Default
+    </a>
+    <a href="#" className="btn btn-primary">
+      Primary
+    </a>
+    <a href="#" className="btn btn-success">
+      Success
+    </a>
+    <a href="#" className="btn btn-error">
+      Error
+    </a>
+    <a href="#" className="btn btn-warning">
+      Warning
+    </a>
     <a href="#" className="btn btn-accent">
-      Anchor Button
+      Accent
     </a>
   </div>
 ))

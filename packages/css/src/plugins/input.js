@@ -1,11 +1,19 @@
 module.exports = function addInputComponentPlugin({ addComponents, theme }) {
+  const select = {
+    background: `${theme(
+      "backgroundColor.white"
+    )} url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC') no-repeat right 8px center`,
+    appearance: "none",
+    backgroundSize: "8px 10px",
+    paddingRight: theme("padding.5"),
+  }
   const inputs = {
     ".input": {
       background: theme("backgroundColor.white"),
       padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
       borderRadius: theme("borderRadius.default"),
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.500"
+        "borderColor.gray.400"
       )}`,
       display: "block",
       lineHeight: 1.5,
@@ -34,10 +42,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         minWidth: "200px",
         width: "100%",
       },
-      "select&": {
-        height: `calc(2 * ${theme("padding.ie-y")} + 1.5rem + 2px)`,
-        lineHeight: 1,
-      },
+      "select&": select,
       "&.has-error": {
         borderColor: theme("borderColor.red.700"),
       },
@@ -84,7 +89,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       },
     },
     ".form-group": {
-      marginBottom: theme("margin.6"),
+      marginBottom: theme("margin.4"),
       "& > label": {
         fontSize: theme("fontSize.sm"),
       },
@@ -95,13 +100,13 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         marginLeft: theme("margin.2"),
       },
       "&.has-error .input, &.has-error .input-group > *": {
-        borderColor: theme("borderColor.red.700"),
+        borderColor: theme("borderColor.red.600"),
       },
       "&.has-error .error-message": {
         display: "block",
         width: "fit-content",
-        backgroundColor: theme("backgroundColor.red.700"),
-        color: theme("textColor.white"),
+        backgroundColor: theme("backgroundColor.red.100"),
+        color: theme("textColor.red.700"),
         marginTop: theme("margin.2"),
         borderRadius: theme("borderRadius.default"),
         fontSize: theme("fontSize.sm"),

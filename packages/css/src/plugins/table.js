@@ -42,8 +42,11 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       "&-bordered": {
         "&, th, td": {
           border: `${theme("borderWidth.default")} solid ${theme(
-            "borderColor.gray.100"
+            "borderColor.gray.400"
           )}`,
+        },
+        "thead > tr > th": {
+          borderBottomColor: theme("borderColor.gray.400"),
         },
       },
     },
