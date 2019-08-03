@@ -1,4 +1,148 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/styles/components/button.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/components/badge.js"],{
+
+/***/ "./components/ComponentsLayout.jsx":
+/*!*****************************************!*\
+  !*** ./components/ComponentsLayout.jsx ***!
+  \*****************************************/
+/*! exports provided: ComponentsLayoutSideBar, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ComponentsLayoutSideBar", function() { return ComponentsLayoutSideBar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ComponentsLayout; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./components/Sidebar.jsx");
+/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout */ "./components/Layout.jsx");
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/ComponentsLayout.jsx";
+
+
+
+function ComponentsLayoutSideBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    scope: "/components",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "Getting Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "Components"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "Button"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/badge",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Badge"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/input",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Input"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/select",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "Select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/table",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, "Table"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/paginate",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "Paginate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/dialog",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "Dialog")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }, "Icons"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/icons",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, "Icons")));
+}
+function ComponentsLayout(_ref) {
+  var children = _ref.children,
+      meta = _ref.meta;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    meta: meta,
+    sideBar: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ComponentsLayoutSideBar, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: this
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35
+    },
+    __self: this
+  }, children);
+}
+
+/***/ }),
 
 /***/ "./components/Header.jsx":
 /*!*******************************!*\
@@ -412,151 +556,6 @@ function SideBar(_ref4) {
     },
     __self: this
   }, children));
-}
-
-/***/ }),
-
-/***/ "./components/StylesLayout.jsx":
-/*!*************************************!*\
-  !*** ./components/StylesLayout.jsx ***!
-  \*************************************/
-/*! exports provided: StylesLayoutSideBar, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StylesLayoutSideBar", function() { return StylesLayoutSideBar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StylesLayout; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./components/Sidebar.jsx");
-/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout */ "./components/Layout.jsx");
-var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/StylesLayout.jsx";
-
-
-
-function StylesLayoutSideBar() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    scope: "/styles",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, "Getting Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
-    scope: "/foundation",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, "Foundation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/colors",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 17
-    },
-    __self: this
-  }, "Colors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/spacing",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, "Spacing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/breakpoints",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, "Breakpoints"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/typography",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }, "Typography")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
-    scope: "/utilities",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 23
-    },
-    __self: this
-  }, "Utilities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/borders",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, "Borders")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
-    scope: "/components",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: this
-  }, "Components"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
-    href: "/button",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: this
-  }, "Button")));
-}
-function StylesLayout(_ref) {
-  var children = _ref.children,
-      meta = _ref.meta;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    meta: meta,
-    sideBar: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StylesLayoutSideBar, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: this
-    }),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, children);
 }
 
 /***/ }),
@@ -5647,20 +5646,17 @@ var head_manager_context_1 = __webpack_require__(/*! ./head-manager-context */ "
 var amp_1 = __webpack_require__(/*! ./amp */ "./node_modules/next-server/dist/lib/amp.js");
 
 function defaultHead() {
-  var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'next-head';
-  var inAmpMode = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var inAmpMode = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
   var head = [react_1["default"].createElement("meta", {
     key: "charSet",
-    charSet: "utf-8",
-    className: className
+    charSet: "utf-8"
   })];
 
   if (!inAmpMode) {
     head.push(react_1["default"].createElement("meta", {
       key: "viewport",
       name: "viewport",
-      content: "width=device-width,minimum-scale=1,initial-scale=1",
-      className: className
+      content: "width=device-width,minimum-scale=1,initial-scale=1"
     }));
   }
 
@@ -5748,17 +5744,10 @@ function reduceComponents(headElements, props) {
   return headElements.reduce(function (list, headElement) {
     var headElementChildren = react_1["default"].Children.toArray(headElement.props.children);
     return list.concat(headElementChildren);
-  }, []).reduce(onlyReactElement, []).reverse().concat(defaultHead('', props.inAmpMode)).filter(unique()).reverse().map(function (c, i) {
-    var className = (c.props && c.props.className ? c.props.className + ' ' : '') + 'next-head';
-
-    if (c.type === 'title' && !c.props.className) {
-      className = undefined;
-    }
-
+  }, []).reduce(onlyReactElement, []).reverse().concat(defaultHead(props.inAmpMode)).filter(unique()).reverse().map(function (c, i) {
     var key = c.key || i;
     return react_1["default"].cloneElement(c, {
-      key: key,
-      className: className
+      key: key
     });
   });
 }
@@ -5845,40 +5834,6 @@ function mitt() {
 }
 
 exports["default"] = mitt;
-
-/***/ }),
-
-/***/ "./node_modules/next-server/dist/lib/request-context.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/next-server/dist/lib/request-context.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
-
-var _defineProperty = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js"));
-
-var __importStar = void 0 && (void 0).__importStar || function (mod) {
-  if (mod && mod.__esModule) return mod;
-  var result = {};
-  if (mod != null) for (var k in mod) {
-    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-  }
-  result["default"] = mod;
-  return result;
-};
-
-(0, _defineProperty["default"])(exports, "__esModule", {
-  value: true
-});
-
-var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-
-exports.RequestContext = React.createContext(null);
 
 /***/ }),
 
@@ -6025,6 +5980,7 @@ function () {
     var initialProps = _ref.initialProps,
         pageLoader = _ref.pageLoader,
         App = _ref.App,
+        wrapApp = _ref.wrapApp,
         Component = _ref.Component,
         err = _ref.err,
         subscription = _ref.subscription;
@@ -6106,6 +6062,7 @@ function () {
     this.asPath = as;
     this.sub = subscription;
     this.clc = null;
+    this._wrapApp = wrapApp;
 
     if (true) {
       // in order for `e.state` to work on the `onpopstate` event
@@ -6618,6 +6575,7 @@ function () {
                 App = this.components['/_app'].Component;
                 _context2.next = 6;
                 return utils_1.loadGetInitialProps(App, {
+                  AppTree: this._wrapApp(App),
                   Component: Component,
                   router: this,
                   ctx: ctx
@@ -7077,21 +7035,21 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles%2Fcomponents%2Fbutton&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Fcomponents%2Fbutton.mdx!./":
-/*!********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles%2Fcomponents%2Fbutton&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Fcomponents%2Fbutton.mdx ***!
-  \********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbadge&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Fbadge.mdx!./":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbadge&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Fbadge.mdx ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/styles/components/button", function() {
-      var page = __webpack_require__(/*! ./pages/styles/components/button.mdx */ "./pages/styles/components/button.mdx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/components/badge", function() {
+      var page = __webpack_require__(/*! ./pages/components/badge.mdx */ "./pages/components/badge.mdx")
       if(true) {
-        module.hot.accept(/*! ./pages/styles/components/button.mdx */ "./pages/styles/components/button.mdx", function() {
-          if(!next.router.components["/styles/components/button"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/styles/components/button.mdx */ "./pages/styles/components/button.mdx")
-          next.router.update("/styles/components/button", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/components/badge.mdx */ "./pages/components/badge.mdx", function() {
+          if(!next.router.components["/components/badge"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/components/badge.mdx */ "./pages/components/badge.mdx")
+          next.router.update("/components/badge", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -7282,8 +7240,6 @@ function (_react$Component) {
           window.scrollTo(0, 0);
           document.body.focus();
         }
-      })["catch"](function (err) {
-        if (_this.props.onError) _this.props.onError(err);
       });
     };
 
@@ -7439,7 +7395,6 @@ var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/help
 
 exports.__esModule = true;
 exports.useRouter = useRouter;
-exports.useRequest = useRequest;
 exports.makePublicRouterInstance = makePublicRouterInstance;
 exports.createRouter = exports.withRouter = exports["default"] = void 0;
 
@@ -7455,8 +7410,6 @@ exports.Router = _router2["default"];
 exports.NextRouter = _router2.NextRouter;
 
 var _routerContext = __webpack_require__(/*! next-server/dist/lib/router-context */ "./node_modules/next-server/dist/lib/router-context.js");
-
-var _requestContext = __webpack_require__(/*! next-server/dist/lib/request-context */ "./node_modules/next-server/dist/lib/request-context.js");
 
 var _withRouter = _interopRequireDefault(__webpack_require__(/*! ./with-router */ "./node_modules/next/dist/client/with-router.js"));
 
@@ -7543,10 +7496,6 @@ exports["default"] = _default;
 
 function useRouter() {
   return _react["default"].useContext(_routerContext.RouterContext);
-}
-
-function useRequest() {
-  return _react["default"].useContext(_requestContext.RequestContext);
 } // INTERNAL APIS
 // -------------
 // (do not use following exports inside the app)
@@ -11503,10 +11452,10 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/styles/components/button.mdx":
-/*!********************************************!*\
-  !*** ./pages/styles/components/button.mdx ***!
-  \********************************************/
+/***/ "./pages/components/badge.mdx":
+/*!************************************!*\
+  !*** ./pages/components/badge.mdx ***!
+  \************************************/
 /*! exports provided: meta, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -11519,10 +11468,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "./node_modules/@mdx-js/react/dist/index.es.js");
-/* harmony import */ var _components_StylesLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/StylesLayout */ "./components/StylesLayout.jsx");
+/* harmony import */ var _components_ComponentsLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ComponentsLayout */ "./components/ComponentsLayout.jsx");
 
 
-var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages/styles/components/button.mdx";
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages/components/badge.mdx";
 
 /* @jsx mdx */
 
@@ -11531,8 +11480,8 @@ var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages
 
 
 var meta = {
-  title: "Button",
-  description: "Button component styles"
+  title: "Badge",
+  description: "Show some badges"
 };
 
 var makeShortcode = function makeShortcode(name) {
@@ -11551,7 +11500,7 @@ var makeShortcode = function makeShortcode(name) {
 var layoutProps = {
   meta: meta
 };
-var MDXLayout = _components_StylesLayout__WEBPACK_IMPORTED_MODULE_4__["default"];
+var MDXLayout = _components_ComponentsLayout__WEBPACK_IMPORTED_MODULE_4__["default"];
 function MDXContent(_ref) {
   var components = _ref.components,
       props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["components"]);
@@ -11564,94 +11513,83 @@ function MDXContent(_ref) {
       lineNumber: 23
     },
     __self: this
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h3", {
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
     },
     __self: this
-  }, "Basic Usage"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
+  }, "Installation"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
-  }, "Use ", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
-    parentName: "p",
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    parentName: "pre"
+  }, {
+    "className": "language-bash"
+  }, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
-  }, ".btn"), " class name to apply a btn look to any component."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
+  }), "npm install --save @tourepedia/badge\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 32
+    },
+    __self: this
+  }, "Usage"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
     },
     __self: this
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
   }, {
-    "className": "language-html",
-    "metastring": "live=true",
-    "live": "true"
+    "className": "language-jsx"
   }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 33
     },
     __self: this
-  }), "<button class=\"btn\" type=\"button\">Click Me!</button>\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h3", {
+  }), "import Badge from \"@tourepedia/badge\"\n\nfunction App () {\n  return <Badge>10</Badge>\n}\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
-    },
-    __self: this
-  }, "Variants"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, "Use ", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
-    parentName: "p",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 36
-    },
-    __self: this
-  }, ".btn-primary"), " to apply the primary color styles to the button"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 41
     },
     __self: this
   }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
     parentName: "pre"
   }, {
-    "className": "language-html",
+    "className": "language-jsx",
     "metastring": "live=true",
     "live": "true"
   }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 41
     },
     __self: this
-  }), "<button class=\"btn btn-primary\" type=\"button\">Click Me!</button>\n")));
+  }), "<Badge primary>10</Badge>\n")));
 }
+;
 MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 4:
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fstyles%2Fcomponents%2Fbutton&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Fcomponents%2Fbutton.mdx ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ 8:
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcomponents%2Fbadge&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Fbadge.mdx ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fstyles%2Fcomponents%2Fbutton&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Fcomponents%2Fbutton.mdx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles%2Fcomponents%2Fbutton&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Fcomponents%2Fbutton.mdx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcomponents%2Fbadge&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Fbadge.mdx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbadge&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Fbadge.mdx!./");
 
 
 /***/ }),
@@ -11667,5 +11605,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=button.js.map
+},[[8,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=badge.js.map
