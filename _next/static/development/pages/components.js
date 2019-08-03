@@ -11949,7 +11949,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcomponents&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fcomponents%2Findex.mdx ***!
   \********************************************************************************************************************************************************************************/
@@ -11972,5 +11972,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=components.js.map
