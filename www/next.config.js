@@ -23,7 +23,7 @@ module.exports = compose(
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   assetPrefix: publishBasePath,
-  exportTrailingSlash: true,
+  exportTrailingSlash: isProd,
   env: {
     hrefPrefix: publishBasePath,
     appName: "Tourepedia Design System",
