@@ -1,529 +1,187 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/index.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/styles.js"],{
 
-/***/ "./assets/undraw_experience_design.svg":
-/*!*********************************************!*\
-  !*** ./assets/undraw_experience_design.svg ***!
-  \*********************************************/
+/***/ "./components/Header.jsx":
+/*!*******************************!*\
+  !*** ./components/Header.jsx ***!
+  \*******************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Header; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Link */ "./components/Link.jsx");
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/Header.jsx";
+
+
+function Header() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+    className: "flex justify-between items-center bg-gray-100 border-b",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "p-4 inline-block hover:bg-gray-100",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, "Tourepedia Design System"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    href: "/styles",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "p-4 inline-block hover:text-gray-800",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, "Styles")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    href: "/components",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    className: "p-4 inline-block hover:text-gray-800",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Components"))));
+}
+
+/***/ }),
+
+/***/ "./components/Layout.jsx":
+/*!*******************************!*\
+  !*** ./components/Layout.jsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Layout; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header */ "./components/Header.jsx");
+/* harmony import */ var _Seo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Seo */ "./components/Seo.jsx");
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/Layout.jsx";
 
 
 
-var _ref =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 696.248,
-  cy: 355.702,
-  r: 76.752,
-  fill: "#6c63ff",
-  opacity: 0.4
-});
-
-var _ref2 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#3f3d56",
-  d: "M270 461.902h428v116H270z"
-});
-
-var _ref3 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M670.587 174.506l-17.09 8.088 15.125-11.31a85.352 85.352 0 0 0-8.258-10.867l-74.117 18.422 66.948-25.538a85.339 85.339 0 0 0-9.722-7.41l-112.936 18.19A84.64 84.64 0 0 0 512 216.902h170a84.594 84.594 0 0 0-11.413-42.395zM684.123 50.195A495.972 495.972 0 0 0 466 0C312.17 0 174.639 69.753 83.29 179.349c156.426-34.275 428.777-93.606 600.833-129.154z",
-  fill: "#f2f2f2"
-});
-
-var _ref4 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#2f2e41",
-  d: "M0 693.902h1020v2H0z"
-});
-
-var _ref5 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M595.864 216.902L538 130.952s87.631 30.592 77.686 85.95z",
-  fill: "#3f3d56"
-});
-
-var _ref6 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M598.136 216.902L656 130.952s-87.631 30.592-77.686 85.95z",
-  fill: "#6c63ff"
-});
-
-var _ref7 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M698.5 695.902h-429v-640h429zm-427-2h425v-636h-425z",
-  fill: "#2f2e41"
-});
-
-var _ref8 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#2f2e41",
-  d: "M271 71.083h427v2H271z"
-});
-
-var _ref9 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 282,
-  cy: 63.902,
-  r: 4,
-  fill: "#6c63ff"
-});
-
-var _ref10 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 293,
-  cy: 63.902,
-  r: 4,
-  fill: "#6c63ff"
-});
-
-var _ref11 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 304,
-  cy: 63.902,
-  r: 4,
-  fill: "#6c63ff"
-});
-
-var _ref12 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#6c63ff",
-  d: "M286 84.902h18v10h-18zM286 163.902h88v10h-88z"
-});
-
-var _ref13 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#f2f2f2",
-  d: "M687 94.901h-88v-10h88zM286 180.902h148v6H286zM286 193.902h140v6H286zM286 206.902h102v6H286zM320 384.902h58v6h-58zM320 397.902h54.865v6H320zM320 410.902h39.973v6H320zM455 384.902h58v6h-58zM455 397.902h54.865v6H455zM455 410.902h39.973v6H455zM595 384.902h58v6h-58zM595 397.902h54.865v6H595zM595 410.902h39.973v6H595z"
-});
-
-var _ref14 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#6c63ff",
-  d: "M410 611.902h88v10h-88z"
-});
-
-var _ref15 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#f2f2f2",
-  d: "M410 628.902h148v6H410zM410 641.902h140v6H410zM410 654.902h102v6H410z"
-});
-
-var _ref16 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#6c63ff",
-  opacity: 0.3,
-  d: "M312.5 271.902h348v2h-348zM312 306.902h74v66h-74z"
-});
-
-var _ref17 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#3f3d56",
-  d: "M447 306.902h74v66h-74zM587 306.902h74v66h-74z"
-});
-
-var _ref18 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M474.359 372.625l-.977-.02c.021-1.08.632-26.56 10.663-33.604l.56.8c-9.626 6.758-10.242 32.564-10.246 32.824z",
-  fill: "#6c63ff"
-});
-
-var _ref19 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 489.206,
-  cy: 333.798,
-  r: 4.881,
-  fill: "#6c63ff"
-});
-
-var _ref20 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M488.22 351.034a15.198 15.198 0 0 1-7.842.338 13.85 13.85 0 0 1 14.24-4.884 15.198 15.198 0 0 1-6.399 4.546zM614.359 372.625l-.977-.02c.021-1.08.632-26.56 10.663-33.604l.56.8c-9.626 6.758-10.242 32.564-10.246 32.824z",
-  fill: "#6c63ff"
-});
-
-var _ref21 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 629.206,
-  cy: 333.798,
-  r: 4.881,
-  fill: "#6c63ff"
-});
-
-var _ref22 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M628.22 351.034a15.198 15.198 0 0 1-7.842.338 13.85 13.85 0 0 1 14.24-4.884 15.198 15.198 0 0 1-6.399 4.546zM286 498.902h88v10h-88z",
-  fill: "#6c63ff"
-});
-
-var _ref23 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#f2f2f2",
-  d: "M286 515.902h148v6H286zM286 528.902h140v6H286zM286 541.902h102v6H286z"
-});
-
-var _ref24 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 611.752,
-  cy: 512.702,
-  r: 31.248,
-  fill: "#6c63ff",
-  opacity: 0.4
-});
-
-var _ref25 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 553.92,
-  cy: 527.626,
-  r: 21.92,
-  fill: "#6c63ff",
-  opacity: 0.4
-});
-
-var _ref26 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 167.5,
-  cy: 582.402,
-  r: 79,
-  fill: "#2f2e41"
-});
-
-var _ref27 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#2f2e41",
-  d: "M131.5 644.402h24v43h-24zM179.5 644.402h24v43h-24z"
-});
-
-var _ref28 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 151.5,
-  cy: 687.902,
-  rx: 20,
-  ry: 7.5,
-  fill: "#2f2e41"
-});
-
-var _ref29 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 199.5,
-  cy: 686.902,
-  rx: 20,
-  ry: 7.5,
-  fill: "#2f2e41"
-});
-
-var _ref30 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 169.5,
-  cy: 562.402,
-  r: 27,
-  fill: "#fff"
-});
-
-var _ref31 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 169.5,
-  cy: 550.402,
-  r: 9,
-  fill: "#3f3d56"
-});
-
-var _ref32 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M90.867 508.934c-6.379-28.567 14.012-57.434 45.544-64.475s62.265 10.41 68.644 38.978-14.518 39.104-46.05 46.145-61.759 7.92-68.138-20.648z",
-  fill: "#6c63ff"
-});
-
-var _ref33 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 313.528,
-  cy: 596.957,
-  rx: 39.5,
-  ry: 12.4,
-  transform: "rotate(-65.077 190.49 613.566)",
-  fill: "#2f2e41"
-});
-
-var _ref34 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 168.528,
-  cy: 620.957,
-  rx: 12.4,
-  ry: 39.5,
-  transform: "rotate(-27.893 -79.903 743.63)",
-  fill: "#2f2e41"
-});
-
-var _ref35 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 906.255,
-  cy: 625.623,
-  rx: 12.4,
-  ry: 39.5,
-  transform: "rotate(-21.078 589.082 806.44)",
-  fill: "#2f2e41"
-});
-
-var _ref36 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 893.19,
-  cy: 583.104,
-  r: 79,
-  fill: "#2f2e41"
-});
-
-var _ref37 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#2f2e41",
-  d: "M929.48 687.999l-24 .067-.12-43 24-.067zM881.483 688.137l-24 .068-.12-43 24-.067z"
-});
-
-var _ref38 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 995.737,
-  cy: 790.529,
-  rx: 20,
-  ry: 7.5,
-  transform: "rotate(-.16 -35451.447 31531.957)",
-  fill: "#2f2e41"
-});
-
-var _ref39 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 947.734,
-  cy: 789.664,
-  rx: 20,
-  ry: 7.5,
-  transform: "rotate(-.16 -35499.445 31531.093)",
-  fill: "#2f2e41"
-});
-
-var _ref40 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 891.134,
-  cy: 563.109,
-  r: 27,
-  fill: "#fff"
-});
-
-var _ref41 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 891.134,
-  cy: 563.109,
-  r: 9,
-  fill: "#3f3d56"
-});
-
-var _ref42 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M969.616 509.422c6.299-28.586-14.173-57.395-45.724-64.347s-62.236 10.584-68.535 39.17 14.628 39.062 46.18 46.015 61.78 7.747 68.08-20.838z",
-  fill: "#6c63ff"
-});
-
-var _ref43 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 1068.319,
-  cy: 648.169,
-  rx: 39.5,
-  ry: 12.4,
-  transform: "rotate(-25.535 800.187 787.505)",
-  fill: "#2f2e41"
-});
-
-var _ref44 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M932.074 611.495c.021 7.732-19.844 23.056-41.936 23.118s-42.865-21.648-42.887-29.38 20.718 1.442 42.809 1.38 41.992-2.85 42.014 4.882z",
-  fill: "#fff"
-});
-
-var _ref45 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 917.248,
-  cy: 468.702,
-  r: 110.248,
-  fill: "#6c63ff",
-  opacity: 0.4
-});
-
-var _ref46 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 190.405,
-  cy: 348.59,
-  r: 79,
-  fill: "#2f2e41"
-});
-
-var _ref47 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#2f2e41",
-  d: "M143.937 403.186l23.616 4.275-7.66 42.312-23.616-4.275zM191.169 411.737l23.616 4.275-7.66 42.312-23.616-4.275z"
-});
-
-var _ref48 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 285.687,
-  cy: 563.475,
-  rx: 7.5,
-  ry: 20,
-  transform: "rotate(-49.739 132.57 605.527)",
-  fill: "#2f2e41"
-});
-
-var _ref49 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 239.439,
-  cy: 555.103,
-  rx: 7.5,
-  ry: 20,
-  transform: "rotate(-49.739 86.321 597.155)",
-  fill: "#2f2e41"
-});
-
-var _ref50 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 195.936,
-  cy: 329.266,
-  r: 27,
-  fill: "#fff"
-});
-
-var _ref51 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 207.032,
-  cy: 319.588,
-  r: 9,
-  fill: "#3f3d56"
-});
-
-var _ref52 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M128.085 262.647c-1.188-29.247 24.019-54.02 56.3-55.331s59.415 21.335 60.603 50.582-21.252 35.892-53.534 37.203-62.181-3.207-63.37-32.454z",
-  fill: "#6c63ff"
-});
-
-var _ref53 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 349.603,
-  cy: 436.168,
-  rx: 39.5,
-  ry: 12.4,
-  transform: "rotate(-12.91 -144.159 766.354)",
-  fill: "#2f2e41"
-});
-
-var _ref54 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ellipse", {
-  cx: 194.528,
-  cy: 461.957,
-  rx: 39.5,
-  ry: 12.4,
-  transform: "rotate(-12.91 -299.233 792.143)",
-  fill: "#2f2e41"
-});
-
-var _ref55 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M168.707 379.723a18 18 0 0 0 35.425 6.413c1.77-9.782-5.793-13.244-15.575-15.015s-18.079-1.18-19.85 8.602z",
-  fill: "#fff"
-});
-
-var _ref56 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  fill: "#3f3d56",
-  d: "M305.535 263.167l70.883 21.25-18.953 63.22-70.883-21.25z"
-});
-
-var _ref57 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M312.868 333.977l-.93-.298c.33-1.03 8.232-25.261 19.863-29.127l.308.926c-11.162 3.71-19.162 28.252-19.241 28.5z",
-  fill: "#6c63ff"
-});
-
-var _ref58 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("circle", {
-  cx: 338.24,
-  cy: 301.05,
-  r: 4.881,
-  fill: "#6c63ff"
-});
-
-var _ref59 =
-/*#__PURE__*/
-react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-  d: "M332.345 317.276a15.198 15.198 0 0 1-7.609-1.927 13.85 13.85 0 0 1 15.043-.59 15.198 15.198 0 0 1-7.434 2.517z",
-  fill: "#6c63ff"
-});
-
-var SvgUndrawExperienceDesign = function SvgUndrawExperienceDesign(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", _extends({
-    viewBox: "0 0 1027.496 696.059"
-  }, props), _ref, _ref2, _ref3, _ref4, _ref5, _ref6, _ref7, _ref8, _ref9, _ref10, _ref11, _ref12, _ref13, _ref14, _ref15, _ref16, _ref17, _ref18, _ref19, _ref20, _ref21, _ref22, _ref23, _ref24, _ref25, _ref26, _ref27, _ref28, _ref29, _ref30, _ref31, _ref32, _ref33, _ref34, _ref35, _ref36, _ref37, _ref38, _ref39, _ref40, _ref41, _ref42, _ref43, _ref44, _ref45, _ref46, _ref47, _ref48, _ref49, _ref50, _ref51, _ref52, _ref53, _ref54, _ref55, _ref56, _ref57, _ref58, _ref59);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (SvgUndrawExperienceDesign);
+function Layout(_ref) {
+  var children = _ref.children,
+      sideBar = _ref.sideBar,
+      meta = _ref.meta;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }), meta ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Seo__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    title: "".concat(meta.title, " | Tourepedia Design System"),
+    description: meta.description,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }) : null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flex",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-64 bg-gray-100 border-r",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, sideBar), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+    className: "w-full py-8 px-8",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "max-w-4xl mx-auto",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    className: "text-3xl md:text-4xl font-light",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, meta.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "md:text-xl font-light",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, meta.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "mt-20",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, children)))));
+}
 
 /***/ }),
 
@@ -637,6 +295,268 @@ function SEO(_ref) {
       __self: this
     }));
   }));
+}
+
+/***/ }),
+
+/***/ "./components/Sidebar.jsx":
+/*!********************************!*\
+  !*** ./components/Sidebar.jsx ***!
+  \********************************/
+/*! exports provided: SidebarLink, SidebarLinkList, SidebarHeading, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarLink", function() { return SidebarLink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarLinkList", function() { return SidebarLinkList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarHeading", function() { return SidebarHeading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return SideBar; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Link */ "./components/Link.jsx");
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/Sidebar.jsx";
+
+
+var SideBarLinkListScope = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext("");
+var SideBarScope = react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext("");
+function SidebarLink(_ref) {
+  var href = _ref.href,
+      children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SideBarLinkListScope.Consumer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, function (scope) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: "mt-2",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      href: "".concat(scope).concat(href),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      className: "text-primary-600 hover:text-primary-800 hover:underline",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, children)));
+  });
+}
+function SidebarLinkList(_ref2) {
+  var children = _ref2.children,
+      _ref2$scope = _ref2.scope,
+      scope = _ref2$scope === void 0 ? "" : _ref2$scope;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SideBarScope.Consumer, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, function (rootScope) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SideBarLinkListScope.Provider, {
+      value: "".concat(rootScope).concat(scope),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 27
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      className: "my-4",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 28
+      },
+      __self: this
+    }, children));
+  });
+}
+function SidebarHeading(_ref3) {
+  var children = _ref3.children;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "mt-8 text-base",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, children);
+}
+function SideBar(_ref4) {
+  var children = _ref4.children,
+      _ref4$scope = _ref4.scope,
+      scope = _ref4$scope === void 0 ? "" : _ref4$scope;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SideBarScope.Provider, {
+    value: scope,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "py-4 px-5 text-sm",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, children));
+}
+
+/***/ }),
+
+/***/ "./components/StylesLayout.jsx":
+/*!*************************************!*\
+  !*** ./components/StylesLayout.jsx ***!
+  \*************************************/
+/*! exports provided: StylesLayoutSideBar, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StylesLayoutSideBar", function() { return StylesLayoutSideBar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return StylesLayout; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Sidebar */ "./components/Sidebar.jsx");
+/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Layout */ "./components/Layout.jsx");
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/components/StylesLayout.jsx";
+
+
+
+function StylesLayoutSideBar() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    scope: "/styles",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, "Getting Started")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    scope: "/foundation",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "Foundation"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/colors",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, "Colors"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/spacing",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, "Spacing"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/breakpoints",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }, "Breakpoints"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/typography",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }, "Typography")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    scope: "/utilities",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, "Utilities"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/borders",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: this
+  }, "Borders")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLinkList"], {
+    scope: "/components",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarHeading"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: this
+  }, "Components"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_1__["SidebarLink"], {
+    href: "/button",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, "Button")));
+}
+function StylesLayout(_ref) {
+  var children = _ref.children,
+      meta = _ref.meta;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    meta: meta,
+    sideBar: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(StylesLayoutSideBar, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: this
+    }),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, children);
 }
 
 /***/ }),
@@ -1530,6 +1450,27 @@ module.exports = _interopRequireWildcard;
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/@mdx-js/react/dist/index.es.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@mdx-js/react/dist/index.es.js ***!
+  \*****************************************************/
+/*! exports provided: MDXContext, MDXProvider, useMDXComponents, withMDXComponents, mdx */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MDXContext", function() { return n; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MDXProvider", function() { return a; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMDXComponents", function() { return t; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withMDXComponents", function() { return r; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mdx", function() { return p; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var n=react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({}),r=function(n){return function(r){var a=t(r.components);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(n,Object.assign({},r,{components:a}))}},t=function(r){var t=react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(n),a=t;return r&&(a="function"==typeof r?r(t):Object.assign({},t,r)),a},a=function(r){var a=t(r.components);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(n.Provider,{value:a},r.children)},o="mdxType",c={inlineCode:"code",wrapper:function(n){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,{},n.children)}},i=function(n){var r=n.components,a=n.mdxType,o=n.originalType,i=n.parentName,p=function(e,n){var r={};for(var t in e)Object.prototype.hasOwnProperty.call(e,t)&&-1===n.indexOf(t)&&(r[t]=e[t]);return r}(n,["components","mdxType","originalType","parentName"]),l=t(r);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(l[i+"."+a]||l[a]||c[a]||o,p)};function p(n,r){var t=arguments,a=r&&r.mdxType;if("string"==typeof n||a){var c=t.length,p=new Array(c);p[0]=i;var l={};for(var m in r)hasOwnProperty.call(r,m)&&(l[m]=r[m]);l.originalType=n,l[o]="string"==typeof n?n:a,p[1]=l;for(var u=2;u<c;u++)p[u]=t[u];return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement.apply(null,p)}return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement.apply(null,t)}i.displayName="MDXCreateElement";
 
 
 /***/ }),
@@ -7136,21 +7077,21 @@ exports.formatWithValidation = formatWithValidation;
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Findex.jsx!./":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Findex.jsx ***!
-  \*****************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Findex.mdx!./":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Findex.mdx ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var page = __webpack_require__(/*! ./pages/index.jsx */ "./pages/index.jsx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/styles", function() {
+      var page = __webpack_require__(/*! ./pages/styles/index.mdx */ "./pages/styles/index.mdx")
       if(true) {
-        module.hot.accept(/*! ./pages/index.jsx */ "./pages/index.jsx", function() {
-          if(!next.router.components["/"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/index.jsx */ "./pages/index.jsx")
-          next.router.update("/", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/styles/index.mdx */ "./pages/styles/index.mdx", function() {
+          if(!next.router.components["/styles"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/styles/index.mdx */ "./pages/styles/index.mdx")
+          next.router.update("/styles", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -11562,141 +11503,179 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./pages/index.jsx":
-/*!*************************!*\
-  !*** ./pages/index.jsx ***!
-  \*************************/
-/*! exports provided: default */
+/***/ "./pages/styles/index.mdx":
+/*!********************************!*\
+  !*** ./pages/styles/index.mdx ***!
+  \********************************/
+/*! exports provided: meta, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Link */ "./components/Link.jsx");
-/* harmony import */ var _components_Seo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Seo */ "./components/Seo.jsx");
-/* harmony import */ var _assets_undraw_experience_design_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../assets/undraw_experience_design.svg */ "./assets/undraw_experience_design.svg");
-var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages/index.jsx";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "meta", function() { return meta; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "./node_modules/@mdx-js/react/dist/index.es.js");
+/* harmony import */ var _components_StylesLayout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../../components/StylesLayout */ "./components/StylesLayout.jsx");
 
 
+var _jsxFileName = "/Users/sudhir/Documents/workspace/tourepedia/tp-ui/www/pages/styles/index.mdx";
+
+/* @jsx mdx */
 
 
+/* @jsx mdx */
 
-function Home() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "min-h-screen",
+
+var meta = {
+  title: "CSS",
+  description: "CSS for Tourepedia Designs System"
+};
+
+var makeShortcode = function makeShortcode(name) {
+  return function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 12
+      },
+      __self: this
+    }));
+  };
+};
+
+var layoutProps = {
+  meta: meta
+};
+var MDXLayout = _components_StylesLayout__WEBPACK_IMPORTED_MODULE_4__["default"];
+function MDXContent(_ref) {
+  var components = _ref.components,
+      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["components"]);
+
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 23
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Seo__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "Tourepedia Design System",
-    description: "Design System for building softwares for Tourepedia",
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 27
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "px-8 py-16 md:p-16 lg:py-20",
+  }, "Introduction"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 28
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "max-w-xs mx-auto lg:float-right lg:w-1/2 lg:max-w-lg",
+  }, "Our goal is to create a system that enables us to build consistent user experiences with ease, yet with enough flexibility to support the broad spectrum of GitHub websites. This goal is embedded in our design and code decisions. Our approach to CSS is influenced by utility-first css."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 29
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_undraw_experience_design_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, "Installation"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 30
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "mt-10 max-w-3xl",
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    parentName: "pre"
+  }, {
+    "className": "language-bash"
+  }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 30
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "font-normal md:font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl",
+  }), "npm install --save @tourepedia/css\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 34
     },
     __self: this
-  }, "Tourepedia Design System"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "font-light text-lg sm:text-2xl md:text-2xl lg:text-3xl",
+  }, "Usage"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 35
     },
     __self: this
-  }, "Design guidelines and tooling for building interfaces with Tourepedia's Design System"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-sm md:text-lg sm:text-normal mt-8",
+  }, "Import the css in your ", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 35
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    href: "/styles",
+  }, "js")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 36
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "text-blue-600 hover:text-blue-700 hover:underline",
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    parentName: "pre"
+  }, {
+    "className": "language-js"
+  }, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 36
     },
     __self: this
-  }, "Styles")), " ・ ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Link__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    href: "/components",
+  }), "import \"@tourepedia/css\"\n")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 40
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    className: "text-blue-600 hover:text-blue-700 hover:underline",
+  }, "or in ", Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("inlineCode", {
+    parentName: "p",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 40
     },
     __self: this
-  }, "Components")), " ・ ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://github.com/tourepedia/tp-ui",
-    className: "text-blue-600 hover:text-blue-700 hover:underline",
+  }, "sass")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
+      lineNumber: 41
     },
     __self: this
-  }, "Open-Source")))));
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    parentName: "pre"
+  }, {
+    "className": "language-sass"
+  }, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }), "@import \"@tourepedia/css\"\n")));
 }
-
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 2:
-/*!*********************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Findex.jsx ***!
-  \*********************************************************************************************************************************************************/
+/***/ 3:
+/*!************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fstyles&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Findex.mdx ***!
+  \************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Findex.jsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Findex.jsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fstyles&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Findex.mdx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fstyles&absolutePagePath=%2FUsers%2Fsudhir%2FDocuments%2Fworkspace%2Ftourepedia%2Ftp-ui%2Fwww%2Fpages%2Fstyles%2Findex.mdx!./");
 
 
 /***/ }),
@@ -11712,5 +11691,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=index.js.map
+},[[3,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=styles.js.map
