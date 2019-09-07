@@ -1223,7 +1223,7 @@ const Badge = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((_ref, ref) => {
   } = _ref,
       props = _objectWithoutProperties(_ref, ["children", "className", "primary", "fullRounded"]);
 
-  if (!children) return null;
+  if (children === null || children === undefined || typeof children === "string" && !children.trim()) return null;
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", _extends({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("badge", primary && "badge-primary", fullRounded && "badge-full-rounded", className),
     ref: ref,
@@ -1274,21 +1274,31 @@ const Button = react__WEBPACK_IMPORTED_MODULE_0__["forwardRef"]((_ref, ref) => {
   let {
     className,
     primary,
+    secondary,
+    tertiary,
+    branded,
     success,
-    error,
+    danger,
     warning,
     accent,
+    light,
+    fullWidth,
     type = "button"
   } = _ref,
-      props = _objectWithoutProperties(_ref, ["className", "primary", "success", "error", "warning", "accent", "type"]);
+      props = _objectWithoutProperties(_ref, ["className", "primary", "secondary", "tertiary", "branded", "success", "danger", "warning", "accent", "light", "fullWidth", "type"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", _extends({
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("btn", {
       "btn-primary": primary,
-      "btn-success": success,
-      "btn-error": error,
-      "btn-warning": warning,
-      "btn-accent": accent
+      "btn-secondary": secondary,
+      "btn-tertiary": tertiary,
+      branded: branded,
+      success: success,
+      danger: danger,
+      warning: warning,
+      accent: accent,
+      light: light,
+      "full-width": fullWidth
     }, className),
     ref: ref,
     type: type
@@ -1402,7 +1412,7 @@ var theme = {
             "800": "#2c5282",
             "900": "#2a4365"
         },
-        "indigo": {
+        "primary": {
             "100": "#ebf4ff",
             "200": "#c3dafe",
             "300": "#a3bffa",
@@ -1412,17 +1422,6 @@ var theme = {
             "700": "#4c51bf",
             "800": "#434190",
             "900": "#3c366b"
-        },
-        "primary": {
-            "100": "#ebf8ff",
-            "200": "#bee3f8",
-            "300": "#90cdf4",
-            "400": "#63b3ed",
-            "500": "#4299e1",
-            "600": "#3182ce",
-            "700": "#2b6cb0",
-            "800": "#2c5282",
-            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -1474,7 +1473,7 @@ var theme = {
         "64": "16rem",
         "px": "1px",
         "ie-y": "0.25rem",
-        "ie-x": "0.5rem"
+        "ie-x": "0.75rem"
     },
     "backgroundColor": {
         "transparent": "transparent",
@@ -1546,7 +1545,7 @@ var theme = {
             "800": "#2c5282",
             "900": "#2a4365"
         },
-        "indigo": {
+        "primary": {
             "100": "#ebf4ff",
             "200": "#c3dafe",
             "300": "#a3bffa",
@@ -1556,17 +1555,6 @@ var theme = {
             "700": "#4c51bf",
             "800": "#434190",
             "900": "#3c366b"
-        },
-        "primary": {
-            "100": "#ebf8ff",
-            "200": "#bee3f8",
-            "300": "#90cdf4",
-            "400": "#63b3ed",
-            "500": "#4299e1",
-            "600": "#3182ce",
-            "700": "#2b6cb0",
-            "800": "#2c5282",
-            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -1677,7 +1665,7 @@ var theme = {
             "800": "#2c5282",
             "900": "#2a4365"
         },
-        "indigo": {
+        "primary": {
             "100": "#ebf4ff",
             "200": "#c3dafe",
             "300": "#a3bffa",
@@ -1687,17 +1675,6 @@ var theme = {
             "700": "#4c51bf",
             "800": "#434190",
             "900": "#3c366b"
-        },
-        "primary": {
-            "100": "#ebf8ff",
-            "200": "#bee3f8",
-            "300": "#90cdf4",
-            "400": "#63b3ed",
-            "500": "#4299e1",
-            "600": "#3182ce",
-            "700": "#2b6cb0",
-            "800": "#2c5282",
-            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -1850,7 +1827,7 @@ var theme = {
         "auto": "auto",
         "px": "1px",
         "ie-y": "0.25rem",
-        "ie-x": "0.5rem",
+        "ie-x": "0.75rem",
         "full": "100%",
         "screen": "100vh"
     },
@@ -1901,7 +1878,7 @@ var theme = {
         "auto": "auto",
         "px": "1px",
         "ie-y": "0.25rem",
-        "ie-x": "0.5rem",
+        "ie-x": "0.75rem",
         "-1": "-0.25rem",
         "-2": "-0.5rem",
         "-3": "-0.75rem",
@@ -1921,7 +1898,7 @@ var theme = {
         "-64": "-16rem",
         "-px": "-1px",
         "-ie-y": "-0.25rem",
-        "-ie-x": "-0.5rem"
+        "-ie-x": "-0.75rem"
     },
     "maxHeight": {
         "full": "100%",
@@ -2005,7 +1982,7 @@ var theme = {
         "64": "16rem",
         "px": "1px",
         "ie-y": "0.25rem",
-        "ie-x": "0.5rem"
+        "ie-x": "0.75rem"
     },
     "stroke": {
         "current": "currentColor"
@@ -2080,7 +2057,7 @@ var theme = {
             "800": "#2c5282",
             "900": "#2a4365"
         },
-        "indigo": {
+        "primary": {
             "100": "#ebf4ff",
             "200": "#c3dafe",
             "300": "#a3bffa",
@@ -2090,17 +2067,6 @@ var theme = {
             "700": "#4c51bf",
             "800": "#434190",
             "900": "#3c366b"
-        },
-        "primary": {
-            "100": "#ebf8ff",
-            "200": "#bee3f8",
-            "300": "#90cdf4",
-            "400": "#63b3ed",
-            "500": "#4299e1",
-            "600": "#3182ce",
-            "700": "#2b6cb0",
-            "800": "#2c5282",
-            "900": "#2a4365"
         },
         "secondary": {
             "100": "#f7fafc",
@@ -2147,7 +2113,7 @@ var theme = {
         "auto": "auto",
         "px": "1px",
         "ie-y": "0.25rem",
-        "ie-x": "0.5rem",
+        "ie-x": "0.75rem",
         "1/2": "50%",
         "1/3": "33.333333%",
         "2/3": "66.666667%",
@@ -2196,13 +2162,14 @@ exports["default"] = theme;
 /*!*****************************************************!*\
   !*** ./node_modules/@tourepedia/dialog/es/index.js ***!
   \*****************************************************/
-/*! exports provided: useDialog, DialogDocument, DialogHeader, DialogTitle, DialogBody, DialogFooter, Dialog, default */
+/*! exports provided: useDialog, DialogDocument, DialogCloseButton, DialogHeader, DialogTitle, DialogBody, DialogFooter, Dialog, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useDialog", function() { return useDialog; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogDocument", function() { return DialogDocument; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogCloseButton", function() { return DialogCloseButton; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogHeader", function() { return DialogHeader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogTitle", function() { return DialogTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogBody", function() { return DialogBody; });
@@ -2235,6 +2202,10 @@ function useDialog(initialOpen = false) {
   const [isOpen, set] = useState(initialOpen);
   return [isOpen, () => set(true), () => set(false)];
 }
+const DialogContext = react__WEBPACK_IMPORTED_MODULE_0__["createContext"]({
+  open: false,
+  onClose: undefined
+});
 const DIALOG_BASE_CLASS_NAME = "dialog";
 const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`;
 function DialogDocument({
@@ -2246,23 +2217,42 @@ function DialogDocument({
     className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(`${DIALOG_BASE_CLASS_NAME}-document`, className)
   }, children);
 }
-const DialogHeader = forwardRef((_ref, ref) => {
+function DialogCloseButton(_ref) {
   let {
-    className
+    className,
+    children,
+    type
   } = _ref,
-      props = _objectWithoutProperties(_ref, ["className"]);
+      props = _objectWithoutProperties(_ref, ["className", "children", "type"]);
+
+  const {
+    onClose
+  } = react__WEBPACK_IMPORTED_MODULE_0__["useContext"](DialogContext);
+  return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", _extends({
+    type: "button",
+    onClick: onClose,
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()("dialog-close-btn", className)
+  }, props), children || react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", null, "\xD7"));
+}
+const DialogHeader = forwardRef((_ref2, ref) => {
+  let {
+    className,
+    closeButton,
+    children
+  } = _ref2,
+      props = _objectWithoutProperties(_ref2, ["className", "closeButton", "children"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", _extends({
     ref: ref,
     className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(`${DIALOG_BASE_CLASS_NAME}-header`, className)
-  }, props));
+  }, props), closeButton ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DialogCloseButton, null) : null, children);
 });
 DialogHeader.displayName = "DialogHeader";
-const DialogTitle = forwardRef((_ref2, ref) => {
+const DialogTitle = forwardRef((_ref3, ref) => {
   let {
     className
-  } = _ref2,
-      props = _objectWithoutProperties(_ref2, ["className"]);
+  } = _ref3,
+      props = _objectWithoutProperties(_ref3, ["className"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("h3", _extends({
     ref: ref,
@@ -2270,11 +2260,11 @@ const DialogTitle = forwardRef((_ref2, ref) => {
   }, props));
 });
 DialogTitle.displayName = "DialogTitle";
-const DialogBody = forwardRef((_ref3, ref) => {
+const DialogBody = forwardRef((_ref4, ref) => {
   let {
     className
-  } = _ref3,
-      props = _objectWithoutProperties(_ref3, ["className"]);
+  } = _ref4,
+      props = _objectWithoutProperties(_ref4, ["className"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", _extends({
     ref: ref,
@@ -2282,11 +2272,11 @@ const DialogBody = forwardRef((_ref3, ref) => {
   }, props));
 });
 DialogBody.displayName = "DialogBody";
-const DialogFooter = forwardRef((_ref4, ref) => {
+const DialogFooter = forwardRef((_ref5, ref) => {
   let {
     className
-  } = _ref4,
-      props = _objectWithoutProperties(_ref4, ["className"]);
+  } = _ref5,
+      props = _objectWithoutProperties(_ref5, ["className"]);
 
   return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", _extends({
     ref: ref,
@@ -2302,7 +2292,6 @@ function Dialog({
   autoFocus = true,
   enforceFocus = true,
   closeOnEscape = true,
-  closeButton,
   className
 }) {
   const wrapperRef = useRef(null); // set the styles for the container
@@ -2326,6 +2315,12 @@ function Dialog({
     enforceFocus,
     autoFocus
   });
+  const dialogContext = react__WEBPACK_IMPORTED_MODULE_0__["useMemo"](() => {
+    return {
+      open,
+      onClose
+    };
+  }, [onClose, open]);
   if (!open) return null;
   if (!container) return null;
   return react_dom__WEBPACK_IMPORTED_MODULE_1__["createPortal"](react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("dialog", {
@@ -2342,10 +2337,9 @@ function Dialog({
     tabIndex: -1,
     "aria-modal": true,
     className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(DIALOG_BASE_CLASS_NAME, className)
-  }, closeButton ? react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", {
-    onClick: onClose,
-    className: `${DIALOG_BASE_CLASS_NAME}-close-btn`
-  }, "\xD7") : null, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DialogDocument, null, children)), container);
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DialogContext.Provider, {
+    value: dialogContext
+  }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"](DialogDocument, null, children))), container);
 }
 Dialog.Header = DialogHeader;
 Dialog.Title = DialogTitle;
@@ -4344,14 +4338,13 @@ function Loader({
     style: {
       position: "absolute",
       right: "10px",
-      bottom: "10px",
-      width: "20px",
-      height: "20px",
+      bottom: ".6rem",
+      width: "1rem",
+      height: "1rem",
       borderRadius: "50%",
       overflow: "hidden",
       border: "2px solid #a0aec0",
-      borderTop: "none",
-      borderLeft: "none",
+      borderTopColor: "transparent",
       transform: `rotate(${deg}deg)`
     }
   });
@@ -23665,12 +23658,7 @@ function () {
         var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
         // "<page>/index.html" directly for the SSR page.
 
-        if (true) {
-          // @ts-ignore this is temporarily global (attached to window)
-          if (__NEXT_DATA__.nextExport) {
-            as = rewrite_url_for_export_1.rewriteUrlForNextExport(as);
-          }
-        }
+        if (false) {}
 
         _this2.abortComponentLoad(as); // If the url change is only related to a hash change
         // We should not proceed. We should only change the state.
@@ -47468,7 +47456,7 @@ var components = {
   },
   inlineCode: function inlineCode(props) {
     return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_5__["default"])({
-      className: "bg-gray-100 text-red-500 px-1 py-1px rounded leading-loose"
+      className: "bg-accent-500 text-white px-1 py-1 rounded leading-loose"
     }, props, {
       __source: {
         fileName: _jsxFileName,
@@ -47479,7 +47467,7 @@ var components = {
   },
   blockquote: function blockquote(props) {
     return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("blockquote", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_5__["default"])({
-      className: "border-l-4 text-gray-600 border-gray-300 px-2 pt-4 mb-4 pb-px bg-gray-100"
+      className: "border-l-4 text-gray-600 border-gray-300 px-2 py-4 mb-4 bg-gray-100"
     }, props, {
       __source: {
         fileName: _jsxFileName,
