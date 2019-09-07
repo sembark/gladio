@@ -2,27 +2,16 @@ import Layout from "../../components/ComponentsLayout"
 
 export const meta = {
     title: "Icons",
-    description: "Available Icons"
+    description: "Available Icons",
+    name: "@tourepedia/icons",
+    usage: `import { AddressBookIcon } from "@tourepedia/icons"
+function App () {
+  return <AddressBookIcon />
+}`
 };
 
 export default Layout
 
-
-## Installation
-
-```bash
-npm install --save @tourepedia/icons
-```
-
-## Usage
-
-```jsx
-import { AddressBookIcon } from "@tourepedia/icons"
-
-function App () {
-  return <AddressBookIcon />
-}
-```
 
 ## Available Icons
 
@@ -48,4 +37,12 @@ function () {
   })}
   </div>
 }
+```
+
+## Playground
+
+```jsx live=true
+<Button primary branded>
+  <Icons.CancelIcon /> Cancel
+</Button>
 ```

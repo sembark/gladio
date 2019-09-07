@@ -2,28 +2,20 @@ import Layout from "../../components/ComponentsLayout"
 
 export const meta = {
     title: "Badge",
-    description: "Show some badges"
+    description: "Show some badges",
+    name: "@tourepedia/badge",
+    usage:`import Badge from "@tourepedia/badge"
+function App () {
+  return <Badge>10</Badge>
+}`
 };
 
 export default Layout
 
+> Passing a `null` or `empty` values as children will render **NOT** render a Badge
 
-## Installation
-
-```bash
-npm install --save @tourepedia/badge
-```
-
-## Usage
-
-```jsx
-import Badge from "@tourepedia/badge"
-
-function App () {
-  return <Badge>10</Badge>
-}
-```
+## Playground
 
 ```jsx live=true
-<Badge primary>10</Badge>
+<Badge primary fullRounded>9</Badge>
 ```

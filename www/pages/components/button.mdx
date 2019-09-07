@@ -2,28 +2,48 @@ import Layout from "../../components/ComponentsLayout"
 
 export const meta = {
     title: "Button",
-    description: "Button is just a wrapper around the native button element to privide convinient for styling."
+    description: "Button is just a wrapper around the native button element to privide convinient for styling.",
+    name: "@tourepedia/button",
+    usage: `import Button from '@tourepedia/button'
+function App () {
+  return <Button>Submit</Button>
+}`
 };
 
 export default Layout
 
+## Hierarchy and Semantics/Colors
 
-## Installation
+Button component has two main type of props that changes the visual representation: Hierarchy(Order) and Semantics (Colors). We can use a combination of these two type of attributes of our purpose.
 
-```bash
-npm install --save @tourepedia/button
-```
+### Hierarchy
 
-## Usage
-
-```jsx
-import Button from "@tourepedia/button"
-
-function App () {
-  return <Button>Button</Button>
-}
-```
+We have three levels for hierarchy: `primary`, `secondary` and `tertiary`. Hierarchy decides which button should be more prominent. You can pass one of these as booleans.
 
 ```jsx live=true
 <Button primary type="button">Click Me!</Button>
+```
+
+### Semantics/Colors
+
+Semantics add the state/meaning of the type of the action a button represents. We have following semantics/colors
+modifiers that can be used to change the apperance:
+`branded`, `success`, `danger`, `warning` and `accent`. Any of these can be passed as a boolean props to apply styles
+for it.
+
+
+```jsx live=true
+<Button branded>Click Me!</Button>
+```
+
+
+> All type="submit" buttons are default to `primary and branded` states which can be overwritten.
+
+
+## Playground
+
+Play will all the props here.
+
+```jsx live=true
+<Button warning primary>Click Me!</Button>
 ```

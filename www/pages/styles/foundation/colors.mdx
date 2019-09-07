@@ -9,12 +9,12 @@ export const meta = {
 export default Layout
 
 export function Palette ({value, shade}) {
-  return <div className="inline-block w-20 m-2 text-gray-700 text-sm text-center">
-    <div className="uppercase">{value}</div>
-    <div className="w-12 h-12 shadow rounded-full my-2 mx-auto" style={{
+return <div className="inline-block p-3 text-gray-700 text-sm" style={{ minWidth: "100px"}}>
+    {shade ? <div className="text-xs">{shade}</div> :null}
+    <div className="w-8 h-8 shadow rounded-full my-2 mr-2" style={{
       backgroundColor: value
     }} />
-    {shade ? <div className="text-xs">{shade}</div> :null}
+    <div className="uppercase text-xs font-bold">{value}</div>
   </div>
 }
 
@@ -22,14 +22,16 @@ export function ColorPalette () {
   return <div>
     {Object.keys(theme.colors).map((name) => {
       const value = theme.colors[name]
-      return <div key={name}>
-        <h4 className="capitalize mt-4">
+      return <div key={name} className="inline-block align-top min-w-sm mb-2 py-6 border-b" style={{ minWidth: "200px"}}>
+        <h4 className="capitalize py-3">
           {name}
         </h4>
+        <div className="-m-3">
         {!value ? null : typeof value === "string" ? <Palette value={value} /> : typeof value === "object" ?
         Object.keys(value).map(shade => {
         return <Palette value={value[shade]} key={shade} shade={shade} />
         }) : null}
+        </div>
       </div>
     })}
   </div>

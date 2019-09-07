@@ -2,24 +2,9 @@ import Layout from "../../components/ComponentsLayout"
 
 export const meta = {
     title: "Dialog",
-    description: "Dialog component for React built on Tourepedia Design System"
-};
-
-export default Layout
-
-
-## Installation
-
-```bash
-npm install --save @tourepedia/dialog
-```
-
-
-## Usage
-
-```jsx
-import Dialog, { useDialog } from "@tourepedia/dialog"
-
+    description: "Dialog component for React built on Tourepedia Design System",
+    name: "@tourepedia/dialog",
+    usage: `import Dialog, { useDialog } from "@tourepedia/dialog"
 function App () {
   const [isOpen, open, close] = useDialog(false)
   return <>
@@ -28,15 +13,20 @@ function App () {
     </Dialog>
     <Button onClick={open}>Open</Button>
   </>
-}
-```
+}`
+};
+
+export default Layout
+
+
+## Playground
 
 ```jsx live=true
 function () {
   const [isOpen, open, close] = useDialog(false)
   return <div>
     <Dialog open={isOpen} onClose={close}>
-      <Dialog.Header>
+      <Dialog.Header closeButton>
         <Dialog.Title>Dialog Title</Dialog.Title>
       </Dialog.Header>
       <Dialog.Body>

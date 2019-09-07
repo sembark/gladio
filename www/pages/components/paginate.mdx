@@ -2,23 +2,9 @@ import Layout from "../../components/ComponentsLayout"
 
 export const meta = {
     title: "Paginate",
-    description: "Pagination component"
-};
-
-export default Layout
-
-
-## Installation
-
-```bash
-npm install --save @tourepedia/paginate
-```
-
-## Usage
-
-```jsx
-import Paginate from "@tourepedia/paginate"
-
+    description: "Pagination component",
+    name: "@tourepedia/paginate",
+    usage: `import Paginate from "@tourepedia/paginate"
 function App () {
   return <Paginate
     from={1}
@@ -29,8 +15,12 @@ function App () {
     isFetching={false}
     onChange={page => {}}
   />
-}
-```
+}`
+};
+
+export default Layout
+
+## Playground
 
 ```jsx live=true
 function () {
