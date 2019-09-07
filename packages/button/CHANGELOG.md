@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.3.0...@tourepedia/button@0.3.1) (2019-09-07)
+
+
+### Bug Fixes
+
+* **css:** modify css for better api and look ([88de18d](https://github.com/tourepedia/tp-ui/commit/88de18d))
+
+
+
+
+
 # [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.2.0...@tourepedia/button@0.3.0) (2019-06-22)
 
 

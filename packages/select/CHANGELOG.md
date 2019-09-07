@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.5...@tourepedia/select@0.5.6) (2019-09-07)
+
+
+### Bug Fixes
+
+* **css:** modify css for better api and look ([88de18d](https://github.com/tourepedia/tp-ui/commit/88de18d))
+
+
+
+
+
 ## [0.5.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.4...@tourepedia/select@0.5.5) (2019-07-21)
 
 
