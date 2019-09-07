@@ -1,34 +1,35 @@
 module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
-  function stateStyles(color = "secondary") {
+  function themeStyles(label, color) {
     return {
-      "&": {
-        border: `${theme("borderWidth.default")} solid ${theme(
-          "borderColor." + color + ".400"
-        )}`,
-        backgroundColor: theme(`backgroundColor.${color}.100`),
-        backgroundImage: `linear-gradient(to bottom, ${theme(
-          "backgroundColor." + color + ".100"
-        )}, ${theme("backgroundColor." + color + ".300")} 90%)`,
-        color: theme(`textColor.${color}.900`),
-      },
-      "&:not(:disabled)": {
-        "&:hover, &:focus": {
-          backgroundColor: theme(`backgroundColor.${color}.200`),
-          backgroundImage: `linear-gradient(to bottom, ${theme(
-            "backgroundColor." + color + ".100"
-          )}, ${theme("backgroundColor." + color + ".400")} 90%)`,
+      [`&-secondary.${label}, &.${label}`]: {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.${color}.400`),
+        color: theme(`textColor.${color}.700`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.transparent`),
           borderColor: theme(`borderColor.${color}.500`),
           color: theme(`textColor.${color}.900`),
         },
       },
-      "&:disabled": {
-        backgroundColor: theme(`backgroundColor.${color}.100`),
-        borderColor: theme(`borderColor.${color}.300`),
-        color: theme(`textColor.gray.600`),
-        cursor: "default",
-        // Repeat `background-position` because `:hover`
-        backgroundPosition: "0 0",
-        backgroundImage: "none",
+      [`&-tertiary.${label}`]: {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.transparent`),
+        color: theme(`textColor.${color}.800`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.transparent`),
+          borderColor: theme(`borderColor.transparent`),
+          color: theme(`textColor.${color}.900`),
+        },
+      },
+      [`&-primary.${label}`]: {
+        backgroundColor: theme(`backgroundColor.${color}.700`),
+        borderColor: theme(`borderColor.${color}.700`),
+        color: theme(`textColor.white`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.${color}.600`),
+          borderColor: theme(`borderColor.${color}.600`),
+          color: theme(`textColor.white`),
+        },
       },
     }
   }
@@ -48,15 +49,89 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       userSelect: "none",
       verticalAlign: "middle",
       whiteSpace: "nowrap",
-      ...stateStyles(),
-      "&-primary": stateStyles("primary"),
-      "&-success": stateStyles("green"),
-      "&-error": stateStyles("red"),
-      "&-warning": stateStyles("yellow"),
-      "&-accent": stateStyles("accent"),
+      border: `${theme("borderWidth.default")} solid ${theme(
+        "borderColor.gray.400"
+      )}`,
+      willChange: "background, border-color, color",
+      transition: "all .15s ease-in-out",
       "&:hover": {
         textDecoration: "none",
-        backgroundRepeat: "repeat-x",
+      },
+      "&[type='submit']": {
+        ...themeStyles("branded", "primary")["&-primary.branded"],
+      },
+      "&, &&-secondary": {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.secondary.400`),
+        color: theme(`backgroundColor.secondary.700`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.transparent`),
+          borderColor: theme(`borderColor.secondary.500`),
+          color: theme(`backgroundColor.secondary.900`),
+        },
+      },
+      "&&-primary": {
+        backgroundColor: theme(`backgroundColor.secondary.200`),
+        borderColor: theme(`borderColor.secondary.300`),
+        color: theme(`backgroundColor.secondary.700`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.secondary.300`),
+          borderColor: theme(`borderColor.secondary.400`),
+          color: theme(`backgroundColor.secondary.800`),
+        },
+      },
+      "&&-tertiary": {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.transparent`),
+        color: theme(`backgroundColor.secondary.700`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.transparent`),
+          borderColor: theme(`borderColor.transparent`),
+          color: theme(`backgroundColor.secondary.900`),
+        },
+      },
+      "&-secondary.light, &.light": {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.white`),
+        color: theme(`textColor.white`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.gray.100`),
+          borderColor: theme(`borderColor.gray.100`),
+          color: theme(`textColor.gray.800`),
+        },
+      },
+      "&-tertiary.light": {
+        backgroundColor: theme(`backgroundColor.transparent`),
+        borderColor: theme(`borderColor.transparent`),
+        color: theme(`textColor.white`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.transparent`),
+          borderColor: theme(`borderColor.transparent`),
+          color: theme(`textColor.white`),
+        },
+      },
+      "&-primary.light": {
+        backgroundColor: theme(`backgroundColor.white`),
+        borderColor: theme(`borderColor.white`),
+        color: theme(`textColor.gray.700`),
+        "&:hover": {
+          backgroundColor: theme(`backgroundColor.white`),
+          borderColor: theme(`borderColor.white`),
+          color: theme(`textColor.gray.900`),
+        },
+      },
+      ...themeStyles("branded", "primary"),
+      ...themeStyles("success", "green"),
+      ...themeStyles("danger", "red"),
+      ...themeStyles("warning", "yellow"),
+      ...themeStyles("accent", "accent"),
+      "&.full-width": {
+        display: "block",
+        width: "100%",
+      },
+      "&:disabled": {
+        opacity: 0.8,
+        cursor: "default",
       },
       "&:focus": {
         outline: "none",

@@ -8,11 +8,11 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
       whiteSpace: "nowrap",
       textAlign: "center",
       display: "inline-block",
-      backgroundColor: theme("backgroundColor.gray.100"),
+      verticalAlign: "baseline",
+      backgroundColor: theme("backgroundColor.white"),
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.200"
+        "borderColor.gray.400"
       )}`,
-      minWidth: "2.2em",
       borderRadius: theme("borderRadius.default"),
       "&-list": {
         display: "inline-block",

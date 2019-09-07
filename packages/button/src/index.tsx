@@ -5,10 +5,17 @@ import classNames from "classnames"
 export type Button = Omit<React.HTMLProps<HTMLButtonElement>, "type" | "as"> & {
   type?: "button" | "submit" | "reset"
   primary?: boolean
+  secondary?: boolean
+  tertiary?: boolean
+
+  branded?: boolean
   success?: boolean
-  error?: boolean
+  danger?: boolean
   warning?: boolean
   accent?: boolean
+  light?: boolean
+
+  fullWidth?: boolean
 }
 
 const Button = React.forwardRef(
@@ -16,10 +23,15 @@ const Button = React.forwardRef(
     {
       className,
       primary,
+      secondary,
+      tertiary,
+      branded,
       success,
-      error,
+      danger,
       warning,
       accent,
+      light,
+      fullWidth,
       type = "button",
       ...props
     }: Button,
@@ -31,10 +43,15 @@ const Button = React.forwardRef(
           "btn",
           {
             "btn-primary": primary,
-            "btn-success": success,
-            "btn-error": error,
-            "btn-warning": warning,
-            "btn-accent": accent,
+            "btn-secondary": secondary,
+            "btn-tertiary": tertiary,
+            branded: branded,
+            success: success,
+            danger: danger,
+            warning: warning,
+            accent: accent,
+            light: light,
+            "full-width": fullWidth,
           },
           className
         )}

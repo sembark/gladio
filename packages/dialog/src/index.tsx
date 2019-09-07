@@ -11,6 +11,14 @@ export function useDialog(
   return [isOpen, () => set(true), () => set(false)]
 }
 
+const DialogContext = React.createContext<{
+  open?: boolean
+  onClose?: () => void
+}>({
+  open: false,
+  onClose: undefined,
+})
+
 const DIALOG_BASE_CLASS_NAME = "dialog"
 const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
 
@@ -28,17 +36,48 @@ export function DialogDocument({
   )
 }
 
+export function DialogCloseButton({
+  className,
+  children,
+  type,
+  ...props
+}: React.HTMLProps<HTMLButtonElement>) {
+  const { onClose } = React.useContext(DialogContext)
+  return (
+    <button
+      type="button"
+      onClick={onClose}
+      className={classNames("dialog-close-btn", className)}
+      {...props}
+    >
+      {children || <span>&times;</span>}
+    </button>
+  )
+}
+
 export const DialogHeader = forwardRef(
   (
-    { className, ...props }: React.HTMLProps<HTMLDivElement>,
+    {
+      className,
+      closeButton,
+      children,
+      ...props
+    }: React.HTMLProps<HTMLDivElement> & {
+      closeButton?: boolean
+    },
     ref: React.Ref<HTMLDivElement>
-  ) => (
-    <div
-      ref={ref}
-      className={classNames(`${DIALOG_BASE_CLASS_NAME}-header`, className)}
-      {...props}
-    />
-  )
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={classNames(`${DIALOG_BASE_CLASS_NAME}-header`, className)}
+        {...props}
+      >
+        {closeButton ? <DialogCloseButton /> : null}
+        {children}
+      </div>
+    )
+  }
 )
 DialogHeader.displayName = "DialogHeader"
 
@@ -117,12 +156,8 @@ interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
    * @default true
    */
   closeOnEscape?: boolean
-  /**
-   * Wether to render a close button or not
-   * @default false
-   */
-  closeButton?: boolean
 }
+
 export function Dialog({
   container = typeof document !== "undefined" ? document.body : undefined,
   children = null,
@@ -131,7 +166,6 @@ export function Dialog({
   autoFocus = true,
   enforceFocus = true,
   closeOnEscape = true,
-  closeButton,
   className,
 }: DialogProps) {
   const wrapperRef = useRef<HTMLDialogElement>(null)
@@ -150,6 +184,12 @@ export function Dialog({
     }
   }, [open])
   useEnforceFocus(wrapperRef, open, { enforceFocus, autoFocus })
+  const dialogContext = React.useMemo(() => {
+    return {
+      open,
+      onClose,
+    }
+  }, [onClose, open])
   if (!open) return null
   if (!container) return null
   return ReactDOM.createPortal(
@@ -168,15 +208,9 @@ export function Dialog({
       aria-modal={true}
       className={classNames(DIALOG_BASE_CLASS_NAME, className)}
     >
-      {closeButton ? (
-        <button
-          onClick={onClose}
-          className={`${DIALOG_BASE_CLASS_NAME}-close-btn`}
-        >
-          &times;
-        </button>
-      ) : null}
-      <DialogDocument>{children}</DialogDocument>
+      <DialogContext.Provider value={dialogContext}>
+        <DialogDocument>{children}</DialogDocument>
+      </DialogContext.Provider>
     </dialog>,
     container
   )

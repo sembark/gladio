@@ -8,7 +8,12 @@ export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
 
 export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
   ({ children, className, primary, fullRounded, ...props }, ref) => {
-    if (!children) return null
+    if (
+      children === null ||
+      children === undefined ||
+      (typeof children === "string" && !children.trim())
+    )
+      return null
     return (
       <span
         className={classNames(

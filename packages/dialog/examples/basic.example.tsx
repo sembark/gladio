@@ -2,6 +2,7 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Dialog, { useDialog } from "./../src/index"
+import Button from "./../../button/src"
 
 const stories = storiesOf("Components/Dialog", module)
 
@@ -14,12 +15,12 @@ stories.add("Dialog", () => {
           Use dialog component to show a ui inside a popup
         </h3>
         <div className="text-center">
-          <button onClick={open} className="border rounded py-2 px-3">
+          <Button primary branded onClick={open}>
             Open The Dialog
-          </button>
+          </Button>
         </div>
-        <Dialog open={isOpen} closeButton onClose={close}>
-          <Dialog.Header>
+        <Dialog open={isOpen} onClose={close}>
+          <Dialog.Header closeButton>
             <Dialog.Title>Terms and Conditions</Dialog.Title>
           </Dialog.Header>
           <Dialog.Body>
@@ -58,15 +59,12 @@ stories.add("Dialog", () => {
             </p>
           </Dialog.Body>
           <Dialog.Footer>
-            <button
-              onClick={close}
-              className="border rounded py-2 px-3 border-primary-600 bg-primary-600 hover:bg-primary-700 text-white"
-            >
+            <Button onClick={close} primary branded>
               Yes. I Agree!
-            </button>
-            <button onClick={close} className="border rounded py-2 px-3 ml-4">
+            </Button>
+            <Button onClick={close} tertiary>
               Naah!
-            </button>
+            </Button>
           </Dialog.Footer>
         </Dialog>
       </div>

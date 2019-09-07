@@ -8,7 +8,7 @@ module.exports = {
       spacing: {
         // spacing for interactive elements like buttons, inputs
         "ie-y": spacing[1],
-        "ie-x": spacing[2],
+        "ie-x": spacing[3],
       },
     },
     colors: {
@@ -21,8 +21,7 @@ module.exports = {
       yellow: colors.yellow,
       green: colors.green,
       blue: colors.blue,
-      indigo: colors.indigo,
-      primary: colors.blue,
+      primary: colors.indigo,
       secondary: colors.gray,
       accent: colors.pink,
     },

@@ -21,14 +21,13 @@ function Loader({ duration = 500 }: { duration?: number }) {
       style={{
         position: "absolute",
         right: "10px",
-        bottom: "10px",
-        width: "20px",
-        height: "20px",
+        bottom: ".6rem",
+        width: "1rem",
+        height: "1rem",
         borderRadius: "50%",
         overflow: "hidden",
         border: "2px solid #a0aec0",
-        borderTop: "none",
-        borderLeft: "none",
+        borderTopColor: "transparent",
         transform: `rotate(${deg}deg)`,
       }}
     />
