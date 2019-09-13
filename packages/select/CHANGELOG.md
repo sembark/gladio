@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.6.0...@tourepedia/select@0.7.0) (2019-09-13)
+
+
+### Features
+
+* **inline-select:** add inline select feature ([8d41260](https://github.com/tourepedia/tp-ui/commit/8d41260))
+
+
+
+
+
 # [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.6...@tourepedia/select@0.6.0) (2019-09-13)
 
 
