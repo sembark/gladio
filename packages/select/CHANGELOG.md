@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.6...@tourepedia/select@0.6.0) (2019-09-13)
+
+
+### Features
+
+* **custom-option:** add custom option render for select ([03b9316](https://github.com/tourepedia/tp-ui/commit/03b9316))
+
+
+
+
+
 ## [0.5.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.5.5...@tourepedia/select@0.5.6) (2019-09-07)
 
 
