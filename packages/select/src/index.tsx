@@ -34,6 +34,16 @@ function Loader({ duration = 500 }: { duration?: number }) {
   )
 }
 
+function OptionItemRenderer({
+  option,
+  labelKey,
+}: {
+  option: any
+  labelKey: string
+}) {
+  return <span>{option[labelKey]}</span>
+}
+
 export interface SelectProps {
   className?: string
   creatable?: boolean
@@ -54,6 +64,7 @@ export interface SelectProps {
   searchable?: boolean
   value?: any | Array<any>
   isLoading?: boolean
+  optionRenderer?: typeof OptionItemRenderer
 }
 
 export function Select({
@@ -76,6 +87,7 @@ export function Select({
   searchable = true,
   value,
   isLoading,
+  optionRenderer: OptionRenderer = OptionItemRenderer,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -282,7 +294,17 @@ export function Select({
                   changeFocusedOption(i)
                 }}
               >
-                {option[labelKey]}
+                <div className="flex items-center">
+                  <input
+                    readOnly
+                    type="checkbox"
+                    checked={checked}
+                    className="mr-2"
+                  />
+                  <div>
+                    <OptionRenderer option={option} labelKey={labelKey} />
+                  </div>
+                </div>
               </Option>
             )
           })}
@@ -304,7 +326,10 @@ export function Select({
                 )
               }
             >
-              {v[labelKey]}
+              <div className="flex items-center">
+                <input readOnly type="checkbox" checked className="mr-2" />
+                <div>{v[labelKey]}</div>
+              </div>
             </li>
           ))}
         </ul>

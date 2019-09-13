@@ -40,7 +40,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       whiteSpace: "nowrap",
       listStyle: "none",
       display: "block",
-      padding: `${theme("padding.2")} ${theme("padding.4")}`,
+      padding: `${theme("spacing.ie-y")} ${theme("spacing.ie-x")}`,
       outline: "none !important",
       cursor: "pointer",
     },
@@ -58,10 +58,6 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     ".select [role='listbox'] [aria-selected='true']": {
       background: theme("backgroundColor.gray.300"),
     },
-    ".select [role='listbox'] [aria-selected='true']:before": {
-      content: "'\\2713 '",
-      marginRight: "5px",
-    },
     ".select ul": {
       display: "block",
       listStyle: "none",
@@ -77,10 +73,6 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       fontSize: theme("fontSize.sm"),
       cursor: "pointer",
       background: theme("backgroundColor.gray.300"),
-    },
-    ".select .selected-list li:before": {
-      content: "'\\2713 '",
-      marginRight: "5px",
     },
   }
   addComponents(select)

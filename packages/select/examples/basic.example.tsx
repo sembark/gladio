@@ -9,34 +9,42 @@ const countries = [
   {
     id: 1,
     name: "India",
+    flag: "🇮🇳",
   },
   {
     id: 2,
-    name: "US",
+    name: "United States",
+    flag: "🇺🇸",
   },
   {
     id: 3,
     name: "China",
+    flag: "🇨🇳",
   },
   {
     id: 4,
     name: "Bhutan",
+    flag: "🇧🇹",
   },
   {
     id: 5,
     name: "Nepal",
+    flag: "🇳🇵",
   },
   {
     id: 6,
     name: "Pakisthan",
+    flag: "🇵🇰",
   },
   {
     id: 7,
-    name: "England",
+    name: "United Kingdom",
+    flag: "🇬🇧",
   },
   {
     id: 8,
     name: "New Zealand",
+    flag: "🇳🇿",
   },
 ]
 
@@ -168,6 +176,62 @@ stories.add("Without searching", () => (
       name="name"
       searchable={false}
       options={countries}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
+    />
+  </div>
+))
+
+const hotels = [
+  {
+    id: 1,
+    name: "Tourepedia Hotels",
+    location: "Jaipur",
+    stars: 3,
+  },
+  {
+    id: 2,
+    name: "Tourepedia Hotels",
+    location: "Bikaner",
+    stars: 3,
+  },
+  {
+    id: 3,
+    name: "Another Hotel",
+    location: "Jaipur",
+    stars: 5,
+  },
+]
+
+stories.add("With Custom Option Renderer", () => (
+  <div className="max-w-lg mx-auto">
+    <Select
+      value={countries[1]}
+      label="Select Location"
+      options={countries}
+      optionRenderer={({ option }) => (
+        <span>
+          {option.flag} {option.name}
+        </span>
+      )}
+      onChange={(value, name) => {
+        alert(`You selected ` + JSON.stringify(value))
+      }}
+    />
+    <br />
+    <Select
+      value={hotels[1]}
+      label="Select hotel"
+      options={hotels}
+      optionRenderer={({ option }) => (
+        <div>
+          <div>{option.name}</div>
+          <small>
+            {option.location} • {option.stars} Star
+          </small>
+        </div>
+      )}
       onChange={(value, name) => {
         alert(`You selected ` + JSON.stringify(value))
       }}
