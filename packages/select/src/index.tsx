@@ -65,6 +65,7 @@ export interface SelectProps {
   value?: any | Array<any>
   isLoading?: boolean
   optionRenderer?: typeof OptionItemRenderer
+  inline?: boolean
 }
 
 export function Select({
@@ -88,6 +89,7 @@ export function Select({
   value,
   isLoading,
   optionRenderer: OptionRenderer = OptionItemRenderer,
+  inline = false,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -241,32 +243,44 @@ export function Select({
     }
   }
   return (
-    <div className={classNames("select", className)} data-focused={isFocused}>
+    <div
+      className={classNames(
+        "select",
+        {
+          "select-inline": inline,
+          "select-not-searchable": !searchable,
+        },
+        className
+      )}
+      data-focused={isFocused}
+    >
       <div role="group" ref={groupRef}>
         {label ? <label htmlFor={name}>{label}</label> : null}
-        <Input
-          type="search"
-          value={
-            (isFocused
-              ? query
-              : !multiple && value
-              ? value[labelKey]
-              : query) || ""
-          }
-          disabled={disabled}
-          onChange={e => {
-            onQuery && onQuery(e.currentTarget.value)
-          }}
-          id={name}
-          onFocus={onFocus}
-          required={required}
-          readOnly={!searchable}
-          placeholder={placeholder}
-          aria-haspopup={true}
-          aria-autocomplete={searchable ? "inline" : "list"}
-          autoComplete="off"
-          ref={inputRef}
-        />
+        {inline && !searchable ? null : (
+          <Input
+            type="search"
+            value={
+              (isFocused
+                ? query
+                : !multiple && value
+                ? value[labelKey]
+                : query) || ""
+            }
+            disabled={disabled}
+            onChange={e => {
+              onQuery && onQuery(e.currentTarget.value)
+            }}
+            id={name}
+            onFocus={onFocus}
+            required={required}
+            readOnly={!searchable}
+            placeholder={placeholder}
+            aria-haspopup={true}
+            aria-autocomplete={searchable ? "inline" : "list"}
+            autoComplete="off"
+            ref={inputRef}
+          />
+        )}
         {isLoading ? <Loader /> : null}
         <ol role="listbox" aria-multiselectable={multiple}>
           {isFocused && options.length === 0 ? (
@@ -297,7 +311,7 @@ export function Select({
                 <div className="flex items-center">
                   <input
                     readOnly
-                    type="checkbox"
+                    type={multiple ? "checkbox" : "radio"}
                     checked={checked}
                     className="mr-2"
                   />
@@ -310,7 +324,7 @@ export function Select({
           })}
         </ol>
       </div>
-      {value && multiple ? (
+      {value && multiple && !inline ? (
         <ul className="selected-list">
           {value.map((v: any) => (
             <li

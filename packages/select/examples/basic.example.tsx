@@ -238,3 +238,26 @@ stories.add("With Custom Option Renderer", () => (
     />
   </div>
 ))
+
+stories.add("Inline Select", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries | null>(null)
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Places"
+          multiple
+          inline
+          searchable={false}
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countries}
+          onQuery={query => {}}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})

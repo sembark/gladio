@@ -36,6 +36,16 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     ".select[data-focused='true'] [role='listbox']": {
       display: "block",
     },
+    ".select.select-inline [role='listbox']": {
+      position: "relative",
+      display: "block",
+    },
+    ".select.select-inline.select-not-searchable [role='listbox']": {
+      boxShadow: "none",
+      background: "transparent",
+      border: "none",
+    },
+
     ".select [role='listbox'] [role='option']": {
       whiteSpace: "nowrap",
       listStyle: "none",
@@ -52,11 +62,20 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
         "borderColor.gray.300"
       )}`,
     },
+    ".select.select-inline.select-not-searchable [role='listbox'] [role='option']": {
+      paddingLeft: "2px",
+    },
+    ".select.select-inline.select-not-searchable [role='listbox'] [role='option'] + [role='option']": {
+      borderTop: "none",
+    },
     ".select [role='listbox'] [role='option']:hover, .select [role='listbox'] [role='option'][data-focused='true']": {
       background: theme("backgroundColor.gray.100"),
     },
     ".select [role='listbox'] [aria-selected='true']": {
       background: theme("backgroundColor.gray.300"),
+    },
+    ".select.select-inline.select-not-searchable [role='listbox'] [aria-selected='true']": {
+      background: "transparent",
     },
     ".select ul": {
       display: "block",
