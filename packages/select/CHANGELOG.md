@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.7.0...@tourepedia/select@0.8.0) (2019-09-17)
+
+
+### Features
+
+* **select:** add interceptor on option creation ([b0e687d](https://github.com/tourepedia/tp-ui/commit/b0e687d))
+
+
+
+
+
 # [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.6.0...@tourepedia/select@0.7.0) (2019-09-13)
 
 
