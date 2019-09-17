@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.0...@tourepedia/select@0.8.1) (2019-09-17)
+
+
+### Bug Fixes
+
+* **select:** add prefix to cretable option ([9444067](https://github.com/tourepedia/tp-ui/commit/9444067))
+
+
+
+
+
 # [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.7.0...@tourepedia/select@0.8.0) (2019-09-17)
 
 
