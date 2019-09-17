@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.1...@tourepedia/select@0.8.2) (2019-09-17)
+
+
+### Bug Fixes
+
+* **creatable-select:** take the create option label from props ([f7e8fe0](https://github.com/tourepedia/tp-ui/commit/f7e8fe0))
+
+
+
+
+
 ## [0.8.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.0...@tourepedia/select@0.8.1) (2019-09-17)
 
 
