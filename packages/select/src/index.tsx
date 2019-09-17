@@ -34,17 +34,25 @@ function Loader({ duration = 500 }: { duration?: number }) {
   )
 }
 
+function defaultCreateOptionLabel(label: string): React.ReactNode {
+  return label
+}
+
 function OptionItemRenderer({
   option,
   labelKey,
   created,
+  createOptionLabel,
 }: {
   option: any
   labelKey: string
   created?: boolean
+  createOptionLabel: typeof defaultCreateOptionLabel
 }) {
   return (
-    <span>{created ? `Add new "${option[labelKey]}"` : option[labelKey]}</span>
+    <span>
+      {created ? createOptionLabel(option[labelKey]) : option[labelKey]}
+    </span>
   )
 }
 
@@ -71,6 +79,7 @@ export interface SelectProps {
   optionRenderer?: typeof OptionItemRenderer
   inline?: boolean
   onCreateNew?: (query: string) => void | Promise<any> | any
+  createOptionLabel?: (query: string) => React.ReactNode
 }
 
 export function Select({
@@ -96,6 +105,7 @@ export function Select({
   optionRenderer: OptionRenderer = OptionItemRenderer,
   inline = false,
   onCreateNew,
+  createOptionLabel = defaultCreateOptionLabel,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -348,6 +358,7 @@ export function Select({
                       option={option}
                       created={option.__created}
                       labelKey={labelKey}
+                      createOptionLabel={createOptionLabel}
                     />
                   </div>
                 </div>
