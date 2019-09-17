@@ -278,7 +278,9 @@ stories.add("Creatable with Custom onCreate", () => {
           onChange={value => {
             changeValue(value)
           }}
-          options={countries.filter(c => c.name.includes(query))}
+          options={countries.filter(c =>
+            c.name.toLowerCase().includes(query.toLowerCase())
+          )}
           onQuery={query => {
             setQuery(query)
           }}

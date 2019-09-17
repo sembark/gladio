@@ -37,11 +37,15 @@ function Loader({ duration = 500 }: { duration?: number }) {
 function OptionItemRenderer({
   option,
   labelKey,
+  created,
 }: {
   option: any
   labelKey: string
+  created?: boolean
 }) {
-  return <span>{option[labelKey]}</span>
+  return (
+    <span>{created ? `Add new "${option[labelKey]}"` : option[labelKey]}</span>
+  )
 }
 
 export interface SelectProps {
@@ -105,20 +109,22 @@ export function Select({
     undefined
   )
   const name: string = propName || (multiple ? "select[]" : "select")
-  if (
-    creatable &&
-    (!options || options.length === 0) &&
-    query &&
-    query.trim() &&
-    !isLoading
-  ) {
-    options = (options || []).concat([
-      {
-        id: query.trim(),
-        name: query.trim(),
-        __created: true,
-      },
-    ])
+  if (creatable && query && query.trim() && !isLoading) {
+    // check if we have an exact match
+    const exactMatch = (options || []).some((option: any) => {
+      return (
+        String(option[labelKey]).toLowerCase() === query.trim().toLowerCase()
+      )
+    })
+    if (!exactMatch) {
+      options = [
+        {
+          id: query.trim(),
+          name: query.trim(),
+          __created: true,
+        },
+      ].concat(options || [])
+    }
   }
   if (value) {
     let moreOptions = []
@@ -338,7 +344,11 @@ export function Select({
                     className="mr-2"
                   />
                   <div>
-                    <OptionRenderer option={option} labelKey={labelKey} />
+                    <OptionRenderer
+                      option={option}
+                      created={option.__created}
+                      labelKey={labelKey}
+                    />
                   </div>
                 </div>
               </Option>
