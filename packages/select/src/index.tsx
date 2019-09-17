@@ -66,6 +66,7 @@ export interface SelectProps {
   isLoading?: boolean
   optionRenderer?: typeof OptionItemRenderer
   inline?: boolean
+  onCreateNew?: (query: string) => void | Promise<any> | any
 }
 
 export function Select({
@@ -90,6 +91,7 @@ export function Select({
   isLoading,
   optionRenderer: OptionRenderer = OptionItemRenderer,
   inline = false,
+  onCreateNew,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -107,13 +109,14 @@ export function Select({
     creatable &&
     (!options || options.length === 0) &&
     query &&
-    query.trim()
+    query.trim() &&
+    !isLoading
   ) {
     options = (options || []).concat([
       {
         id: query.trim(),
         name: query.trim(),
-        created: true,
+        __created: true,
       },
     ])
   }
@@ -131,12 +134,15 @@ export function Select({
     )
     options = options.concat(moreOptions)
   }
-  function setIsFouced(isFocused: boolean) {
-    changeFocusState(isFocused)
-    if (!isFocused) {
-      onBlur && onBlur({ target: { name } })
-    }
-  }
+  const setIsFouced = React.useCallback(
+    (isFocused: boolean) => {
+      changeFocusState(isFocused)
+      if (!isFocused) {
+        onBlur && onBlur({ target: { name } })
+      }
+    },
+    [onBlur, changeFocusState]
+  )
   // handle the focused state
   useEffect(() => {
     const document = ownerDocument()
@@ -225,23 +231,39 @@ export function Select({
       document.removeEventListener("keydown", handleKeyDown)
     }
   }, [isFocused, focusedOption, options, value])
-  function handleOptionClick(option: any, checked: boolean) {
-    if (onChange) {
-      const newValues = checked
-        ? multiple
-          ? (value || []).concat([option])
-          : option
-        : multiple
-        ? (value || []).filter((v: any) => v.id !== option.id)
-        : undefined
-      onChange(newValues, name)
-      if (!multiple && newValues) {
-        setTimeout(() => {
-          setIsFouced(false)
+
+  // handle the option click
+  const handleOptionClick = React.useCallback(
+    (option: any, checked: boolean) => {
+      Promise.resolve()
+        .then(() => {
+          if (onCreateNew && option && option.__created) {
+            const newOption = onCreateNew(option.name)
+            return Promise.resolve(newOption)
+          }
+          return option
         })
-      }
-    }
-  }
+        .then((option: any) => {
+          if (!option) return
+          if (onChange) {
+            const newValues = checked
+              ? multiple
+                ? (value || []).concat([option])
+                : option
+              : multiple
+              ? (value || []).filter((v: any) => v.id !== option.id)
+              : undefined
+            onChange(newValues, name)
+            if (!multiple && newValues) {
+              setTimeout(() => {
+                setIsFouced(false)
+              })
+            }
+          }
+        })
+    },
+    [onChange, multiple, value, setIsFouced]
+  )
   return (
     <div
       className={classNames(

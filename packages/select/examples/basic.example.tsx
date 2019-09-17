@@ -261,3 +261,39 @@ stories.add("Inline Select", () => {
   }
   return <SelectRenderer />
 })
+
+stories.add("Creatable with Custom onCreate", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries[0] | null>(
+      null
+    )
+    const [query, setQuery] = React.useState<string>("")
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Places"
+          creatable
+          query={query}
+          onChange={value => {
+            changeValue(value)
+          }}
+          options={countries.filter(c => c.name.includes(query))}
+          onQuery={query => {
+            setQuery(query)
+          }}
+          onCreateNew={async (query: string) => {
+            return Promise.resolve().then(() => {
+              const newName = window.prompt("Please provide a new name", query)
+              if (newName) {
+                return { id: newName, name: newName }
+              }
+              return null
+            })
+          }}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
