@@ -12,6 +12,8 @@ module.exports = {
     opts,
     { imports, componentName, props, jsx, exports }
   ) {
+    // template = https://babeljs.io/docs/en/babel-template
+    // this provides some convenient methods for template creation
     const typeScriptTpl = template.smart({ plugins: ["typescript"] })
 
     const componentNameWithSvgPrefix = componentName.name.replace(/^Svg/, "")
