@@ -13,12 +13,22 @@ module.exports = {
     { imports, componentName, props, jsx, exports }
   ) {
     const typeScriptTpl = template.smart({ plugins: ["typescript"] })
+
     const componentNameWithSvgPrefix = componentName.name.replace(/^Svg/, "")
+    /**
+     * We can not simply just pass any variable to the typeScriptTpl.ast`` function and expect it to work.
+     * For example, We're trying to add a className to the svg element, so to accomplish this,
+     * we will need to create an expression first = `tp-icon tp-icon-componentName ${className}`
+     * and then we will push that expression to the className attributes of the svg element,
+     * in this case, the `jsx` variable
+     */
+    // create a className expression = "tp-icon tp-icon-" + componentName + " " + className
     const classNameExpression = template.ast(
       `'tp-icon tp-icon-${componentNameWithSvgPrefix
         .replace(/\B([A-Z])/g, "-$1")
         .toLowerCase()} ' + className`
     ).expression
+    // now apply this className to the svg element
     jsx.openingElement.attributes.push({
       type: "JSXAttribute",
       name: { type: "JSXIdentifier", name: "className" },
@@ -43,6 +53,8 @@ module.exports = {
 		))
 		export default ForwardRef
   `
+    // we could have simple added the following sentence to the typeScriptTpl.ast`` but it would not work as the
+    // reason stated above. And so, we wll append an expression to the ast
     // add the displayName name
     ast.push(
       template.expression(
