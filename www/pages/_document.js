@@ -2,7 +2,7 @@ import React from "react"
 import Document, { Head, Main, NextScript } from "next/document"
 
 function Link({ href, ...props }) {
-  return <link href={process.env.hrefPrefix + href} {...props} />
+  return <link href={href} {...props} />
 }
 
 export default class MyDocument extends Document {

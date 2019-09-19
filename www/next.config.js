@@ -13,23 +13,14 @@ function compose(...funcs) {
   return funcs.reduce((a, b) => (...args) => a(b(...args)))
 }
 
-const isProd = process.env.NODE_ENV === "production"
-
-const publishBasePath = isProd ? "/tp-ui" : ""
-
 module.exports = compose(
   withMDX,
   withCSS
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
-  assetPrefix: publishBasePath,
-  exportTrailingSlash: isProd,
   env: {
-    hrefPrefix: publishBasePath,
     appName: "Tourepedia Design System",
   },
-  registerSwPrefix: publishBasePath,
-  scope: publishBasePath + "/",
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
