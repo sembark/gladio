@@ -51,6 +51,7 @@ export function Paginate({
   className,
   ...props
 }: PaginateProps) {
+  if (!total) return null
   return (
     <nav className={classNames("paginate", className)} {...props}>
       <ul>
