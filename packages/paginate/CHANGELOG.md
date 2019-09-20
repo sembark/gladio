@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/paginate@0.2.2...@tourepedia/paginate@0.2.3) (2019-09-20)
+
+
+### Bug Fixes
+
+* **pagination:** should not render when no items ([7a0e93d](https://github.com/tourepedia/tp-ui/commit/7a0e93d))
+
+
+
+
+
 ## [0.2.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/paginate@0.2.1...@tourepedia/paginate@0.2.2) (2019-09-20)
 
 
