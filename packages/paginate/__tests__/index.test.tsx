@@ -47,12 +47,4 @@ describe("Paginate", () => {
     expect(onChange).toHaveBeenCalledTimes(1)
     expect(onChange).toHaveBeenCalledWith(currentPage + 1)
   })
-
-  it("should call with page when clicked on page refresh", () => {
-    const refreshPageBtn = getByTitle("Refresh this Page")
-    expect(refreshPageBtn).not.toBeNull()
-    fireEvent.click(refreshPageBtn)
-    expect(onChange).toHaveBeenCalledTimes(1)
-    expect(onChange).toHaveBeenCalledWith(currentPage)
-  })
 })

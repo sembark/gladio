@@ -1,6 +1,5 @@
 import * as React from "react"
 import Button from "@tourepedia/button"
-import { RefreshIcon, ChevronDownIcon } from "@tourepedia/icons"
 import classNames from "classnames"
 import { Omit } from "utility-types"
 
@@ -54,29 +53,15 @@ export function Paginate({
 }: PaginateProps) {
   return (
     <nav className={classNames("paginate", className)} {...props}>
-      <mark>
-        <b>
-          {from}-{to}
-        </b>{" "}
-        <i>of</i> <b>{total}</b>
-      </mark>
       <ul>
         <li>
           <Button
             disabled={isFetching || currentPage <= 1}
             onClick={() => onChange(currentPage - 1)}
             title="Previous Page"
+            branded={currentPage > 1}
           >
-            <ChevronDownIcon style={{ transform: "rotate(90deg)" }} />
-          </Button>
-        </li>
-        <li>
-          <Button
-            disabled={isFetching}
-            onClick={() => onChange(currentPage)}
-            title="Refresh this Page"
-          >
-            <RefreshIcon />
+            Previous
           </Button>
         </li>
         <li>
@@ -84,8 +69,9 @@ export function Paginate({
             disabled={isFetching || lastPage <= currentPage}
             onClick={() => onChange(currentPage + 1)}
             title="Next Page"
+            branded={lastPage > currentPage}
           >
-            <ChevronDownIcon style={{ transform: "rotate(-90deg)" }} />
+            Next
           </Button>
         </li>
       </ul>
