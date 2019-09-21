@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react"
+import { useRef, useEffect, useState, useCallback } from "react"
 import { ownerDocument, activeElement, contains } from "@tourepedia/dom-helpers"
 
 export function useDidUpdate(fn: () => void, conditions: any = []): void {
@@ -120,9 +120,8 @@ export function useFetchState<ReturnType, ParamsType = any>(
     data: null,
     errors: null,
   })
-  return [
-    data,
-    (...args: any) => {
+  const fetch = useCallback(
+    async (...args: any) => {
       changeData({
         isFetching: true,
         errors: null,
@@ -147,6 +146,11 @@ export function useFetchState<ReturnType, ParamsType = any>(
           return Promise.reject(error)
         })
     },
+    [changeData, fetchFn]
+  )
+  return [
+    data,
+    fetch,
     {
       isFetching,
       errors,
