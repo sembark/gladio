@@ -103,21 +103,20 @@ export function useFetchState<ReturnType, ParamsType = any>(
   fetchFn: (data?: ParamsType) => Promise<ReturnType>,
   initialValues: {
     isFetching?: boolean
-  } = {
-    isFetching: false,
+    data: ReturnType
   }
 ): [
-  ReturnType | null,
+  ReturnType,
   (data?: ParamsType) => Promise<ReturnType>,
   { isFetching: boolean; errors: any }
 ] {
   const [{ isFetching, data, errors }, changeData] = useState<{
-    data: ReturnType | null
+    data: ReturnType
     isFetching: boolean
     errors?: any
   }>({
     isFetching: initialValues.isFetching || false,
-    data: null,
+    data: initialValues.data,
     errors: null,
   })
   const fetch = useCallback(

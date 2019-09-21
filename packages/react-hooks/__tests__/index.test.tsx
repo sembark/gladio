@@ -55,7 +55,10 @@ describe("react-hooks", () => {
     type IData = string
     function Fetch({ loadData }: { loadData: () => Promise<IData> }) {
       const [data, fetch, { isFetching, errors }] = useFetchState<IData>(
-        loadData
+        loadData,
+        {
+          data: "",
+        }
       )
       return (
         <div>
@@ -78,13 +81,13 @@ describe("react-hooks", () => {
       })
       const { getByTestId } = render(<Fetch loadData={fetchFn} />)
       expect(getByTestId("isFetching").innerHTML).toBe("false")
-      expect(getByTestId("data").innerHTML).toBe("null")
+      expect(getByTestId("data").innerHTML).toBe('""')
       expect(getByTestId("error").innerHTML).toBe("null")
 
       // now fetch the data
       fireEvent.click(getByTestId("load"))
       expect(getByTestId("isFetching").innerHTML).toBe("true")
-      expect(getByTestId("data").innerHTML).toBe("null")
+      expect(getByTestId("data").innerHTML).toBe('""')
       expect(getByTestId("error").innerHTML).toBe("null")
       expect(fetchFn).toHaveBeenCalledTimes(1)
 
