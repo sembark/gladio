@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.2.1...@tourepedia/badge@0.3.0) (2019-09-21)
+
+
+### Features
+
+* **badge:** add more states to badges ([d23f475](https://github.com/tourepedia/tp-ui/commit/d23f475))
+
+
+
+
+
 ## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.2.0...@tourepedia/badge@0.2.1) (2019-09-07)
 
 

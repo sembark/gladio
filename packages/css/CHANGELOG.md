@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.19.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.18.0...@tourepedia/css@0.19.0) (2019-09-21)
+
+
+### Features
+
+* **badge:** add more states to badges ([d23f475](https://github.com/tourepedia/tp-ui/commit/d23f475))
+
+
+
+
+
 # [0.18.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.17.0...@tourepedia/css@0.18.0) (2019-09-13)
 
 
