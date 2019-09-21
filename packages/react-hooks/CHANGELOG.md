@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.3.1...@tourepedia/react-hooks@0.3.2) (2019-09-21)
+
+
+### Bug Fixes
+
+* **fetch-hook:** take the intitial data from props ([4668a11](https://github.com/tourepedia/tp-ui/commit/4668a11))
+* **hooks:** use callback for fetch hooks ([235a534](https://github.com/tourepedia/tp-ui/commit/235a534))
+
+
+
+
+
 ## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.3.0...@tourepedia/react-hooks@0.3.1) (2019-06-08)
 
 
