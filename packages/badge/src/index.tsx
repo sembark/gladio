@@ -3,11 +3,26 @@ import classNames from "classnames"
 
 export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
   primary?: boolean
+  danger?: boolean
+  warning?: boolean
+  success?: boolean
   fullRounded?: boolean
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
-  ({ children, className, primary, fullRounded, ...props }, ref) => {
+  (
+    {
+      children,
+      className,
+      primary,
+      danger,
+      warning,
+      success,
+      fullRounded,
+      ...props
+    },
+    ref
+  ) => {
     if (
       children === null ||
       children === undefined ||
@@ -18,8 +33,13 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
       <span
         className={classNames(
           "badge",
-          primary && "badge-primary",
-          fullRounded && "badge-full-rounded",
+          {
+            "badge-primary": primary,
+            "badge-danger": danger,
+            "badge-warning": warning,
+            "badge-success": success,
+            "badge-full-rounded": fullRounded,
+          },
           className
         )}
         ref={ref}

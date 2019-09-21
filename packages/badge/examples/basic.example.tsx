@@ -8,13 +8,16 @@ import Button from "./../../button/src"
 const stories = storiesOf("Components/Badge", module)
 
 function Container({ children }: { children: React.ReactNode }) {
-  return <div className="max-w-sm mx-auto px-4" children={children} />
+  return <div className="max-w-lg mx-auto px-4" children={children} />
 }
 
 stories.add("Badges", () => (
   <Container>
-    <Badge>12</Badge>
-    <Badge primary>43</Badge>
+    <Badge>In Progress</Badge>
+    <Badge primary>12,000</Badge>
+    <Badge success>Paid</Badge>
+    <Badge danger>Overdue</Badge>
+    <Badge warning>v1.0.0-alpha.1</Badge>
   </Container>
 ))
 
