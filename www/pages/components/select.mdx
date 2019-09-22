@@ -14,6 +14,28 @@ function App () {
 
 export default Layout
 
+## Custom option renderer
+
+We can pass `optionRenderer` to the select component to render a custom component for options in the menu
+
+
+```jsx live=true
+function () {
+  return <Select options={[
+    {id: 1, name: "Taj Hotel", stars: 5, location: "Jaipur"},
+    {id: 2, name: "Udaan Hotel", stars: 4, location: "Ajmer"},
+    {id: 3, name: "Udaan Hotel", stars: 2, location: "Jaipur"},
+  ]}
+  optionRenderer={({ option }) => <div>
+    <div>{option.name}</div>
+    <div className="-mt-1 text-sm text-gray-600">
+      {option.location} •  {option.stars} Star
+    </div>
+  </div>}
+  />
+}
+```
+
 ## Playground
 
 ```jsx live=true

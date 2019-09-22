@@ -1,7 +1,6 @@
 import React, { Fragment } from "react"
 import * as ReactLive from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
-import editorTheme from "prism-react-renderer/themes/dracula"
 import { github as theme } from "./themes"
 import * as UI from "@tourepedia/ui"
 import * as HtmlLive from "./HtmlLive"
@@ -30,7 +29,7 @@ export default function CodeBlock({
           code={children}
           language={language}
           noInline={noInline}
-          theme={editorTheme}
+          theme={theme}
           scope={{
             ...React,
             ...UI,

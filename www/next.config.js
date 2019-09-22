@@ -19,7 +19,7 @@ module.exports = compose(
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   env: {
-    appName: "Tourepedia Design System",
+    appName: "SoLoMo",
   },
   webpack(config) {
     config.module.rules.push({

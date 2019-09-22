@@ -39,7 +39,7 @@ export function SidebarHeading({ children }) {
 export default function SideBar({ children, scope = "" }) {
   return (
     <SideBarScope.Provider value={scope}>
-      <section className="py-4 px-5 text-sm">{children}</section>
+      <section className="py-4 px-3 text-sm">{children}</section>
     </SideBarScope.Provider>
   )
 }

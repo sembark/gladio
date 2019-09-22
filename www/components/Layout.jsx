@@ -15,7 +15,7 @@ export default function Layout({ children, sideBar, meta }) {
       ) : null}
       <div className="flex">
         <div className="w-64 bg-gray-100 border-r">{sideBar}</div>
-        <main className="w-full py-8 px-8">
+        <main className="w-full py-8 px-3 sm:px-4 md:px-5 overflow-auto">
           <div className="max-w-6xl mx-auto">
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-light">{meta.title}</h2>

@@ -1,5 +1,5 @@
 import React from "react"
-import App, { Container } from "next/app"
+import App from "next/app"
 import { MDXProvider } from "@mdx-js/react"
 
 import CodeBlock from "./../components/CodeBlock"
@@ -20,7 +20,7 @@ const components = {
   h3: props => <h3 className="mt-8 mb-4" {...props} />,
   inlineCode: props => (
     <code
-      className="bg-accent-500 text-white px-1 py-1 rounded leading-loose"
+      className="text-accent-700 p-1 rounded bg-gray-100 shadow text-sm"
       {...props}
     />
   ),
@@ -37,9 +37,7 @@ class MyApp extends App {
     const { Component } = this.props
     return (
       <MDXProvider components={components}>
-        <Container>
-          <Component />
-        </Container>
+        <Component />
       </MDXProvider>
     )
   }
