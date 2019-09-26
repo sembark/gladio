@@ -2,7 +2,8 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus } from "@tourepedia/react-hooks"
-import { animated, useTransition, config } from "react-spring"
+import { animated, useTransition } from "react-spring"
+import { Omit } from "utility-types"
 
 const { useRef, useState, useEffect, forwardRef } = React
 export function useDialog(
@@ -132,7 +133,8 @@ export const DialogFooter = forwardRef(
 )
 DialogFooter.displayName = "DialogFooter"
 
-interface DialogProps extends React.HTMLProps<HTMLDialogElement> {
+interface DialogProps
+  extends Omit<React.HTMLProps<HTMLDialogElement>, "open" | "onClose"> {
   /**
    * Contianer element where we should render the dialog
    * @default document.body
@@ -205,36 +207,40 @@ export function Dialog({
     enter: { opacity: 1, transform: "translateY(0)" },
     leave: { opacity: 0, transform: "translateY(-10px)" },
   })
-  return transitions.map(
-    ({ item, key, props: anim }) =>
-      item &&
-      container &&
-      ReactDOM.createPortal(
-        <animated.dialog
-          key={key}
-          open
-          ref={wrapperRef}
-          onKeyDown={event => {
-            if (!open || !closeOnEscape) return
-            // handle the escape key
-            if (event.keyCode === 27) {
-              onClose && onClose()
-            }
-          }}
-          role="dialog"
-          tabIndex={-1}
-          aria-modal={true}
-          style={{ opacity: anim.opacity }}
-          className={classNames(DIALOG_BASE_CLASS_NAME, className)}
-        >
-          <DialogContext.Provider value={dialogContext}>
-            <DialogDocument style={{ transform: anim.transform }}>
-              {children}
-            </DialogDocument>
-          </DialogContext.Provider>
-        </animated.dialog>,
-        container
-      )
+  return (
+    <React.Fragment>
+      {transitions.map(
+        ({ item, key, props: anim }) =>
+          item &&
+          container &&
+          ReactDOM.createPortal(
+            <animated.dialog
+              key={key}
+              open
+              ref={wrapperRef}
+              onKeyDown={event => {
+                if (!open || !closeOnEscape) return
+                // handle the escape key
+                if (event.keyCode === 27) {
+                  onClose && onClose()
+                }
+              }}
+              role="dialog"
+              tabIndex={-1}
+              aria-modal={true}
+              style={{ opacity: anim.opacity }}
+              className={classNames(DIALOG_BASE_CLASS_NAME, className)}
+            >
+              <DialogContext.Provider value={dialogContext}>
+                <DialogDocument style={{ transform: anim.transform }}>
+                  {children}
+                </DialogDocument>
+              </DialogContext.Provider>
+            </animated.dialog>,
+            container
+          )
+      )}
+    </React.Fragment>
   )
 }
 
