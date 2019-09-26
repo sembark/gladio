@@ -73,7 +73,7 @@ export function useEnforceFocus(
         lastActiveElementRef.current.focus()
       }
     }
-  }, [open])
+  }, [open, element.current])
 
   function handleKeyDown(event: KeyboardEvent) {
     if (!open) return
@@ -96,7 +96,7 @@ export function useEnforceFocus(
       }
     }
     return
-  }, [open])
+  }, [open, element.current])
 }
 
 export function useFetchState<ReturnType, ParamsType = any>(
