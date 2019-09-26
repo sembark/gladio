@@ -1,13 +1,12 @@
 module.exports = function addDialog({ addComponents, theme }) {
   const base = ".dialog"
   const screens = theme("screens")
-  const padding = theme("padding.4")
-  const borderRadius = theme("borderRadius.lg")
+  const padding = `${theme("padding.4")} ${theme("padding.6")}`
+  const borderRadius = theme("borderRadius.default")
   const dividerBorder = `${theme("borderWidth.default")} solid ${theme(
     "borderColor.gray.200"
   )}`
   const backgroundWhite = theme("backgroundColor.white")
-  const backgroundGray = theme("backgroundColor.gray.100")
   const dialog = {
     [base]: {
       position: "fixed",
@@ -44,8 +43,10 @@ module.exports = function addDialog({ addComponents, theme }) {
     [`${base}-header`]: {
       borderBottom: dividerBorder,
       padding,
-      background: backgroundGray,
       borderRadius: `${borderRadius} ${borderRadius} 0 0`,
+      "&.has-close-btn": {
+        paddingRight: "50px",
+      },
     },
     [`${base}-title`]: {
       margin: 0,
@@ -62,7 +63,6 @@ module.exports = function addDialog({ addComponents, theme }) {
     [`${base}-footer`]: {
       padding,
       borderTop: dividerBorder,
-      background: backgroundGray,
       borderRadius: `0 0 ${borderRadius} ${borderRadius}`,
       "> .btn + .btn": {
         marginLeft: theme("margin.2"),
@@ -71,7 +71,7 @@ module.exports = function addDialog({ addComponents, theme }) {
     [`${base}-close-btn`]: {
       position: "absolute",
       right: "15px",
-      top: "10px",
+      top: "15px",
       border: "none",
       zIndex: 2,
       fontSize: "2em",
