@@ -13,7 +13,8 @@
   },
   "peerDependencies": {
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "react-spring": "^8.0.27"
   },
   "scripts": {
     "test": "jest",
@@ -27,6 +28,9 @@
   ],
   "jest": {
     "preset": "ts-jest"
+  },
+  "devDependencies": {
+    "react-spring": "^8.0.27"
   },
   "dependencies": {
     "@tourepedia/react-hooks": "^0.3.2",

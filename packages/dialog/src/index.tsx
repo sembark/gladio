@@ -2,6 +2,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus } from "@tourepedia/react-hooks"
+import { animated, useTransition, config } from "react-spring"
 
 const { useRef, useState, useEffect, forwardRef } = React
 export function useDialog(
@@ -25,14 +26,16 @@ const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
 export function DialogDocument({
   className,
   children,
+  style,
 }: React.HTMLProps<HTMLElement>) {
   return (
-    <div
+    <animated.div
       role="document"
+      style={style}
       className={classNames(`${DIALOG_BASE_CLASS_NAME}-document`, className)}
     >
       {children}
-    </div>
+    </animated.div>
   )
 }
 
@@ -70,7 +73,13 @@ export const DialogHeader = forwardRef(
     return (
       <div
         ref={ref}
-        className={classNames(`${DIALOG_BASE_CLASS_NAME}-header`, className)}
+        className={classNames(
+          `${DIALOG_BASE_CLASS_NAME}-header`,
+          {
+            "has-close-btn": closeButton,
+          },
+          className
+        )}
         {...props}
       >
         {closeButton ? <DialogCloseButton /> : null}
@@ -190,29 +199,42 @@ export function Dialog({
       onClose,
     }
   }, [onClose, open])
-  if (!open) return null
-  if (!container) return null
-  return ReactDOM.createPortal(
-    <dialog
-      open={open}
-      ref={wrapperRef}
-      onKeyDown={event => {
-        if (!open || !closeOnEscape) return
-        // handle the escape key
-        if (event.keyCode === 27) {
-          onClose && onClose()
-        }
-      }}
-      role="dialog"
-      tabIndex={-1}
-      aria-modal={true}
-      className={classNames(DIALOG_BASE_CLASS_NAME, className)}
-    >
-      <DialogContext.Provider value={dialogContext}>
-        <DialogDocument>{children}</DialogDocument>
-      </DialogContext.Provider>
-    </dialog>,
-    container
+  const transitions = useTransition(open && container, null, {
+    // config: config.stiff,
+    from: { opacity: 0, transform: "translateY(-10px)" },
+    enter: { opacity: 1, transform: "translateY(0)" },
+    leave: { opacity: 0, transform: "translateY(-10px)" },
+  })
+  return transitions.map(
+    ({ item, key, props: anim }) =>
+      item &&
+      container &&
+      ReactDOM.createPortal(
+        <animated.dialog
+          key={key}
+          open
+          ref={wrapperRef}
+          onKeyDown={event => {
+            if (!open || !closeOnEscape) return
+            // handle the escape key
+            if (event.keyCode === 27) {
+              onClose && onClose()
+            }
+          }}
+          role="dialog"
+          tabIndex={-1}
+          aria-modal={true}
+          style={{ opacity: anim.opacity }}
+          className={classNames(DIALOG_BASE_CLASS_NAME, className)}
+        >
+          <DialogContext.Provider value={dialogContext}>
+            <DialogDocument style={{ transform: anim.transform }}>
+              {children}
+            </DialogDocument>
+          </DialogContext.Provider>
+        </animated.dialog>,
+        container
+      )
   )
 }
 
