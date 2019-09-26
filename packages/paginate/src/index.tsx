@@ -38,6 +38,11 @@ export interface PaginateProps
    * Change handler for the pages
    */
   onChange: (page: number) => any
+  /**
+   * Hide when not needed
+   * @default true
+   */
+  autoHide?: boolean
 }
 
 export function Paginate({
@@ -49,9 +54,10 @@ export function Paginate({
   lastPage,
   onChange,
   className,
+  autoHide = true,
   ...props
 }: PaginateProps) {
-  if (!total) return null
+  if (!total || (autoHide && lastPage <= 1)) return null
   return (
     <nav className={classNames("paginate", className)} {...props}>
       <ul>
