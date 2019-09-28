@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.20.0...@tourepedia/css@0.20.1) (2019-09-28)
+
+
+### Bug Fixes
+
+* **datetime:** picker not showing due to z index ([06f2cf6](https://github.com/tourepedia/tp-ui/commit/06f2cf6))
+
+
+
+
+
 # [0.20.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.19.0...@tourepedia/css@0.20.0) (2019-09-28)
 
 
