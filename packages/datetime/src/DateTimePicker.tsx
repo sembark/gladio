@@ -92,7 +92,10 @@ export default function DateTimePicker({
 }
 
 interface IDateInputMenuProps
-  extends Pick<React.HTMLProps<HTMLInputElement>, "onBlur" | "placeholder"> {}
+  extends Pick<
+    React.HTMLProps<HTMLInputElement>,
+    "onBlur" | "placeholder" | "name" | "id"
+  > {}
 
 function DateInputMenu({
   format,
@@ -124,11 +127,21 @@ interface IDateTimeInputProps
 export function DateTimeInput({
   onBlur,
   placeholder,
+  name,
+  id,
   ...props
 }: IDateTimeInputProps) {
   return (
     <DateTimePicker
-      renderMenu={props => <DateInputMenu {...props} onBlur={onBlur} />}
+      renderMenu={props => (
+        <DateInputMenu
+          {...props}
+          onBlur={onBlur}
+          name={name}
+          id={id}
+          placeholder={placeholder}
+        />
+      )}
       {...props}
     />
   )
