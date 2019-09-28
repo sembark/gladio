@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.4.8...@tourepedia/dialog@0.5.0) (2019-09-28)
+
+
+### Bug Fixes
+
+* **dialog:** return single child instead of array ([1ec8131](https://github.com/tourepedia/tp-ui/commit/1ec8131))
+
+
+### Features
+
+* **dialog-animation:** add react-spring into dialogs ([f85ccf3](https://github.com/tourepedia/tp-ui/commit/f85ccf3))
+
+
+
+
+
 ## [0.4.8](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.4.7...@tourepedia/dialog@0.4.8) (2019-09-21)
 
 **Note:** Version bump only for package @tourepedia/dialog

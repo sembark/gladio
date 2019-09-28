@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.3.17...@tourepedia/ui@1.4.0) (2019-09-28)
+
+
+### Features
+
+* **datetime-ui:** add datetime to ui components ([b04ca5c](https://github.com/tourepedia/tp-ui/commit/b04ca5c))
+
+
+
+
+
 ## [1.3.17](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.3.16...@tourepedia/ui@1.3.17) (2019-09-21)
 
 **Note:** Version bump only for package @tourepedia/ui

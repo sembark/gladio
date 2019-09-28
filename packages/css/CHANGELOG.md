@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.20.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.19.0...@tourepedia/css@0.20.0) (2019-09-28)
+
+
+### Bug Fixes
+
+* **dialog-css:** add focus state to close button ([1c33317](https://github.com/tourepedia/tp-ui/commit/1c33317))
+
+
+### Features
+
+* **css:** updates styles for dialog ([47abeca](https://github.com/tourepedia/tp-ui/commit/47abeca))
+* **datetime:** add date time component ([73a91e4](https://github.com/tourepedia/tp-ui/commit/73a91e4))
+
+
+
+
+
 # [0.19.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.18.0...@tourepedia/css@0.19.0) (2019-09-21)
 
 

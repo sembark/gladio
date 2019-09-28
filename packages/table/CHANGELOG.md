@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.2.1...@tourepedia/table@0.3.0) (2019-09-28)
+
+
+### Features
+
+* **datetime:** add date time component ([73a91e4](https://github.com/tourepedia/tp-ui/commit/73a91e4))
+
+
+
+
+
 ## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.2.0...@tourepedia/table@0.2.1) (2019-07-18)
 
 
