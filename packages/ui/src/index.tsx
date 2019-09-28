@@ -28,6 +28,7 @@ import * as Icons from "@tourepedia/icons"
 import Table from "@tourepedia/table"
 import Select, { Async as AsyncSelect } from "@tourepedia/select"
 import Paginate from "@tourepedia/paginate"
+import DateTime, { DateTimeInput, DateTimePicker } from "@tourepedia/datetime"
 
 export {
   Badge,
@@ -58,4 +59,7 @@ export {
   useEnforceFocus,
   Paginate,
   theme,
+  DateTime,
+  DateTimePicker,
+  DateTimeInput,
 }

@@ -30,6 +30,7 @@
     "@tourepedia/badge": "^0.3.0",
     "@tourepedia/button": "^0.3.1",
     "@tourepedia/css": "^0.19.0",
+    "@tourepedia/datetime": "^0.0.0",
     "@tourepedia/dialog": "^0.4.8",
     "@tourepedia/dom-helpers": "^0.2.7",
     "@tourepedia/icons": "^0.4.1",
