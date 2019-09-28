@@ -28,5 +28,5 @@ exec(
 
 console.log("\nExporting type definitions...")
 exec(
-  `${tsc} src/*.tsx --outDir types --emitDeclarationOnly --declaration true --jsx preserve --allowSyntheticDefaultImports true`
+  `${tsc} src/*.tsx --outDir types --emitDeclarationOnly --declaration true --jsx preserve --target es5 --allowSyntheticDefaultImports true`
 )
