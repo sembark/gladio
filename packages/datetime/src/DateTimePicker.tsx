@@ -78,10 +78,12 @@ export default function DateTimePicker({
       />
       {transitions.map(({ item, key, props: style }) =>
         item ? (
-          <animated.div key={key} style={style}>
-            <div className="tpdt-picker-dropdown">
-              <DateTime {...props} />
-            </div>
+          <animated.div
+            key={key}
+            style={style}
+            className="tpdt-picker-dropdown"
+          >
+            <DateTime {...props} />
           </animated.div>
         ) : null
       )}

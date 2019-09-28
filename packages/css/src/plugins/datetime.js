@@ -115,6 +115,7 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
           position: "absolute",
           top: "100%",
           left: 0,
+          zIndex: 1000,
           padding: theme("padding.2"),
           background: theme("backgroundColor.white"),
           borderRadius: theme("borderRadius.lg"),
