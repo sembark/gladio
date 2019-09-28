@@ -91,20 +91,25 @@ export default function DateTimePicker({
   )
 }
 
-interface IDateInputMenuProps extends IMenuProps {
-  onBlur?: () => any
-}
+interface IDateInputMenuProps
+  extends Pick<React.HTMLProps<HTMLInputElement>, "onBlur" | "placeholder"> {}
 
-function DateInputMenu({ format, value, show, onBlur }: IDateInputMenuProps) {
+function DateInputMenu({
+  format,
+  value,
+  show,
+  hide,
+  toggle,
+  isVisible,
+  ...props
+}: IDateInputMenuProps & IMenuProps) {
   return (
     <Input
+      {...props}
       type="text"
       value={value}
       placeholder={format}
       onChange={() => show()}
-      onBlur={() => {
-        onBlur && onBlur()
-      }}
       onFocus={() => {
         show()
       }}
@@ -112,11 +117,15 @@ function DateInputMenu({ format, value, show, onBlur }: IDateInputMenuProps) {
   )
 }
 
-interface IDateTimeInputProps extends IDateTimePickerProps {
-  onBlur?: () => any
-}
+interface IDateTimeInputProps
+  extends IDateTimePickerProps,
+    IDateInputMenuProps {}
 
-export function DateTimeInput({ onBlur, ...props }: IDateTimeInputProps) {
+export function DateTimeInput({
+  onBlur,
+  placeholder,
+  ...props
+}: IDateTimeInputProps) {
   return (
     <DateTimePicker
       renderMenu={props => <DateInputMenu {...props} onBlur={onBlur} />}
