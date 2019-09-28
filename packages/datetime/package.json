@@ -1,0 +1,43 @@
+{
+  "name": "@tourepedia/datetime",
+  "version": "0.0.0",
+  "description": "Datetime Component for Tourepedia Apps",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "moment": "^2.24.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-spring": "^8.0.27"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "node ../../shared/build"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "files": [
+    "src",
+    "lib",
+    "es",
+    "types"
+  ],
+  "dependencies": {
+    "@tourepedia/input": "^0.2.0",
+    "@tourepedia/react-hooks": "^0.3.2",
+    "classnames": "^2.2.6",
+    "utility-types": "^3.7.0"
+  },
+  "devDependencies": {
+    "moment": "^2.24.0",
+    "react-spring": "^8.0.27"
+  }
+}

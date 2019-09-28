@@ -68,14 +68,6 @@ stories.add("Table Striped", () => (
   </div>
 ))
 
-stories.add("Table Striped", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table striped>{child}</Table>
-    </div>
-  </div>
-))
-
 stories.add("Table Auto Width", () => (
   <div className="p-10">
     <div className=" max-w-3xl mx-auto">
