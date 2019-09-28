@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/datetime",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Datetime Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
