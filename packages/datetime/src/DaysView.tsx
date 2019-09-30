@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as moment from "moment"
+import moment from "moment"
 import classNames from "classnames"
 
 import { getDaysOfWeek, VIEWS } from "./utils"
@@ -126,8 +126,8 @@ function Days() {
                   onChange(
                     (selected || viewDate)
                       .clone()
-                      .month(viewDate.month())
-                      .year(viewDate.year())
+                      .month(date.month())
+                      .year(date.year())
                       .date(date.date())
                   )
               }

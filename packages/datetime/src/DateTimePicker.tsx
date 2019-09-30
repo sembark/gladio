@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as moment from "moment"
+import moment from "moment"
 import { useRootClose } from "@tourepedia/react-hooks"
 import { useTransition, animated, config } from "react-spring"
 import { Input } from "@tourepedia/input"
@@ -14,6 +14,9 @@ interface IMenuProps {
   show: () => any
   hide: () => any
   format: string
+  dateFormat: string
+  timeFormat: string
+  id: string
 }
 
 function DefaultMenu({ value, toggle }: IMenuProps) {
@@ -26,10 +29,22 @@ function DefaultMenu({ value, toggle }: IMenuProps) {
 
 interface IDateTimePickerProps extends React.ComponentProps<typeof DateTime> {
   renderMenu?: typeof DefaultMenu
+  id?: string
+}
+
+let __id = 1
+
+function getId(prefix: string = "tpdt_picker_menu_id"): string {
+  return prefix + __id++
+}
+
+function useId(): string {
+  return React.useMemo(() => getId(), [])
 }
 
 export default function DateTimePicker({
   renderMenu: Menu = DefaultMenu,
+  id: propsId,
   ...props
 }: IDateTimePickerProps) {
   const {
@@ -39,6 +54,8 @@ export default function DateTimePicker({
   } = props
 
   const [isDropdownOpen, setDropdownVisibility] = React.useState<boolean>(false)
+  const _id = useId()
+  const id = propsId || _id
 
   // handle the outside close
   const containerRef = React.useRef<HTMLDivElement>(null)
@@ -54,8 +71,14 @@ export default function DateTimePicker({
   // hide the dropdown when values changes
   React.useEffect(() => {
     if (value && !timeFormat && dateFormat) {
-      setDropdownVisibility(false)
+      const id = setTimeout(() => {
+        setDropdownVisibility(false)
+      }, 100)
+      return () => {
+        clearTimeout(id)
+      }
     }
+    return () => {}
   }, [value ? moment(value).format(dateFormat) : value])
 
   const transitions = useTransition(isDropdownOpen, null, {
@@ -72,6 +95,9 @@ export default function DateTimePicker({
         show={() => setDropdownVisibility(true)}
         hide={() => setDropdownVisibility(false)}
         format={dateTimeFormat}
+        dateFormat={dateFormat}
+        timeFormat={timeFormat}
+        id={id}
         toggle={() => {
           setDropdownVisibility(!isDropdownOpen)
         }}
@@ -83,7 +109,9 @@ export default function DateTimePicker({
             style={style}
             className="tpdt-picker-dropdown"
           >
-            <DateTime {...props} />
+            <label htmlFor={id}>
+              <DateTime {...props} />
+            </label>
           </animated.div>
         ) : null
       )}
@@ -104,6 +132,8 @@ function DateInputMenu({
   hide,
   toggle,
   isVisible,
+  dateFormat,
+  timeFormat,
   ...props
 }: IDateInputMenuProps & IMenuProps) {
   return (
@@ -111,8 +141,15 @@ function DateInputMenu({
       {...props}
       type="text"
       value={value}
+      readOnly
       placeholder={format}
-      onChange={() => show()}
+      onClick={e => {
+        if (typeof document !== "undefined") {
+          if (document.activeElement === e.target && !isVisible) {
+            show()
+          }
+        }
+      }}
       onFocus={() => {
         show()
       }}
@@ -138,7 +175,6 @@ export function DateTimeInput({
           {...props}
           onBlur={onBlur}
           name={name}
-          id={id}
           placeholder={placeholder}
         />
       )}
