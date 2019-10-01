@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.2.2...@tourepedia/datetime@0.3.0) (2019-10-01)
+
+
+### Bug Fixes
+
+* **gitignore:** add styles dir to gitignore ([cc3a9f1](https://github.com/tourepedia/tp-ui/commit/cc3a9f1))
+
+
+### Features
+
+* **datetime:** add accessibility labels ([93b1f69](https://github.com/tourepedia/tp-ui/commit/93b1f69))
+
+
+
+
+
 ## [0.2.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.2.1...@tourepedia/datetime@0.2.2) (2019-09-30)
 
 
