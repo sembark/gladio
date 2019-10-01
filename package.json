@@ -19,7 +19,7 @@
     "start": "npm-run-all -l -p build:watch storybook",
     "prerelease": "npm run test:changed && npm run build:changed && lerna run build:ui",
     "release": "env-cmd -f .env.tokens lerna publish",
-    "www": "cd www && npm dev",
+    "www": "cd www && npm run dev",
     "deploy": "now www --prod",
     "commit": "git-cz",
     "outdated": "lerna exec --no-bail --stream -- npm outdated"
