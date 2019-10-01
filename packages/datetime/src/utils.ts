@@ -12,12 +12,12 @@ export const VIEWS: { [key: string]: TViews } = {
 }
 
 export function getDaysOfWeek(locale: Locale) {
-  const days = locale.weekdaysMin()
+  const [weekdaysMin, weekdays] = [locale.weekdaysMin(), locale.weekdays()]
   const first = locale.firstDayOfWeek()
-  const dow: Array<string> = []
+  const dow: Array<{ short: string; full: string }> = []
   let i = 0
-  days.forEach(function(day) {
-    dow[(7 + i++ - first) % 7] = day
+  weekdaysMin.forEach(function(day, index) {
+    dow[(7 + i++ - first) % 7] = { short: day, full: weekdays[index] }
   })
   return dow
 }
@@ -26,15 +26,11 @@ export function alwaysValidDate(_?: Moment, __?: Moment) {
   return true
 }
 
-export function capitalize(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1)
-}
-
-const DEFAULT_TIME_FORMAT = moment()
+export const DEFAULT_TIME_FORMAT = moment()
   .localeData()
   .longDateFormat("LT")
 
-const DEFAULT_DATE_FORMAT = moment()
+export const DEFAULT_DATE_FORMAT = moment()
   .localeData()
   .longDateFormat("LL")
 

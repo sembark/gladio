@@ -2,7 +2,7 @@ import * as React from "react"
 import { Moment } from "moment"
 import classNames from "classnames"
 
-import { capitalize, alwaysValidDate, VIEWS } from "./utils"
+import { alwaysValidDate, VIEWS, DEFAULT_DATE_FORMAT } from "./utils"
 import { useDateTimeContext } from "./DateTimeContext"
 
 function Header() {
@@ -20,6 +20,7 @@ function Header() {
           className="tpdt-switch"
           onClick={() => showView("years")}
           colSpan={2}
+          role="button"
           data-value={viewDate.year()}
         >
           {viewDate.year()}
@@ -27,6 +28,7 @@ function Header() {
         <th
           key="prev"
           className="tpdt-prev"
+          role="button"
           onClick={() => navigateBack(1, "years")}
         >
           <span>‹</span>
@@ -34,6 +36,7 @@ function Header() {
         <th
           key="next"
           className="tpdt-next"
+          role="button"
           onClick={() => navigateForward(1, "years")}
         >
           <span>›</span>
@@ -45,18 +48,16 @@ function Header() {
 
 function Month(props: {
   key: string | number
-  viewDate: Moment
-  onClick?: (month: number) => any
+  onSelect?: () => any
   className?: string
-  month: number
-  year: number
-  selectedDate?: Moment
+  month: Moment
 }) {
-  const { viewDate, month, onClick, selectedDate, ...otherProps } = props
-  const localMoment = props.viewDate
+  const { month, onSelect, ...otherProps } = props
+  const { viewDate, dateFormat } = useDateTimeContext()
+  const localMoment = viewDate
   const monthStr = localMoment
     .localeData()
-    .monthsShort(localMoment.month(month))
+    .monthsShort(localMoment.month(month.month()))
   const strLength = 3
   // Because some months are up to 5 characters long, we want to
   // use a fixed string length for consistency
@@ -64,12 +65,14 @@ function Month(props: {
   return (
     <td
       data-value={month}
-      onClick={() => {
-        onClick && onClick(month)
-      }}
+      onClick={onSelect}
+      title={month.format(
+        (dateFormat || DEFAULT_DATE_FORMAT).replace(/d/gi, "")
+      )}
+      style={{ textTransform: "capitalize" }}
       {...otherProps}
     >
-      {capitalize(monthStrFixedLength)}
+      <span>{monthStrFixedLength}</span>
     </td>
   )
 }
@@ -115,14 +118,11 @@ function Months() {
           "tpdt-disabled": isDisabled,
           "tpdt-active": date && i === date.month() && year === date.year(),
         })}
-        month={i}
-        viewDate={viewDate}
-        year={year}
-        selectedDate={date && date.clone()}
-        onClick={
+        month={currentMonth.clone()}
+        onSelect={
           !isDisabled
-            ? (month: number) => {
-                setViewDate(viewDate.clone().month(month))
+            ? () => {
+                setViewDate(viewDate.clone().month(currentMonth.month()))
                 showView(VIEWS.DAYS)
               }
             : undefined

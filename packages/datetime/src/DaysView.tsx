@@ -2,7 +2,7 @@ import * as React from "react"
 import moment from "moment"
 import classNames from "classnames"
 
-import { getDaysOfWeek, VIEWS } from "./utils"
+import { getDaysOfWeek, VIEWS, DEFAULT_DATE_FORMAT } from "./utils"
 import { useDateTimeContext } from "./DateTimeContext"
 
 type Moment = moment.Moment
@@ -16,11 +16,13 @@ function Header() {
   } = useDateTimeContext()
   const date = viewDate
   const locale = date.localeData()
+  const dow = React.useMemo(() => getDaysOfWeek(locale), [locale])
   return (
     <thead key="th">
       <tr key="h">
         <th
           key="s"
+          role="button"
           className="tpdt-switch"
           onClick={() => showView(VIEWS.MONTHS)}
           colSpan={5}
@@ -31,6 +33,7 @@ function Header() {
         <th
           key="p"
           className="tpdt-prev"
+          role="button"
           onClick={() => navigateBack(1, "months")}
         >
           <span>‹</span>
@@ -38,15 +41,21 @@ function Header() {
         <th
           key="n"
           className="tpdt-next"
+          role="button"
           onClick={() => navigateForward(1, "months")}
         >
           <span>›</span>
         </th>
       </tr>
       <tr key="d">
-        {getDaysOfWeek(locale).map((day, index) => (
-          <th key={day + index} className="tpdt-dow">
-            {day}
+        {dow.map((day, index) => (
+          <th
+            key={day.full + index}
+            title={day.full}
+            aria-label={day.full}
+            className="tpdt-dow"
+          >
+            {day.short}
           </th>
         ))}
       </tr>
@@ -76,14 +85,16 @@ function Footer() {
 function Day(props: {
   key: string
   date: Moment
-  onSelect?: (date: Moment) => any
+  onSelect?: () => any
   className?: string
 }) {
   const { onSelect, date, ...otherProps } = props
+  const { dateFormat } = useDateTimeContext()
   return (
     <td
-      data-value={date}
-      onClick={() => onSelect && onSelect(date)}
+      aria-label={date.format(dateFormat || DEFAULT_DATE_FORMAT)}
+      role="button"
+      onClick={onSelect}
       {...otherProps}
     >
       {date.date()}
@@ -114,21 +125,22 @@ function Days() {
 
   while (currentDay.isBefore(lastDay)) {
     const isDisabled = !isValidDate(currentDay, selected)
+    const day = currentDay.clone()
     days.push(
       <Day
         key={currentDay.format("M_D")}
         date={currentDay.clone()}
         onSelect={
           !isDisabled
-            ? date => {
+            ? () => {
                 // update the date/month/year in the selected or view Date
                 onChange &&
                   onChange(
                     (selected || viewDate)
                       .clone()
-                      .month(date.month())
-                      .year(date.year())
-                      .date(date.date())
+                      .month(day.month())
+                      .year(day.year())
+                      .date(day.date())
                   )
               }
             : undefined
