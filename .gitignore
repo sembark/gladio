@@ -5,6 +5,7 @@ lerna-debug.log*
 /packages/*/lib
 /packages/*/es
 /packages/*/types
+/packages/*/styles
 .out
 .env.tokens
 /packages/*/package-lock.json
