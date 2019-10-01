@@ -19,7 +19,9 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "node ../../shared/build"
+    "build": "node ../../shared/build && npm run build:css",
+    "build:css": "tailwind build tailwind.css -o styles/styles.css",
+    "css:watch": "chokidar \"./src/styles.js\" -c \"npm run build:css\""
   },
   "jest": {
     "preset": "ts-jest"
@@ -28,9 +30,11 @@
     "src",
     "lib",
     "es",
-    "types"
+    "types",
+    "styles"
   ],
   "dependencies": {
+    "@tourepedia/css": "^0.20.1",
     "@tourepedia/input": "^0.2.0",
     "@tourepedia/react-hooks": "^0.4.0",
     "classnames": "^2.2.6",
@@ -38,6 +42,7 @@
   },
   "devDependencies": {
     "moment": "^2.24.0",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "tailwindcss": "^1.1.2"
   }
 }

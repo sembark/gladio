@@ -1,4 +1,5 @@
 module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
+  console.log(theme("padding"))
   const dateTime = {
     ".tpdt": {
       width: "fit-content",

@@ -7,6 +7,5 @@ module.exports = [
   require("./input"),
   require("./table"),
   require("./paginate"),
-  require("./datetime"),
   require("./output-theme"),
 ]

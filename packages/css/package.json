@@ -13,7 +13,7 @@
     "build:css": "tailwind build src/index.css -o lib/styles.css",
     "build:theme": "../../node_modules/.bin/tsc lib/theme.ts --outDir lib --module commonjs  --declaration true --allowSyntheticDefaultImports true",
     "build": "npm run build:css && npm run build:theme",
-    "build:watch": "chokidar \"./src/**/*.(ts|js|tsx|jsx|css)\" -c \"npm run build:css\""
+    "css:watch": "chokidar \"./src/**/*.(ts|js|tsx|jsx|css)\" -c \"npm run build:css\""
   },
   "files": [
     "src",

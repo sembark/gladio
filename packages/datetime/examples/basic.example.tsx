@@ -3,6 +3,7 @@ import { storiesOf } from "@storybook/react"
 import moment from "moment"
 
 import DateTime, { DateTimePicker, DateTimeInput } from "./../src/index"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/DateTime", module)
 
