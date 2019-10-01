@@ -24,7 +24,7 @@ export default class MyDocument extends Document {
           <Link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
           <Link rel="manifest" href="/static/manifest.json" />
         </Head>
-        <body className="tds bg-white">
+        <body className="tds bg-white leading-relaxed text-gray-800">
           <Main />
           <NextScript />
         </body>

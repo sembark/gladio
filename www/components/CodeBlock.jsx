@@ -1,4 +1,5 @@
-import React, { Fragment } from "react"
+import * as React from "react"
+import moment from "moment"
 import * as ReactLive from "react-live"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import { github as theme } from "./themes"
@@ -32,14 +33,15 @@ export default function CodeBlock({
           theme={theme}
           scope={{
             ...React,
+            moment,
             ...UI,
           }}
         >
           {live ? (
-            <Fragment>
+            <React.Fragment>
               <Live.LiveEditor className="editor" tabIndex="-1" />
               <Live.LiveError className="error" />
-            </Fragment>
+            </React.Fragment>
           ) : null}
           <Live.LivePreview className="preview" />
         </Live.LiveProvider>

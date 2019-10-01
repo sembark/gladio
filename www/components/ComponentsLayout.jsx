@@ -21,6 +21,7 @@ export function ComponentsLayoutSideBar() {
         <SidebarLink href="/table">Table</SidebarLink>
         <SidebarLink href="/paginate">Paginate</SidebarLink>
         <SidebarLink href="/dialog">Dialog</SidebarLink>
+        <SidebarLink href="/datetime">Date & Time</SidebarLink>
       </SidebarLinkList>
       <SidebarLinkList>
         <SidebarHeading>Icons</SidebarHeading>

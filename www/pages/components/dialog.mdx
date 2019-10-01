@@ -22,7 +22,7 @@ export default Layout
 ## Playground
 
 ```jsx live=true
-function () {
+function App() {
   const [isOpen, open, close] = useDialog(false)
   return <div>
     <Dialog open={isOpen} onClose={close}>

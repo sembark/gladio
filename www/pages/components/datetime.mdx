@@ -1,0 +1,98 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "DateTime",
+    description: "Show Date and Time in Calendary way or use as a Picker to select one",
+    name: "@tourepedia/datetime",
+    usage:`import DateTime from "@tourepedia/datetime"
+function App () {
+  return <DateTime />
+}`
+};
+
+export default Layout
+
+
+## Components
+
+Following components are exported from `@tourepedia/datetime` module.
+
+### DateTime
+
+DateTime component is the base component which allows selection of dates and times. Date format can be passed with
+a combination of `dateFormat` and `timeFormat` props. Passing any of them as `true` enable that type of component and
+setting it to `false` disable that type.
+
+> **dateFormat** defaults to `true` whereas **timeFormat** defaults to `false`
+
+A string value can also be passed as the format for these props e.g. **dateFormat="DD MMM, YYYY"**, **timeFormat="HH:mm
+A"**.
+
+```jsx live=true
+// import DateTime from "@tourepedia/datetime"
+function DateTimeInputFiel() {
+  const [value, setValue] = useState()
+  return <DateTime value={value} onChange={setValue} timeFormat />
+}
+```
+
+
+### DateTimeInput
+
+Instead of using a native `<input type="date" />`, you can use the `DateTimeInput` component which render a input with
+the DateTime component. Native inputs have different UI/UX and are not will supported. You can pass all other props
+accepted by `DateTime` base component like formats, value, onChange etc.
+
+```jsx live=true
+// import { DateTimeInput } from "@tourepedia/DateTimeInput"
+
+function Input() {
+  const [value, setValue] = useState()
+  return <DateTimeInput value={value} onChange={setValue} />
+}
+```
+
+### DateTimePicker
+
+To have a fine control over what is rendered by the DateTimeInput, we can use the `DateTimePicker` component that let's
+you render a customized component as the toggler. It default to rendering a button component.
+
+```jsx live=true
+// import { DateTimePicker } from "@tourepedia/DateTimeInput"
+
+function CustomPicker() {
+  const [value, setValue] = useState()
+  return <DateTimePicker
+    value={value}
+    onChange={setValue}
+    timeFormat
+    renderMenu={({
+      show,
+      hide,
+      toggle,
+      value,
+      isVisible,
+      format,
+      dateFormat,
+      timeFormat,
+      id
+    }) => (
+      <span onClick={show}>{value || "Select a date"}</span>
+    )} />
+}
+```
+
+
+
+## Playground
+
+```jsx live=true
+function DateTimeInputFiel() {
+  const [value, setValue] = useState(moment())
+  return <DateTimeInput
+    value={value}
+    onChange={setValue}
+    dateFormat="D MMM, YYYY"
+    timeFormat="HH:mm:ss" />
+}
+```
