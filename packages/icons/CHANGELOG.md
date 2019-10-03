@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.1...@tourepedia/icons@0.4.2) (2019-10-03)
+
+**Note:** Version bump only for package @tourepedia/icons
+
+
+
+
+
 ## [0.4.1](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.0...@tourepedia/icons@0.4.1) (2019-09-20)
 
 **Note:** Version bump only for package @tourepedia/icons

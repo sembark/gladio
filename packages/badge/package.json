@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/badge",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Badge Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -36,7 +36,7 @@
   ],
   "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
   "dependencies": {
-    "@tourepedia/css": "^0.20.2",
+    "@tourepedia/css": "^0.20.3",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
