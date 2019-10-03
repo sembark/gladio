@@ -13,7 +13,10 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "node ../../shared/build"
+    "build:js": "node ../../shared/build",
+    "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
+    "build": "npm run build:js",
+    "build:watch": "npm run js:watch"
   },
   "files": [
     "src",

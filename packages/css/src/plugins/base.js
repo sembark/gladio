@@ -13,7 +13,7 @@ module.exports = function addTypography({ addBase, theme }) {
       fontSize: theme("fontSize.base"),
     },
     "h1, h2, h3, h4, h5, h6": {
-      fontWeight: 600,
+      fontWeight: 700,
     },
     a: {
       color: theme("textColor.blue.700"),

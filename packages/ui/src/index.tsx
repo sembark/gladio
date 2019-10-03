@@ -7,6 +7,11 @@ import {
   activeElement,
   isDom,
   contains,
+  listen,
+  removeEventListener,
+  addEventListener,
+  optionsSupported,
+  onceSupported,
 } from "@tourepedia/dom-helpers"
 import {
   useDidMount,
@@ -14,6 +19,7 @@ import {
   useOnce,
   useFetchState,
   useEnforceFocus,
+  useRootClose,
 } from "@tourepedia/react-hooks"
 import {
   Input,
@@ -52,11 +58,17 @@ export {
   activeElement,
   isDom,
   contains,
+  addEventListener,
+  removeEventListener,
+  optionsSupported,
+  onceSupported,
+  listen,
   useDidMount,
   useDidUpdate,
   useOnce,
   useFetchState,
   useEnforceFocus,
+  useRootClose,
   Paginate,
   theme,
   DateTime,

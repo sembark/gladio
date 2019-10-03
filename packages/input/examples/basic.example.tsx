@@ -10,6 +10,7 @@ import {
   InputGroupAddon,
   ErrorMessage,
 } from "./../src/index"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Input", module)
 

@@ -17,20 +17,30 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "node ../../shared/build"
+    "build:js": "node ../../shared/build",
+    "build:css": "tailwind build tailwind.css -o styles/styles.css",
+    "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
+    "css:watch": "chokidar \"./src/styles.js\" -c \"npm run build:css\"",
+    "build": "npm-run-all -l -p build:js build:css",
+    "build:watch": "npm-run-all -l -p js:watch css:watch"
   },
   "files": [
     "src",
     "lib",
     "es",
-    "types"
+    "types",
+    "styles"
   ],
   "jest": {
     "preset": "ts-jest"
   },
   "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
   "dependencies": {
+    "@tourepedia/css": "^0.20.2",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.1.2"
   }
 }

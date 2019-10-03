@@ -2,6 +2,7 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Table from "./../src/index"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Table", module)
 

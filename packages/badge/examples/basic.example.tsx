@@ -4,6 +4,7 @@ import { storiesOf } from "@storybook/react"
 import Badge, { BadgeList } from "./../src/index"
 import * as Icons from "./../../icons/src"
 import Button from "./../../button/src"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Badge", module)
 

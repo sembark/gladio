@@ -3,6 +3,8 @@ import { storiesOf } from "@storybook/react"
 
 import Dialog, { useDialog } from "./../src/index"
 import Button from "./../../button/src"
+import "./../../button/styles/styles.css"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Dialog", module)
 

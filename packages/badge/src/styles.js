@@ -4,7 +4,7 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
       lineHeight: 1,
       padding: `${theme("padding.1")} ${theme("padding.2")}`,
       fontSize: theme("fontSize.sm"),
-      fontWeight: theme("fontWeight.bold"),
+      fontWeight: theme("fontWeight.semibold"),
       whiteSpace: "nowrap",
       textAlign: "center",
       display: "inline-block",

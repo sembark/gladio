@@ -2,6 +2,7 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Select, { Async } from "./../src/index"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Select", module)
 

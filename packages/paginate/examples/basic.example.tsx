@@ -2,6 +2,8 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Paginate from "./../src/index"
+import "./../../button/styles/styles.css"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Paginate", module)
 
