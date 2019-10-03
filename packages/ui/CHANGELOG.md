@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.4.6...@tourepedia/ui@1.4.7) (2019-10-03)
+
+
+### Bug Fixes
+
+* **ui:** css utilities not working ([0d925c4](https://github.com/tourepedia/tp-ui/commit/0d925c4))
+
+
+
+
+
 ## [1.4.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.4.5...@tourepedia/ui@1.4.6) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/ui
