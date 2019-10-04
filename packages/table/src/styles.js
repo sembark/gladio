@@ -69,26 +69,26 @@ module.exports = function addTableComponent({ theme, addComponents }) {
             )}`,
           },
         },
-        "> *:first-child > tr:first-child >": {
+        "> *:first-child > tr:first-child >, > thead > tr:last-child": {
           "td, th": {
             borderTop: `${theme("borderWidth.default")} solid ${theme(
               "borderColor.gray.400"
             )}`,
             "&:first-child": {
-              borderRadius: `${borderRadius} 0 0 0`,
+              borderTopLeftRadius: borderRadius,
             },
             "&:last-child": {
-              borderRadius: `0 ${borderRadius} 0 0`,
+              borderTopRightRadius: borderRadius,
             },
           },
         },
         "> *:last-child > tr:last-child >": {
           td: {
             "&:first-child": {
-              borderRadius: `0 0 0 ${borderRadius}`,
+              borderBottomLeftRadius: borderRadius,
             },
             "&:last-child": {
-              borderRadius: `0 0 ${borderRadius}  0`,
+              borderBottomRightRadius: borderRadius,
             },
           },
         },

@@ -77,7 +77,9 @@ stories.add("Table", () => (
 stories.add("Table Bordered", () => (
   <div className="p-10">
     <div className=" max-w-3xl mx-auto">
-      <Table bordered>{child}</Table>
+      <Table bordered caption="Some random caption">
+        {child}
+      </Table>
     </div>
   </div>
 ))
@@ -123,7 +125,9 @@ stories.add("Multiple Bodies", () => (
 stories.add("Table Auto Width", () => (
   <div className="p-10">
     <div className=" max-w-3xl mx-auto">
-      <Table autoWidth>{child}</Table>
+      <Table autoWidth bordered striped>
+        {child}
+      </Table>
     </div>
   </div>
 ))
