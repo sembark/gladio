@@ -68,6 +68,7 @@ export const Table = React.forwardRef(
   ) => {
     const $table = (
       <table
+        cellSpacing={0}
         ref={ref}
         className={classNames(
           "table",
