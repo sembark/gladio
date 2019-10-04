@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.3.1...@tourepedia/table@0.4.0) (2019-10-04)
+
+
+### Features
+
+* **table:** update css to add border radius ([7ab82d0](https://github.com/tourepedia/tp-ui/commit/7ab82d0))
+
+
+
+
+
 ## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.3.0...@tourepedia/table@0.3.1) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/table

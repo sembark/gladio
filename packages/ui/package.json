@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/ui",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "UI Components for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,7 +38,7 @@
     "@tourepedia/paginate": "^0.2.5",
     "@tourepedia/react-hooks": "^0.4.1",
     "@tourepedia/select": "^0.8.4",
-    "@tourepedia/table": "^0.3.1"
+    "@tourepedia/table": "^0.4.0"
   },
   "devDependencies": {
     "node-sass-chokidar": "^1.3.5"
