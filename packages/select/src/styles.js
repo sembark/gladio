@@ -47,7 +47,6 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     },
 
     ".select [role='listbox'] [role='option']": {
-      whiteSpace: "nowrap",
       listStyle: "none",
       display: "block",
       padding: `${theme("spacing.ie-y")} ${theme("spacing.ie-x")}`,
