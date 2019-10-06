@@ -74,3 +74,48 @@ stories.add("Dialog", () => {
   }
   return <DialogRenderer />
 })
+
+stories.add("Dialog within Dialog", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    const [isOpen2, open2, close2] = useDialog()
+    return (
+      <div>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Open First Dialog
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close}>
+          <Dialog.Header closeButton>
+            <Dialog.Title>Some title here</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <h3>Some content</h3>
+            <p>some content here and some more suff</p>
+            <Button primary branded onClick={open2}>
+              Anothre One
+            </Button>
+            <Dialog open={isOpen2} onClose={close2}>
+              <Dialog.Header closeButton>
+                <Dialog.Title>Another Dialog</Dialog.Title>
+              </Dialog.Header>
+              <Dialog.Body>Here is some text</Dialog.Body>
+              <Dialog.Footer>
+                <Button onClick={close2} primary branded>
+                  Okay
+                </Button>
+              </Dialog.Footer>
+            </Dialog>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} tertiary>
+              Close
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})

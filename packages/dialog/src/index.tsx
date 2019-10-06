@@ -1,9 +1,11 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
-import { useEnforceFocus } from "@tourepedia/react-hooks"
-import { animated, useTransition } from "react-spring"
+import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
+import { animated, config, useTransition } from "react-spring"
 import { Omit } from "utility-types"
+
+import DialogManager from "./DialogManager"
 
 const { useRef, useState, useEffect, forwardRef } = React
 export function useDialog(
@@ -16,9 +18,13 @@ export function useDialog(
 const DialogContext = React.createContext<{
   open?: boolean
   onClose?: () => void
+  titleId: string
+  contentId: string
 }>({
   open: false,
   onClose: undefined,
+  titleId: "",
+  contentId: "",
 })
 
 const DIALOG_BASE_CLASS_NAME = "dialog"
@@ -95,27 +101,36 @@ export const DialogTitle = forwardRef(
   (
     { className, ...props }: React.HTMLProps<HTMLDivElement>,
     ref: React.Ref<HTMLHeadingElement>
-  ) => (
-    <h3
-      ref={ref}
-      className={classNames(`${DIALOG_BASE_CLASS_NAME}-title`, className)}
-      {...props}
-    />
-  )
+  ) => {
+    const { titleId } = React.useContext(DialogContext)
+    return (
+      <h3
+        ref={ref}
+        id={titleId}
+        className={classNames(`${DIALOG_BASE_CLASS_NAME}-title`, className)}
+        {...props}
+      />
+    )
+  }
 )
+
 DialogTitle.displayName = "DialogTitle"
 
 export const DialogBody = forwardRef(
   (
     { className, ...props }: React.HTMLProps<HTMLDivElement>,
     ref: React.Ref<HTMLDivElement>
-  ) => (
-    <div
-      ref={ref}
-      className={classNames(`${DIALOG_BASE_CLASS_NAME}-body`, className)}
-      {...props}
-    />
-  )
+  ) => {
+    const { contentId } = React.useContext(DialogContext)
+    return (
+      <div
+        id={contentId}
+        ref={ref}
+        className={classNames(`${DIALOG_BASE_CLASS_NAME}-body`, className)}
+        {...props}
+      />
+    )
+  }
 )
 DialogBody.displayName = "DialogBody"
 
@@ -169,6 +184,8 @@ interface DialogProps
   closeOnEscape?: boolean
 }
 
+const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
+
 export function Dialog({
   container = typeof document !== "undefined" ? document.body : undefined,
   children = null,
@@ -179,30 +196,41 @@ export function Dialog({
   closeOnEscape = true,
   className,
 }: DialogProps) {
-  const wrapperRef = useRef<HTMLDialogElement>(null)
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const id = useId("dialog-")
+
   // set the styles for the container
   useEffect(() => {
     if (!container) {
       return
     }
     if (open) {
-      container.classList.add(DIALOG_OPEN_CONTAINER_CLASS_NAME)
+      dialogManager.add(id, container)
     } else {
-      container.classList.remove(DIALOG_OPEN_CONTAINER_CLASS_NAME)
+      dialogManager.remove(id)
     }
     return () => {
-      container.classList.remove(DIALOG_OPEN_CONTAINER_CLASS_NAME)
+      dialogManager.remove(id)
     }
-  }, [open])
+  }, [open, container])
+
   useEnforceFocus(wrapperRef, open, { enforceFocus, autoFocus })
+
+  // provide the context
+  const titleId = `${id}-title`
+  const contentId = `${id}-content`
+
   const dialogContext = React.useMemo(() => {
     return {
       open,
       onClose,
+      titleId,
+      contentId,
     }
-  }, [onClose, open])
+  }, [onClose, open, titleId, contentId])
   const transitions = useTransition(open && container, null, {
-    // config: config.stiff,
+    config: config.stiff,
     from: { opacity: 0, transform: "translateY(-10px)" },
     enter: { opacity: 1, transform: "translateY(0)" },
     leave: { opacity: 0, transform: "translateY(-10px)" },
@@ -214,9 +242,8 @@ export function Dialog({
           item &&
           container &&
           ReactDOM.createPortal(
-            <animated.dialog
+            <animated.div
               key={key}
-              open
               ref={wrapperRef}
               onKeyDown={event => {
                 if (!open || !closeOnEscape) return
@@ -228,6 +255,8 @@ export function Dialog({
               role="dialog"
               tabIndex={-1}
               aria-modal={true}
+              aria-labelledby={titleId}
+              aria-describedby={contentId}
               style={{ opacity: anim.opacity }}
               className={classNames(DIALOG_BASE_CLASS_NAME, className)}
             >
@@ -236,7 +265,7 @@ export function Dialog({
                   {children}
                 </DialogDocument>
               </DialogContext.Provider>
-            </animated.dialog>,
+            </animated.div>,
             container
           )
       )}
