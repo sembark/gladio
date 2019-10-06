@@ -1,6 +1,6 @@
 import * as React from "react"
 import moment from "moment"
-import { useRootClose } from "@tourepedia/react-hooks"
+import { useRootClose, useId } from "@tourepedia/react-hooks"
 import { useTransition, animated, config } from "react-spring"
 import { Input } from "@tourepedia/input"
 
@@ -32,16 +32,6 @@ interface IDateTimePickerProps extends React.ComponentProps<typeof DateTime> {
   id?: string
 }
 
-let __id = 1
-
-function getId(prefix: string = "tpdt_picker_menu_id"): string {
-  return prefix + __id++
-}
-
-function useId(): string {
-  return React.useMemo(() => getId(), [])
-}
-
 export default function DateTimePicker({
   renderMenu: Menu = DefaultMenu,
   id: propsId,
@@ -54,7 +44,7 @@ export default function DateTimePicker({
   } = props
 
   const [isDropdownOpen, setDropdownVisibility] = React.useState<boolean>(false)
-  const _id = useId()
+  const _id = useId("tpdt_picker_menu")
   const id = propsId || _id
 
   // handle the outside close

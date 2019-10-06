@@ -20,6 +20,7 @@ import {
   useFetchState,
   useEnforceFocus,
   useRootClose,
+  useId,
 } from "@tourepedia/react-hooks"
 import {
   Input,
@@ -69,6 +70,7 @@ export {
   useFetchState,
   useEnforceFocus,
   useRootClose,
+  useId,
   Paginate,
   theme,
   DateTime,
