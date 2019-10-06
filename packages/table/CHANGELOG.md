@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.4.1...@tourepedia/table@0.4.2) (2019-10-06)
+
+
+### Bug Fixes
+
+* **table-css:** header in striped row not working ([fe9425a](https://github.com/tourepedia/tp-ui/commit/fe9425a))
+
+
+
+
+
 ## [0.4.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.4.0...@tourepedia/table@0.4.1) (2019-10-04)
 
 
