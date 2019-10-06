@@ -131,3 +131,36 @@ stories.add("Table Auto Width", () => (
     </div>
   </div>
 ))
+
+stories.add("Table with row containing header", () => (
+  <div className="p-10">
+    <div className=" max-w-3xl mx-auto">
+      <Table autoWidth bordered striped>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Inclusion</th>
+            <th>Exclusion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Meal Plan</th>
+            <td>MAP, CP</td>
+            <td>AP</td>
+          </tr>
+          <tr>
+            <th>Transport Service</th>
+            <td>Yes</td>
+            <td />
+          </tr>
+          <tr>
+            <th>Room Heater</th>
+            <td />
+            <td>Yes</td>
+          </tr>
+        </tbody>
+      </Table>
+    </div>
+  </div>
+))

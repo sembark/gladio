@@ -48,29 +48,31 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       "&-w-auto": {
         width: "auto",
       },
-      "&-striped tr:nth-child(2n) > td": {
-        background: theme("backgroundColor.gray.100"),
+      "&-striped > tbody > tr:nth-child(2n) >": {
+        "th, td": {
+          background: theme("backgroundColor.gray.100"),
+        },
       },
       "&-bordered": {
-        "th, td": {
-          borderBottom: `${theme("borderWidth.default")} solid ${theme(
-            "borderColor.gray.400"
-          )}`,
-        },
         "> * > tr ": {
-          "> td:first-child, > th:first-child": {
-            borderLeft: `${theme("borderWidth.default")} solid ${theme(
+          "> td, > th": {
+            borderBottom: `${theme("borderWidth.default")} solid ${theme(
               "borderColor.gray.400"
             )}`,
-          },
-          "> td:last-child, > th:last-child": {
-            borderRight: `${theme("borderWidth.default")} solid ${theme(
-              "borderColor.gray.400"
-            )}`,
+            "&:first-child": {
+              borderLeft: `${theme("borderWidth.default")} solid ${theme(
+                "borderColor.gray.400"
+              )}`,
+            },
+            "&:last-child": {
+              borderRight: `${theme("borderWidth.default")} solid ${theme(
+                "borderColor.gray.400"
+              )}`,
+            },
           },
         },
-        "> *:first-child > tr:first-child >, > thead > tr:last-child": {
-          "td, th": {
+        "> *:first-child > tr:first-child, > thead > tr:last-child": {
+          "> td, > th": {
             borderTop: `${theme("borderWidth.default")} solid ${theme(
               "borderColor.gray.400"
             )}`,
@@ -83,7 +85,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
           },
         },
         "> *:last-child > tr:last-child >": {
-          td: {
+          "td, th": {
             "&:first-child": {
               borderBottomLeftRadius: borderRadius,
             },
