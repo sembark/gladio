@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.2.1...@tourepedia/input@0.2.2) (2019-10-06)
+
+
+### Bug Fixes
+
+* **input:** remove max width from inputs ([247dcee](https://github.com/tourepedia/tp-ui/commit/247dcee))
+
+
+
+
+
 ## [0.2.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.2.0...@tourepedia/input@0.2.1) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/input
