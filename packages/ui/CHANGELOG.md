@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.4.10...@tourepedia/ui@1.5.0) (2019-10-06)
+
+
+### Features
+
+* **usage:** use newly created id hook ([a612dbf](https://github.com/tourepedia/tp-ui/commit/a612dbf))
+
+
+
+
+
 ## [1.4.10](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.4.9...@tourepedia/ui@1.4.10) (2019-10-05)
 
 **Note:** Version bump only for package @tourepedia/ui

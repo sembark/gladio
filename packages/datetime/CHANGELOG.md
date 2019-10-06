@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.3.1...@tourepedia/datetime@0.4.0) (2019-10-06)
+
+
+### Features
+
+* **usage:** use newly created id hook ([a612dbf](https://github.com/tourepedia/tp-ui/commit/a612dbf))
+
+
+
+
+
 ## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.3.0...@tourepedia/datetime@0.3.1) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/datetime
