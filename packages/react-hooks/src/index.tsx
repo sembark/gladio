@@ -265,3 +265,18 @@ export function useRootClose(
     handleKeyUp,
   ])
 }
+
+let ids: { [key: string]: number } = {
+  "": 0,
+}
+
+function genId(prefix: string = "") {
+  const id = (ids[prefix] = ids[prefix] || -0)
+  ids[prefix] = ids[prefix] + 1
+  return prefix + id.toString()
+}
+
+export function useId(prefix: string = ""): string {
+  const id = useRef(genId(prefix.trim()))
+  return id.current
+}
