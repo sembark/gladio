@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.5.2...@tourepedia/dialog@0.6.0) (2019-10-07)
+
+
+### Features
+
+* **dialog-css:** add full width-height dialog ([07e2112](https://github.com/tourepedia/tp-ui/commit/07e2112))
+
+
+
+
+
 ## [0.5.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.5.1...@tourepedia/dialog@0.5.2) (2019-10-06)
 
 

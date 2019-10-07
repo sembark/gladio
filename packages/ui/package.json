@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/ui",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "UI Components for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -31,7 +31,7 @@
     "@tourepedia/button": "^0.3.2",
     "@tourepedia/css": "^0.20.3",
     "@tourepedia/datetime": "^0.4.1",
-    "@tourepedia/dialog": "^0.5.2",
+    "@tourepedia/dialog": "^0.6.0",
     "@tourepedia/dom-helpers": "^0.3.1",
     "@tourepedia/icons": "^0.4.2",
     "@tourepedia/input": "^0.2.2",
