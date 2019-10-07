@@ -43,6 +43,17 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
         backgroundColor: theme("backgroundColor.red.200"),
         color: theme("textColor.red.800"),
       },
+      "&-accent, &-list-accent &": {
+        borderColor: theme("borderColor.accent.300"),
+        backgroundColor: theme("backgroundColor.accent.200"),
+        color: theme("textColor.accent.800"),
+      },
+      "&-outlined, &-list-outlined &": {
+        backgroundColor: theme("backgroundColor.white"),
+      },
+      "&-outlined&-primary, &-list-outlined&-list-primary &": {
+        color: theme("backgroundColor.primary.800"),
+      },
     },
   }
   addComponents(badges)

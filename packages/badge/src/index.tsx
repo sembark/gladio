@@ -6,6 +6,8 @@ export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
   danger?: boolean
   warning?: boolean
   success?: boolean
+  accent?: boolean
+  outlined?: boolean
   fullRounded?: boolean
 }
 
@@ -18,6 +20,8 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
       danger,
       warning,
       success,
+      accent,
+      outlined,
       fullRounded,
       ...props
     },
@@ -38,7 +42,9 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
             "badge-danger": danger,
             "badge-warning": warning,
             "badge-success": success,
+            "badge-accent": accent,
             "badge-full-rounded": fullRounded,
+            "badge-outlined": outlined,
           },
           className
         )}
@@ -57,6 +63,11 @@ export default Badge
 export function BadgeList({
   className,
   primary,
+  danger,
+  warning,
+  success,
+  accent,
+  outlined,
   fullRounded,
   ...props
 }: IBadgeProps) {
@@ -64,8 +75,15 @@ export function BadgeList({
     <span
       className={classNames(
         "badge-list",
-        primary && "badge-list-primary",
-        fullRounded && "badge-list-full-rounded",
+        {
+          "badge-list-primary": primary,
+          "badge-list-danger": danger,
+          "badge-list-warning": warning,
+          "badge-list-success": success,
+          "badge-list-accent": accent,
+          "badge-list-full-rounded": fullRounded,
+          "badge-list-outlined": outlined,
+        },
         className
       )}
       {...props}

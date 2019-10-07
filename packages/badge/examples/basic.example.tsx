@@ -19,6 +19,28 @@ stories.add("Badges", () => (
     <Badge success>Paid</Badge>
     <Badge danger>Overdue</Badge>
     <Badge warning>v1.0.0-alpha.1</Badge>
+    <Badge accent>New</Badge>
+  </Container>
+))
+
+stories.add("Outlined", () => (
+  <Container>
+    <Badge outlined>In Progress</Badge>
+    <Badge primary outlined>
+      12,000
+    </Badge>
+    <Badge success outlined>
+      Paid
+    </Badge>
+    <Badge danger outlined>
+      Overdue
+    </Badge>
+    <Badge warning outlined>
+      v1.0.0-alpha.1
+    </Badge>
+    <Badge accent outlined>
+      New
+    </Badge>
   </Container>
 ))
 
