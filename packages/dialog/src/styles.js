@@ -40,6 +40,13 @@ module.exports = function addDialog({ addComponents, theme }) {
         margin: "1.75rem auto",
       },
     },
+    [`${base}-fit-container ${base}-document`]: {
+      width: "100%",
+      maxWidth: "100%",
+      minHeight: "100%",
+      margin: 0,
+      borderRadius: 0,
+    },
     [`${base}-header`]: {
       borderBottom: dividerBorder,
       padding,

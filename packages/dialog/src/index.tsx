@@ -182,9 +182,20 @@ interface DialogProps
    * @default true
    */
   closeOnEscape?: boolean
+  /**
+   * Fit the container in height and width
+   */
+  fitContainer?: boolean
 }
 
 const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
+
+const defaultTransitionConfig = {
+  config: config.stiff,
+  from: { opacity: 0, transform: "translate3d(0, -10px, 0)" },
+  enter: { opacity: 1, transform: "translate3d(0, 0px, 0)" },
+  leave: { opacity: 0, transform: "translate3d(0, -10px, 0)" },
+}
 
 export function Dialog({
   container = typeof document !== "undefined" ? document.body : undefined,
@@ -193,10 +204,15 @@ export function Dialog({
   onClose,
   autoFocus = true,
   enforceFocus = true,
-  closeOnEscape = true,
+  closeOnEscape,
   className,
+  fitContainer = false,
 }: DialogProps) {
   const wrapperRef = useRef<HTMLDivElement>(null)
+
+  // disable closeOnEscape if no props is provided and fitContainer is set to true
+  closeOnEscape =
+    closeOnEscape === undefined ? !fitContainer : closeOnEscape || true
 
   const id = useId("dialog-")
 
@@ -229,46 +245,41 @@ export function Dialog({
       contentId,
     }
   }, [onClose, open, titleId, contentId])
-  const transitions = useTransition(open && container, null, {
-    config: config.stiff,
-    from: { opacity: 0, transform: "translateY(-10px)" },
-    enter: { opacity: 1, transform: "translateY(0)" },
-    leave: { opacity: 0, transform: "translateY(-10px)" },
-  })
+  const transitions = useTransition(open, null, defaultTransitionConfig)
   return (
     <React.Fragment>
-      {transitions.map(
-        ({ item, key, props: anim }) =>
-          item &&
-          container &&
-          ReactDOM.createPortal(
-            <animated.div
-              key={key}
-              ref={wrapperRef}
-              onKeyDown={event => {
-                if (!open || !closeOnEscape) return
-                // handle the escape key
-                if (event.keyCode === 27) {
-                  onClose && onClose()
-                }
-              }}
-              role="dialog"
-              tabIndex={-1}
-              aria-modal={true}
-              aria-labelledby={titleId}
-              aria-describedby={contentId}
-              style={{ opacity: anim.opacity }}
-              className={classNames(DIALOG_BASE_CLASS_NAME, className)}
-            >
-              <DialogContext.Provider value={dialogContext}>
-                <DialogDocument style={{ transform: anim.transform }}>
-                  {children}
-                </DialogDocument>
-              </DialogContext.Provider>
-            </animated.div>,
-            container
-          )
-      )}
+      {transitions.map(({ item, key, props: anim }) => {
+        if (!item) return null
+        const dialog = (
+          <animated.div
+            key={key}
+            ref={wrapperRef}
+            onKeyDown={event => {
+              if (!open || !closeOnEscape) return
+              // handle the escape key
+              if (event.keyCode === 27) {
+                onClose && onClose()
+              }
+            }}
+            role="dialog"
+            tabIndex={-1}
+            aria-modal={true}
+            aria-labelledby={titleId}
+            aria-describedby={contentId}
+            style={{ opacity: anim.opacity }}
+            className={classNames(DIALOG_BASE_CLASS_NAME, className, {
+              [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
+            })}
+          >
+            <DialogContext.Provider value={dialogContext}>
+              <DialogDocument style={{ transform: anim.transform }}>
+                {children}
+              </DialogDocument>
+            </DialogContext.Provider>
+          </animated.div>
+        )
+        return container && ReactDOM.createPortal(dialog, container)
+      })}
     </React.Fragment>
   )
 }

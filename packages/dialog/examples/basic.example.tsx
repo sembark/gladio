@@ -119,3 +119,66 @@ stories.add("Dialog within Dialog", () => {
   }
   return <DialogRenderer />
 })
+
+stories.add("Fit Container Dialog", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    return (
+      <div>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Open Full Dialog
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close} fitContainer>
+          <Dialog.Header closeButton>
+            <Dialog.Title>Some title here</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <h3>Some content</h3>
+            <p>
+              Lorem ipsum dolor amet scenester retro aesthetic knausgaard
+              live-edge, humblebrag cornhole beard literally bitters adaptogen
+              next level. Meggings godard pour-over dreamcatcher enamel pin
+              heirloom, retro readymade seitan forage waistcoat small batch
+              tumblr. Williamsburg occupy letterpress ramps paleo pop-up
+              lumbersexual. Sustainable forage brunch health goth cardigan.
+            </p>
+            <p>
+              Lomo selvage meditation fanny pack 8-bit, affogato pork belly.
+              Pork belly next level scenester keytar pour-over meh waistcoat
+              bicycle rights raclette. 90's hot chicken cardigan kogi.
+              Gluten-free meggings offal, put a bird on it kickstarter selvage
+              yuccie disrupt cold-pressed distillery blue bottle actually
+              tumblr. Roof party 8-bit disrupt portland, sartorial pitchfork
+              vexillologist.
+            </p>
+            <p>
+              Yr poke echo park blog hoodie pickled, glossier etsy pork belly
+              disrupt fam schlitz. Cray tofu master cleanse, yr franzen
+              asymmetrical venmo schlitz food truck kale chips actually lomo
+              bushwick echo park sustainable. Organic cornhole you probably
+              haven't heard of them, edison bulb synth dreamcatcher mlkshk
+              adaptogen freegan VHS food truck forage pickled. 8-bit craft beer
+              four loko brunch iceland distillery intelligentsia swag offal
+              farm-to-table heirloom trust fund tbh occupy.
+            </p>
+            <p>
+              Pabst direct trade photo booth retro shabby chic irony cliche
+              heirloom DIY ramps adaptogen edison bulb. Helvetica palo santo
+              humblebrag, snackwave adaptogen yr hammock gochujang squid. YOLO
+              coloring book chambray meh. Roof party tousled stumptown, seitan
+              aesthetic chartreuse tofu pabst raclette biodiesel.
+            </p>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} tertiary>
+              Close
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})
