@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/tourepedia/tp-ui#readme",
   "dependencies": {
-    "@tourepedia/ui": "^1.4.5",
+    "@tourepedia/ui": "^1.5.6",
     "moment": "^2.24.0",
     "next": "9.0.6",
     "prism-react-renderer": "0.1.6",
