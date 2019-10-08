@@ -101,6 +101,87 @@ module.exports = function addDialog({ addComponents, theme }) {
         opacity: 1,
       },
     },
+    [`${base}-fit-container ${base}-close-btn`]: {
+      right: "auto",
+      left: "15px",
+      top: "15px",
+      border: "none",
+      borderRadius: 0,
+      borderRight: `${theme("borderWidth.default")} solid ${theme(
+        "borderColor.default"
+      )}`,
+      paddingRight: "5px",
+    },
+    [`${base}-fit-container ${base}-header`]: {
+      "&.has-close-btn": {
+        padding,
+        paddingLeft: "60px",
+      },
+    },
+    [`${base}-back-icon`]: {
+      position: "relative",
+      display: "inline-block",
+      width: "16px",
+      height: "16px",
+      transition: "transform ease-in .15s",
+      transform: "translateX(0)",
+      "&:before": {
+        content: '""',
+        display: "inline-block",
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        left: 0,
+        top: 0,
+        border: "2px solid black",
+        transform: "rotate(45deg)",
+        transformOrigin: "center center",
+        borderRadius: "2px",
+        borderTop: "none",
+        borderRight: "none",
+      },
+      "&:after": {
+        content: '""',
+        display: "inline-block",
+        width: "120%",
+        height: "2px",
+        position: "absolute",
+        left: "-2px",
+        top: "calc(50% - 1px)",
+        background: "black",
+        borderRadius: "2px",
+      },
+    },
+    [`${base}-close-btn:hover ${base}-back-icon, ${base}-back-icon:hover`]: {
+      transform: "translateX(-2px)",
+    },
+    [`${base}-close-icon`]: {
+      position: "relative",
+      display: "inline-block",
+      width: "16px",
+      height: "16px",
+      transition: "transform .25s ease-in-out",
+      "&:before, &:after": {
+        content: '""',
+        display: "inline-block",
+        position: "absolute",
+        width: "100%",
+        height: "2px",
+        left: 0,
+        top: "50%",
+        background: "black",
+        transformOrigin: "center center",
+      },
+      "&:before": {
+        transform: "rotate(45deg)",
+      },
+      "&:after": {
+        transform: "rotate(-45deg)",
+      },
+    },
+    [`${base}-close-btn:hover ${base}-close-icon, ${base}-close-icon:hover`]: {
+      transform: "rotate(90deg)",
+    },
   }
   addComponents(dialog)
 }

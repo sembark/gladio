@@ -20,12 +20,16 @@ const DialogContext = React.createContext<{
   onClose?: () => void
   titleId: string
   contentId: string
+  fitContainer: boolean
 }>({
   open: false,
   onClose: undefined,
   titleId: "",
   contentId: "",
+  fitContainer: false,
 })
+
+const DialogProvider = DialogContext.Provider
 
 const DIALOG_BASE_CLASS_NAME = "dialog"
 const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
@@ -52,7 +56,7 @@ export function DialogCloseButton({
   type,
   ...props
 }: React.HTMLProps<HTMLButtonElement>) {
-  const { onClose } = React.useContext(DialogContext)
+  const { onClose, fitContainer } = React.useContext(DialogContext)
   return (
     <button
       type="button"
@@ -60,7 +64,12 @@ export function DialogCloseButton({
       className={classNames("dialog-close-btn", className)}
       {...props}
     >
-      {children || <span>&times;</span>}
+      {children ||
+        (fitContainer ? (
+          <span className="dialog-back-icon" />
+        ) : (
+          <span className="dialog-close-icon" />
+        ))}
     </button>
   )
 }
@@ -69,7 +78,7 @@ export const DialogHeader = forwardRef(
   (
     {
       className,
-      closeButton,
+      closeButton = true,
       children,
       ...props
     }: React.HTMLProps<HTMLDivElement> & {
@@ -243,6 +252,7 @@ export function Dialog({
       onClose,
       titleId,
       contentId,
+      fitContainer,
     }
   }, [onClose, open, titleId, contentId])
   const transitions = useTransition(open, null, defaultTransitionConfig)
@@ -271,11 +281,11 @@ export function Dialog({
               [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
             })}
           >
-            <DialogContext.Provider value={dialogContext}>
+            <DialogProvider value={dialogContext}>
               <DialogDocument style={{ transform: anim.transform }}>
                 {children}
               </DialogDocument>
-            </DialogContext.Provider>
+            </DialogProvider>
           </animated.div>
         )
         return container && ReactDOM.createPortal(dialog, container)
