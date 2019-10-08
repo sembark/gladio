@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.6.0...@tourepedia/dialog@0.7.0) (2019-10-08)
+
+
+### Features
+
+* **dialog-css:** add back arrow and close icon ([255ffa4](https://github.com/tourepedia/tp-ui/commit/255ffa4))
+
+
+
+
+
 # [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.5.2...@tourepedia/dialog@0.6.0) (2019-10-07)
 
 
