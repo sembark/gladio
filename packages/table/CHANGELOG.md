@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.4.2...@tourepedia/table@0.5.0) (2019-10-08)
+
+
+### Features
+
+* **table-css:** add hover state to table ([294eeb6](https://github.com/tourepedia/tp-ui/commit/294eeb6))
+
+
+
+
+
 ## [0.4.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.4.1...@tourepedia/table@0.4.2) (2019-10-06)
 
 
