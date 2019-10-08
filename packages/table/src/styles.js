@@ -10,6 +10,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       "th, td": {
         verticalAlign: "top",
         textAlign: "left",
+        transition: "background .15s ease-in-out",
       },
       th: {
         padding: `${theme("padding.3")} ${theme("padding.4")}`,
@@ -49,6 +50,11 @@ module.exports = function addTableComponent({ theme, addComponents }) {
         width: "auto",
       },
       "&-striped > tbody > tr:nth-child(2n) >": {
+        "th, td": {
+          background: theme("backgroundColor.gray.100"),
+        },
+      },
+      "&-hover > tbody > tr:hover >": {
         "th, td": {
           background: theme("backgroundColor.gray.100"),
         },

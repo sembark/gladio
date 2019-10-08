@@ -46,6 +46,10 @@ export interface TableProps
    * Add border around each data cell
    */
   bordered?: boolean
+  /**
+   * Change row's background color when hovered
+   */
+  hover?: boolean
 }
 
 export const Table = React.forwardRef(
@@ -62,6 +66,7 @@ export const Table = React.forwardRef(
       autoWidth,
       striped,
       bordered,
+      hover,
       ...otherProps
     }: TableProps,
     ref: React.Ref<HTMLTableElement>
@@ -72,10 +77,13 @@ export const Table = React.forwardRef(
         ref={ref}
         className={classNames(
           "table",
-          fixedLayout ? "table-fixed" : undefined,
-          autoWidth ? "table-w-auto" : undefined,
-          striped ? "table-striped" : undefined,
-          bordered ? "table-bordered" : undefined,
+          {
+            "table-fixed": fixedLayout,
+            "table-w-auto": autoWidth,
+            "table-striped": striped,
+            "table-bordered": bordered,
+            "table-hover": hover,
+          },
           className
         )}
         {...otherProps}

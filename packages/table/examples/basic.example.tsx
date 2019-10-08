@@ -91,10 +91,28 @@ stories.add("Table Striped", () => (
   </div>
 ))
 
+stories.add("Table Hover", () => (
+  <div className="p-10">
+    <div className=" max-w-3xl mx-auto">
+      <Table hover>{child}</Table>
+    </div>
+  </div>
+))
+
 stories.add("Table with borders and strips", () => (
   <div className="p-10">
     <div className=" max-w-3xl mx-auto">
       <Table striped bordered>
+        {child}
+      </Table>
+    </div>
+  </div>
+))
+
+stories.add("Table with borders and hover", () => (
+  <div className="p-10">
+    <div className=" max-w-3xl mx-auto">
+      <Table hover bordered>
         {child}
       </Table>
     </div>
