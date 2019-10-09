@@ -39,7 +39,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       backgroundPosition: "-1px -1px",
       backgroundRepeat: "repeat-x",
       backgroundSize: "110% 110%",
-      borderRadius: theme("borderRadius.default"),
+      borderRadius: theme("borderRadius.lg"),
       cursor: "pointer",
       display: "inline-block",
       fontWeight: theme("fontWeight.semibold"),

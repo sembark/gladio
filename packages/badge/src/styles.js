@@ -13,7 +13,7 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
       border: `${theme("borderWidth.default")} solid ${theme(
         "borderColor.gray.400"
       )}`,
-      borderRadius: theme("borderRadius.default"),
+      borderRadius: theme("borderRadius.lg"),
       "&-list": {
         display: "inline-block",
       },

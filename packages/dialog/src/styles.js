@@ -2,7 +2,7 @@ module.exports = function addDialog({ addComponents, theme }) {
   const base = ".dialog"
   const screens = theme("screens")
   const padding = `${theme("padding.4")} ${theme("padding.6")}`
-  const borderRadius = theme("borderRadius.default")
+  const borderRadius = theme("borderRadius.lg")
   const dividerBorder = `${theme("borderWidth.default")} solid ${theme(
     "borderColor.gray.200"
   )}`
@@ -19,6 +19,9 @@ module.exports = function addDialog({ addComponents, theme }) {
       overflow: "hidden",
       padding: 0,
       border: "none",
+      [`&${[base]}-fit-container`]: {
+        background: "transparent",
+      },
     },
     [`${base}-is-open`]: {
       overflow: "hidden",
@@ -33,6 +36,7 @@ module.exports = function addDialog({ addComponents, theme }) {
       margin: "0.5rem",
       background: backgroundWhite,
       borderRadius: borderRadius,
+      boxShadow: theme("boxShadow.2xl"),
     },
     [`@media (min-width: ${screens.md})`]: {
       [`${base}-document`]: {
@@ -103,7 +107,7 @@ module.exports = function addDialog({ addComponents, theme }) {
     },
     [`${base}-fit-container ${base}-close-btn`]: {
       right: "auto",
-      left: "15px",
+      left: "20px",
       top: "15px",
       border: "none",
       borderRadius: 0,
@@ -115,7 +119,7 @@ module.exports = function addDialog({ addComponents, theme }) {
     [`${base}-fit-container ${base}-header`]: {
       "&.has-close-btn": {
         padding,
-        paddingLeft: "60px",
+        paddingLeft: "80px",
       },
     },
     [`${base}-back-icon`]: {

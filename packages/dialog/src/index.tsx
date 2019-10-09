@@ -2,7 +2,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
-import { animated, config, useTransition } from "react-spring"
+import { animated, useTransition } from "react-spring"
 import { Omit } from "utility-types"
 
 import DialogManager from "./DialogManager"
@@ -199,13 +199,6 @@ interface DialogProps
 
 const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
 
-const defaultTransitionConfig = {
-  config: config.stiff,
-  from: { opacity: 0, transform: "translate3d(0, -10px, 0)" },
-  enter: { opacity: 1, transform: "translate3d(0, 0px, 0)" },
-  leave: { opacity: 0, transform: "translate3d(0, -10px, 0)" },
-}
-
 export function Dialog({
   container = typeof document !== "undefined" ? document.body : undefined,
   children = null,
@@ -255,7 +248,20 @@ export function Dialog({
       fitContainer,
     }
   }, [onClose, open, titleId, contentId])
-  const transitions = useTransition(open, null, defaultTransitionConfig)
+  const transitionConfig = React.useMemo(() => {
+    return {
+      from: {
+        opacity: 0,
+        transform: `translate3d(${fitContainer ? "10px, 0" : "0, -10px"}, 0)`,
+      },
+      enter: { opacity: 1, transform: "translate3d(0, 0px, 0)" },
+      leave: {
+        opacity: 0,
+        transform: `translate3d(${fitContainer ? "10px, 0" : "0, -10px"}, 0)`,
+      },
+    }
+  }, [fitContainer])
+  const transitions = useTransition(open, null, transitionConfig)
   return (
     <React.Fragment>
       {transitions.map(({ item, key, props: anim }) => {
