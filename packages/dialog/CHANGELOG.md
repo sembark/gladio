@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.7.0...@tourepedia/dialog@0.8.0) (2019-10-09)
+
+
+### Features
+
+* **css:** more corners more rounded ([8f94e31](https://github.com/tourepedia/tp-ui/commit/8f94e31))
+
+
+
+
+
 # [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.6.0...@tourepedia/dialog@0.7.0) (2019-10-08)
 
 

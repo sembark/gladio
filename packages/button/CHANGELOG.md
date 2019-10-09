@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.3.2...@tourepedia/button@0.4.0) (2019-10-09)
+
+
+### Features
+
+* **css:** more corners more rounded ([8f94e31](https://github.com/tourepedia/tp-ui/commit/8f94e31))
+
+
+
+
+
 ## [0.3.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.3.1...@tourepedia/button@0.3.2) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/button
