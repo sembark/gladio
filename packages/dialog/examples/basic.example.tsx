@@ -182,3 +182,57 @@ stories.add("Fit Container Dialog", () => {
   }
   return <DialogRenderer />
 })
+
+stories.add("Focus Enforced", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    const [isOpen2, open2, close2] = useDialog()
+    return (
+      <div>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Open Dialog 1
+          </Button>
+          <Button primary branded onClick={open2}>
+            Open Dialog 2
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close}>
+          <Dialog.Header>
+            <Dialog.Title>Dialog 1</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <p>
+              Should focus back to it's triggers when closed. Tab navigation
+              will happen inside this dialog only and on close, it will focus
+              back to it's trigger.
+            </p>
+            <div className="form-group">
+              <label>Name</label>
+              <input className="input" type="text" />
+            </div>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} primary branded>
+              Okay
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+        <Dialog open={isOpen2} onClose={close2}>
+          <Dialog.Header>
+            <Dialog.Title>Dialog 2</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <p>Should focus back to it's triggers when closed</p>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close2} primary branded>
+              Close
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from "react"
+import { useMemo, useRef, useEffect, useState, useCallback } from "react"
 import {
   ownerDocument,
   activeElement,
@@ -53,55 +53,76 @@ export function useEnforceFocus(
     enforceFocus: true,
   }
 ) {
-  const lastActiveElementRef = useRef<HTMLElement | null>(null)
-  useDidUpdate(() => {
-    // focus the container when opening if autoFocus is set to true
+  const lastActiveElementRef = useRef<HTMLElement | null>(activeElement())
+
+  // store the last active element
+  lastActiveElementRef.current = useMemo(() => {
     if (open) {
-      // store the last active element
-      lastActiveElementRef.current = activeElement()
-      if (
-        autoFocus &&
-        element.current &&
-        !contains(element.current, lastActiveElementRef.current)
-      ) {
-        element.current.focus()
-      }
-    } else {
-      // focus the last focused element when closing
-      if (enforceFocus && lastActiveElementRef.current) {
-        lastActiveElementRef.current.focus()
-      }
+      return activeElement()
     }
-    // focus the last focused element when unmounting
-    return () => {
-      if (enforceFocus && lastActiveElementRef.current) {
-        lastActiveElementRef.current.focus()
-      }
-    }
-  }, [open, element.current])
+    return lastActiveElementRef.current
+  }, [open])
 
-  function handleKeyDown(event: KeyboardEvent) {
-    if (!open) return
-    // handle the tab key
-    if (event.keyCode === 9 && enforceFocus) {
-      // this is a tab event, prevent the focus from going out
-      const currentActiveElement = activeElement()
-      if (element.current && !contains(element.current, currentActiveElement)) {
-        element.current.focus()
-      }
+  // focus the last focused element
+  const focusOnLastActiveElement = useCallback(() => {
+    if (enforceFocus && lastActiveElementRef.current) {
+      lastActiveElementRef.current.focus()
     }
-  }
+  }, [enforceFocus, lastActiveElementRef.current])
 
+  // focus back last element when closed
+  useEffect(() => {
+    if (!open) {
+      focusOnLastActiveElement()
+    }
+  }, [open, focusOnLastActiveElement])
+  // or on unmount
+  useEffect(() => {
+    return focusOnLastActiveElement
+  }, [])
+
+  // auto focus the container
+  // focus the container when opening if autoFocus is set to true
+  useEffect(() => {
+    const currentActiveElement = activeElement()
+    if (
+      open &&
+      autoFocus &&
+      element.current &&
+      !contains(element.current, currentActiveElement)
+    ) {
+      element.current.focus()
+    }
+  }, [open, element.current, autoFocus])
+  // and also enforce focus when tabbing through
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!open) return
+      // handle the tab key
+      if (event.keyCode === 9 && autoFocus) {
+        // this is a tab event, prevent the focus from going out
+        const currentActiveElement = activeElement()
+        if (
+          element.current &&
+          !contains(element.current, currentActiveElement)
+        ) {
+          element.current.focus()
+        }
+      }
+    },
+    [open, element.current]
+  )
+  // add the event listeners
   useDidUpdate(() => {
     const document = ownerDocument()
-    if (open) {
-      document && document.addEventListener("keydown", handleKeyDown)
+    if (open && document) {
+      document.addEventListener("keydown", handleKeyDown)
       return () => {
-        document && document.removeEventListener("keydown", handleKeyDown)
+        document.removeEventListener("keydown", handleKeyDown)
       }
     }
     return
-  }, [open, element.current])
+  }, [open, handleKeyDown])
 }
 
 export function useFetchState<ReturnType, ParamsType = any>(

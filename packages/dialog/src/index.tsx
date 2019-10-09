@@ -61,6 +61,7 @@ export function DialogCloseButton({
     <button
       type="button"
       onClick={onClose}
+      autoFocus
       className={classNames("dialog-close-btn", className)}
       {...props}
     >
