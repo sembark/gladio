@@ -2,7 +2,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
-import { animated, useTransition } from "react-spring"
+import { Transition } from "react-spring/renderprops.cjs"
 import { Omit } from "utility-types"
 
 import DialogManager from "./DialogManager"
@@ -40,13 +40,13 @@ export function DialogDocument({
   style,
 }: React.HTMLProps<HTMLElement>) {
   return (
-    <animated.div
+    <div
       role="document"
       style={style}
       className={classNames(`${DIALOG_BASE_CLASS_NAME}-document`, className)}
     >
       {children}
-    </animated.div>
+    </div>
   )
 }
 
@@ -262,14 +262,17 @@ export function Dialog({
       },
     }
   }, [fitContainer])
-  const transitions = useTransition(open, null, transitionConfig)
   return (
-    <React.Fragment>
-      {transitions.map(({ item, key, props: anim }) => {
-        if (!item) return null
-        const dialog = (
-          <animated.div
-            key={key}
+    <Transition
+      items={open}
+      from={transitionConfig.from}
+      enter={transitionConfig.enter}
+      leave={transitionConfig.leave}
+    >
+      {item => anim => {
+        if (!item || !container) return null
+        return ReactDOM.createPortal(
+          <div
             ref={wrapperRef}
             onKeyDown={event => {
               if (!open || !closeOnEscape) return
@@ -293,11 +296,11 @@ export function Dialog({
                 {children}
               </DialogDocument>
             </DialogProvider>
-          </animated.div>
+          </div>,
+          container
         )
-        return container && ReactDOM.createPortal(dialog, container)
-      })}
-    </React.Fragment>
+      }}
+    </Transition>
   )
 }
 

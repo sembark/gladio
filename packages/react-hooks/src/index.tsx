@@ -66,7 +66,9 @@ export function useEnforceFocus(
   // focus the last focused element
   const focusOnLastActiveElement = useCallback(() => {
     if (enforceFocus && lastActiveElementRef.current) {
-      lastActiveElementRef.current.focus()
+      setTimeout(() => {
+        lastActiveElementRef.current && lastActiveElementRef.current.focus()
+      })
     }
   }, [enforceFocus, lastActiveElementRef.current])
 

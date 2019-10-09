@@ -209,7 +209,7 @@ stories.add("Focus Enforced", () => {
             </p>
             <div className="form-group">
               <label>Name</label>
-              <input className="input" type="text" />
+              <input className="input" type="text" autoFocus />
             </div>
           </Dialog.Body>
           <Dialog.Footer>
