@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.1...@tourepedia/react-hooks@0.5.2) (2019-10-09)
+
+
+### Bug Fixes
+
+* **hook-dialog:** fix focus and remounting issue in dialog ([74f91c4](https://github.com/tourepedia/tp-ui/commit/74f91c4))
+
+
+
+
+
 ## [0.5.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.0...@tourepedia/react-hooks@0.5.1) (2019-10-09)
 
 

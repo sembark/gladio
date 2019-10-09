@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.1...@tourepedia/dialog@0.8.2) (2019-10-09)
+
+
+### Bug Fixes
+
+* **hook-dialog:** fix focus and remounting issue in dialog ([74f91c4](https://github.com/tourepedia/tp-ui/commit/74f91c4))
+
+
+
+
+
 ## [0.8.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.0...@tourepedia/dialog@0.8.1) (2019-10-09)
 
 
