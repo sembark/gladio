@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.0...@tourepedia/react-hooks@0.5.1) (2019-10-09)
+
+
+### Bug Fixes
+
+* **enforce-hook:** focus not working properly back to last one ([dec0b11](https://github.com/tourepedia/tp-ui/commit/dec0b11))
+
+
+
+
+
 # [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.4.1...@tourepedia/react-hooks@0.5.0) (2019-10-06)
 
 
