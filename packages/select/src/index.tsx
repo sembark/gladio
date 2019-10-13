@@ -127,13 +127,13 @@ export function Select({
       )
     })
     if (!exactMatch) {
-      options = [
+      options = (options || []).concat([
         {
           id: query.trim(),
           name: query.trim(),
           __created: true,
         },
-      ].concat(options || [])
+      ])
     }
   }
   if (value) {
