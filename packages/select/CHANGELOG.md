@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.6...@tourepedia/select@0.8.7) (2019-10-13)
+
+
+### Bug Fixes
+
+* **creatable-select:** move new item label at end ([17d4f52](https://github.com/tourepedia/tp-ui/commit/17d4f52))
+
+
+
+
+
 ## [0.8.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.5...@tourepedia/select@0.8.6) (2019-10-06)
 
 **Note:** Version bump only for package @tourepedia/select
