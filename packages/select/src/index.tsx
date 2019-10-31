@@ -352,6 +352,7 @@ export function Select({
                     type={multiple ? "checkbox" : "radio"}
                     checked={checked}
                     className="mr-2"
+                    tabIndex={-1}
                   />
                   <div>
                     <OptionRenderer
@@ -384,7 +385,13 @@ export function Select({
               }
             >
               <div className="flex items-center">
-                <input readOnly type="checkbox" checked className="mr-2" />
+                <input
+                  readOnly
+                  type="checkbox"
+                  checked
+                  className="mr-2"
+                  tabIndex={-1}
+                />
                 <div>{v[labelKey]}</div>
               </div>
             </li>
