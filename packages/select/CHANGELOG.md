@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.7...@tourepedia/select@0.8.8) (2019-10-31)
+
+
+### Bug Fixes
+
+* **select:** remove the tabbing from checkboxes ([1ecacd7](https://github.com/tourepedia/tp-ui/commit/1ecacd7))
+
+
+
+
+
 ## [0.8.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.6...@tourepedia/select@0.8.7) (2019-10-13)
 
 
