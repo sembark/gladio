@@ -155,7 +155,7 @@ export function useFetchState<ReturnType, ParamsType = any>(
         data: data,
       })
 
-      return fetchFn(args)
+      return fetchFn(...args)
         .then(data => {
           changeData({
             isFetching: false,
