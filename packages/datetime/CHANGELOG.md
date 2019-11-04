@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.4.4...@tourepedia/datetime@0.4.5) (2019-11-04)
+
+
+### Bug Fixes
+
+* **datetime:** not respecting props id ([30ae5e1](https://github.com/tourepedia/tp-ui/commit/30ae5e1))
+
+
+
+
+
 ## [0.4.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.4.3...@tourepedia/datetime@0.4.4) (2019-11-01)
 
 **Note:** Version bump only for package @tourepedia/datetime
