@@ -16,7 +16,7 @@ interface IMenuProps {
   format: string
   dateFormat: string
   timeFormat: string
-  id: string
+  id?: string
 }
 
 function DefaultMenu({ value, toggle }: IMenuProps) {
@@ -155,7 +155,6 @@ export function DateTimeInput({
   onBlur,
   placeholder,
   name,
-  id,
   ...props
 }: IDateTimeInputProps) {
   return (

@@ -86,7 +86,12 @@ stories.add("DateTimeInput", () => {
     const [value, changeValue] = React.useState<any>()
     return (
       <Container>
-        <DateTimeInput value={value} onChange={changeValue} timeFormat />
+        <DateTimeInput
+          id="myId"
+          value={value}
+          onChange={changeValue}
+          timeFormat
+        />
       </Container>
     )
   }
