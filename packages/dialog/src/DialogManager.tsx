@@ -14,7 +14,22 @@ export default function DialogManager(className?: string) {
    */
   const dataForContainerIndex: Array<{ dialogs: typeof dialogs }> = []
 
+  /**
+   * List of listeners
+   */
+  const listeners: Array<() => any> = []
+
+  function broadcast() {
+    listeners.forEach(fn => fn && fn())
+  }
   return {
+    /**
+     * Number of dialogs
+     */
+    length: () => dialogs.length,
+    /**
+     * Add a new dialog to the manager
+     */
     add(dialog: IDialog, container: HTMLElement) {
       let dialogIndex = dialogs.indexOf(dialog)
       let containerIndex = containers.indexOf(container)
@@ -25,21 +40,22 @@ export default function DialogManager(className?: string) {
       dialogs.push(dialog)
       if (containerIndex !== -1) {
         dataForContainerIndex[containerIndex].dialogs.push(dialog)
-        return dialogIndex
+      } else {
+        const data = {
+          dialogs: [dialog],
+        }
+        if (className) {
+          container.classList.add(className)
+        }
+        containers.push(container)
+        dataForContainerIndex.push(data)
       }
-
-      const data = {
-        dialogs: [dialog],
-      }
-
-      if (className) {
-        container.classList.add(className)
-      }
-
-      containers.push(container)
-      dataForContainerIndex.push(data)
+      broadcast()
       return dialogIndex
     },
+    /**
+     * Remove a dialog
+     */
     remove(dialog: IDialog) {
       let dialogIndex = dialogs.indexOf(dialog)
       if (dialogIndex === -1) {
@@ -60,6 +76,34 @@ export default function DialogManager(className?: string) {
         containers.splice(containerIndex, 1)
         dataForContainerIndex.splice(containerIndex, 1)
       }
+      broadcast()
+    },
+    /**
+     * Subscribe to the changes
+     */
+    subscribe(subscriber: () => any) {
+      let index = listeners.indexOf(subscriber)
+      if (index === -1) {
+        listeners.push(subscriber)
+      }
+      return () => {
+        this.unsubscribe(subscriber)
+      }
+    },
+    /**
+     * Unsubscribe from changes
+     */
+    unsubscribe(unsubscriber: () => any) {
+      let index = listeners.indexOf(unsubscriber)
+      if (index !== -1) {
+        listeners.splice(index, 1)
+      }
+    },
+    /**
+     * Is this dialog on top of all
+     */
+    isTop(dialog: IDialog): boolean {
+      return Boolean(dialogs.length && dialogs[dialogs.length - 1] === dialog)
     },
   }
 }

@@ -3,7 +3,6 @@ import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
 import { Transition } from "react-spring/renderprops.cjs"
-import { Omit } from "utility-types"
 
 import DialogManager from "./DialogManager"
 
@@ -158,8 +157,7 @@ export const DialogFooter = forwardRef(
 )
 DialogFooter.displayName = "DialogFooter"
 
-interface DialogProps
-  extends Omit<React.HTMLProps<HTMLDialogElement>, "open" | "onClose"> {
+interface DialogProps {
   /**
    * Contianer element where we should render the dialog
    * @default document.body
@@ -196,11 +194,12 @@ interface DialogProps
    * Fit the container in height and width
    */
   fitContainer?: boolean
+  className?: string
 }
 
 const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
 
-export function Dialog({
+function DialogContainer({
   container = typeof document !== "undefined" ? document.body : undefined,
   children = null,
   open,
@@ -210,14 +209,28 @@ export function Dialog({
   closeOnEscape,
   className,
   fitContainer = false,
-}: DialogProps) {
+  animation,
+}: DialogProps & {
+  animation: any
+}) {
   const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const id = useId("dialog-")
+
+  // to handle the case when there are multiple dialog opened simultaneously
+  const [isTopDialog, _updateIsTopDialog] = useState(false)
+
+  useEffect(() => {
+    const unsubscribe = dialogManager.subscribe(function subscriber() {
+      _updateIsTopDialog(dialogManager.isTop(id))
+    })
+    return unsubscribe
+  }, [])
 
   // disable closeOnEscape if no props is provided and fitContainer is set to true
   closeOnEscape =
-    closeOnEscape === undefined ? !fitContainer : closeOnEscape || true
-
-  const id = useId("dialog-")
+    isTopDialog &&
+    (closeOnEscape === undefined ? !fitContainer : closeOnEscape || true)
 
   // set the styles for the container
   useEffect(() => {
@@ -234,7 +247,12 @@ export function Dialog({
     }
   }, [open, container])
 
-  useEnforceFocus(wrapperRef, open, { enforceFocus, autoFocus })
+  useEnforceFocus(wrapperRef, {
+    init: open,
+    disabled: !isTopDialog,
+    restoreToLast: isTopDialog && enforceFocus,
+    autoFocus: isTopDialog && autoFocus,
+  })
 
   // provide the context
   const titleId = `${id}-title`
@@ -249,6 +267,40 @@ export function Dialog({
       fitContainer,
     }
   }, [onClose, open, titleId, contentId])
+  if (!container) return null
+  return ReactDOM.createPortal(
+    <div
+      id={id}
+      ref={wrapperRef}
+      onKeyDown={event => {
+        if (!open || !closeOnEscape) return
+        // handle the escape key
+        if (event.keyCode === 27) {
+          onClose && onClose()
+        }
+      }}
+      role="dialog"
+      tabIndex={-1}
+      aria-modal={true}
+      aria-labelledby={titleId}
+      aria-describedby={contentId}
+      style={{ opacity: animation.opacity }}
+      className={classNames(DIALOG_BASE_CLASS_NAME, className, {
+        [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
+      })}
+    >
+      <DialogProvider value={dialogContext}>
+        <DialogDocument style={{ transform: animation.transform }}>
+          {children}
+        </DialogDocument>
+      </DialogProvider>
+    </div>,
+    container
+  )
+}
+
+function Dialog(props: DialogProps) {
+  const { fitContainer, open } = props
   const transitionConfig = React.useMemo(() => {
     return {
       from: {
@@ -270,35 +322,8 @@ export function Dialog({
       leave={transitionConfig.leave}
     >
       {item => anim => {
-        if (!item || !container) return null
-        return ReactDOM.createPortal(
-          <div
-            ref={wrapperRef}
-            onKeyDown={event => {
-              if (!open || !closeOnEscape) return
-              // handle the escape key
-              if (event.keyCode === 27) {
-                onClose && onClose()
-              }
-            }}
-            role="dialog"
-            tabIndex={-1}
-            aria-modal={true}
-            aria-labelledby={titleId}
-            aria-describedby={contentId}
-            style={{ opacity: anim.opacity }}
-            className={classNames(DIALOG_BASE_CLASS_NAME, className, {
-              [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
-            })}
-          >
-            <DialogProvider value={dialogContext}>
-              <DialogDocument style={{ transform: anim.transform }}>
-                {children}
-              </DialogDocument>
-            </DialogProvider>
-          </div>,
-          container
-        )
+        if (!item) return null
+        return <DialogContainer {...props} animation={anim} />
       }}
     </Transition>
   )

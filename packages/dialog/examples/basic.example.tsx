@@ -93,6 +93,14 @@ stories.add("Dialog within Dialog", () => {
           <Dialog.Body>
             <h3>Some content</h3>
             <p>some content here and some more suff</p>
+            <input
+              type="text"
+              className="input"
+              placeholder="Input for tab navigation"
+            />
+            <br />
+            <input type="text" className="input" placeholder="Another Input" />
+            <br />
             <Button primary branded onClick={open2}>
               Anothre One
             </Button>
@@ -100,7 +108,22 @@ stories.add("Dialog within Dialog", () => {
               <Dialog.Header closeButton>
                 <Dialog.Title>Another Dialog</Dialog.Title>
               </Dialog.Header>
-              <Dialog.Body>Here is some text</Dialog.Body>
+              <Dialog.Body>
+                <p>Here is some text</p>
+                <br />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Input for tab navigation"
+                />
+                <br />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Another Input"
+                />
+                <br />
+              </Dialog.Body>
               <Dialog.Footer>
                 <Button onClick={close2} primary branded>
                   Okay

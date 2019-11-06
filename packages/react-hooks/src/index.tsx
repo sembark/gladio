@@ -41,46 +41,60 @@ export function useOnce(fn: () => void): void {
  * and return back to last focused element when the condition got true
  *
  * @param element React.RefObject<HTMLElement> - Ref object (useRef) to container element
- * @param open boolean - Trigger for enforcement and return focus to last focused element
  * @param config { autoFocus: boolean, enforceFocus: boolean } - Should the container element be auto focused (autoFocus)
  * and should the last activeElement be focused back
  */
 export function useEnforceFocus(
   element: React.RefObject<HTMLElement>,
-  open = true,
-  { autoFocus, enforceFocus }: { autoFocus: boolean; enforceFocus: boolean } = {
+  {
+    init,
+    autoFocus,
+    restoreToLast,
+    disabled,
+  }: {
+    init: boolean
+    autoFocus: boolean
+    restoreToLast: boolean
+    disabled: boolean
+  } = {
+    init: true,
     autoFocus: true,
-    enforceFocus: true,
+    restoreToLast: true,
+    disabled: false,
   }
 ) {
   const lastActiveElementRef = useRef<HTMLElement | null>(activeElement())
 
   // store the last active element
   lastActiveElementRef.current = useMemo(() => {
-    if (open) {
+    if (init) {
       return activeElement()
     }
     return lastActiveElementRef.current
-  }, [open])
+  }, [init])
 
   // focus the last focused element
   const focusOnLastActiveElement = useCallback(() => {
-    if (enforceFocus && lastActiveElementRef.current) {
+    if (!disabled && restoreToLast && lastActiveElementRef.current) {
       setTimeout(() => {
         lastActiveElementRef.current && lastActiveElementRef.current.focus()
       })
     }
-  }, [enforceFocus, lastActiveElementRef.current])
+  }, [restoreToLast, lastActiveElementRef.current, disabled])
 
   // focus back last element when closed
   useEffect(() => {
-    if (!open) {
+    if (!init && !disabled) {
       focusOnLastActiveElement()
     }
-  }, [open, focusOnLastActiveElement])
+  }, [init, focusOnLastActiveElement, disabled])
   // or on unmount
   useEffect(() => {
-    return focusOnLastActiveElement
+    return () => {
+      if (!disabled && restoreToLast) {
+        focusOnLastActiveElement()
+      }
+    }
   }, [])
 
   // auto focus the container
@@ -88,43 +102,31 @@ export function useEnforceFocus(
   useEffect(() => {
     const currentActiveElement = activeElement()
     if (
-      open &&
+      !disabled &&
+      init &&
       autoFocus &&
       element.current &&
       !contains(element.current, currentActiveElement)
     ) {
       element.current.focus()
     }
-  }, [open, element.current, autoFocus])
+  }, [init, element.current, autoFocus, disabled])
   // and also enforce focus when tabbing through
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent) => {
-      if (!open) return
-      // handle the tab key
-      if (event.keyCode === 9 && autoFocus) {
-        // this is a tab event, prevent the focus from going out
-        const currentActiveElement = activeElement()
-        if (
-          element.current &&
-          !contains(element.current, currentActiveElement)
-        ) {
-          element.current.focus()
-        }
-      }
-    },
-    [open, element.current]
-  )
+  const handleFocusChange = useCallback(() => {
+    if (!init || disabled) return
+    const currentActiveElement = activeElement()
+    if (element.current && !contains(element.current, currentActiveElement)) {
+      element.current.focus()
+    }
+  }, [init, element.current])
   // add the event listeners
   useDidUpdate(() => {
     const document = ownerDocument()
-    if (open && document) {
-      document.addEventListener("keydown", handleKeyDown)
-      return () => {
-        document.removeEventListener("keydown", handleKeyDown)
-      }
+    if (init && document && !disabled) {
+      return listen(document, "focusin" as any, handleFocusChange)
     }
     return
-  }, [open, handleKeyDown])
+  }, [init, handleFocusChange, disabled])
 }
 
 export function useFetchState<ReturnType, ParamsType = any>(
