@@ -299,7 +299,7 @@ function DialogContainer({
   )
 }
 
-function Dialog(props: DialogProps) {
+export function Dialog(props: DialogProps) {
   const { fitContainer, open } = props
   const transitionConfig = React.useMemo(() => {
     return {
