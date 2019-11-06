@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.3...@tourepedia/react-hooks@0.5.4) (2019-11-06)
+
+
+### Bug Fixes
+
+* **dialog:** dialog not working ([5670de9](https://github.com/tourepedia/tp-ui/commit/5670de9))
+
+
+
+
+
 ## [0.5.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.2...@tourepedia/react-hooks@0.5.3) (2019-11-01)
 
 

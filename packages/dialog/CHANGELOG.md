@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.3...@tourepedia/dialog@0.8.4) (2019-11-06)
+
+
+### Bug Fixes
+
+* **dialog:** dialog not working ([5670de9](https://github.com/tourepedia/tp-ui/commit/5670de9))
+
+
+
+
+
 ## [0.8.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.2...@tourepedia/dialog@0.8.3) (2019-11-01)
 
 **Note:** Version bump only for package @tourepedia/dialog
