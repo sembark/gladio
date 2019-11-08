@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.8...@tourepedia/select@0.9.0) (2019-11-08)
+
+
+### Features
+
+* **select:** add caching ([57d738a](https://github.com/tourepedia/tp-ui/commit/57d738a))
+
+
+
+
+
 ## [0.8.8](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.7...@tourepedia/select@0.8.8) (2019-10-31)
 
 
