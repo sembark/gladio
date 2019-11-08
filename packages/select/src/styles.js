@@ -92,6 +92,26 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       cursor: "pointer",
       background: theme("backgroundColor.gray.300"),
     },
+    ".select__loader": {
+      position: "absolute",
+      right: "10px",
+      bottom: ".6rem",
+      width: "1rem",
+      height: "1rem",
+      borderRadius: "50%",
+      overflow: "hidden",
+      border: "2px solid #a0aec0",
+      borderTopColor: "transparent",
+      animation: "select-loader-spin 500ms infinite linear",
+    },
+    "@keyframes select-loader-spin": {
+      from: {
+        transform: `rotate(0deg)`,
+      },
+      to: {
+        transform: `rotate(360deg)`,
+      },
+    },
   }
   addComponents(select)
 }

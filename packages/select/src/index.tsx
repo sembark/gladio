@@ -1,37 +1,15 @@
-import * as React from "react"
+import React, { useState, useEffect, useRef, useCallback } from "react"
 import { Omit } from "utility-types"
-import { contains, ownerDocument } from "@tourepedia/dom-helpers"
+import { contains, ownerDocument, listen } from "@tourepedia/dom-helpers"
 import classNames from "classnames"
 import { Input } from "@tourepedia/input"
 
-const { useState, useEffect, useRef } = React
+import createCache from "./cache"
 
-function Loader({ duration = 500 }: { duration?: number }) {
-  const [deg, setDeg] = useState<number>(0)
-  useEffect(() => {
-    const handler = requestAnimationFrame(() => {
-      setDeg((deg + (360 / (duration || 150)) * 16) % 360)
-    })
-    return () => {
-      cancelAnimationFrame(handler)
-    }
-  }, [deg])
-  return (
-    <div
-      style={{
-        position: "absolute",
-        right: "10px",
-        bottom: ".6rem",
-        width: "1rem",
-        height: "1rem",
-        borderRadius: "50%",
-        overflow: "hidden",
-        border: "2px solid #a0aec0",
-        borderTopColor: "transparent",
-        transform: `rotate(${deg}deg)`,
-      }}
-    />
-  )
+const Cache = createCache()
+
+function Loader() {
+  return <div className="select__loader" />
 }
 
 function defaultCreateOptionLabel(label: string): React.ReactNode {
@@ -181,13 +159,13 @@ export function Select({
         setIsFouced(false)
       }
     }
-    document.addEventListener("click", handleClick)
-    document.addEventListener("keyup", handleClick)
-    document.addEventListener("focus", handleClick)
+    const removeListeners = [
+      listen(document, "click", handleClick),
+      listen(document, "keyup", handleClick),
+      listen(document, "focus", handleClick),
+    ]
     return () => {
-      document.removeEventListener("click", handleClick)
-      document.removeEventListener("keyup", handleClick)
-      document.removeEventListener("focus", handleClick)
+      removeListeners.forEach(fn => fn())
     }
   }, [isFocused, groupRef.current])
   // handle the keyboad navigation
@@ -242,10 +220,7 @@ export function Select({
           break
       }
     }
-    document.addEventListener("keydown", handleKeyDown)
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown)
-    }
+    return listen(document, "keydown", handleKeyDown)
   }, [isFocused, focusedOption, options, value])
 
   // handle the option click
@@ -319,7 +294,7 @@ export function Select({
             ref={inputRef}
           />
         )}
-        {isLoading ? <Loader /> : null}
+        {isLoading ? !searchable && options.length ? null : <Loader /> : null}
         <ol role="listbox" aria-multiselectable={multiple}>
           {isFocused && options.length === 0 ? (
             <li role="option" aria-readonly={true}>
@@ -444,12 +419,24 @@ export interface AsyncProps
     Partial<Pick<SelectProps, "onQuery" | "options" | "query">> {
   fetch: (query: string) => Promise<any[]>
   debounceBy?: number
+  cacheKey?: string
 }
 
-export function Async({ fetch, debounceBy = 300, ...otherProps }: AsyncProps) {
-  const [query, setQuery] = useState<string>("")
-  const [isLoading, changeLoading] = useState<boolean>(false)
-  const [options, setOptions] = useState<Array<any>>([])
+export function Async({
+  fetch,
+  debounceBy = 300,
+  cacheKey,
+  ...otherProps
+}: AsyncProps) {
+  const [state, setState] = useState<{
+    query: string
+    isLoading: boolean
+    options: Array<any>
+  }>({
+    query: "",
+    isLoading: false,
+    options: cacheKey ? Cache.get(cacheKey) : [],
+  })
   const lastDeboundeHandler = useRef<number>()
   useEffect(() => {
     return () => {
@@ -457,28 +444,46 @@ export function Async({ fetch, debounceBy = 300, ...otherProps }: AsyncProps) {
         window.clearTimeout(lastDeboundeHandler.current)
     }
   }, [lastDeboundeHandler])
+
+  const fetchOptions = useCallback(
+    (query: string) => {
+      setState(state => ({
+        ...state,
+        isLoading: true,
+        options: cacheKey ? Cache.get(cacheKey) : state.options,
+        query,
+      }))
+      clearTimeout(lastDeboundeHandler.current)
+      lastDeboundeHandler.current = window.setTimeout(() => {
+        fetch(query)
+          .then(options => {
+            if (cacheKey) {
+              Cache.set(cacheKey, options)
+            }
+            setState(state => ({
+              ...state,
+              isLoading: false,
+              options,
+            }))
+          })
+          .catch(error => {
+            setState(state => ({
+              ...state,
+              isLoading: false,
+            }))
+            return Promise.reject(error)
+          })
+      }, debounceBy)
+    },
+    [fetch, lastDeboundeHandler, debounceBy]
+  )
+  const { options, query, isLoading } = state
   return (
     <Select
       options={options}
       query={query}
       isLoading={isLoading}
-      onQuery={query => {
-        changeLoading(true)
-        setQuery(query)
-        clearTimeout(lastDeboundeHandler.current)
-        lastDeboundeHandler.current = window.setTimeout(() => {
-          fetch(query)
-            .then(setOptions)
-            .then(resp => {
-              changeLoading(false)
-              return resp
-            })
-            .catch(error => {
-              isLoading && changeLoading(false)
-              return Promise.reject(error)
-            })
-        }, debounceBy)
-      }}
+      onQuery={fetchOptions}
       {...otherProps}
     />
   )

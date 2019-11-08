@@ -119,7 +119,14 @@ stories.add("Single Select Async", () => (
         alert(`You selected ` + JSON.stringify(value))
       }}
       fetch={q => {
-        return Promise.resolve(countries.filter(c => c.name.indexOf(q) !== -1))
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            const data = countries.filter(
+              c => c.name.toLowerCase().indexOf(q.toLowerCase()) !== -1
+            )
+            resolve(data)
+          }, 1000)
+        })
       }}
     />
   </div>
@@ -300,3 +307,41 @@ stories.add("Creatable with Custom onCreate", () => {
   }
   return <SelectRenderer />
 })
+
+stories.add(
+  "Async with Cache",
+  () => (
+    <div className="max-w-lg mx-auto">
+      <Async
+        cacheKey="name"
+        multiple
+        inline
+        searchable={false}
+        label="Select Places"
+        name="name"
+        onChange={(value, name) => {
+          alert(`You selected ` + JSON.stringify(value))
+        }}
+        fetchOnMount
+        fetch={q => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve(countries.filter(c => c.name.indexOf(q) !== -1))
+            }, 100)
+          })
+        }}
+      />
+    </div>
+  ),
+  {
+    info: `
+
+  This example shows the usage of cache feature. When the components first mounts, it behaves in the similar
+  way, it will show a loader to fetch the data and when it receives the data, it will show the options. But when it
+  renders the second time, it will not show a loader as it will get the data from the cache. It will still make the
+  fetch request to get the latest data and will see the latest data when it receives one but user will not see a
+  loading screen. You can test by removing the "cacheKey" prop from the "Async" component.
+
+    `,
+  }
+)
