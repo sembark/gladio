@@ -157,6 +157,17 @@ export const DialogFooter = forwardRef(
 )
 DialogFooter.displayName = "DialogFooter"
 
+interface IBackdropProps extends React.HTMLProps<HTMLDivElement> {}
+
+function Backdrop({ className, ...props }: IBackdropProps) {
+  return (
+    <div
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}__backdrop`, className)}
+      {...props}
+    />
+  )
+}
+
 interface DialogProps {
   /**
    * Contianer element where we should render the dialog
@@ -194,6 +205,9 @@ interface DialogProps {
    * Fit the container in height and width
    */
   fitContainer?: boolean
+  /**
+   * Class name for the Dialog element
+   */
   className?: string
 }
 
@@ -289,6 +303,7 @@ function DialogContainer({
         [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
       })}
     >
+      {!fitContainer ? <Backdrop /> : null}
       <DialogProvider value={dialogContext}>
         <DialogDocument style={{ transform: animation.transform }}>
           {children}

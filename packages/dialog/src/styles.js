@@ -15,13 +15,17 @@ module.exports = function addDialog({ addComponents, theme }) {
       left: 0,
       width: "100%",
       height: "100%",
-      background: "rgba(0, 0, 0, 0.5)",
       overflow: "hidden",
       padding: 0,
       border: "none",
-      [`&${[base]}-fit-container`]: {
-        background: "transparent",
-      },
+    },
+    [`${base}__backdrop`]: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      background: "rgba(0, 0, 0, 0.5)",
     },
     [`${base}-is-open`]: {
       overflow: "hidden",
