@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.5...@tourepedia/dialog@0.8.6) (2019-11-11)
+
+
+### Bug Fixes
+
+* **dialog:** add backdrop in dialog ([592591a](https://github.com/tourepedia/tp-ui/commit/592591a))
+
+
+
+
+
 ## [0.8.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.4...@tourepedia/dialog@0.8.5) (2019-11-06)
 
 
