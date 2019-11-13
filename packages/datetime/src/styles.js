@@ -9,7 +9,7 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
         textAlign: "center",
         padding: "5px 0",
         "&:hover": {
-          background: theme("backgroundColor.gray.100"),
+          background: theme("backgroundColor.gray-100"),
         },
       },
       "&-prev, &-next": {
@@ -26,7 +26,7 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
       },
       "&-time-toggle": {
         borderTop: `${theme("borderWidth.default")} solid ${theme(
-          "borderColor.gray.200"
+          "borderColor.gray-200"
         )}`,
         textAlign: "center",
       },
@@ -34,7 +34,7 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
         padding: `${theme("padding.2")} 0`,
         width: "32px",
         textAlign: "center",
-        color: theme("textColor.gray.600"),
+        color: theme("textColor.gray-600"),
         fontSize: theme("fontSize.sm"),
       },
       "&-day, &-month, &-year": {
@@ -46,11 +46,11 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
         userSelect: "none",
       },
       "&-day&-today": {
-        boxShadow: `0 0 0 1px ${theme("textColor.gray.600")} inset`,
+        boxShadow: `0 0 0 1px ${theme("textColor.gray-600")} inset`,
       },
       "& &-active": {
         color: theme("textColor.white"),
-        backgroundColor: theme("backgroundColor.gray.600"),
+        backgroundColor: theme("backgroundColor.gray-600"),
       },
       "&-month": {
         padding: "15px",
@@ -81,7 +81,7 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
         fontSize: ".8em",
         display: "block",
         textAlign: "left",
-        color: theme("textColor.gray.600"),
+        color: theme("textColor.gray-600"),
         textTransform: "uppercase",
         letterSpacing: "1px",
         marginBottom: "5px",
@@ -96,13 +96,13 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
         paddingRight: theme("padding.5"),
         borderRadius: theme("borderRadius.default"),
         border: `${theme("borderWidth.default")} solid ${theme(
-          "borderColor.gray.400"
+          "borderColor.gray-400"
         )}`,
         padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
         boxShadow: theme("boxShadow.inner"),
         "&:focus": {
           outline: "none",
-          borderColor: theme("borderColor.primary.600"),
+          borderColor: theme("borderColor.primary-600"),
           boxShadow: `${theme("boxShadow.inner")}, ${theme(
             "boxShadow.outline"
           )}`,
@@ -110,8 +110,10 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
       },
       "&-picker": {
         position: "relative",
+        display: "inline-block",
         "&-toggle": {},
         "&-dropdown": {
+          minWidth: "200px",
           position: "absolute",
           top: "100%",
           left: 0,
@@ -120,6 +122,10 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
           background: theme("backgroundColor.white"),
           borderRadius: theme("borderRadius.lg"),
           boxShadow: theme("boxShadow.default"),
+        },
+        "&--right &-dropdown": {
+          left: "auto",
+          right: 0,
         },
       },
     },

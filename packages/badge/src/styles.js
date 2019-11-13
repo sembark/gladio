@@ -11,7 +11,7 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
       verticalAlign: "baseline",
       backgroundColor: theme("backgroundColor.white"),
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.400"
+        "borderColor.gray-400"
       )}`,
       borderRadius: theme("borderRadius.lg"),
       "&-list": {
@@ -24,35 +24,35 @@ module.exports = function addBadgeComponentPlugin({ addComponents, theme }) {
         borderRadius: theme("borderRadius.full"),
       },
       "&-primary, &-list-primary &": {
-        borderColor: theme("borderColor.primary.700"),
-        backgroundColor: theme("backgroundColor.primary.600"),
+        borderColor: theme("borderColor.primary-700"),
+        backgroundColor: theme("backgroundColor.primary-600"),
         color: theme("textColor.white"),
       },
       "&-success, &-list-success &": {
-        borderColor: theme("borderColor.green.300"),
-        backgroundColor: theme("backgroundColor.green.200"),
-        color: theme("textColor.green.800"),
+        borderColor: theme("borderColor.green-300"),
+        backgroundColor: theme("backgroundColor.green-200"),
+        color: theme("textColor.green-800"),
       },
       "&-warning, &-list-warning &": {
-        borderColor: theme("borderColor.yellow.300"),
-        backgroundColor: theme("backgroundColor.yellow.200"),
-        color: theme("textColor.yellow.800"),
+        borderColor: theme("borderColor.yellow-300"),
+        backgroundColor: theme("backgroundColor.yellow-200"),
+        color: theme("textColor.yellow-800"),
       },
       "&-danger, &-list-danger &": {
-        borderColor: theme("borderColor.red.300"),
-        backgroundColor: theme("backgroundColor.red.200"),
-        color: theme("textColor.red.800"),
+        borderColor: theme("borderColor.red-300"),
+        backgroundColor: theme("backgroundColor.red-200"),
+        color: theme("textColor.red-800"),
       },
       "&-accent, &-list-accent &": {
-        borderColor: theme("borderColor.accent.300"),
-        backgroundColor: theme("backgroundColor.accent.200"),
-        color: theme("textColor.accent.800"),
+        borderColor: theme("borderColor.accent-300"),
+        backgroundColor: theme("backgroundColor.accent-200"),
+        color: theme("textColor.accent-800"),
       },
       "&-outlined, &-list-outlined &": {
         backgroundColor: theme("backgroundColor.white"),
       },
       "&-outlined&-primary, &-list-outlined&-list-primary &": {
-        color: theme("backgroundColor.primary.800"),
+        color: theme("backgroundColor.primary-800"),
       },
     },
   }

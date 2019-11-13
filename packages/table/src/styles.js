@@ -21,7 +21,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       "thead > tr > th": {
         verticalAlign: "bottom",
         borderBottom: `${theme("borderWidth.2")} solid ${theme(
-          "borderColor.gray.100"
+          "borderColor.gray-100"
         )}`,
         fontWeight: theme("fontWeight.semibold"),
       },
@@ -51,28 +51,28 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       },
       "&-striped > tbody > tr:nth-child(2n) >": {
         "th, td": {
-          background: theme("backgroundColor.gray.100"),
+          background: theme("backgroundColor.gray-100"),
         },
       },
       "&-hover > tbody > tr:hover >": {
         "th, td": {
-          background: theme("backgroundColor.gray.100"),
+          background: theme("backgroundColor.gray-100"),
         },
       },
       "&-bordered": {
         "> * > tr ": {
           "> td, > th": {
             borderBottom: `${theme("borderWidth.default")} solid ${theme(
-              "borderColor.gray.400"
+              "borderColor.gray-400"
             )}`,
             "&:first-child": {
               borderLeft: `${theme("borderWidth.default")} solid ${theme(
-                "borderColor.gray.400"
+                "borderColor.gray-400"
               )}`,
             },
             "&:last-child": {
               borderRight: `${theme("borderWidth.default")} solid ${theme(
-                "borderColor.gray.400"
+                "borderColor.gray-400"
               )}`,
             },
           },
@@ -80,7 +80,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
         "> *:first-child > tr:first-child, > thead > tr:last-child": {
           "> td, > th": {
             borderTop: `${theme("borderWidth.default")} solid ${theme(
-              "borderColor.gray.400"
+              "borderColor.gray-400"
             )}`,
             "&:first-child": {
               borderTopLeftRadius: borderRadius,
@@ -101,7 +101,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
           },
         },
         "> thead > tr:last-child > th": {
-          borderBottomColor: theme("borderColor.gray.400"),
+          borderBottomColor: theme("borderColor.gray-400"),
         },
       },
     },

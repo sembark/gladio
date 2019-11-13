@@ -28,13 +28,13 @@ npm install --save @tourepedia/css
 **in sass**
 
 ```
-@include '@tourepedia/css/lib/styles.css'
+@include '@tourepedia/css/styles/styles.css'
 ```
 
 **in js**
 
 ```
-import '@tourepedia/css/lib/styles.css'
+import '@tourepedia/css/styles/styles.css'
 ```
 
 A JSON file for theme is also included

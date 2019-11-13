@@ -13,7 +13,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       padding: `${theme("padding.ie-y")} ${theme("padding.ie-x")}`,
       borderRadius: theme("borderRadius.default"),
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.400"
+        "borderColor.gray-400"
       )}`,
       display: "block",
       lineHeight: 1.5,
@@ -21,7 +21,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       boxShadow: theme("boxShadow.inner"),
       "&:focus": {
         outline: "none",
-        borderColor: theme("borderColor.primary.600"),
+        borderColor: theme("borderColor.primary-600"),
         boxShadow: `${theme("boxShadow.inner")}, ${theme("boxShadow.outline")}`,
       },
       "&[type='checkbox'], &[type='radio']": {
@@ -43,10 +43,10 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       },
       "select&": select,
       "&.has-error": {
-        borderColor: theme("borderColor.red.700"),
+        borderColor: theme("borderColor.red-700"),
       },
       "&:disabled": {
-        background: theme("backgroundColor.gray.100"),
+        background: theme("backgroundColor.gray-100"),
         cursor: "not-allowed",
         opacity: ".8",
       },
@@ -79,7 +79,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         [`&-addon`]: {
           padding: theme("padding.ie-y"),
           border: `${theme("borderWidth.default")} solid ${theme(
-            "borderColor.gray.500"
+            "borderColor.gray-500"
           )}`,
         },
         "&.has-error > *": {
@@ -99,13 +99,13 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         marginLeft: theme("margin.2"),
       },
       "&.has-error .input, &.has-error .input-group > *": {
-        borderColor: theme("borderColor.red.600"),
+        borderColor: theme("borderColor.red-600"),
       },
       "&.has-error .error-message": {
         display: "block",
         width: "fit-content",
-        backgroundColor: theme("backgroundColor.red.100"),
-        color: theme("textColor.red.700"),
+        backgroundColor: theme("backgroundColor.red-100"),
+        color: theme("textColor.red-700"),
         marginTop: theme("margin.2"),
         borderRadius: theme("borderRadius.default"),
         fontSize: theme("fontSize.sm"),

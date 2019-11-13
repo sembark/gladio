@@ -3,6 +3,7 @@ import moment from "moment"
 import { useRootClose, useId } from "@tourepedia/react-hooks"
 import { useTransition, animated, config } from "react-spring"
 import { Input } from "@tourepedia/input"
+import classNames from "classnames"
 
 import DateTime from "./DateTime"
 import { getDateTimeFormats } from "./utils"
@@ -30,11 +31,13 @@ function DefaultMenu({ value, toggle }: IMenuProps) {
 interface IDateTimePickerProps extends React.ComponentProps<typeof DateTime> {
   renderMenu?: typeof DefaultMenu
   id?: string
+  rightAlign?: boolean
 }
 
 export default function DateTimePicker({
   renderMenu: Menu = DefaultMenu,
   id: propsId,
+  rightAlign,
   ...props
 }: IDateTimePickerProps) {
   const {
@@ -78,7 +81,12 @@ export default function DateTimePicker({
     leave: { opacity: 0, transform: "translateY(-5px)" },
   })
   return (
-    <div className="tpdt-picker" ref={containerRef}>
+    <div
+      className={classNames("tpdt-picker", {
+        "tpdt-picker--right": rightAlign,
+      })}
+      ref={containerRef}
+    >
       <Menu
         isVisible={isDropdownOpen}
         value={value ? moment(value).format(dateTimeFormat) : undefined}

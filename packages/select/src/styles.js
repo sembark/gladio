@@ -25,7 +25,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       zIndex: 2,
       background: "white",
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.300"
+        "borderColor.gray-300"
       )}`,
       display: "none",
       overflow: "auto",
@@ -58,7 +58,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
     },
     ".select [role='listbox'] [role='option'] + [role='option']": {
       borderTop: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.300"
+        "borderColor.gray-300"
       )}`,
     },
     ".select.select-inline.select-not-searchable [role='listbox'] [role='option']": {
@@ -68,10 +68,10 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       borderTop: "none",
     },
     ".select [role='listbox'] [role='option']:hover, .select [role='listbox'] [role='option'][data-focused='true']": {
-      background: theme("backgroundColor.gray.100"),
+      background: theme("backgroundColor.gray-100"),
     },
     ".select [role='listbox'] [aria-selected='true']": {
-      background: theme("backgroundColor.gray.300"),
+      background: theme("backgroundColor.gray-300"),
     },
     ".select.select-inline.select-not-searchable [role='listbox'] [aria-selected='true']": {
       background: "transparent",
@@ -90,7 +90,7 @@ module.exports = function addSelectComponentPlugin({ addComponents, theme }) {
       borderRadius: theme("borderRadius.default"),
       fontSize: theme("fontSize.sm"),
       cursor: "pointer",
-      background: theme("backgroundColor.gray.300"),
+      background: theme("backgroundColor.gray-300"),
     },
     ".select__loader": {
       position: "absolute",

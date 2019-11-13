@@ -74,7 +74,12 @@ stories.add("DateTime Picker", () => {
     const [value, changeValue] = React.useState<any>()
     return (
       <Container>
-        <DateTimePicker value={value} onChange={changeValue} timeFormat />
+        <DateTimePicker
+          value={value}
+          onChange={changeValue}
+          timeFormat
+          rightAlign
+        />
       </Container>
     )
   }

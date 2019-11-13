@@ -5,23 +5,35 @@
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
   "license": "MIT",
-  "main": "lib/theme.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "build:css": "tailwind build src/index.css -o lib/styles.css",
-    "build:theme": "../../node_modules/.bin/tsc lib/theme.ts --outDir lib --module commonjs  --declaration true --allowSyntheticDefaultImports true",
+    "build:css": "tailwind build src/index.css -o styles/styles.css",
+    "build:js": "node ../../shared/build --onlyTs",
     "css:watch": "chokidar \"./src/**/*.(js|css)\" -c \"npm run build:css\"",
-    "build:watch": "npm run css:watch",
-    "build": "npm-run-all -l -p build:css  build:theme"
+    "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
+    "build:watch": "npm run css:watch js:watch",
+    "build": "npm-run-all -l build:css  build:js",
+    "prepublish": "npm run build:css",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "ts-jest"
   },
   "files": [
     "src",
     "lib"
   ],
   "devDependencies": {
-    "tailwindcss": "^1.0.2"
+    "tailwindcss": "^1.1.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "utility-types": "^3.7.0"
   },
   "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01"
 }

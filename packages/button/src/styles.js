@@ -3,31 +3,31 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
     return {
       [`&-secondary.${label}, &.${label}`]: {
         backgroundColor: theme(`backgroundColor.transparent`),
-        borderColor: theme(`borderColor.${color}.400`),
-        color: theme(`textColor.${color}.700`),
+        borderColor: theme(`borderColor.${color}-400`),
+        color: theme(`textColor.${color}-700`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
-          borderColor: theme(`borderColor.${color}.500`),
-          color: theme(`textColor.${color}.900`),
+          borderColor: theme(`borderColor.${color}-500`),
+          color: theme(`textColor.${color}-900`),
         },
       },
       [`&-tertiary.${label}`]: {
         backgroundColor: theme(`backgroundColor.transparent`),
         borderColor: theme(`borderColor.transparent`),
-        color: theme(`textColor.${color}.800`),
+        color: theme(`textColor.${color}-800`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
           borderColor: theme(`borderColor.transparent`),
-          color: theme(`textColor.${color}.900`),
+          color: theme(`textColor.${color}-900`),
         },
       },
       [`&-primary.${label}`]: {
-        backgroundColor: theme(`backgroundColor.${color}.700`),
-        borderColor: theme(`borderColor.${color}.700`),
+        backgroundColor: theme(`backgroundColor.${color}-700`),
+        borderColor: theme(`borderColor.${color}-700`),
         color: theme(`textColor.white`),
         "&:hover": {
-          backgroundColor: theme(`backgroundColor.${color}.600`),
-          borderColor: theme(`borderColor.${color}.600`),
+          backgroundColor: theme(`backgroundColor.${color}-600`),
+          borderColor: theme(`borderColor.${color}-600`),
           color: theme(`textColor.white`),
         },
       },
@@ -50,7 +50,7 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       verticalAlign: "middle",
       whiteSpace: "nowrap",
       border: `${theme("borderWidth.default")} solid ${theme(
-        "borderColor.gray.400"
+        "borderColor.gray-400"
       )}`,
       willChange: "background, border-color, color",
       transition: "all .15s ease-in-out",
@@ -62,32 +62,32 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       },
       "&, &&-secondary": {
         backgroundColor: theme(`backgroundColor.transparent`),
-        borderColor: theme(`borderColor.secondary.400`),
-        color: theme(`backgroundColor.secondary.700`),
+        borderColor: theme(`borderColor.secondary-400`),
+        color: theme(`backgroundColor.secondary-700`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
-          borderColor: theme(`borderColor.secondary.500`),
-          color: theme(`backgroundColor.secondary.900`),
+          borderColor: theme(`borderColor.secondary-500`),
+          color: theme(`backgroundColor.secondary-900`),
         },
       },
       "&&-primary": {
-        backgroundColor: theme(`backgroundColor.secondary.200`),
-        borderColor: theme(`borderColor.secondary.300`),
-        color: theme(`backgroundColor.secondary.700`),
+        backgroundColor: theme(`backgroundColor.secondary-200`),
+        borderColor: theme(`borderColor.secondary-300`),
+        color: theme(`backgroundColor.secondary-700`),
         "&:hover": {
-          backgroundColor: theme(`backgroundColor.secondary.300`),
-          borderColor: theme(`borderColor.secondary.400`),
-          color: theme(`backgroundColor.secondary.800`),
+          backgroundColor: theme(`backgroundColor.secondary-300`),
+          borderColor: theme(`borderColor.secondary-400`),
+          color: theme(`backgroundColor.secondary-800`),
         },
       },
       "&&-tertiary": {
         backgroundColor: theme(`backgroundColor.transparent`),
         borderColor: theme(`borderColor.transparent`),
-        color: theme(`backgroundColor.secondary.700`),
+        color: theme(`backgroundColor.secondary-700`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
           borderColor: theme(`borderColor.transparent`),
-          color: theme(`backgroundColor.secondary.900`),
+          color: theme(`backgroundColor.secondary-900`),
         },
       },
       "&-secondary.light, &.light": {
@@ -95,9 +95,9 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
         borderColor: theme(`borderColor.white`),
         color: theme(`textColor.white`),
         "&:hover": {
-          backgroundColor: theme(`backgroundColor.gray.100`),
-          borderColor: theme(`borderColor.gray.100`),
-          color: theme(`textColor.gray.800`),
+          backgroundColor: theme(`backgroundColor.gray-100`),
+          borderColor: theme(`borderColor.gray-100`),
+          color: theme(`textColor.gray-800`),
         },
       },
       "&-tertiary.light": {
@@ -113,11 +113,11 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       "&-primary.light": {
         backgroundColor: theme(`backgroundColor.white`),
         borderColor: theme(`borderColor.white`),
-        color: theme(`textColor.gray.700`),
+        color: theme(`textColor.gray-700`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.white`),
           borderColor: theme(`borderColor.white`),
-          color: theme(`textColor.gray.900`),
+          color: theme(`textColor.gray-900`),
         },
       },
       ...themeStyles("branded", "primary"),

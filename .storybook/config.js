@@ -2,7 +2,7 @@ import { configure, addDecorator, addParameters } from "@storybook/react"
 import { getStorybook } from "@storybook/react"
 import { withInfo } from "@storybook/addon-info"
 
-import "./../packages/css/lib/styles.css"
+import "./../packages/css/styles/styles.css"
 
 addParameters({
   options: {

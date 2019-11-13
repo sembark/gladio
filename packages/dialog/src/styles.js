@@ -4,7 +4,7 @@ module.exports = function addDialog({ addComponents, theme }) {
   const padding = `${theme("padding.4")} ${theme("padding.6")}`
   const borderRadius = theme("borderRadius.lg")
   const dividerBorder = `${theme("borderWidth.default")} solid ${theme(
-    "borderColor.gray.200"
+    "borderColor.gray-200"
   )}`
   const backgroundWhite = theme("backgroundColor.white")
   const dialog = {

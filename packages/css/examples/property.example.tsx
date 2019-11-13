@@ -1,7 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
-import "./../lib/styles.css"
+import "./../styles/styles.css"
 
 const stories = storiesOf("Styles/Property", module)
 
