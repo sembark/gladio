@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/box",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Box Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -33,7 +33,7 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.20.3",
+    "@tourepedia/css": "^0.21.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   }

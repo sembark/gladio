@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.6...@tourepedia/dialog@0.9.0) (2019-11-13)
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/tourepedia/tp-ui/commit/9614509))
+
+
+
+
+
 ## [0.8.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.5...@tourepedia/dialog@0.8.6) (2019-11-11)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.4.6...@tourepedia/datetime@0.5.0) (2019-11-13)
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/tourepedia/tp-ui/commit/9614509))
+
+
+
+
+
 ## [0.4.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.4.5...@tourepedia/datetime@0.4.6) (2019-11-06)
 
 **Note:** Version bump only for package @tourepedia/datetime

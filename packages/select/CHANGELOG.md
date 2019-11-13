@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.9.0...@tourepedia/select@0.10.0) (2019-11-13)
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/tourepedia/tp-ui/commit/9614509))
+
+
+
+
+
 # [0.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.8.8...@tourepedia/select@0.9.0) (2019-11-08)
 
 
