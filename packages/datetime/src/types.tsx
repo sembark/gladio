@@ -25,6 +25,7 @@ export interface IDateTimeConfig {
   onChange?: (date?: Moment) => any
   value?: Moment | string
   isValidDate?: (currentDate: Moment, selectedDate?: Moment | string) => boolean
+  clearable?: boolean
 }
 
 export type TDateTimeContext = IDateTimeHelpers &

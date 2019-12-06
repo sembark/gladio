@@ -65,6 +65,7 @@ export function useDateTime(config: IDateTimeConfig) {
     children,
     onChange,
     value: configValue,
+    clearable = true,
     ...props
   } = config
 
@@ -121,9 +122,15 @@ export function useDateTime(config: IDateTimeConfig) {
       if (!onChange) {
         return
       }
+      if (clearable && value && date) {
+        if (moment(value).isSame(date, "day")) {
+          onChange()
+          return
+        }
+      }
       onChange(date)
     },
-    [onChange]
+    [onChange, value]
   )
   // automatic change the viewDate if current select date
   // is not in the current month
@@ -148,6 +155,7 @@ export function useDateTime(config: IDateTimeConfig) {
     showView,
     navigateForward,
     navigateBack,
+    clearable,
   }
 
   return ctx
