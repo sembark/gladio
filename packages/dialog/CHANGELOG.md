@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.9.0...@tourepedia/dialog@0.10.0) (2019-12-07)
+
+
+### Features
+
+* **dialog:** add sizies to dialog ([8fde9d2](https://github.com/tourepedia/tp-ui/commit/8fde9d2))
+
+
+
+
+
 # [0.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.8.6...@tourepedia/dialog@0.9.0) (2019-11-13)
 
 
