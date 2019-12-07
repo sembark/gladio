@@ -48,6 +48,15 @@ module.exports = function addDialog({ addComponents, theme }) {
         margin: "1.75rem auto",
       },
     },
+    [`${base}-sm ${base}-document`]: {
+      maxWidth: screens.sm,
+    },
+    [`${base}-lg ${base}-document`]: {
+      maxWidth: screens.lg,
+    },
+    [`${base}-xl ${base}-document`]: {
+      maxWidth: screens.xl,
+    },
     [`${base}-fit-container ${base}-document`]: {
       width: "100%",
       maxWidth: "100%",
