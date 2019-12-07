@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.10.0...@tourepedia/dialog@0.10.1) (2019-12-07)
+
+
+### Bug Fixes
+
+* **dialog:** fix size styles ([59095b6](https://github.com/tourepedia/tp-ui/commit/59095b6))
+
+
+
+
+
 # [0.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/dialog@0.9.0...@tourepedia/dialog@0.10.0) (2019-12-07)
 
 
