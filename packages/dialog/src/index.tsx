@@ -209,6 +209,19 @@ interface DialogProps {
    * Class name for the Dialog element
    */
   className?: string
+  /**
+   * Large size
+   */
+  xl?: boolean
+  /**
+   * Large size
+   */
+  lg?: boolean
+
+  /**
+   * Small size
+   */
+  sm?: boolean
 }
 
 const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
@@ -224,6 +237,9 @@ function DialogContainer({
   className,
   fitContainer = false,
   animation,
+  xl,
+  lg,
+  sm,
 }: DialogProps & {
   animation: any
 }) {
@@ -301,6 +317,9 @@ function DialogContainer({
       style={{ opacity: animation.opacity }}
       className={classNames(DIALOG_BASE_CLASS_NAME, className, {
         [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
+        [`${DIALOG_BASE_CLASS_NAME}-lg`]: lg,
+        [`${DIALOG_BASE_CLASS_NAME}-sm`]: sm,
+        [`${DIALOG_BASE_CLASS_NAME}-xl`]: xl,
       })}
     >
       {!fitContainer ? <Backdrop /> : null}

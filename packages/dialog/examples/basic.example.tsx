@@ -259,3 +259,75 @@ stories.add("Focus Enforced", () => {
   }
   return <DialogRenderer />
 })
+
+stories.add("Small Size", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    return (
+      <div>
+        <h3 className="text-center">
+          Use dialog component to show a ui inside a popup
+        </h3>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Small Dialog
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close} sm>
+          <Dialog.Header closeButton>
+            <Dialog.Title>How you doing?</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <h3>I hope.. Good!</h3>
+            <p>I don't know man. Things are going the way they go.</p>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} primary branded>
+              Hmm
+            </Button>
+            <Button onClick={close} tertiary>
+              Shut up!
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})
+
+stories.add("Large Size", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    return (
+      <div>
+        <h3 className="text-center">
+          Use dialog component to show a ui inside a popup
+        </h3>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Large Dialog
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close} lg>
+          <Dialog.Header closeButton>
+            <Dialog.Title>How you doing?</Dialog.Title>
+          </Dialog.Header>
+          <Dialog.Body>
+            <h3>I hope.. Good!</h3>
+            <p>I don't know man. Things are going the way they go.</p>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} primary branded>
+              Hmm
+            </Button>
+            <Button onClick={close} tertiary>
+              Shut up!
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})
