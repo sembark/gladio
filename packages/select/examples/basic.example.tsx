@@ -64,7 +64,6 @@ stories.add("Single Select", () => {
             changeValue(value)
           }}
           options={countries}
-          onQuery={query => {}}
         />
       </div>
     )
@@ -82,7 +81,6 @@ stories.add("Disabled Select", () => (
         alert(`You selected ` + JSON.stringify(value))
       }}
       options={countries}
-      onQuery={query => {}}
     />
   </div>
 ))
@@ -101,7 +99,6 @@ stories.add("Multi Select", () => {
             changeValue(value)
           }}
           options={countries}
-          onQuery={query => {}}
         />
       </div>
     )
@@ -155,19 +152,15 @@ stories.add("Creatable Select", () => {
     const [value, changeValue] = React.useState<typeof countries[0] | null>(
       null
     )
-    const [query, setQuery] = React.useState<string>("")
     return (
       <div className="max-w-lg mx-auto">
         <Select
           value={value}
           label="Select Places"
+          options={countries}
           creatable
-          query={query}
           onChange={value => {
             changeValue(value)
-          }}
-          onQuery={query => {
-            setQuery(query)
           }}
         />
       </div>
@@ -262,7 +255,6 @@ stories.add("Inline Select", () => {
             changeValue(value)
           }}
           options={countries}
-          onQuery={query => {}}
         />
       </div>
     )
@@ -275,22 +267,14 @@ stories.add("Creatable with Custom onCreate", () => {
     const [value, changeValue] = React.useState<typeof countries[0] | null>(
       null
     )
-    const [query, setQuery] = React.useState<string>("")
     return (
       <div className="max-w-lg mx-auto">
         <Select
           value={value}
           label="Select Places"
           creatable
-          query={query}
           onChange={value => {
             changeValue(value)
-          }}
-          options={countries.filter(c =>
-            c.name.toLowerCase().includes(query.toLowerCase())
-          )}
-          onQuery={query => {
-            setQuery(query)
           }}
           onCreateNew={async (query: string) => {
             return Promise.resolve().then(() => {

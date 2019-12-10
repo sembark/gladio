@@ -34,6 +34,8 @@ function OptionItemRenderer({
   )
 }
 
+type TOption = any
+
 export interface SelectProps {
   className?: string
   creatable?: boolean
@@ -44,20 +46,24 @@ export interface SelectProps {
   multiple?: boolean
   name?: string
   onBlur?: (e: any) => void
-  onChange?: (value: any | Array<any>, name: string) => void
+  onChange?: (value: TOption | Array<TOption>, name: string) => void
   onFocus?: (e: any) => void
   onQuery?: (query: string) => void
-  options?: Array<any>
+  options?: Array<TOption>
   placeholder?: string
   query?: string
   required?: boolean
   searchable?: boolean
-  value?: any | Array<any>
+  value?: TOption | Array<TOption>
   isLoading?: boolean
   optionRenderer?: typeof OptionItemRenderer
   inline?: boolean
   onCreateNew?: (query: string) => void | Promise<any> | any
   createOptionLabel?: (query: string) => React.ReactNode
+  filterOptions?: (
+    options?: Array<TOption>,
+    query?: string
+  ) => Array<TOption> | undefined
 }
 
 export function Select({
@@ -84,6 +90,7 @@ export function Select({
   inline = false,
   onCreateNew,
   createOptionLabel = defaultCreateOptionLabel,
+  filterOptions,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -97,6 +104,9 @@ export function Select({
     undefined
   )
   const name: string = propName || (multiple ? "select[]" : "select")
+  if (filterOptions && searchable) {
+    options = filterOptions(options, query) || []
+  }
   if (creatable && query && query.trim() && !isLoading) {
     // check if we have an exact match
     const exactMatch = (options || []).some((option: any) => {
@@ -484,9 +494,41 @@ export function Async({
       query={query}
       isLoading={isLoading}
       onQuery={fetchOptions}
+      filterOptions={undefined}
       {...otherProps}
     />
   )
 }
 
-export default Select
+function withFilterManagement(Select: React.ComponentType<SelectProps>) {
+  return function WithQuery(props: SelectProps) {
+    const filterOptions = useCallback(
+      (options?: Array<TOption>, query?: string) => {
+        if (!options || !query || props.searchable === false) return options
+        return options.filter(o =>
+          (o.name || o.description || o.title || "")
+            .toLowerCase()
+            .includes(query.toLowerCase())
+        )
+      },
+      [props.options, props.searchable]
+    )
+    return <Select filterOptions={filterOptions} {...props} />
+  }
+}
+
+function withQueryManagement(Select: React.ComponentType<SelectProps>) {
+  return function WithQuery(props: SelectProps) {
+    const [query, setQuery] = useState<string>("")
+    if (props.searchable !== false) {
+      props = {
+        query,
+        onQuery: setQuery,
+        ...props,
+      }
+    }
+    return <Select {...props} />
+  }
+}
+
+export default withQueryManagement(withFilterManagement(Select))
