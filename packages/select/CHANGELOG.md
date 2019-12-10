@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.10.0...@tourepedia/select@0.11.0) (2019-12-10)
+
+
+### Features
+
+* **select:** add hoc for filtering and query management ([b29083f](https://github.com/tourepedia/tp-ui/commit/b29083f))
+
+
+
+
+
 # [0.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.9.0...@tourepedia/select@0.10.0) (2019-11-13)
 
 
