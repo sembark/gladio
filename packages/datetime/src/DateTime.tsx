@@ -122,7 +122,7 @@ export function useDateTime(config: IDateTimeConfig) {
       if (!onChange) {
         return
       }
-      if (clearable && value && date) {
+      if (clearable && value && date && !configTimeFormat) {
         if (moment(value).isSame(date, "day")) {
           onChange()
           return
@@ -130,7 +130,7 @@ export function useDateTime(config: IDateTimeConfig) {
       }
       onChange(date)
     },
-    [onChange, value]
+    [onChange, value, configTimeFormat]
   )
   // automatic change the viewDate if current select date
   // is not in the current month
