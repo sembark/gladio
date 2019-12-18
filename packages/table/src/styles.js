@@ -7,29 +7,29 @@ module.exports = function addTableComponent({ theme, addComponents }) {
       marginBottom: theme("margin.6"),
       background: theme("backgroundColor.white"),
       width: "100%",
-      "th, td": {
+      "> * > tr > th, > * > tr > td": {
         verticalAlign: "top",
         textAlign: "left",
         transition: "background .15s ease-in-out",
       },
-      th: {
+      "> * > tr > th": {
         padding: `${theme("padding.3")} ${theme("padding.4")}`,
       },
-      td: {
+      "> * > tr > td": {
         padding: `${theme("padding.2")} ${theme("padding.4")}`,
       },
-      "thead > tr > th": {
+      "> thead > tr > th": {
         verticalAlign: "bottom",
         borderBottom: `${theme("borderWidth.2")} solid ${theme(
           "borderColor.gray-100"
         )}`,
         fontWeight: theme("fontWeight.semibold"),
       },
-      "tfoot > tr > td": {
+      "> tfoot > tr > td": {
         verticalAlign: "top",
         fontWeight: theme("fontWeight.semibold"),
       },
-      caption: {
+      "> caption": {
         textAlign: "left",
         padding: `${theme("padding.2")} 0`,
       },
@@ -38,7 +38,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
         width: "100%",
         overflowX: "auto",
         "-webkit-overflow-scrolling": "touch",
-        th: {
+        "> thead > tr > th": {
           whiteSpace: "pre",
         },
       },
