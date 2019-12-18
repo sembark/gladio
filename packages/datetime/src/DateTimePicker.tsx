@@ -18,6 +18,8 @@ interface IMenuProps {
   dateFormat: string
   timeFormat: string
   id?: string
+  readOnly?: boolean
+  disabled?: boolean
 }
 
 function DefaultMenu({ value, toggle }: IMenuProps) {
@@ -32,12 +34,16 @@ interface IDateTimePickerProps extends React.ComponentProps<typeof DateTime> {
   renderMenu?: typeof DefaultMenu
   id?: string
   rightAlign?: boolean
+  readOnly?: boolean
+  disabled?: boolean
 }
 
 export default function DateTimePicker({
   renderMenu: Menu = DefaultMenu,
   id: propsId,
   rightAlign,
+  readOnly,
+  disabled,
   ...props
 }: IDateTimePickerProps) {
   const {
@@ -96,6 +102,8 @@ export default function DateTimePicker({
         dateFormat={dateFormat}
         timeFormat={timeFormat}
         id={id}
+        readOnly={readOnly}
+        disabled={disabled}
         toggle={() => {
           setDropdownVisibility(!isDropdownOpen)
         }}
@@ -132,24 +140,29 @@ function DateInputMenu({
   isVisible,
   dateFormat,
   timeFormat,
+  readOnly,
+  disabled,
   ...props
 }: IDateInputMenuProps & IMenuProps) {
   return (
     <Input
       {...props}
+      disabled={disabled}
       type="text"
       value={value}
       readOnly
       placeholder={format}
       onClick={e => {
-        if (typeof document !== "undefined") {
+        if (typeof document !== "undefined" && !readOnly && !disabled) {
           if (document.activeElement === e.target && !isVisible) {
             show()
           }
         }
       }}
       onFocus={() => {
-        show()
+        if (!readOnly && !disabled) {
+          show()
+        }
       }}
     />
   )

@@ -131,3 +131,15 @@ stories.add("TimeInput", () => {
   }
   return <DateTimeRenderer />
 })
+
+stories.add("Readonly Date Picker", () => {
+  function DateTimeRenderer() {
+    const [value, changeValue] = React.useState<any>(moment())
+    return (
+      <Container>
+        <DateTimeInput value={value} onChange={changeValue} readOnly />
+      </Container>
+    )
+  }
+  return <DateTimeRenderer />
+})
