@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.6.1...@tourepedia/datetime@0.7.0) (2019-12-18)
+
+
+### Features
+
+* **datetime:** add readonly and disabled to picker ([3b160ae](https://github.com/tourepedia/tp-ui/commit/3b160ae))
+
+
+
+
+
 ## [0.6.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.6.0...@tourepedia/datetime@0.6.1) (2019-12-10)
 
 
