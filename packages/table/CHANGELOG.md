@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.6.0...@tourepedia/table@0.6.1) (2019-12-18)
+
+
+### Bug Fixes
+
+* **table:** restrict styles ([2f4314c](https://github.com/tourepedia/tp-ui/commit/2f4314c))
+
+
+
+
+
 # [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.5.0...@tourepedia/table@0.6.0) (2019-11-13)
 
 
