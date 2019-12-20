@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.6.1...@tourepedia/table@0.6.2) (2019-12-20)
+
+
+### Bug Fixes
+
+* **table:** whitespace pre not applying to header ([93a3871](https://github.com/tourepedia/tp-ui/commit/93a3871))
+
+
+
+
+
 ## [0.6.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.6.0...@tourepedia/table@0.6.1) (2019-12-18)
 
 
