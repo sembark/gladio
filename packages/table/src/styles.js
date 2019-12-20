@@ -38,7 +38,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
         width: "100%",
         overflowX: "auto",
         "-webkit-overflow-scrolling": "touch",
-        "> thead > tr > th": {
+        "> .table > thead > tr > th": {
           whiteSpace: "pre",
         },
       },
