@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.6.7...@tourepedia/ui@1.7.0) (2019-12-24)
+
+
+### Features
+
+* **ui:** add toolbar export ([dcc7a71](https://github.com/tourepedia/tp-ui/commit/dcc7a71))
+
+
+
+
+
 ## [1.6.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.6.6...@tourepedia/ui@1.6.7) (2019-12-20)
 
 **Note:** Version bump only for package @tourepedia/ui
