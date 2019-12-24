@@ -1,5 +1,5 @@
 import Badge, { BadgeList } from "@tourepedia/badge"
-import Button, { ButtonGroup } from "@tourepedia/button"
+import Button, { ButtonGroup, ButtonToolbar } from "@tourepedia/button"
 import Dialog, { useDialog } from "@tourepedia/dialog"
 import theme from "@tourepedia/css"
 import {
@@ -42,6 +42,7 @@ export {
   BadgeList,
   Button,
   ButtonGroup,
+  ButtonToolbar,
   Dialog,
   useDialog,
   Input,
