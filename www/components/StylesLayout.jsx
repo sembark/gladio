@@ -33,7 +33,7 @@ export function StylesLayoutSideBar() {
 
 export default function StylesLayout({ children, meta }) {
   return (
-    <Layout meta={meta} sideBar={<StylesLayoutSideBar />}>
+    <Layout meta={meta} title="Styles" sideBar={<StylesLayoutSideBar />}>
       {children}
     </Layout>
   )

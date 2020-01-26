@@ -19,7 +19,7 @@ module.exports = compose(
 )({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   env: {
-    appName: "SoLoMo",
+    appName: "Shape",
   },
   webpack(config) {
     config.module.rules.push({

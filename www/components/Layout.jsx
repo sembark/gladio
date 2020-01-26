@@ -2,14 +2,17 @@ import React from "react"
 import Header from "./Header"
 import SEO from "./Seo"
 import CodeBlock from "./CodeBlock"
+import appConfig from "./../config/app"
 
-export default function Layout({ children, sideBar, meta }) {
+export default function Layout({ children, sideBar, title, meta }) {
   return (
     <div>
       <Header />
       {meta ? (
         <SEO
-          title={`${meta.title} | Tourepedia Design System`}
+          title={`${[meta.title, title, appConfig.name]
+            .filter(Boolean)
+            .join(" | ")}`}
           description={meta.description}
         />
       ) : null}

@@ -33,7 +33,11 @@ export function ComponentsLayoutSideBar() {
 
 export default function ComponentsLayout({ children, meta }) {
   return (
-    <Layout meta={meta} sideBar={<ComponentsLayoutSideBar />}>
+    <Layout
+      meta={meta}
+      title="Components"
+      sideBar={<ComponentsLayoutSideBar />}
+    >
       {children}
     </Layout>
   )

@@ -5,8 +5,8 @@ export default function Header() {
     <header className="flex justify-between items-center bg-gray-100 border-b text-sm">
       <div>
         <Link href="/">
-          <a className="p-4 inline-block hover:bg-gray-100">
-            {process.env.appName}
+          <a className="px-4 py-2 inline-flex items-center hover:bg-gray-100">
+            <img alt="Logo" src="/36x36_icon.png" />
           </a>
         </Link>
       </div>
