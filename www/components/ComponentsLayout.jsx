@@ -14,14 +14,16 @@ export function ComponentsLayoutSideBar() {
       </SidebarLinkList>
       <SidebarLinkList>
         <SidebarHeading>Components</SidebarHeading>
-        <SidebarLink href="/button">Button</SidebarLink>
+        <SidebarLink href="/alert">Alert</SidebarLink>
         <SidebarLink href="/badge">Badge</SidebarLink>
-        <SidebarLink href="/input">Input</SidebarLink>
-        <SidebarLink href="/select">Select</SidebarLink>
-        <SidebarLink href="/table">Table</SidebarLink>
-        <SidebarLink href="/paginate">Paginate</SidebarLink>
-        <SidebarLink href="/dialog">Dialog</SidebarLink>
+        <SidebarLink href="/button">Button</SidebarLink>
         <SidebarLink href="/datetime">Date & Time</SidebarLink>
+        <SidebarLink href="/dialog">Dialog</SidebarLink>
+        <SidebarLink href="/input">Input</SidebarLink>
+        <SidebarLink href="/paginate">Paginate</SidebarLink>
+        <SidebarLink href="/select">Select</SidebarLink>
+        <SidebarLink href="/snackbar">Snackbar</SidebarLink>
+        <SidebarLink href="/table">Table</SidebarLink>
       </SidebarLinkList>
       <SidebarLinkList>
         <SidebarHeading>Icons</SidebarHeading>

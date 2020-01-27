@@ -1,0 +1,187 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Snackbar",
+    description: "Use snackbars to show minimal non-interruptive actionable messages to users.",
+    name: "@tourepedia/snackbar",
+    usage:`import { showSnackbar } from "@tourepedia/alert"
+function App () {
+  return <button onClick={() => {
+    // handle delete action
+    // and notify user with a success message
+    // and allow user to undo the action (optional)
+    showSnackbar("Deleted", "Restore", { onClick: () => {
+      // restore
+      showSnackbar('Restored')
+    }})
+  }}>Delete</button>
+}`
+};
+
+export default Layout
+
+## Playground
+
+```jsx live=true
+<Button danger primary onClick={() => {
+  showSnackbar("Deleted", "Restore", { onClick: () => {
+    showSnackbar('Restored')
+  }})
+  }}>Delete Message</Button>
+```
+
+This modules exposes several utilities (to show/hide the snackbar(s)) and a Component to manually render a Snackbar (not
+recommended). We can only show one snackbar at a time as showing multiple clutters the UI and is not recommended in UX
+guidelines.
+
+The way snackbars are handled is by maintaining a queue of snackbars. If `showSnackbar` is called and there
+is already a snackbar visible, this new snackbar is pushed to the queue and will be shown as soon as all the snackbars
+ahead of it has been shown. A snackbar can be removed from queue (hide) without showing if required.
+
+Each snackbar has a unique ID. A call to `showSnackbar` return the ID which can be used to programmatically hide
+the snackbar. We can also lookup for the visibility state for a given ID.
+
+## Snackbar
+
+`Snackbar` component holds the UI implementation for a single snackbar. Along with all the props that a `div` element
+can take, it accepts following props:
+
+### timeout
+Duration(in milliseconds, `default=5000`) for the visibility of the snackbar. Setting it's value to `-1` will disable auto-closing of
+snackbar and will require users to manually close it. For demo purposes, most of the playgrounds will use `-1` value
+for timeout.
+
+### label [Required]
+
+The label/message to show in the snackbar. The label should be as minimal as possible for quick reading and grasping the
+intent.
+
+```jsx live=true
+<Snackbar timeout={-1}>Tourpedia is now online</Snackbar
+```
+
+### actionText and onClick
+
+Snackbar renders a close icon as the default close action. You can pass a custom action text and handler to be rendered
+along with close icon
+
+```jsx live=true
+<Snackbar
+  timeout={-1}
+  actionText="Connect"
+  onClick={() => alert('Your are connected!')}
+  >
+  Tourpedia is now online
+</Snackbar>
+```
+
+### onClosed
+
+To attach an handler when the snackbar is closed (removed from DOM).
+
+```jsx live=true
+<Snackbar
+  timeout={-1}
+  onClosed={() => alert('Connection closed')}
+  >
+  Tourpedia is now online
+</Snackbar>
+```
+
+
+## Utilities
+
+Utilities are simple helper functions to handle the snackbars visibility.
+
+### `showSnackbar`
+
+This utility can be used to show a snackbar. It has following signature:
+
+```js
+showSnackbar(
+  message: string,
+  actionLabel?: string, // when we want to render a custom action along with the close icon
+  config?: {
+    id?: string // to identify this message uniquely
+    timeout?: number // snackbar's timeout prop
+    onClick?: () => any // handler for custom action, only called when an `actionLabel` is provided
+    onClosed?: () => any // handler for closed event
+  }
+): string // id the created snackbar. Will return a custom id if not id is provided in the configuration parameter
+```
+
+```jsx live=true
+<Button onClick={() => showSnackbar("Hi. I'm a Shape")}>Say Hi</Button>
+```
+
+
+### `showSnackbarIfNot`
+
+To avoid duplication of messages (in queue), we can use this utility. This is specially useful when we have a fix id for
+a message that must not be duplicated e.g. Offline Status messages. Try clicking both of these buttons 2-3 times. The
+first one will show the number of times you clicked where as the second will only be shown once. Once both are shown,
+click on the next button will again show the message (queue is empty). We can use `timeout={-1}` to show a message
+indefinitely and hide it programmatically/on user's actions.
+
+Other then first argument being an ID, it has the same signature as the `showSnackbar` function has.
+
+```jsx live=true
+<>
+  <Button onClick={() => showSnackbar("Project created")}>
+   Push me to the queue
+  </Button>
+  <Button onClick={() => showSnackbarIfNot("offlineMessage", "Offline! Please check your internet connection.")}>
+   I'll be visible only once
+  </Button>
+</>
+```
+
+
+### `hideSnackbar`
+
+To hide a snackbar (id) programmatically.
+
+```jsx live=true
+function App() {
+  let id
+  return <>
+    <Button onClick={() => {
+      id = showSnackbarIfNot(
+        "offlineMessage",
+        "Offline! Please check your internet connection.",
+        undefined,
+        {
+          timeout: -1
+        }
+      )
+    }}>
+      Show
+    </Button>
+    <Button onClick={() => {hideSnackbar(id)}}>Hide</Button>
+  </>
+}
+```
+
+
+### `isOpenSnackbar`
+
+To check if a snackbar (id) is currently opened or not.
+
+```jsx live=true
+function App() {
+  let id
+  return <>
+    <Button onClick={() => {
+      id = showSnackbarIfNot(
+        "offlineMessage",
+        "Offline! Please check your internet connection."
+      )
+    }}>
+      Show
+    </Button>
+    <Button onClick={() => {
+      alert(isOpenSnackbar(id).toString())
+    }}>Check If Open</Button>
+  </>
+}
+```

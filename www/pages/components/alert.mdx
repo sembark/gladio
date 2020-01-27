@@ -1,0 +1,47 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Alert",
+    description: "Show alerts in ui to for assertive and polite messages to users",
+    name: "@tourepedia/alert",
+    usage:`import Alert from "@tourepedia/alert"
+function App () {
+  return <Alert type="assertive">Please upgrade your account to use this feature</Alert>
+}`
+};
+
+export default Layout
+
+## Playground
+
+```jsx live=true
+<Alert type="assertive" status="success">Account details updated successfully.</Alert>
+```
+
+## Props
+
+Along with all props that a `div` element can accept, following special props are available.
+
+### Status
+
+Alert component can be rendered with `status` prop to determine the themes for alert. Following status are available:
+`info`, `success`, `warning` and `error`. The default status is `info`.
+
+
+```jsx live=true
+<Alert status="success">Project successfully created.</Alert>
+```
+
+### Type
+
+A type for alert defines how the alert lives in `aria-live` region. Passing an `assertive` type makes the alert readout
+immediately whereas a `polite` type put the alert in `aria-live="polite"` region. The type can be combined with a status
+to provide any themed alert to be in a required live region. Following types are available: `assertive`, `polite`. The
+default type is `polite`.
+
+> When an assertive type is passed without passsing a `status` prop, the status will be changed to `error`.
+
+```jsx live=true
+<Alert type="assertive">Deletion of a project requires admin permissions.</Alert>
+```
+

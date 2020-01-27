@@ -14,9 +14,9 @@ export function StylesLayoutSideBar() {
       </SidebarLinkList>
       <SidebarLinkList scope="/foundation">
         <SidebarHeading>Foundation</SidebarHeading>
+        <SidebarLink href="/breakpoints">Breakpoints</SidebarLink>
         <SidebarLink href="/colors">Colors</SidebarLink>
         <SidebarLink href="/spacing">Spacing</SidebarLink>
-        <SidebarLink href="/breakpoints">Breakpoints</SidebarLink>
         <SidebarLink href="/typography">Typography</SidebarLink>
       </SidebarLinkList>
       <SidebarLinkList scope="/utilities">
