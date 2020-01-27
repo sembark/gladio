@@ -6,24 +6,24 @@ import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Snackbar", module)
 
-stories.add("Basic", () => <Snackbar label="This is something" />)
+stories.add("Basic", () => <Snackbar>This is something</Snackbar>)
 
 stories.add("Always Visible", () => (
-  <Snackbar
-    label="I have a timeout of -1. Not auto closing =D. Click to close"
-    timeout={-1}
-  />
+  <Snackbar timeout={-1}>
+    I have a timeout of -1. Not auto closing =D. Click to close
+  </Snackbar>
 ))
 
 stories.add("Custom Action", () => (
   <Snackbar
-    label="Message sent"
     timeout={-1}
     actionText="Undo"
     onClick={() => {
       showSnackbar("Message sent undone.")
     }}
-  />
+  >
+    Message sent
+  </Snackbar>
 ))
 
 stories.add("Show/Hide", () => (

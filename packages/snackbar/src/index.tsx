@@ -41,19 +41,16 @@ interface ISnackbarConfig {
 
 interface ISnackbarProps
   extends ISnackbarConfig,
-    Omit<
-      React.HTMLProps<HTMLDivElement>,
-      keyof ISnackbarConfig | "label" | "ref"
-    > {
+    Omit<React.HTMLProps<HTMLDivElement>, keyof ISnackbarConfig | "ref"> {
   /**
    * Label on the snackbar
    */
-  label: string
+  children: React.ReactNode
 }
 
 export function Snackbar({
   stacked,
-  label,
+  children,
   actionText,
   onClick,
   id,
@@ -93,10 +90,10 @@ export function Snackbar({
               { "snackbar--stacked": stacked },
               className
             )}
-            id={String(id)}
+            id={id ? String(id) : undefined}
           >
             <div role="status" aria-live="polite" className="snackbar__label">
-              {label}
+              {children}
             </div>
             <div className="snackbar__actions">
               {actionText && onClick ? (
@@ -152,12 +149,15 @@ function findOrCreateSnackbarContainerElement(): HTMLElement {
   return findSnackbarContainerElement() || createSnackbarContainerElement()
 }
 
-function createSnackbarElement(label: string, config: ISnackbarConfig) {
+function createSnackbarElement(
+  label: React.ReactNode,
+  config: ISnackbarConfig
+) {
   const document = getDocument()
   const body = document.body
   const snackbarContainer = findOrCreateSnackbarContainerElement()
   body.appendChild(snackbarContainer)
-  ReactDOM.render(<Snackbar label={label} {...config} />, snackbarContainer)
+  ReactDOM.render(<Snackbar {...config}>{label}</Snackbar>, snackbarContainer)
   return snackbarContainer
 }
 
@@ -189,7 +189,7 @@ let lastVisibleSnackbarId: TId | undefined = undefined
  * Open a snackbar with an id
  */
 export function showSnackbar(
-  label: string,
+  label: React.ReactNode,
   actionText?: string,
   config: Optional<ISnackbarConfig, "onClick"> = {}
 ) {
@@ -198,7 +198,7 @@ export function showSnackbar(
     // only push to the queue if not already present
     if (!queue.some(s => s.id === id)) {
       queue.push({
-        label,
+        children: label,
         actionText,
         ...config,
       })
@@ -231,8 +231,8 @@ export function hideSnackbar(id: TId) {
   if (queue.length > 0) {
     const snackbar = queue.shift()
     if (snackbar) {
-      const { label, actionText, ...config } = snackbar
-      showSnackbar(label, actionText, config)
+      const { children, actionText, ...config } = snackbar
+      showSnackbar(children, actionText, config)
     }
   }
 }
@@ -257,7 +257,7 @@ export function isOpenSnackbar(id: TId) {
  */
 export function showSnackbarIfNot(
   id: TId,
-  label: string,
+  label: React.ReactNode,
   actionText?: string,
   config?: ISnackbarConfig
 ): TId {
