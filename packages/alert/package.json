@@ -1,0 +1,46 @@
+{
+  "name": "@tourepedia/alert",
+  "version": "0.0.0",
+  "description": "Alert ui component",
+  "repository": "https://github.com/tourepedia/tp-ui",
+  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "types/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "build:js": "node ../../shared/build",
+    "build:css": "tailwind build tailwind.css -o styles/styles.css",
+    "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
+    "css:watch": "chokidar \"./src/**/styles.js\" -c \"npm run build:css\"",
+    "build": "npm-run-all -l -p build:js build:css",
+    "build:watch": "npm-run-all -l -p js:watch css:watch"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "files": [
+    "src",
+    "lib",
+    "es",
+    "types",
+    "styles"
+  ],
+  "dependencies": {
+    "@tourepedia/css": "^0.21.0",
+    "@tourepedia/icons": "^0.5.0",
+    "classnames": "^2.2.6",
+    "utility-types": "^3.7.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.1.2"
+  }
+}

@@ -36,6 +36,7 @@ import Table from "@tourepedia/table"
 import Select, { Async as AsyncSelect } from "@tourepedia/select"
 import Paginate from "@tourepedia/paginate"
 import DateTime, { DateTimeInput, DateTimePicker } from "@tourepedia/datetime"
+import Alert from "@tourepedia/alert"
 
 export {
   Badge,
@@ -77,4 +78,5 @@ export {
   DateTime,
   DateTimePicker,
   DateTimeInput,
+  Alert,
 }

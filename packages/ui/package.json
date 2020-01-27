@@ -27,6 +27,7 @@
     "styles"
   ],
   "dependencies": {
+    "@tourepedia/alert": "^0.0.0",
     "@tourepedia/badge": "^0.6.0",
     "@tourepedia/button": "^0.5.0",
     "@tourepedia/css": "^0.21.0",
