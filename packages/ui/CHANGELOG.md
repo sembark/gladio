@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.7.2...@tourepedia/ui@1.8.0) (2020-01-27)
+
+
+### Features
+
+* **package:** add alert package ([738b831](https://github.com/tourepedia/tp-ui/commit/738b831))
+
+
+
+
+
 ## [1.7.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.7.1...@tourepedia/ui@1.7.2) (2020-01-27)
 
 **Note:** Version bump only for package @tourepedia/ui
