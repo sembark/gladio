@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.3...@tourepedia/icons@0.5.0) (2020-01-27)
+
+
+### Features
+
+* **icons:** add info and slider icons ([a26c6bb](https://github.com/tourepedia/tp-ui/packages/icons/commit/a26c6bb))
+
+
+
+
+
 ## [0.4.3](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.2...@tourepedia/icons@0.4.3) (2020-01-27)
 
 
