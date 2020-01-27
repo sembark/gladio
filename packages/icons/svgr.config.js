@@ -44,8 +44,9 @@ module.exports = {
 		interface ISVGComponentProps extends React.SVGProps<SVGSVGElement> {
 			title?: string
 		}
-    const ${componentName} = ({ svgRef, title, className = "", ...props }: ISVGComponentProps & {
+    const ${componentName} = ({ svgRef, title, className = "", titleId, ...props }: ISVGComponentProps & {
 	svgRef?: React.Ref<SVGSVGElement>,
+  titleId?: string
 }) => ${jsx};
 		const ForwardRef = React.forwardRef((props: ISVGComponentProps, ref: React.Ref<SVGSVGElement>) => (
 			React.createElement(${componentName}, {
@@ -60,7 +61,7 @@ module.exports = {
     // add the displayName name
     ast.push(
       template.expression(
-        `ForwardRef.displayName = '${componentNameWithSvgPrefix}Icon'`
+        `ForwardRef.displayName = '${componentNameWithSvgPrefix}'`
       )()
     )
     return ast

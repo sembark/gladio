@@ -1,7 +1,7 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
-import * as Icons from "./../src/index"
+import Icons from "./../src/index"
 import "./../src/icon.css"
 
 const stories = storiesOf("Components/Icons", module)

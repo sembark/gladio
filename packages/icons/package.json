@@ -16,7 +16,7 @@
     "react-dom": "^16.8.0"
   },
   "scripts": {
-    "prebuild:js": "svgr -d src/icons src/svgs --ext tsx && node ./add-imports && mkdir -p styles && cp src/icon.css styles/icon.css",
+    "prebuild:js": "svgr -d src/icons src/svgs --ext tsx && mkdir -p styles && cp src/icon.css styles/icon.css",
     "build:js": "node ../../shared/build",
     "js:watch": "chokidar \"./src/svgs/*.(svg)\" -c \"npm run build:js\"",
     "build": "npm run build:js",
@@ -30,6 +30,6 @@
   ],
   "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01",
   "devDependencies": {
-    "@svgr/cli": "^4.3.0"
+    "@svgr/cli": "^5.1.0"
   }
 }
