@@ -37,6 +37,13 @@ import Select, { Async as AsyncSelect } from "@tourepedia/select"
 import Paginate from "@tourepedia/paginate"
 import DateTime, { DateTimeInput, DateTimePicker } from "@tourepedia/datetime"
 import Alert from "@tourepedia/alert"
+import {
+  Snackbar,
+  showSnackbar,
+  hideSnackbar,
+  isOpenSnackbar,
+  showSnackbarIfNot,
+} from "@tourepedia/snackbar"
 
 export {
   Badge,
@@ -79,4 +86,9 @@ export {
   DateTimePicker,
   DateTimeInput,
   Alert,
+  Snackbar,
+  showSnackbar,
+  hideSnackbar,
+  isOpenSnackbar,
+  showSnackbarIfNot,
 }
