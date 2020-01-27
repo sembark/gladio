@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.2...@tourepedia/icons@0.4.3) (2020-01-27)
+
+
+### Bug Fixes
+
+* **icons:** remove empty title element ([18c77d2](https://github.com/tourepedia/tp-ui/packages/icons/commit/18c77d2))
+
+
+
+
+
 ## [0.4.2](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.4.1...@tourepedia/icons@0.4.2) (2019-10-03)
 
 **Note:** Version bump only for package @tourepedia/icons
