@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.9.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.9.0...@tourepedia/ui@1.9.1) (2020-01-27)
+
+
+### Bug Fixes
+
+* **css:** css not building ([27645f3](https://github.com/tourepedia/tp-ui/commit/27645f3))
+
+
+
+
+
 # [1.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.8.0...@tourepedia/ui@1.9.0) (2020-01-27)
 
 
