@@ -1,4 +1,5 @@
 import Link from "./Link"
+import Logo from "./../public/48x48_icon.svg"
 
 export default function Header() {
   return (
@@ -6,7 +7,7 @@ export default function Header() {
       <div>
         <Link href="/">
           <a className="px-4 py-2 inline-flex items-center hover:bg-gray-100">
-            <img alt="Logo" src="/36x36_icon.png" />
+            <Logo className="w-8 h-8" />
           </a>
         </Link>
       </div>

@@ -1,7 +1,6 @@
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 })
-const withCSS = require("@zeit/next-css")
 
 function compose(...funcs) {
   if (funcs.length === 0) {
@@ -13,13 +12,10 @@ function compose(...funcs) {
   return funcs.reduce((a, b) => (...args) => a(b(...args)))
 }
 
-module.exports = compose(
-  withMDX,
-  withCSS
-)({
+module.exports = compose(withMDX)({
   pageExtensions: ["js", "jsx", "md", "mdx"],
   env: {
-    appName: "Shape",
+    appName: "Shapes",
   },
   webpack(config) {
     config.module.rules.push({

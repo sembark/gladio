@@ -35,10 +35,9 @@
     "react-spring": "^8.0.27"
   },
   "devDependencies": {
-    "@mdx-js/loader": "1.4.5",
-    "@mdx-js/react": "1.0.20",
-    "@next/mdx": "9.0.2",
-    "@svgr/webpack": "4.3.2",
-    "@zeit/next-css": "1.0.1"
+    "@mdx-js/loader": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "@next/mdx": "^9.2.1",
+    "@svgr/webpack": "^5.1.0"
   }
 }

@@ -2,6 +2,7 @@ import Link from "../components/Link"
 import SEO from "../components/Seo"
 import DesignIcon from "./../assets/undraw_experience_design.svg"
 import appConfig from "./../config/app"
+import Logo from "./../public/48x48_icon.svg"
 
 function Home() {
   return (
@@ -15,7 +16,7 @@ function Home() {
           <DesignIcon />
         </div>
         <div className="mt-10 max-w-3xl">
-          <img alt="logo" src="/48x48_icon.png" />
+          <Logo />
           <h1 className="font-normal md:font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             {appConfig.name}
           </h1>
