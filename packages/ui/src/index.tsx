@@ -31,7 +31,7 @@ import {
   InputGroupAddon,
   ErrorMessage,
 } from "@tourepedia/input"
-import * as Icons from "@tourepedia/icons"
+import Icons from "@tourepedia/icons"
 import Table from "@tourepedia/table"
 import Select, { Async as AsyncSelect } from "@tourepedia/select"
 import Paginate from "@tourepedia/paginate"
