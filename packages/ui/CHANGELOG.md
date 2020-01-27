@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.8.0...@tourepedia/ui@1.9.0) (2020-01-27)
+
+
+### Features
+
+* **package:** add snackbar package ([cce6896](https://github.com/tourepedia/tp-ui/commit/cce6896))
+
+
+
+
+
 # [1.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.7.2...@tourepedia/ui@1.8.0) (2020-01-27)
 
 
