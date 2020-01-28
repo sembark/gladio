@@ -12,7 +12,7 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <html lang="es" className="bg-gray-100">
+      <html lang="en" className="bg-gray-100">
         <Head>
           <meta name="theme-color" content="#000000" />
           <Link rel="manifest" href="/manifest.json" />
