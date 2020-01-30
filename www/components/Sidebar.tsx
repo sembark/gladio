@@ -4,7 +4,13 @@ import Link from "./Link"
 const SideBarLinkListScope = React.createContext("")
 const SideBarScope = React.createContext("")
 
-export function SidebarLink({ href, children }) {
+export function SidebarLink({
+  href,
+  children,
+}: {
+  href: string
+  children: React.ReactNode
+}) {
   return (
     <SideBarLinkListScope.Consumer>
       {scope => (
@@ -20,7 +26,13 @@ export function SidebarLink({ href, children }) {
   )
 }
 
-export function SidebarLinkList({ children, scope = "" }) {
+export function SidebarLinkList({
+  children,
+  scope = "",
+}: {
+  children: React.ReactNode
+  scope?: string
+}) {
   return (
     <SideBarScope.Consumer>
       {rootScope => (
@@ -32,11 +44,17 @@ export function SidebarLinkList({ children, scope = "" }) {
   )
 }
 
-export function SidebarHeading({ children }) {
+export function SidebarHeading({ children }: { children: React.ReactNode }) {
   return <h3 className="mt-8 text-base">{children}</h3>
 }
 
-export default function SideBar({ children, scope = "" }) {
+export default function SideBar({
+  children,
+  scope = "",
+}: {
+  children: React.ReactNode
+  scope?: string
+}) {
   return (
     <SideBarScope.Provider value={scope}>
       <section className="py-4 px-3 text-sm">{children}</section>

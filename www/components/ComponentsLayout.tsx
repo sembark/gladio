@@ -33,7 +33,13 @@ export function ComponentsLayoutSideBar() {
   )
 }
 
-export default function ComponentsLayout({ children, meta }) {
+export default function ComponentsLayout({
+  children,
+  meta,
+}: {
+  children: React.ReactNode
+  meta: any
+}) {
   return (
     <Layout
       meta={meta}

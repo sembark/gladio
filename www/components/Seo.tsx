@@ -13,6 +13,10 @@ export default function SEO({
    * @var array
    */
   meta = [],
+}: {
+  title: string
+  description?: string
+  meta?: Array<{ [key: string]: string }>
 }) {
   if (title) {
     meta = meta.concat([

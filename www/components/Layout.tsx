@@ -4,7 +4,17 @@ import SEO from "./Seo"
 import CodeBlock from "./CodeBlock"
 import appConfig from "./../config/app"
 
-export default function Layout({ children, sideBar, title, meta }) {
+export default function Layout({
+  children,
+  sideBar,
+  title,
+  meta,
+}: {
+  children: React.ReactNode
+  sideBar: React.ReactNode
+  title: string
+  meta: any
+}) {
   return (
     <div>
       <Header />

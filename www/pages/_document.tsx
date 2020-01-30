@@ -1,15 +1,11 @@
 import React from "react"
 import Document, { Head, Main, NextScript } from "next/document"
 
-function Link({ href, ...props }) {
+function Link({ href, ...props }: React.HTMLProps<HTMLLinkElement>) {
   return <link href={href} {...props} />
 }
 
 export default class MyDocument extends Document {
-  static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
-  }
   render() {
     return (
       <html lang="en" className="bg-gray-100">

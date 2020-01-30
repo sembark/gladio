@@ -1,4 +1,6 @@
-export const github = {
+import { PrismTheme } from "prism-react-renderer"
+
+export const github: PrismTheme = {
   plain: {
     color: "#393A34",
     backgroundColor: "#f6f8fa",

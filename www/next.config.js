@@ -13,7 +13,7 @@ function compose(...funcs) {
 }
 
 module.exports = compose(withMDX)({
-  pageExtensions: ["js", "jsx", "md", "mdx"],
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
   env: {
     appName: "Shapes",
   },

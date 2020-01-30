@@ -1,7 +1,7 @@
 import * as React from "react"
 import moment from "moment"
 import * as ReactLive from "react-live"
-import Highlight, { defaultProps } from "prism-react-renderer"
+import Highlight, { defaultProps, Language } from "prism-react-renderer"
 import { github as theme } from "./themes"
 import * as UI from "@tourepedia/ui"
 import * as HtmlLive from "./HtmlLive"
@@ -13,12 +13,19 @@ export default function CodeBlock({
   className,
   children,
   language,
+}: {
+  live?: boolean
+  preview?: boolean
+  noInline?: boolean
+  className?: string
+  language?: string
+  children: string
 }) {
-  language = language || className.replace(/language-/, "")
+  language = language || (className || "").replace(/language-/, "") || "sh"
   if (live || preview) {
     let Live = ReactLive
     if (language === "html") {
-      Live = HtmlLive
+      Live = HtmlLive as any
     }
     return (
       <div
@@ -26,7 +33,7 @@ export default function CodeBlock({
       >
         <Live.LiveProvider
           code={children}
-          language={language}
+          language={language as Language}
           noInline={noInline}
           theme={theme}
           scope={{
@@ -37,7 +44,7 @@ export default function CodeBlock({
         >
           {live ? (
             <React.Fragment>
-              <Live.LiveEditor className="editor" tabIndex="-1" />
+              <Live.LiveEditor className="editor" tabIndex={-1} />
               <Live.LiveError className="error" />
             </React.Fragment>
           ) : null}
@@ -53,7 +60,7 @@ export default function CodeBlock({
         {...defaultProps}
         theme={theme}
         code={children}
-        language={language}
+        language={language as Language}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className + " only-preview"} style={{ ...style }}>

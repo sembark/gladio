@@ -26,13 +26,16 @@
   "homepage": "https://github.com/tourepedia/tp-ui#readme",
   "dependencies": {
     "@tourepedia/ui": "^1.9.2",
+    "@types/mdx-js__react": "^1.5.0",
+    "@types/node": "^13.5.2",
     "moment": "^2.24.0",
     "next": "^9.2.1",
     "prism-react-renderer": "0.1.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-live": "2.1.2",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "typescript": "^3.7.5"
   },
   "devDependencies": {
     "@mdx-js/loader": "^1.5.5",
