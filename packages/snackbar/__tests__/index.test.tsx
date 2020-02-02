@@ -9,7 +9,7 @@ afterEach(cleanup)
 describe("Snackbar", () => {
   it("renders a div with the given label", async () => {
     const { container } = render(
-      <Snackbar label="hellow from snackbar" data-testid="snackbar" />
+      <Snackbar data-testid="snackbar">hello from snackbar</Snackbar>
     )
     const elm = await findByTestId(container, "snackbar")
     expect(elm).not.toBeNull()
