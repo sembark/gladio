@@ -26,7 +26,10 @@
   },
   "files": [
     "src",
-    "lib"
+    "lib",
+    "es",
+    "types",
+    "styles"
   ],
   "devDependencies": {
     "tailwindcss": "^1.1.2"
