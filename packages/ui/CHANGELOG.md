@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.9.2...@tourepedia/ui@1.10.0) (2020-02-02)
+
+
+### Features
+
+* **box:** add box to ui ([7c636dc](https://github.com/tourepedia/tp-ui/commit/7c636dc))
+
+
+
+
+
 ## [1.9.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.9.1...@tourepedia/ui@1.9.2) (2020-01-27)
 
 **Note:** Version bump only for package @tourepedia/ui
