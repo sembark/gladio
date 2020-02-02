@@ -44,6 +44,7 @@ import {
   isOpenSnackbar,
   showSnackbarIfNot,
 } from "@tourepedia/snackbar"
+import Box from "@tourepedia/box"
 
 export {
   Badge,
@@ -91,4 +92,5 @@ export {
   hideSnackbar,
   isOpenSnackbar,
   showSnackbarIfNot,
+  Box,
 }
