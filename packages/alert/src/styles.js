@@ -1,6 +1,6 @@
 function getStylesForColor(color, theme) {
   return {
-    borderColor: theme(`borderColor.${color}-200`),
+    borderColor: theme(`borderColor.${color}-600`),
     backgroundColor: theme(`backgroundColor.${color}-100`),
     color: theme(`textColor.${color}-800`),
   }
