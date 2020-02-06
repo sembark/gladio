@@ -19,7 +19,13 @@ function capitalize(str) {
 }
 
 /**
- * Get the class names for config keys
+ * Get the class names (for tailwind) for config keys
+ * e.g. suppose we key for theme for padding as `padding` but
+ * in tailwind, these have a class name as `p`, `paddingTop` has
+ * `pt`. So, in this function, we map these config keys to classes.
+ *
+ * If we have added a new key to config, we need to make sure we
+ * map a class name for the key
  * @param {string} to
  */
 function getClassNames(theme) {
@@ -141,6 +147,9 @@ function getClassNames(theme) {
       case "textAlign":
         classNames[to] = "text"
         break
+      case "whiteSpace":
+        classNames[to] = "whitespace"
+        break
       case "cursor":
       case "fill":
       case "flex":
@@ -184,6 +193,9 @@ function createFlatConfig(nestedConfig, prefix = "", previousConfig = {}) {
   }, previousConfig)
 }
 
+/**
+ * here we add variants to the theme's key e.g. responsive variants, hover variants etc.
+ */
 function addVariantsSuffix(variantsConfig = {}, theme = {}) {
   const withSuffix = {}
   const screens = Object.keys(theme.screens)
@@ -257,6 +269,10 @@ function addVariantsSuffix(variantsConfig = {}, theme = {}) {
   return withSuffix
 }
 
+/**
+ * This function add the tailwind variant classNames to each defined variant
+ * e.g. for sm, write `sm:`
+ */
 function addVariantsClassPrefix(variants = {}, classNames = {}) {
   Object.keys(variants).forEach(baseKey => {
     if (classNames[baseKey] !== undefined) {
@@ -270,7 +286,12 @@ function addVariantsClassPrefix(variants = {}, classNames = {}) {
   return classNames
 }
 
-function generatePossibleValuesTemplate(theme, allAvailableVariants) {
+/**
+ * Generate all the variant's template to be used in Typescript.
+ * When you add a key to the theme, make sure to handle that case here for
+ * proper Typescript support
+ */
+function generatePossibleValuesTypescriptTemplate(theme, allAvailableVariants) {
   let template = "{"
   Object.keys(allAvailableVariants).forEach(key => {
     let value = ""
@@ -407,6 +428,9 @@ function generatePossibleValuesTemplate(theme, allAvailableVariants) {
       case /^outline/.test(key):
         value = theme.outline ? `theme.outline` : ""
         break
+      case /^whiteSpace/.test(key):
+        value = theme.whiteSpace ? `theme.whiteSpace` : ""
+        break
       default:
         value = theme[key] ? `theme.${key}` : ""
     }
@@ -419,6 +443,14 @@ function generatePossibleValuesTemplate(theme, allAvailableVariants) {
   return template
 }
 
+/**
+ * Tailwind has plugins to add these missing values when generating the css.
+ * We are not using a plugin system and so we need to add them here to be
+ * available. When you add a new key, make sure to handle it in following
+ * functions:
+ *  - generatePossibleValuesTypescriptTemplate: to get the typescript support
+ *  - getClassNames: to map the new key to the tailwind class name
+ */
 function addMissingAttributesToTheme(theme) {
   theme.display = {
     inline: "inline",
@@ -515,9 +547,19 @@ function addMissingAttributesToTheme(theme) {
   theme.outline = {
     none: "none",
   }
+  theme.whiteSpace = {
+    normal: "normal",
+    "no-wrap": "no-wrap",
+    pre: "pre",
+    "pre-line": "pre-line",
+    "pre-wrap": "pre-wrap",
+  }
   return theme
 }
 
+/**
+ * Add (missing) variants to theme's keys. Tailwind handles these via plugins.
+ */
 function addMissingVariants(variants = {}) {
   variants.display = ["responsive"]
   variants.overflow = ["responsive"]
@@ -525,6 +567,7 @@ function addMissingVariants(variants = {}) {
   variants.textDecoration = ["responsive", "hover", "focus"]
   variants.textTransform = ["responsive", "hover", "focus"]
   variants.outline = ["focus"]
+  variants.whiteSpace = ["responsive"]
   return variants
 }
 
@@ -554,7 +597,7 @@ module.exports = function outputTheme({ config }) {
 const theme = ${JSON.stringify(theme, null, 2)}
 const classNamesForKeys= ${JSON.stringify(allAvailableVariants, null, 2)}
 export default theme
-export interface StyleProps ${generatePossibleValuesTemplate(
+export interface StyleProps ${generatePossibleValuesTypescriptTemplate(
       theme,
       allAvailableVariants
     )}
