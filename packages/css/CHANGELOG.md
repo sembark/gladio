@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.21.1...@tourepedia/css@0.22.0) (2020-02-06)
+
+
+### Features
+
+* **box:** add whitespace support ([1e4594a](https://github.com/tourepedia/tp-ui/commit/1e4594a))
+
+
+
+
+
 ## [0.21.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.21.0...@tourepedia/css@0.21.1) (2020-02-02)
 
 

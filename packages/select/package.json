@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/select",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "description": "Select Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,9 +38,9 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/css": "^0.21.1",
+    "@tourepedia/css": "^0.22.0",
     "@tourepedia/dom-helpers": "^0.3.1",
-    "@tourepedia/input": "^0.3.1",
+    "@tourepedia/input": "^0.3.2",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

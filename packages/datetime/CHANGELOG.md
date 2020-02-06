@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.7.1...@tourepedia/datetime@0.7.2) (2020-02-06)
+
+**Note:** Version bump only for package @tourepedia/datetime
+
+
+
+
+
 ## [0.7.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/datetime@0.7.0...@tourepedia/datetime@0.7.1) (2020-02-02)
 
 **Note:** Version bump only for package @tourepedia/datetime
