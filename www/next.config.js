@@ -1,3 +1,5 @@
+const package = require("@tourepedia/ui/package.json")
+const version = package.version
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 })
@@ -16,6 +18,7 @@ module.exports = compose(withMDX)({
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   env: {
     appName: "Shapes",
+    version,
   },
   webpack(config) {
     config.module.rules.push({

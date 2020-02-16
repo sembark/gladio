@@ -35,7 +35,7 @@ export default function StylesLayout({
   children,
   meta,
 }: {
-  children: string
+  children: React.ReactNode
   meta: any
 }) {
   return (

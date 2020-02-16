@@ -43,6 +43,7 @@ function Home() {
             >
               Github
             </a>
+            {" ・ "}v{appConfig.version}
           </div>
         </div>
       </div>
