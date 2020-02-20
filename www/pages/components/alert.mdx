@@ -15,7 +15,9 @@ export default Layout
 ## Playground
 
 ```jsx live=true
-<Alert type="assertive" status="success">Account details updated successfully.</Alert>
+<Alert type="assertive" status="success">
+  Account details updated successfully.
+</Alert>
 ```
 
 ## Props
@@ -29,7 +31,9 @@ Alert component can be rendered with `status` prop to determine the themes for a
 
 
 ```jsx live=true
-<Alert status="success">Project successfully created.</Alert>
+<Alert status="success">
+  Project successfully created.
+</Alert>
 ```
 
 ### Type
@@ -42,6 +46,8 @@ default type is `polite`.
 > When an assertive type is passed without passsing a `status` prop, the status will be changed to `error`.
 
 ```jsx live=true
-<Alert type="assertive">Deletion of a project requires admin permissions.</Alert>
+<Alert type="assertive">
+  Deletion of a project requires admin permissions.
+</Alert>
 ```
 

@@ -29,7 +29,10 @@ export default function CodeBlock({
     }
     return (
       <div
-        className={"react-live" + (preview && !live ? " react-preview" : "")}
+        className={
+          "react-live md:flex flex-wrap border-2 border-gray-600 rounded relative my-12" +
+          (preview && !live ? " react-preview" : "")
+        }
       >
         <Live.LiveProvider
           code={children}
@@ -43,12 +46,15 @@ export default function CodeBlock({
           }}
         >
           {live ? (
-            <React.Fragment>
-              <Live.LiveEditor className="editor" tabIndex={-1} />
-              <Live.LiveError className="error" />
-            </React.Fragment>
+            <div className="md:w-1/2 md:border-r border-gray-300">
+              <div className="text-xs py-2 px-4 uppercase text-gray-600 font-bold tracking-wider">
+                Code Editor
+              </div>
+              <Live.LiveEditor className="text-xl" tabIndex={-1} />
+              <Live.LiveError className="bg-red-100" />
+            </div>
           ) : null}
-          <Live.LivePreview className="preview" />
+          <Live.LivePreview className="md:w-1/2 p-2" />
         </Live.LiveProvider>
         <Styles />
       </div>
@@ -63,7 +69,13 @@ export default function CodeBlock({
         language={language as Language}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className + " only-preview"} style={{ ...style }}>
+          <pre
+            className={
+              className +
+              " only-preview rounded border-2 border-gray-300 relative p-4 my-2"
+            }
+            style={{ ...style }}
+          >
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
@@ -82,44 +94,6 @@ export default function CodeBlock({
 function Styles() {
   return (
     <style jsx global>{`
-      .react-live {
-        border: 2px solid #718096;
-        border-radius: 0.5rem;
-        position: relative;
-        margin: 60px 10px;
-      }
-      .react-live:before {
-        content: "Editable Code Example";
-        font-size: 0.9rem;
-        display: block;
-        bottom: 100%;
-        width: 100%;
-        padding: 1rem;
-        text-transform: uppercase;
-        color: gray;
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-      .react-live.react-preview:before {
-        display: none;
-      }
-      .react-live > *:not(:first-child) {
-        border-top: 2px solid #f7fafc;
-        padding: 1rem;
-      }
-      .react-live > .editor {
-        font-size: 1.3rem;
-      }
-      .react-live > .error {
-        background: #fc8181;
-      }
-      .only-preview {
-        border: 2px solid #f7fafc;
-        border-radius: 0.25rem;
-        position: relative;
-        padding: 1rem;
-        margin: 10px;
-      }
       pre {
         overflow: auto;
       }
