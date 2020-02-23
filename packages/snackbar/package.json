@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/snackbar",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Snackbar/Notification utility",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
