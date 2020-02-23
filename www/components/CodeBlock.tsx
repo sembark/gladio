@@ -54,7 +54,7 @@ export default function CodeBlock({
               <Live.LiveError className="bg-red-100" />
             </div>
           ) : null}
-          <Live.LivePreview className="md:w-1/2 p-2" />
+          <Live.LivePreview className={`${live ? "md:w-1/2" : "w-full"} p-2`} />
         </Live.LiveProvider>
         <Styles />
       </div>
