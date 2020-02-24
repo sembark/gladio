@@ -27,11 +27,8 @@ function OptionItemRenderer({
   created?: boolean
   createOptionLabel: typeof defaultCreateOptionLabel
 }) {
-  return (
-    <span>
-      {created ? createOptionLabel(option[labelKey]) : option[labelKey]}
-    </span>
-  )
+  const label = getLabelForOption(option, labelKey)
+  return <span>{created ? createOptionLabel(label) : label}</span>
 }
 
 type TOption = any
@@ -111,7 +108,8 @@ export function Select({
     // check if we have an exact match
     const exactMatch = (options || []).some((option: any) => {
       return (
-        String(option[labelKey]).toLowerCase() === query.trim().toLowerCase()
+        String(getLabelForOption(option, labelKey)).toLowerCase() ===
+        query.trim().toLowerCase()
       )
     })
     if (!exactMatch) {
@@ -134,7 +132,8 @@ export function Select({
     // only push the more options if they are not already present in
     // the options list
     moreOptions = moreOptions.filter(
-      moreOption => !options.some(option => option.id === moreOption.id)
+      moreOption =>
+        !options.some(option => matchOptions(option, moreOption, labelKey))
     )
     options = options.concat(moreOptions)
   }
@@ -194,8 +193,8 @@ export function Select({
       } else {
         const selectedOptionIndex = options.findIndex(o =>
           Array.isArray(value)
-            ? value.some(v => v.id === o.id)
-            : value.id === o.id
+            ? value.some(v => matchOptions(v, o, labelKey))
+            : matchOptions(value, o, labelKey)
         )
         changeFocusedOption(selectedOptionIndex)
       }
@@ -221,8 +220,8 @@ export function Select({
           const option = options[focusedOption || 0]
           const checked = value
             ? Array.isArray(value)
-              ? value.some(v => v.id === option.id)
-              : (value as any).id === option.id
+              ? value.some(v => matchOptions(v, option, labelKey))
+              : matchOptions(value, option, labelKey)
             : false
           handleOptionClick(option, !checked)
           break
@@ -252,7 +251,9 @@ export function Select({
                 ? (value || []).concat([option])
                 : option
               : multiple
-              ? (value || []).filter((v: any) => v.id !== option.id)
+              ? (value || []).filter(
+                  (v: any) => !matchOptions(v, option, labelKey)
+                )
               : undefined
             onChange(newValues, name)
             if (!multiple && newValues) {
@@ -286,8 +287,8 @@ export function Select({
               (isFocused
                 ? query
                 : !multiple && value
-                ? value[labelKey]
-                : query) || ""
+                ? getLabelForOption(value, labelKey)
+                : "") || ""
             }
             disabled={disabled}
             onChange={e => {
@@ -314,15 +315,21 @@ export function Select({
           {options.map((option, i) => {
             const checked = value
               ? multiple
-                ? (value || []).some((v: any) => v.id === option.id)
-                : (value as any).id === option.id
+                ? (value || []).some((v: any) =>
+                    matchOptions(v, option, labelKey)
+                  )
+                : matchOptions(value, option)
               : false
             return (
               <Option
-                key={option.id}
+                key={getMatcherValueForOption(option)}
                 checked={checked}
                 focused={i === focusedOption}
-                title={option.title || option.description}
+                title={
+                  typeof option === "object"
+                    ? option.title || option.description
+                    : getLabelForOption(option, labelKey)
+                }
                 disabled={disabled}
                 onClick={checked => {
                   handleOptionClick(option, checked)
@@ -357,14 +364,16 @@ export function Select({
         <ul className="selected-list">
           {value.map((v: any) => (
             <li
-              key={v.id}
+              key={getMatcherValueForOption(v)}
               title="Click to unselect"
               role="button"
               onClick={() =>
                 !disabled &&
                 onChange &&
                 onChange(
-                  value.filter((val: any) => val.id !== v.id) as any,
+                  value.filter(
+                    (val: any) => !matchOptions(val, v, labelKey)
+                  ) as any,
                   name
                 )
               }
@@ -377,7 +386,7 @@ export function Select({
                   className="mr-2"
                   tabIndex={-1}
                 />
-                <div>{v[labelKey]}</div>
+                <div>{getLabelForOption(v, labelKey)}</div>
               </div>
             </li>
           ))}
@@ -442,11 +451,11 @@ export function Async({
     query: string
     isLoading: boolean
     options: Array<any>
-  }>({
+  }>(() => ({
     query: "",
     isLoading: false,
     options: cacheKey ? Cache.get(cacheKey) : [],
-  })
+  }))
   const lastDeboundeHandler = useRef<number>()
   useEffect(() => {
     return () => {
@@ -502,16 +511,24 @@ export function Async({
 
 function withFilterManagement(Select: React.ComponentType<SelectProps>) {
   return function WithQuery(props: SelectProps) {
+    const { searchable, labelKey = "name" } = props
     const filterOptions = useCallback(
       (options?: Array<TOption>, query?: string) => {
-        if (!options || !query || props.searchable === false) return options
+        if (!options || !query || searchable === false) return options
+        const searchQuery: string = query.toLowerCase().trim()
         return options.filter(o =>
-          (o.name || o.description || o.title || "")
+          (
+            getLabelForOption(o, labelKey) ||
+            getLabelForOption(o, "name") ||
+            getLabelForOption(o, "description") ||
+            getLabelForOption(o, "title") ||
+            ""
+          )
             .toLowerCase()
-            .includes(query.toLowerCase())
+            .includes(searchQuery)
         )
       },
-      [props.options, props.searchable]
+      [searchable, labelKey]
     )
     return <Select filterOptions={filterOptions} {...props} />
   }
@@ -532,3 +549,50 @@ function withQueryManagement(Select: React.ComponentType<SelectProps>) {
 }
 
 export default withQueryManagement(withFilterManagement(Select))
+
+/**
+ * Match two options and verify if they are equal or not
+ */
+function matchOptions(
+  optionA?: any,
+  optionB?: any,
+  labelKey: string = "name"
+): boolean {
+  if (!optionA || !optionB) return false
+  return (
+    getMatcherValueForOption(optionA, labelKey) ===
+    getMatcherValueForOption(optionB, labelKey)
+  )
+}
+
+/**
+ * Get the matcher value for option
+ * option.id is given the highest priority and then we will simply get the label
+ */
+function getMatcherValueForOption(
+  option: any,
+  labelKey: string = "name"
+): string {
+  if (!option) return ""
+  const optionType = typeof option
+  if (optionType === "object" && option.id) return String(option.id)
+  return getLabelForOption(option, labelKey)
+}
+
+/**
+ * Get the label for option
+ */
+function getLabelForOption(option?: any, labelKey: string = "name"): string {
+  if (!option) return ""
+  const optionType = typeof option
+  switch (optionType) {
+    case "string":
+      return String(option)
+    case "number":
+      return String(option)
+    case "object":
+      return String((option as any)[labelKey])
+    default:
+      return ""
+  }
+}

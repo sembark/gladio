@@ -20,7 +20,7 @@
     "build:js": "node ../../shared/build",
     "build:css": "tailwind build tailwind.css -o styles/styles.css",
     "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
-    "css:watch": "chokidar \"./src/styles.js\" -c \"npm run build:css\"",
+    "css:watch": "chokidar \"./src/**/styles.js\" -c \"npm run build:css\"",
     "build": "npm-run-all -l -p build:js build:css",
     "build:watch": "npm-run-all -l -p js:watch css:watch"
   },

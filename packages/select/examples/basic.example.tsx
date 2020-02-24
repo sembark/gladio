@@ -329,3 +329,50 @@ stories.add(
     `,
   }
 )
+
+const countryNames = countries.map(c => c.name)
+
+stories.add("Select with Strings", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countryNames[0] | null>(
+      null
+    )
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Place"
+          name="name"
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countryNames}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
+
+stories.add("Multi Select with Strings", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countryNames | null>(
+      null
+    )
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          value={value}
+          label="Select Places"
+          name="name"
+          multiple
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countryNames}
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
