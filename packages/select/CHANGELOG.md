@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.11.2...@tourepedia/select@0.12.0) (2020-02-24)
+
+
+### Features
+
+* **select:** allow select to accept the array of strings ([d75bcc9](https://github.com/tourepedia/tp-ui/commit/d75bcc9))
+
+
+
+
+
 ## [0.11.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.11.1...@tourepedia/select@0.11.2) (2020-02-06)
 
 **Note:** Version bump only for package @tourepedia/select
