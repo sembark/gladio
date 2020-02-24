@@ -1,4 +1,4 @@
-import React from "react"
+import React, { TableHTMLAttributes } from "react"
 import App from "next/app"
 import { MDXProvider } from "@mdx-js/react"
 
@@ -24,6 +24,9 @@ const components = {
   ),
   p: (props: React.HTMLProps<HTMLParagraphElement>) => (
     <p className="mb-4" {...props} />
+  ),
+  table: (props: React.HTMLProps<HTMLTableElement>) => (
+    <table className="table table-bordered table-striped" {...props} />
   ),
   inlineCode: (props: React.HTMLProps<HTMLDivElement>) => (
     <code

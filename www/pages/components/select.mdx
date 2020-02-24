@@ -6,13 +6,23 @@ export const meta = {
     name: "@tourepedia/select",
     usage: `import Select from "@tourepedia/select"
 function App () {
-  return <Select value={null} options={[{
-    id: 1, name: "Apple"
-  }]} />
+  return <Select value={null} options={["Apple", "Orange", "Mango"]} />
 }`
 };
 
 export default Layout
+
+The select component provides a convenient and easy way to render a custom select with search and multi select
+functionality. The component also allows the async fetch for options to filter out the list.
+
+## Props
+
+### onChange
+
+Listen to `onChange` of the selected value. This work in the similar way as the native select works.
+```js
+type onChange = (value: null | string | object, name: string) => void
+```
 
 ## Custom option renderer
 
@@ -21,7 +31,11 @@ We can pass `optionRenderer` to the select component to render a custom componen
 
 ```jsx live=true
 function () {
-  return <Select options={[
+  const [value, setValue] = useState(null)
+  return <Select
+  value={value}
+  onChange={val => setValue(val)}
+  options={[
     {id: 1, name: "Taj Hotel", stars: 5, location: "Jaipur"},
     {id: 2, name: "Udaan Hotel", stars: 4, location: "Ajmer"},
     {id: 3, name: "Udaan Hotel", stars: 2, location: "Jaipur"},
@@ -36,6 +50,7 @@ function () {
 }
 ```
 
+
 ## Playground
 
 ```jsx live=true
@@ -48,19 +63,13 @@ function () {
     { id: 5, name: "Mango" }
   ], [])
   const [value, setValue] = useState(null)
-  const [query, setQuery] = useState("")
-  const [options, changeOptions] = useState(fruits)
   return <Select
     label="Select a fruit"
     value={value}
     onChange={val => setValue(val)}
     multiple
-    options={options}
-    query={query}
-    onQuery={(q) => {
-      setQuery(q)
-      changeOptions(fruits.filter(o => (o.name.toLowerCase()).indexOf((q || "").toLowerCase()) !== -1))
-    }}
+    options={fruits}
     />
 }
 ```
+
