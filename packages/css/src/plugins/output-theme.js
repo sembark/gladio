@@ -61,7 +61,7 @@ function getClassNames(theme) {
         prefix = "rounded"
         classNames["rounded"] = prefix
         classNames[`roundedTop`] = `${prefix}-t`
-        classNames[`roundedRight`] = `${prefix}-t`
+        classNames[`roundedRight`] = `${prefix}-r`
         classNames[`roundedBottom`] = `${prefix}-b`
         classNames[`roundedLeft`] = `${prefix}-l`
         classNames[`roundedTopRight`] = `${prefix}-tr`
