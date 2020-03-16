@@ -2,7 +2,6 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Alert from "./../src/index"
-import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Alert", module)
 

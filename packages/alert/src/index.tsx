@@ -1,42 +1,96 @@
-import React from "react"
+import React, { useMemo } from "react"
 import Icons from "@tourepedia/icons"
 import classNames from "classnames"
-import { Omit } from "utility-types"
+import { Omit, $PropertyType } from "utility-types"
+import Box from "@tourepedia/box"
+
+type TBoxProps = React.ComponentProps<typeof Box>
+
+type TStatus = "info" | "error" | "success" | "warning"
+
+type TType = "assertive" | "polite"
 
 interface AlertProps
   extends Omit<
-    React.HTMLProps<HTMLDivElement>,
+    TBoxProps,
     "status" | "children" | "type" | "role" | "aria-live"
   > {
-  status?: "info" | "error" | "success" | "warning"
+  status?: TStatus
   children?: React.ReactNode
   hideIcon?: boolean
-  type?: "assertive" | "polite"
+  type?: TType
 }
 
 export default function Alert({
-  status,
-  type,
+  status: statusProp,
+  type: typeProp,
   children,
   hideIcon,
   className,
   ...props
 }: AlertProps) {
   if (!children) return null
-  if (!type) {
-    if (status === "error") {
-      type = "assertive"
-    } else {
-      type = "polite"
-    }
+  const type = typeProp || getTypeBasedOnStatus(statusProp)
+  const status = statusProp || getStatusBasedOnType(type)
+  const Icon = getIconBasedOnStatus(status)
+  const stylesForStatus = useMemo(() => getStylesForStatus(status), [status])
+  return (
+    <Box
+      display="flex"
+      alignItems="center"
+      marginTop="2"
+      marginBottom="4"
+      padding="1"
+      border
+      rounded="lg"
+      {...stylesForStatus}
+      {...props}
+      role={type === "assertive" ? "alert" : "status"}
+      aria-live={type}
+      className={classNames(
+        "alert",
+        {
+          [`alert--${status}`]: status && status !== "info",
+        },
+        className
+      )}
+    >
+      {!hideIcon ? (
+        <Box
+          marginRight="3"
+          width="12"
+          height="12"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          fontSize="xl"
+          className="alert__icon"
+        >
+          <Icon />
+        </Box>
+      ) : null}
+      <Box className="alert__content" flex="1">
+        {children}
+      </Box>
+    </Box>
+  )
+}
+
+function getTypeBasedOnStatus(status?: TStatus): TType {
+  if (status === "error") {
+    return "assertive"
   }
-  if (!status) {
-    if (type === "assertive") {
-      status = "error"
-    } else {
-      status = "info"
-    }
+  return "polite"
+}
+
+function getStatusBasedOnType(type?: TType): TStatus {
+  if (type === "assertive") {
+    return "error"
   }
+  return "info"
+}
+
+function getIconBasedOnStatus(status: TStatus) {
   let Icon
   switch (status) {
     case "warning":
@@ -52,25 +106,31 @@ export default function Alert({
       Icon = Icons.Info
       break
   }
-  return (
-    <div
-      {...props}
-      role={type === "assertive" ? "alert" : "status"}
-      aria-live={type}
-      className={classNames(
-        "alert",
-        {
-          [`alert--${status}`]: status && status !== "info",
-        },
-        className
-      )}
-    >
-      {!hideIcon ? (
-        <div className="alert__icon">
-          <Icon />
-        </div>
-      ) : null}
-      <div className="alert__content">{children}</div>
-    </div>
-  )
+  return Icon
+}
+
+function getStylesForStatus(status: TStatus) {
+  switch (status) {
+    case "error":
+      return getStylesForColor("red")
+    case "success":
+      return getStylesForColor("green")
+    case "warning":
+      return getStylesForColor("yellow")
+    default:
+      return getStylesForColor("gray")
+  }
+}
+
+function getStylesForColor(
+  color: string
+): Pick<TBoxProps, "borderColor" | "backgroundColor" | "textColor"> {
+  return {
+    borderColor: `${color}-600` as $PropertyType<TBoxProps, "borderColor">,
+    backgroundColor: `${color}-100` as $PropertyType<
+      TBoxProps,
+      "backgroundColor"
+    >,
+    textColor: `${color}-800` as $PropertyType<TBoxProps, "textColor">,
+  }
 }
