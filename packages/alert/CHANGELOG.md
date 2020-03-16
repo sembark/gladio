@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.2.3...@tourepedia/alert@0.3.0) (2020-03-16)
+
+
+### Features
+
+* **alert:** use Box in Alert component and remove css ([4eff34b](https://github.com/tourepedia/tp-ui/commit/4eff34b))
+
+
+
+
+
 ## [0.2.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.2.2...@tourepedia/alert@0.2.3) (2020-03-11)
 
 **Note:** Version bump only for package @tourepedia/alert
