@@ -7,6 +7,8 @@
  */
 const props = theme => ({
   margin: theme.margin,
+  marginX: theme.margin,
+  marginY: theme.margin,
   marginTop: theme.margin,
   marginRight: theme.margin,
   marginBottom: theme.margin,
@@ -18,6 +20,8 @@ const props = theme => ({
  */
 const variants = variants => ({
   margin: variants.margin,
+  marginX: variants.margin,
+  marginY: variants.margin,
   marginTop: variants.margin,
   marginRight: variants.margin,
   marginBottom: variants.margin,
@@ -31,6 +35,8 @@ const variants = variants => ({
  */
 const classNames = {
   margin: "m",
+  marginX: "mx",
+  marginY: "my",
   marginTop: "mt",
   marginRight: "mr",
   marginBottom: "mb",
@@ -42,6 +48,8 @@ const classNames = {
  */
 const types = {
   margin: "keyof typeof theme.margin",
+  marginX: "keyof typeof theme.margin",
+  marginY: "keyof typeof theme.margin",
   marginTop: "keyof typeof theme.margin",
   marginRight: "keyof typeof theme.margin",
   marginBottom: "keyof typeof theme.margin",

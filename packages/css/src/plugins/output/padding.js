@@ -7,6 +7,8 @@
  */
 const props = theme => ({
   padding: theme.padding,
+  paddingX: theme.padding,
+  paddingY: theme.padding,
   paddingTop: theme.padding,
   paddingRight: theme.padding,
   paddingBottom: theme.padding,
@@ -18,6 +20,8 @@ const props = theme => ({
  */
 const variants = variants => ({
   padding: variants.padding,
+  paddingX: variants.padding,
+  paddingY: variants.padding,
   paddingTop: variants.padding,
   paddingRight: variants.padding,
   paddingBottom: variants.padding,
@@ -31,9 +35,11 @@ const variants = variants => ({
  */
 const classNames = {
   padding: "p",
+  paddingX: "px",
+  paddingY: "py",
   paddingTop: "pt",
   paddingRight: "pr",
-  paddingBottop: "pb",
+  paddingBottom: "pb",
   paddingLeft: "pl",
 }
 
@@ -42,6 +48,8 @@ const classNames = {
  */
 const types = {
   padding: "keyof typeof theme.padding",
+  paddingX: "keyof typeof theme.padding",
+  paddingY: "keyof typeof theme.padding",
   paddingTop: "keyof typeof theme.padding",
   paddingRight: "keyof typeof theme.padding",
   paddingBottom: "keyof typeof theme.padding",

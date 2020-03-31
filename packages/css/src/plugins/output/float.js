@@ -6,21 +6,21 @@
  *
  */
 const props = {
-  borderStyle: {
-    solid: "solid",
-    dashed: "dashed",
-    dotted: "dotted",
-    double: "double",
+  float: {
+    right: "right",
+    left: "left",
     none: "none",
   },
+  clearfix: true,
 }
 
 /**
  * Variants for each of props's key
  */
-// const variants = variants => ({
-//   borderStyle: variants.borderStyle
-// })
+const variants = variants => ({
+  float: variants.float,
+  clearfix: variants.float,
+})
 
 /**
  * Class name for each of props's key
@@ -28,19 +28,21 @@ const props = {
  * This will be used when creating the tailwind classNames for given keys
  */
 const classNames = {
-  borderStyle: "border",
+  float: "float",
+  clearfix: "clearfix",
 }
 
 /**
  * Get the types for each of props keys
  */
 const types = {
-  borderStyle: "keyof typeof theme.borderStyle",
+  float: "keyof typeof theme.float",
+  clearfix: "typeof theme.clearfix",
 }
 
 module.exports = {
   props,
-  // variants,
+  variants,
   classNames,
   types,
 }

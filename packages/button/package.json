@@ -34,7 +34,7 @@
   "jest": {
     "preset": "ts-jest"
   },
-  "gitHead": "514db73ff4913868825fb94da7bd86453281d485",
+  "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
   "dependencies": {
     "@tourepedia/css": "^0.23.0",
     "classnames": "^2.2.6",

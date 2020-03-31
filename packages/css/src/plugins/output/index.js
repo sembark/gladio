@@ -5,6 +5,7 @@ const backgroundSize = require("./background-size")
 const borderColor = require("./border-color")
 const borderRadius = require("./border-radius")
 const borderWidth = require("./border-width")
+const borderStyle = require("./border-style")
 const boxShadow = require("./box-shadow")
 const container = require("./container")
 const cursor = require("./cursor")
@@ -38,12 +39,14 @@ const position = require("./position")
 const scrolling = require("./scrolling")
 const stroke = require("./stroke")
 const textAlign = require("./text-align")
+const textColor = require("./text-color")
 const textDecoration = require("./text-decoration")
 const textTranform = require("./text-transform")
 const verticalAlign = require("./vertical-align")
 const whiteSpace = require("./white-space")
 const width = require("./width")
 const zIndex = require("./z-index")
+const float = require("./float")
 
 module.exports = [
   alignItems,
@@ -52,6 +55,7 @@ module.exports = [
   backgroundSize,
   borderColor,
   borderRadius,
+  borderStyle,
   borderWidth,
   boxShadow,
   container,
@@ -80,6 +84,7 @@ module.exports = [
   position,
   scrolling,
   textAlign,
+  textColor,
   textDecoration,
   textTranform,
   verticalAlign,
@@ -92,4 +97,5 @@ module.exports = [
   order,
   placeholderColor,
   stroke,
+  float,
 ]

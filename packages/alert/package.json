@@ -36,5 +36,6 @@
     "@tourepedia/icons": "^0.6.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
-  }
+  },
+  "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3"
 }

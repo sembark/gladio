@@ -40,5 +40,6 @@
   "dependencies": {
     "@tourepedia/css": "^0.23.0",
     "classnames": "^2.2.6"
-  }
+  },
+  "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3"
 }
