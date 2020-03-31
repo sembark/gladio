@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.23.0...@tourepedia/css@0.23.1) (2020-03-31)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/tourepedia/tp-ui/commit/05ab815))
+
+
+
+
+
 # [0.23.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.22.1...@tourepedia/css@0.23.0) (2020-03-31)
 
 

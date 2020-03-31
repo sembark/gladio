@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.3.1...@tourepedia/alert@0.3.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* **alert:** types not working ([1db553c](https://github.com/tourepedia/tp-ui/commit/1db553c))
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/tourepedia/tp-ui/commit/05ab815))
+
+
+
+
+
 ## [0.3.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.3.0...@tourepedia/alert@0.3.1) (2020-03-31)
 
 **Note:** Version bump only for package @tourepedia/alert
