@@ -1,5 +1,6 @@
 const fs = require("fs")
 const path = require("path")
+const plugins = require("./output")
 
 function ensureDirectoryExistence(filePath) {
   var dirname = path.dirname(filePath)
@@ -28,145 +29,13 @@ function capitalize(str) {
  * map a class name for the key
  * @param {string} to
  */
-function getClassNames(theme) {
-  const keys = Object.keys(theme)
-  const classNames = {}
-  keys.forEach(to => {
-    let prefix = ""
-    switch (to) {
-      case "margin":
-      case "padding":
-        prefix = to.charAt(0)
-        classNames[to] = prefix
-        classNames[`${to}Top`] = `${prefix}t`
-        classNames[`${to}Right`] = `${prefix}r`
-        classNames[`${to}Bottom`] = `${prefix}b`
-        classNames[`${to}Left`] = `${prefix}l`
-        classNames[`${to}X`] = `${prefix}x`
-        classNames[`${to}Y`] = `${prefix}y`
-        break
-      case "borderWidth":
-        prefix = "border"
-        classNames["border"] = prefix
-        classNames[`borderTop`] = `${prefix}-t`
-        classNames[`borderRight`] = `${prefix}-r`
-        classNames[`borderBottom`] = `${prefix}-b`
-        classNames[`borderLeft`] = `${prefix}-l`
-        break
-      case "borderColor":
-      case "borderStyle":
-        classNames[to] = "border"
-        break
-      case "borderRadius":
-        prefix = "rounded"
-        classNames["rounded"] = prefix
-        classNames[`roundedTop`] = `${prefix}-t`
-        classNames[`roundedRight`] = `${prefix}-r`
-        classNames[`roundedBottom`] = `${prefix}-b`
-        classNames[`roundedLeft`] = `${prefix}-l`
-        classNames[`roundedTopRight`] = `${prefix}-tr`
-        classNames[`roundedBottomRight`] = `${prefix}-br`
-        classNames[`roundedBottomLeft`] = `${prefix}-bl`
-        classNames[`roundedTopLeft`] = `${prefix}-tl`
-        break
-      case "boxShadow":
-        classNames[to] = "shadow"
-        break
-      case "maxHeight":
-        classNames[to] = "max-h"
-        break
-      case "maxWidth":
-        classNames[to] = "max-w"
-        break
-      case "alignItems":
-        classNames[to] = "items"
-        break
-      case "justifyContent":
-        classNames[to] = "justify"
-        break
-      case "backgroundColor":
-      case "backgroundPosition":
-      case "backgroundSize":
-        classNames[to] = "bg"
-        break
-      case "display":
-      case "position":
-      case "textDecoration":
-      case "textTransform":
-        classNames[to] = ""
-        break
-      case "verticalAlign":
-        classNames[to] = "align"
-        break
-      case "zIndex":
-        classNames[to] = "z"
-        break
-      case "width":
-        classNames[to] = "w"
-        break
-      case "height":
-        classNames[to] = "h"
-        break
-      case "textColor":
-        classNames[to] = "text"
-        break
-      case "placeholderColor":
-        classNames[to] = "placeholder"
-        break
-      case "minWidth":
-        classNames[to] = "min-w"
-        break
-      case "maxHeight":
-        classNames[to] = "min-h"
-        break
-      case "listStyleType":
-        classNames[to] = "list"
-        break
-      case "lineHeight":
-        classNames[to] = "leading"
-        break
-      case "letterSpacing":
-        classNames[to] = "tracking"
-        break
-      case "fontSize":
-        classNames[to] = "text"
-        break
-      case "fontWeight":
-      case "fontFamily":
-        classNames[to] = "font"
-        break
-      case "flexGrow":
-        classNames[to] = "flex-grow"
-        break
-      case "flexShrink":
-        classNames[to] = "flex-shrink"
-        break
-      case "objectPosition":
-        classNames[to] = "object"
-        break
-      case "textAlign":
-        classNames[to] = "text"
-        break
-      case "whiteSpace":
-        classNames[to] = "whitespace"
-        break
-      case "cursor":
-      case "fill":
-      case "flex":
-      case "height":
-      case "width":
-      case "inset":
-      case "opacity":
-      case "order":
-      case "scrolling":
-      case "overflow":
-      case "stroke":
-      case "outline":
-        classNames[to] = to
-        break
+function getClassNames() {
+  return plugins.reduce((classNames, plugin) => {
+    if (plugin.classNames) {
+      classNames = { ...classNames, ...plugin.classNames }
     }
-  })
-  return classNames
+    return classNames
+  }, {})
 }
 
 /**
@@ -200,78 +69,29 @@ function addVariantsSuffix(variantsConfig = {}, theme = {}) {
   const withSuffix = {}
   const screens = Object.keys(theme.screens)
   Object.keys(variantsConfig).forEach(key => {
+    let allKeys = [key]
     const variants = variantsConfig[key]
-    function addSuffixTo(to) {
-      if (!withSuffix[to]) {
-        withSuffix[to] = {}
+    allKeys.forEach(propKey => {
+      if (!withSuffix[propKey]) {
+        withSuffix[propKey] = {}
       }
       for (variant of variants) {
         if (variant === "responsive") {
           screens.forEach(s => {
-            withSuffix[to][`${to}${capitalize(s)}`] = s
+            withSuffix[propKey][`${propKey}${capitalize(s)}`] = s
           })
         } else {
-          withSuffix[to][`${to}${capitalize(variant)}`] = variant
+          withSuffix[propKey][`${propKey}${capitalize(variant)}`] = variant
         }
       }
-    }
-    // add the other padding suffix e.g. bottom, left, X, Y etc
-    switch (key) {
-      case "margin":
-        ;[
-          "margin",
-          "marginBottom",
-          "marginTop",
-          "marginLeft",
-          "marginRight",
-          "marginX",
-          "marginY",
-        ].forEach(addSuffixTo)
-        break
-      case "padding":
-        ;[
-          "padding",
-          "paddingBottom",
-          "paddingTop",
-          "paddingLeft",
-          "paddingRight",
-          "paddingX",
-          "paddingY",
-        ].forEach(addSuffixTo)
-        break
-      case "borderWidth":
-      case "border":
-        ;[
-          "border",
-          "borderTop",
-          "borderRight",
-          "borderBottom",
-          "borderLeft",
-        ].forEach(addSuffixTo)
-        break
-      case "borderRadius":
-        ;[
-          "rounded",
-          "roundedTop",
-          "roundedTopRight",
-          "roundedTopLeft",
-          "roundedRight",
-          "roundedLeft",
-          "roundedBottom",
-          "roundedBottomRight",
-          "roundedBottomLeft",
-        ].forEach(addSuffixTo)
-        break
-      default:
-        addSuffixTo(key)
-    }
+    })
   })
   return withSuffix
 }
 
 /**
  * This function add the tailwind variant classNames to each defined variant
- * e.g. for sm, write `sm:`
+ * e.g. for sm, write `sm:`, hover hover, write `hover:`
  */
 function addVariantsClassPrefix(variants = {}, classNames = {}) {
   Object.keys(variants).forEach(baseKey => {
@@ -291,289 +111,38 @@ function addVariantsClassPrefix(variants = {}, classNames = {}) {
  * When you add a key to the theme, make sure to handle that case here for
  * proper Typescript support
  */
-function generatePossibleValuesTypescriptTemplate(theme, allAvailableVariants) {
-  let template = "{"
-  Object.keys(allAvailableVariants).forEach(key => {
-    let value = ""
-    switch (true) {
-      case /^width/.test(key):
-        value = theme.width ? `theme.width` : ""
-        break
-      case /^maxWidth/.test(key):
-        value = theme.maxWidth ? `theme.maxWidth` : ""
-        break
-      case /^minWidth/.test(key):
-        value = theme.minWidth ? `theme.minWidth` : ""
-        break
-      case /^height/.test(key):
-        value = theme.height ? `theme.height` : ""
-        break
-      case /^maxHeight/.test(key):
-        value = theme.maxHeight ? `theme.maxHeight` : ""
-        break
-      case /^minHeight/.test(key):
-        value = theme.minHeight ? `theme.minHeight` : ""
-        break
-      case /^display/.test(key):
-        value = theme.display ? `theme.display` : ""
-        break
-      case /^justifyContent/.test(key):
-        value = theme.justifyContent ? `theme.justifyContent` : ""
-        break
-      case /^alignItems/.test(key):
-        value = theme.alignItems ? `theme.alignItems` : ""
-        break
-      case /^opacity/.test(key):
-        value = theme.opacity ? `theme.opacity` : ""
-        break
-      case /^objectPosition/.test(key):
-        value = theme.objectPosition ? `theme.objectPosition` : ""
-        break
-      case /^order/.test(key):
-        value = theme.order ? `theme.order` : ""
-        break
-      case /^padding/.test(key):
-        value = theme.padding ? `theme.padding` : ""
-        break
-      case /^placeholderColor/.test(key):
-        value = theme.placeholderColor ? `theme.placeholderColor` : ""
-        break
-      case /^stroke/.test(key):
-        value = theme.stroke ? `theme.stroke` : ""
-        break
-      case /^textColor/.test(key):
-        value = theme.textColor ? `theme.textColor` : ""
-        break
-      case /^verticalAlign/.test(key):
-        value = theme.verticalAlign ? `theme.verticalAlign` : ""
-        break
-      case /^margin/.test(key):
-        value = theme.margin ? `theme.margin` : ""
-        break
-      case /^letterSpacing/.test(key):
-        value = theme.letterSpacing ? `theme.letterSpacing` : ""
-        break
-      case /^lineHeight/.test(key):
-        value = theme.lineHeight ? `theme.lineHeight` : ""
-        break
-      case /^listStyleType/.test(key):
-        value = theme.listStyleType ? `theme.listStyleType` : ""
-        break
-      case /^inset/.test(key):
-        value = theme.inset ? `theme.inset` : ""
-        break
-      case /^fontFamily/.test(key):
-        value = theme.fontFamily ? `theme.fontFamily` : ""
-        break
-      case /^fontWeight/.test(key):
-        value = theme.fontWeight ? `theme.fontWeight` : ""
-        break
-      case /^fontSize/.test(key):
-        value = theme.fontSize ? `theme.fontSize` : ""
-        break
-      case /^flexShrink/.test(key):
-        value = theme.flexShrink ? `theme.flexShrink` : ""
-        break
-      case /^rounded/.test(key):
-        value = theme.borderRadius ? `theme.borderRadius | true` : ""
-        break
-      case /^backgroundColor/.test(key):
-        value = theme.backgroundColor ? `theme.backgroundColor` : ""
-        break
-      case /^backgroundSize/.test(key):
-        value = theme.backgroundSize ? `theme.backgroundSize` : ""
-        break
-      case /^backgroundPosition/.test(key):
-        value = theme.backgroundPosition ? `theme.backgroundPosition` : ""
-        break
-      case /^borderColor/.test(key):
-        value = theme.borderColor ? `theme.borderColor` : ""
-        break
-      case /^boxShadow/.test(key):
-        value = theme.boxShadow ? `theme.boxShadow | true` : ""
-        break
-      case /^cursor/.test(key):
-        value = theme.cursor ? `theme.cursor` : ""
-        break
-      case /^fill/.test(key):
-        value = theme.fill ? `theme.fill` : ""
-        break
-      case /^flexGrow/.test(key):
-        value = theme.flexGrow ? `theme.flexGrow` : ""
-        break
-      case /^flex/.test(key):
-        value = theme.flex ? `theme.flex` : ""
-        break
-      case /^zIndex/.test(key):
-        value = theme.zIndex ? `theme.zIndex` : ""
-        break
-      case /^container/.test(key):
-        value = theme.container ? `theme.container` : ""
-        break
-      case /^borderWidth/.test(key):
-        value = theme.borderWidth ? `theme.borderWidth | true` : ""
-        break
-      case /^border/.test(key):
-        value = theme.borderWidth ? `theme.borderWidth | true` : ""
-        break
-      case /^textAlign/.test(key):
-        value = theme.textAlign ? `theme.textAlign` : ""
-        break
-      case /^textDecoration/.test(key):
-        value = theme.textDecoration ? `theme.textDecoration` : ""
-        break
-      case /^textTransform/.test(key):
-        value = theme.textTransform ? `theme.textTransform` : ""
-        break
-      case /^outline/.test(key):
-        value = theme.outline ? `theme.outline` : ""
-        break
-      case /^whiteSpace/.test(key):
-        value = theme.whiteSpace ? `theme.whiteSpace` : ""
-        break
-      default:
-        value = theme[key] ? `theme.${key}` : ""
-    }
-    if (value) {
-      template += `
-  ${key}?: keyof typeof ${value},`
-    }
+function generatePossibleValuesTypescriptTemplate(propsWithVariants) {
+  let propTypes = {}
+  plugins.forEach(plugin => {
+    Object.keys(plugin.types).forEach(prop => {
+      const type = plugin.types[prop]
+      propTypes[prop] = type
+      // add add same type to each of it's variants
+      if (propsWithVariants[prop]) {
+        Object.keys(propsWithVariants[prop]).forEach(prop => {
+          propTypes[prop] = type
+        })
+      }
+    })
   })
-  template += "}"
-  return template
-}
-
-/**
- * Tailwind has plugins to add these missing values when generating the css.
- * We are not using a plugin system and so we need to add them here to be
- * available. When you add a new key, make sure to handle it in following
- * functions:
- *  - generatePossibleValuesTypescriptTemplate: to get the typescript support
- *  - getClassNames: to map the new key to the tailwind class name
- */
-function addMissingAttributesToTheme(theme) {
-  theme.display = {
-    inline: "inline",
-    "inline-block": "inline-block",
-    block: "block",
-    hidden: "hidden",
-    flex: "flex",
-    "inline-flex": "inline-flex",
-    table: "table",
-    "table-row": "table-row",
-    "table-cell": "table-cell",
-  }
-  theme.justifyContent = {
-    start: "start",
-    center: "center",
-    end: "end",
-    between: "between",
-    around: "around",
-  }
-  theme.alignItems = {
-    stretch: "stretch",
-    start: "start",
-    center: "center",
-    end: "end",
-    baseline: "baseline",
-  }
-  theme.verticalAlign = {
-    baseline: "baseline",
-    top: "top",
-    middle: "middle",
-    bottom: "bottom",
-    "text-top": "text-top",
-    "text-bottom": "text-bottom",
-  }
-  theme.position = {
-    static: "static",
-    fixed: "fixed",
-    absolute: "absolute",
-    relative: "relative",
-    sticky: "sticky",
-  }
-  theme.overflow = {
-    auto: "auto",
-    hidden: "hidden",
-    visible: "visible",
-    scroll: "scroll",
-    "x-auto": "x-auto",
-    "y-auto": "y-auto",
-    "x-hidden": "x-hidden",
-    "y-hidden": "y-hidden",
-    "x-visibile": "x-visibile",
-    "y-visibile": "y-visibile",
-    "x-scroll": "x-scroll",
-    "y-scroll": "y-scroll",
-  }
-  theme.scrolling = {
-    touch: "touch",
-    auto: "auto",
-  }
-  theme.objectPosition = {
-    bottom: "bottom",
-    center: "center",
-    left: "left",
-    "left-bottom": "left-bottom",
-    "left-top": "left-top",
-    right: "right",
-    "right-bottom": "right-bottom",
-    "right-top": "right-top",
-    top: "top",
-  }
-  theme.textAlign = {
-    center: "center",
-    left: "left",
-    right: "right",
-    justify: "justify",
-  }
-  theme.textAlign = {
-    center: "center",
-    left: "left",
-    right: "right",
-    justify: "justify",
-  }
-  theme.textDecoration = {
-    underline: "underline",
-    "line-through": "line-through",
-    "no-underline": "no-underline",
-  }
-  theme.textTransform = {
-    uppercase: "uppercase",
-    lowercase: "lowercase",
-    capitalize: "capitalize",
-    "normal-case": "normal-case",
-  }
-  theme.outline = {
-    none: "none",
-  }
-  theme.whiteSpace = {
-    normal: "normal",
-    "no-wrap": "no-wrap",
-    pre: "pre",
-    "pre-line": "pre-line",
-    "pre-wrap": "pre-wrap",
-  }
-  return theme
-}
-
-/**
- * Add (missing) variants to theme's keys. Tailwind handles these via plugins.
- */
-function addMissingVariants(variants = {}) {
-  variants.display = ["responsive"]
-  variants.overflow = ["responsive"]
-  variants.textAlign = ["responsive"]
-  variants.textDecoration = ["responsive", "hover", "focus"]
-  variants.textTransform = ["responsive", "hover", "focus"]
-  variants.outline = ["focus"]
-  variants.whiteSpace = ["responsive"]
-  return variants
+  let template = "{\n"
+  Object.keys(propTypes).forEach(prop => {
+    template += `
+  ${prop}?: ${propTypes[prop]},`
+  })
+  return template + "\n}"
 }
 
 module.exports = function outputTheme({ config }) {
   const pkgRoot = process.env.PWD || process.cwd()
-  const theme = addMissingAttributesToTheme({ ...config("theme") })
+  let theme = { ...config("theme") }
+  plugins.forEach(plugin => {
+    let props = plugin.props
+    if (typeof props === "function") {
+      props = props(theme)
+    }
+    theme = Object.assign({}, theme, props)
+  })
   if (theme.colors) theme.colors = createFlatConfig(theme.colors)
   if (theme.placeholderColor)
     theme.placeholderColor = createFlatConfig(theme.placeholderColor)
@@ -581,12 +150,43 @@ module.exports = function outputTheme({ config }) {
     theme.backgroundColor = createFlatConfig(theme.backgroundColor)
   if (theme.borderColor) theme.borderColor = createFlatConfig(theme.borderColor)
   if (theme.textColor) theme.textColor = createFlatConfig(theme.textColor)
-  const classNames = getClassNames(theme)
-  const variants = addVariantsSuffix(
-    addMissingVariants(config("variants")),
-    theme
+  // get the classNames
+  const classNames = plugins.reduce((classNames, plugin) => {
+    if (plugin.classNames) {
+      classNames = { ...classNames, ...plugin.classNames }
+    }
+    return classNames
+  }, {})
+  let variants = config("variants")
+  plugins.forEach(plugin => {
+    let pluginVariants = plugin.variants
+    if (typeof pluginVariants === "function") {
+      pluginVariants = pluginVariants(variants)
+    }
+    variants = { ...variants, ...(pluginVariants || {}) }
+  })
+  // Now get the variants for all the props
+  // for each props key, we will get props with all of it's variants
+  // e.g. for "whiteSpace" which has responsive variants
+  //  we will get
+  //  {
+  //     "whiteSpace": {
+  //       "whiteSpaceSm": "sm",
+  //       "whiteSpaceMd": "md"
+  //     }
+  //  }
+  const propsWithVariants = addVariantsSuffix(variants, theme)
+
+  // Now we will get the classNames for each prop (along with variants)
+  // e.g. {
+  //  whiteSpace: "whitespace",
+  //  whiteSpaceSm: "sm:whitespace",
+  //  whiteSpaceSm: "sm:whitespace"
+  // }
+  const propsWithClassNames = addVariantsClassPrefix(
+    propsWithVariants,
+    classNames
   )
-  const allAvailableVariants = addVariantsClassPrefix(variants, classNames)
   const outputFile = path.join(pkgRoot, "src/theme.ts")
   process.stdout.write(`Exporting theme to src/theme.ts...`)
   ensureDirectoryExistence(outputFile)
@@ -595,12 +195,15 @@ module.exports = function outputTheme({ config }) {
     `// Don't modify this file directly
 // It is an autogenerated file in the build process
 const theme = ${JSON.stringify(theme, null, 2)}
-const classNamesForKeys= ${JSON.stringify(allAvailableVariants, null, 2)}
-export default theme
+
+const classNamesForKeys= ${JSON.stringify(propsWithClassNames, null, 2)}
+
 export interface StyleProps ${generatePossibleValuesTypescriptTemplate(
-      theme,
-      allAvailableVariants
+      propsWithVariants
     )}
+
+export default theme
+
 export { classNamesForKeys }
 `
   )

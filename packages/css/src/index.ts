@@ -14,11 +14,26 @@ function getClassNameForKey(
   if (!value) return null
   if ((value === "default" || value === true) && prefix) return prefix
   if (typeof value == "string") {
-    return prefix
-      ? prefix.charAt(prefix.length - 1) === ":"
-        ? `${prefix}${value}`
-        : `${prefix}-${value}`
-      : value
+    let isNegativeValue = value.charAt(0) === "-"
+    if (isNegativeValue) {
+      // remove the negative part
+      // we will add it to the className
+      value = value.slice(1) as typeof value
+    }
+    const className = (() => {
+      if (prefix) {
+        // check if the prefix is a variant with no class name
+        // e.g. sm: for "displaySm" prop
+        if (prefix.charAt(prefix.length - 1) === ":") {
+          // just return the prefix and value
+          // e.g. for displaySm:block => sm:block
+          return `${prefix}${value}`
+        }
+        return `${prefix}-${value}`
+      }
+      return value
+    })()
+    return (isNegativeValue ? "-" : "") + className
   }
   return null
 }
