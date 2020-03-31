@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.23.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.22.1...@tourepedia/css@0.23.0) (2020-03-31)
+
+
+### Features
+
+* **css:** add plugin architecture and negative classname support ([f943dd0](https://github.com/tourepedia/tp-ui/commit/f943dd0))
+
+
+
+
+
 ## [0.22.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.22.0...@tourepedia/css@0.22.1) (2020-03-11)
 
 

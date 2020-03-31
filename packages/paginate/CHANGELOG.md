@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.11](https://github.com/tourepedia/tp-ui/compare/@tourepedia/paginate@0.2.10...@tourepedia/paginate@0.2.11) (2020-03-31)
+
+**Note:** Version bump only for package @tourepedia/paginate
+
+
+
+
+
 ## [0.2.10](https://github.com/tourepedia/tp-ui/compare/@tourepedia/paginate@0.2.9...@tourepedia/paginate@0.2.10) (2020-03-11)
 
 **Note:** Version bump only for package @tourepedia/paginate

@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/table",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Table Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,7 +38,7 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/css": "^0.22.1",
+    "@tourepedia/css": "^0.23.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   }

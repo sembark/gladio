@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/snackbar",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Snackbar/Notification utility",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -36,7 +36,7 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.22.1",
+    "@tourepedia/css": "^0.23.0",
     "@tourepedia/dom-helpers": "^0.3.1",
     "@tourepedia/icons": "^0.6.0",
     "classnames": "^2.2.6",
