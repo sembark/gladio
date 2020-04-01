@@ -27,3 +27,11 @@ stories.add("Icons", () => {
     </div>
   )
 })
+
+stories.add("Icon aside text", () => {
+  return (
+    <div className="text-base text-center">
+      <Icons.Home /> Home • <Icons.Star /> Star • <Icons.Share /> Share
+    </div>
+  )
+})

@@ -18,7 +18,7 @@
   "scripts": {
     "prebuild:js": "svgr -d src/icons src/svgs --ext tsx && mkdir -p styles && cp src/icon.css styles/icon.css",
     "build:js": "node ../../shared/build",
-    "js:watch": "chokidar \"./src/svgs/*.(svg)\" -c \"npm run build:js\"",
+    "js:watch": "chokidar \"./src/svgs/**/*.(svg)\" -c \"npm run build:js\"",
     "build": "npm run build:js",
     "build:watch": "npm run js:watch"
   },
