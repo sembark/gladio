@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.6.5...@tourepedia/badge@0.6.6) (2020-04-01)
+
+**Note:** Version bump only for package @tourepedia/badge
+
+
+
+
+
 ## [0.6.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/badge@0.6.4...@tourepedia/badge@0.6.5) (2020-03-31)
 
 

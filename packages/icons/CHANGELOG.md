@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.6.0...@tourepedia/icons@0.7.0) (2020-04-01)
+
+
+### Features
+
+* **icons:** get icons from heroicons ([e4cefd4](https://github.com/tourepedia/tp-ui/packages/icons/commit/e4cefd4))
+
+
+
+
+
 # [0.6.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.5.0...@tourepedia/icons@0.6.0) (2020-02-23)
 
 
