@@ -2,7 +2,7 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Badge, { BadgeList } from "./../src/index"
-import * as Icons from "./../../icons/src"
+import Icons from "./../../icons/src"
 import Button from "./../../button/src"
 import "./../styles/styles.css"
 
@@ -81,7 +81,7 @@ stories.add(
 stories.add("With Icons Inside", () => (
   <Container>
     <Badge>
-      <Icons.RupeeIcon /> 1,000
+      <Icons.Rupee /> 1,000
     </Badge>
   </Container>
 ))
