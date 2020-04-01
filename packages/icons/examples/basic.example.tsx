@@ -9,7 +9,7 @@ const stories = storiesOf("Components/Icons", module)
 stories.add("Icons", () => {
   const size = "50px"
   return (
-    <div className="text-xl">
+    <div className="text-xl text-primary-600">
       {Object.keys(Icons).map(key => {
         const Icon = Icons[key]
         if (Icon.displayName) {
