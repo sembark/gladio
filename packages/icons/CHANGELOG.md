@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.7.0...@tourepedia/icons@0.7.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* **icons:** fill not working in icons ([59cfd01](https://github.com/tourepedia/tp-ui/packages/icons/commit/59cfd01))
+
+
+
+
+
 # [0.7.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.6.0...@tourepedia/icons@0.7.0) (2020-04-01)
 
 
