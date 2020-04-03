@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.8.0...@tourepedia/icons@0.8.1) (2020-04-03)
+
+
+### Bug Fixes
+
+* **icons:** size is not 24x24 for all icons ([2da085c](https://github.com/tourepedia/tp-ui/packages/icons/commit/2da085c))
+
+
+
+
+
 # [0.8.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.7.1...@tourepedia/icons@0.8.0) (2020-04-01)
 
 
