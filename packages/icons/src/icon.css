@@ -11,27 +11,3 @@ Single-colored icons can be modified like so:
   color: red;
 }
 ========================================== */
-
-.tp-icon-star-empty {
-  width: 0.927734375em;
-}
-
-.tp-icon-star {
-  width: 0.927734375em;
-}
-
-.tp-icon-spinner {
-  width: 1.0009765625em;
-}
-
-.tp-icon-child {
-  width: 0.7138671875em;
-}
-
-.tp-icon-bus {
-  width: 0.857421875em;
-}
-
-.tp-icon-bed {
-  width: 1.1416015625em;
-}
