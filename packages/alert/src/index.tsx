@@ -19,6 +19,7 @@ interface AlertProps
   children?: React.ReactNode
   hideIcon?: boolean
   type?: TType
+  title?: string
 }
 
 export default function Alert({
@@ -27,6 +28,7 @@ export default function Alert({
   children,
   hideIcon,
   className,
+  title,
   ...props
 }: AlertProps) {
   if (!children) return null
@@ -37,10 +39,10 @@ export default function Alert({
   return (
     <Box
       display="flex"
-      alignItems="center"
+      alignItems="start"
       marginTop="2"
       marginBottom="4"
-      padding="1"
+      padding="3"
       border
       rounded="lg"
       {...stylesForStatus}
@@ -56,20 +58,16 @@ export default function Alert({
       )}
     >
       {!hideIcon ? (
-        <Box
-          marginRight="3"
-          width="12"
-          height="12"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          fontSize="xl"
-          className="alert__icon"
-        >
+        <Box marginRight="3" className="alert__icon">
           <Icon />
         </Box>
       ) : null}
       <Box className="alert__content" flex="1">
+        {title ? (
+          <Box fontWeight="semibold" marginBottom="2">
+            {title}
+          </Box>
+        ) : null}
         {children}
       </Box>
     </Box>
@@ -126,7 +124,7 @@ function getStylesForColor(
   color: string
 ): Pick<TBoxProps, "borderColor" | "backgroundColor" | "textColor"> {
   return {
-    borderColor: (`${color}-600` as any) as $PropertyType<
+    borderColor: (`${color}-300` as any) as $PropertyType<
       TBoxProps,
       "borderColor"
     >,

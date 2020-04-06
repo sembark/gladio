@@ -26,6 +26,17 @@ stories.add(
   }
 )
 
+stories.add("With Title", () => (
+  <div className="max-w-lg mx-auto">
+    <Alert title="There are 2 errors with your submittions" status="error">
+      <ul className="list-disc px-4">
+        <li>The email address is already taken.</li>
+        <li>Your password must contain atleast one uppercase letter.</li>
+      </ul>
+    </Alert>
+  </div>
+))
+
 stories.add(
   "Status",
   () => (
