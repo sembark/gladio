@@ -23,6 +23,8 @@ interface IBoxProps
       | "overflow"
       | "stroke"
       | "textDecoration"
+      | "fontStyle"
+      | "pointerEvents"
     > {
   as?: React.ReactType
 }
