@@ -70,3 +70,4 @@ exec(
     options.onlyTs ? "src/*.ts" : "src/*.tsx"
   } --outDir types --emitDeclarationOnly --declaration true --jsx preserve --target es5 --allowSyntheticDefaultImports true`
 )
+console.log("Done\n")
