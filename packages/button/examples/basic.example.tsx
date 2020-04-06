@@ -12,10 +12,6 @@ stories.add("Basic Buttons", () => (
     <Button primary>Primary</Button>
     <Button secondary>Secondary</Button>
     <Button tertiary>Tertiary</Button>
-    <Button type="submit">Submit Button</Button>
-    <Button type="submit" danger>
-      Submit Override
-    </Button>
   </div>
 ))
 
