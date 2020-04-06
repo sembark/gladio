@@ -146,7 +146,7 @@ describe("getClassName", () => {
       overflow: "auto",
       overflowLg: "x-auto",
     })
-    expect(className).toBe("overflow-auto overflow-x-auto")
+    expect(className).toBe("overflow-auto lg:overflow-x-auto")
   })
 
   it("handles positions", () => {
@@ -165,11 +165,9 @@ describe("getClassName", () => {
 
   it("handles flex wrap", () => {
     const className = getClassName({
-      flexShrink: true,
+      flexWrap: "no-wrap",
     })
-    expect(className).toBe(
-      "absolute inset-x-auto top-0 right-auto bottom-auto left-auto"
-    )
+    expect(className).toBe("flex-no-wrap")
   })
 })
 
