@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/tourepedia/tp-ui#readme",
   "dependencies": {
-    "@tourepedia/ui": "^1.11.6",
+    "@tourepedia/ui": "^1.11.7",
     "@types/mdx-js__react": "^1.5.0",
     "@types/node": "^13.5.2",
     "moment": "^2.24.0",

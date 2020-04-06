@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           <Link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <Link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
-        <body className="tds bg-white leading-relaxed text-gray-800">
+        <body className="tds bg-white leading-relaxed text-gray-800 font-sans">
           <Main />
           <NextScript />
         </body>
