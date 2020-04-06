@@ -1,4 +1,5 @@
 const alignItems = require("./align-items")
+const appearance = require("./appearance")
 const backgroundColor = require("./background-color")
 const backgroundPosition = require("./background-position")
 const backgroundSize = require("./background-size")
@@ -14,8 +15,10 @@ const fill = require("./fill")
 const flex = require("./flex")
 const flexGrow = require("./flex-grow")
 const flexShrink = require("./flex-shrink")
+const flexWrap = require("./flex-wrap")
 const fontFamily = require("./font-family")
 const fontSize = require("./font-size")
+const fontStyle = require("./font-style")
 const fontWeight = require("./font-weight")
 const height = require("./height")
 const inset = require("./inset")
@@ -50,6 +53,7 @@ const float = require("./float")
 
 module.exports = [
   alignItems,
+  appearance,
   backgroundColor,
   backgroundPosition,
   backgroundSize,
@@ -65,8 +69,10 @@ module.exports = [
   flex,
   flexGrow,
   flexShrink,
+  flexWrap,
   fontFamily,
   fontSize,
+  fontStyle,
   fontWeight,
   height,
   inset,

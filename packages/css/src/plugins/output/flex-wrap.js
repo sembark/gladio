@@ -5,14 +5,18 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
-  flexShrink: theme.flexShrink,
-})
+const props = {
+  flexWrap: {
+    "no-wrap": "no-wrap",
+    wrap: "wrap",
+    "wrap-reverse": "wrap-reverse",
+  },
+}
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ flexShrink: variants.flexShrink })
+const variants = variants => ({ flexWrap: variants.flexWrap || [] })
 
 /**
  * Class name for each of props's key
@@ -20,14 +24,14 @@ const variants = variants => ({ flexShrink: variants.flexShrink })
  * This will be used when creating the tailwind classNames for given keys
  */
 const classNames = {
-  flexShrink: "flex-shrink",
+  flexWrap: "flex",
 }
 
 /**
  * Get the types for each of props keys
  */
 const types = {
-  flexShrink: "keyof typeof theme.flexShrink | true",
+  flexWrap: "keyof typeof theme.flexWrap",
 }
 
 module.exports = {

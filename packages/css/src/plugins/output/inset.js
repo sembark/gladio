@@ -7,12 +7,26 @@
  */
 const props = theme => ({
   inset: theme.inset,
+  insetX: theme.inset,
+  insetY: theme.inset,
+  top: theme.inset,
+  right: theme.inset,
+  bottom: theme.inset,
+  left: theme.inset,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ inset: variants.inset || [] })
+const variants = variants => ({
+  inset: variants.inset || [],
+  insetX: variants.inset || [],
+  insetY: variants.inset || [],
+  top: variants.inset || [],
+  right: variants.inset || [],
+  bottom: variants.inset || [],
+  left: variants.inset || [],
+})
 
 /**
  * Class name for each of props's key
@@ -21,6 +35,12 @@ const variants = variants => ({ inset: variants.inset || [] })
  */
 const classNames = {
   inset: "inset",
+  insetX: "inset-x",
+  insetY: "inset-y",
+  top: "top",
+  right: "right",
+  bottom: "bottom",
+  left: "left",
 }
 
 /**
@@ -28,6 +48,12 @@ const classNames = {
  */
 const types = {
   inset: "keyof typeof theme.inset",
+  insetX: "keyof typeof theme.inset",
+  insetY: "keyof typeof theme.inset",
+  top: "keyof typeof theme.inset",
+  right: "keyof typeof theme.inset",
+  bottom: "keyof typeof theme.inset",
+  left: "keyof typeof theme.inset",
 }
 
 module.exports = {

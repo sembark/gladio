@@ -140,6 +140,37 @@ describe("getClassName", () => {
     })
     expect(className).toBe("tracking-wider leading-loose")
   })
+
+  it("handles overflow", () => {
+    const className = getClassName({
+      overflow: "auto",
+      overflowLg: "x-auto",
+    })
+    expect(className).toBe("overflow-auto overflow-x-auto")
+  })
+
+  it("handles positions", () => {
+    const className = getClassName({
+      position: "absolute",
+      insetX: "auto",
+      top: "0",
+      right: "auto",
+      bottom: "auto",
+      left: "auto",
+    })
+    expect(className).toBe(
+      "absolute inset-x-auto top-0 right-auto bottom-auto left-auto"
+    )
+  })
+
+  it("handles flex wrap", () => {
+    const className = getClassName({
+      flexShrink: true,
+    })
+    expect(className).toBe(
+      "absolute inset-x-auto top-0 right-auto bottom-auto left-auto"
+    )
+  })
 })
 
 describe("removeStyleProps", () => {

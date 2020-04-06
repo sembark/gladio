@@ -7,12 +7,19 @@
  */
 const props = theme => ({
   cursor: theme.cursor,
+  pointerEvents: {
+    none: "none",
+    auto: "auto",
+  },
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ cursor: variants.cursor })
+const variants = variants => ({
+  cursor: variants.cursor,
+  pointerEvents: variants.pointerEvents,
+})
 
 /**
  * Class name for each of props's key
@@ -21,6 +28,7 @@ const variants = variants => ({ cursor: variants.cursor })
  */
 const classNames = {
   cursor: "cursor",
+  pointerEvents: "pointer-events",
 }
 
 /**
@@ -28,6 +36,7 @@ const classNames = {
  */
 const types = {
   cursor: "keyof typeof theme.cursor",
+  pointerEvents: "keyof typeof theme.pointerEvents",
 }
 
 module.exports = {

@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexGrow: "keyof typeof theme.flexGrow",
+  flexGrow: "keyof typeof theme.flexGrow | true",
 }
 
 module.exports = {

@@ -25,7 +25,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = { overflow: ["responsive"] }
+const variants = variants => ({ overflow: variants.overflow || ["responsive"] })
 
 /**
  * Class name for each of props's key
@@ -33,7 +33,7 @@ const variants = { overflow: ["responsive"] }
  * This will be used when creating the tailwind classNames for given keys
  */
 const classNames = {
-  overflow: "",
+  overflow: "overflow",
 }
 
 /**
