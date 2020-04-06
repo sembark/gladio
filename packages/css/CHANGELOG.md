@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.23.1...@tourepedia/css@0.24.0) (2020-04-06)
+
+
+### Features
+
+* **css:** add appearance, flex-wrap and font-styles ([fdf5c57](https://github.com/tourepedia/tp-ui/commit/fdf5c57))
+
+
+
+
+
 ## [0.23.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.23.0...@tourepedia/css@0.23.1) (2020-03-31)
 
 

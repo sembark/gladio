@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/box@0.1.5...@tourepedia/box@0.1.6) (2020-04-06)
+
+
+### Bug Fixes
+
+* **types:** box prop type not working ([ee103f0](https://github.com/tourepedia/tp-ui/commit/ee103f0))
+
+
+
+
+
 ## [0.1.5](https://github.com/tourepedia/tp-ui/compare/@tourepedia/box@0.1.4...@tourepedia/box@0.1.5) (2020-03-31)
 
 
