@@ -50,6 +50,7 @@ const whiteSpace = require("./white-space")
 const width = require("./width")
 const zIndex = require("./z-index")
 const float = require("./float")
+const wordBreak = require("./word-break")
 
 module.exports = [
   alignItems,
@@ -104,4 +105,5 @@ module.exports = [
   placeholderColor,
   stroke,
   float,
+  wordBreak,
 ]

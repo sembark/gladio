@@ -169,6 +169,15 @@ describe("getClassName", () => {
     })
     expect(className).toBe("flex-no-wrap")
   })
+
+  it("handles word breaks", () => {
+    const className = getClassName({
+      wordBreak: "all",
+      wordBreakMd: "normal",
+      wordTruncate: true,
+    })
+    expect(className).toBe("break-all md:break-normal truncate")
+  })
 })
 
 describe("removeStyleProps", () => {
