@@ -28,7 +28,7 @@ module.exports = {
     const classNameExpression = template.ast(
       `'tp-icon tp-icon-${componentNameWithSvgPrefix
         .replace(/\B([A-Z])/g, "-$1")
-        .toLowerCase()} ' + className`
+        .toLowerCase()} ' + className + (rotate ? " rotate-" + rotate : "")`
     ).expression
     // now apply this className to the svg element
     jsx.openingElement.attributes.push({
@@ -43,8 +43,9 @@ module.exports = {
     import * as React from 'react';
 		interface ISVGComponentProps extends React.SVGProps<SVGSVGElement> {
 			title?: string
+      rotate?: "90" | "180" | "270"
 		}
-    const ${componentName} = ({ svgRef, title, className = "", titleId, ...props }: ISVGComponentProps & {
+    const ${componentName} = ({ svgRef, title, className = "", rotate, titleId, ...props }: ISVGComponentProps & {
 	svgRef?: React.Ref<SVGSVGElement>,
   titleId?: string
 }) => ${jsx};

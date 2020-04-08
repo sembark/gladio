@@ -11,3 +11,13 @@ Single-colored icons can be modified like so:
   color: red;
 }
 ========================================== */
+/* rotation helpers */
+.rotate-90 {
+  transform: rotate(90deg);
+}
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.rotate-270 {
+  transform: rotate(270deg);
+}

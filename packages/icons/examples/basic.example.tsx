@@ -35,3 +35,11 @@ stories.add("Icon aside text", () => {
     </div>
   )
 })
+
+stories.add("Icon with rotation", () => {
+  return (
+    <div className="text-base text-center">
+      <Icons.ChevronDown rotate="90" />
+    </div>
+  )
+})
