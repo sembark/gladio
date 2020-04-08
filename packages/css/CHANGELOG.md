@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.24.0...@tourepedia/css@0.25.0) (2020-04-08)
+
+
+### Features
+
+* **css:** add work breaking ([c71ac57](https://github.com/tourepedia/tp-ui/commit/c71ac57))
+
+
+
+
+
 # [0.24.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.23.1...@tourepedia/css@0.24.0) (2020-04-06)
 
 

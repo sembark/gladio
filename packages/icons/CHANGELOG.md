@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.8.1...@tourepedia/icons@0.9.0) (2020-04-08)
+
+
+### Features
+
+* **icons:** add icons rotation ([f15c04e](https://github.com/tourepedia/tp-ui/packages/icons/commit/f15c04e))
+
+
+
+
+
 ## [0.8.1](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.8.0...@tourepedia/icons@0.8.1) (2020-04-03)
 
 
