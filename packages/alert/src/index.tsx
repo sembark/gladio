@@ -31,7 +31,7 @@ export default function Alert({
   title,
   ...props
 }: AlertProps) {
-  if (!children) return null
+  if (!children && !title) return null
   const type = typeProp || getTypeBasedOnStatus(statusProp)
   const status = statusProp || getStatusBasedOnType(type)
   const Icon = getIconBasedOnStatus(status)
