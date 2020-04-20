@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/ui",
-  "version": "1.11.8",
+  "version": "1.11.9",
   "description": "UI Components for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -27,7 +27,7 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/alert": "^0.4.1",
+    "@tourepedia/alert": "^0.4.2",
     "@tourepedia/badge": "^0.6.8",
     "@tourepedia/box": "^0.1.7",
     "@tourepedia/button": "^0.5.7",

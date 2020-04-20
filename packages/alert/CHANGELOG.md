@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.4.1...@tourepedia/alert@0.4.2) (2020-04-20)
+
+
+### Bug Fixes
+
+* **alert:** title not rendering when no children ([6c21cce](https://github.com/tourepedia/tp-ui/commit/6c21cce))
+
+
+
+
+
 ## [0.4.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.4.0...@tourepedia/alert@0.4.1) (2020-04-08)
 
 **Note:** Version bump only for package @tourepedia/alert
