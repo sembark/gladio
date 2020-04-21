@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.10.0...@tourepedia/icons@0.10.1) (2020-04-21)
+
+
+### Bug Fixes
+
+* **icons:** align to text bottom ([9faf4f3](https://github.com/tourepedia/tp-ui/packages/icons/commit/9faf4f3))
+
+
+
+
+
 # [0.10.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.9.0...@tourepedia/icons@0.10.0) (2020-04-21)
 
 
