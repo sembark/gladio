@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.9.0...@tourepedia/icons@0.10.0) (2020-04-21)
+
+
+### Features
+
+* **icons:** added light buld icon ([86b7eed](https://github.com/tourepedia/tp-ui/packages/icons/commit/86b7eed))
+
+
+
+
+
 # [0.9.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.8.1...@tourepedia/icons@0.9.0) (2020-04-08)
 
 
