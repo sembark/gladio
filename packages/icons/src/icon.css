@@ -2,6 +2,7 @@
   display: inline-block;
   width: 1.3em;
   height: 1.3em;
+  vertical-align: text-bottom;
 }
 
 /* ==========================================
