@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.17](https://github.com/tourepedia/tp-ui/compare/@tourepedia/snackbar@0.1.16...@tourepedia/snackbar@0.1.17) (2020-04-25)
+
+**Note:** Version bump only for package @tourepedia/snackbar
+
+
+
+
+
 ## [0.1.16](https://github.com/tourepedia/tp-ui/compare/@tourepedia/snackbar@0.1.15...@tourepedia/snackbar@0.1.16) (2020-04-21)
 
 **Note:** Version bump only for package @tourepedia/snackbar

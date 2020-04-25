@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.6.9...@tourepedia/table@0.7.0) (2020-04-25)
+
+
+### Features
+
+* **table:** add tabular-nums to all table ([4851376](https://github.com/tourepedia/tp-ui/commit/4851376))
+
+
+
+
+
 ## [0.6.9](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.6.8...@tourepedia/table@0.6.9) (2020-04-08)
 
 **Note:** Version bump only for package @tourepedia/table

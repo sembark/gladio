@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.4.4...@tourepedia/alert@0.5.0) (2020-04-25)
+
+
+### Features
+
+* **alert:** updated with new icons ([786060d](https://github.com/tourepedia/tp-ui/commit/786060d))
+
+
+
+
+
 ## [0.4.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.4.3...@tourepedia/alert@0.4.4) (2020-04-21)
 
 **Note:** Version bump only for package @tourepedia/alert
