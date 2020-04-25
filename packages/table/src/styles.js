@@ -11,6 +11,7 @@ module.exports = function addTableComponent({ theme, addComponents }) {
         verticalAlign: "top",
         textAlign: "left",
         transition: "background .15s ease-in-out",
+        fontVariantNumeric: "tabular-nums",
       },
       "> * > tr > th": {
         padding: `${theme("padding.3")} ${theme("padding.4")}`,
