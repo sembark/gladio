@@ -58,8 +58,8 @@ export default function Alert({
       )}
     >
       {!hideIcon ? (
-        <Box marginRight="3" className="alert__icon">
-          <Icon />
+        <Box marginRight="3" className="alert__icon" opacity="75">
+          <Icon style={{ transform: "translateY(2px)" }} />
         </Box>
       ) : null}
       <Box className="alert__content" flex="1">
@@ -92,16 +92,16 @@ function getIconBasedOnStatus(status: TStatus) {
   let Icon
   switch (status) {
     case "warning":
-      Icon = Icons.Attention
+      Icon = Icons.AttentionSolid
       break
     case "error":
-      Icon = Icons.Cancel
+      Icon = Icons.CancelCircleSolid
       break
     case "success":
-      Icon = Icons.Ok
+      Icon = Icons.OkCircleSolid
       break
     default:
-      Icon = Icons.Info
+      Icon = Icons.InfoSolid
       break
   }
   return Icon
