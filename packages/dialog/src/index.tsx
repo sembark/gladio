@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
 import { Transition } from "react-spring/renderprops.cjs"
+import { Omit } from "utility-types"
 
 import DialogManager from "./DialogManager"
 
@@ -80,9 +81,11 @@ export const DialogHeader = forwardRef(
       className,
       closeButton = true,
       children,
+      title,
       ...props
-    }: React.HTMLProps<HTMLDivElement> & {
+    }: Omit<React.HTMLProps<HTMLDivElement>, "title"> & {
       closeButton?: boolean
+      title?: React.ReactNode
     },
     ref: React.Ref<HTMLDivElement>
   ) => {
@@ -99,6 +102,7 @@ export const DialogHeader = forwardRef(
         {...props}
       >
         {closeButton ? <DialogCloseButton /> : null}
+        {title ? <DialogTitle>{title}</DialogTitle> : null}
         {children}
       </div>
     )
@@ -222,6 +226,11 @@ interface DialogProps {
    * Small size
    */
   sm?: boolean
+
+  /**
+   * Title
+   */
+  title?: React.ReactNode
 }
 
 const dialogManager = DialogManager(DIALOG_OPEN_CONTAINER_CLASS_NAME)
@@ -240,6 +249,7 @@ function DialogContainer({
   xl,
   lg,
   sm,
+  title,
 }: DialogProps & {
   animation: any
 }) {
@@ -325,6 +335,7 @@ function DialogContainer({
       {!fitContainer ? <Backdrop /> : null}
       <DialogProvider value={dialogContext}>
         <DialogDocument style={{ transform: animation.transform }}>
+          {title ? <DialogHeader title={title} /> : null}
           {children}
         </DialogDocument>
       </DialogProvider>

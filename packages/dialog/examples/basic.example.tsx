@@ -331,3 +331,36 @@ stories.add("Large Size", () => {
   }
   return <DialogRenderer />
 })
+
+stories.add("With a Title", () => {
+  function DialogRenderer() {
+    const [isOpen, open, close] = useDialog()
+    return (
+      <div>
+        <h3 className="text-center">
+          This dialog has a title prop to the Root &lt;Dialog /&gt; component.
+        </h3>
+        <div className="text-center">
+          <Button primary branded onClick={open}>
+            Open
+          </Button>
+        </div>
+        <Dialog open={isOpen} onClose={close} title="How you doing">
+          <Dialog.Body>
+            <h3>I hope.. Good!</h3>
+            <p>I don't know man. Things are going the way they go.</p>
+          </Dialog.Body>
+          <Dialog.Footer>
+            <Button onClick={close} primary branded>
+              Hmm
+            </Button>
+            <Button onClick={close} tertiary>
+              Shut up!
+            </Button>
+          </Dialog.Footer>
+        </Dialog>
+      </div>
+    )
+  }
+  return <DialogRenderer />
+})
