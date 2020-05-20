@@ -64,7 +64,7 @@ export default function Alert({
       ) : null}
       <Box className="alert__content" flex="1">
         {title ? (
-          <Box fontWeight="semibold" marginBottom="2">
+          <Box fontWeight="semibold" marginBottom={children ? "2" : "0"}>
             {title}
           </Box>
         ) : null}
