@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.5.0...@tourepedia/alert@0.5.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* **alert:** remove the title margin if not content ([833f290](https://github.com/tourepedia/tp-ui/commit/833f290))
+
+
+
+
+
 # [0.5.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/alert@0.4.4...@tourepedia/alert@0.5.0) (2020-04-25)
 
 
