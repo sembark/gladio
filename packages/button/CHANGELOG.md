@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.5.7...@tourepedia/button@0.6.0) (2020-07-04)
+
+
+### Features
+
+* **box:** use box in badge, button and inputs ([5c36f1c](https://github.com/tourepedia/tp-ui/commit/5c36f1c))
+
+
+
+
+
 ## [0.5.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/button@0.5.6...@tourepedia/button@0.5.7) (2020-04-08)
 
 **Note:** Version bump only for package @tourepedia/button
