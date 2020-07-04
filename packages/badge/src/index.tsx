@@ -1,7 +1,8 @@
 import * as React from "react"
 import classNames from "classnames"
+import Box from "@tourepedia/box"
 
-export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
+export interface IBadgeProps extends React.ComponentProps<typeof Box> {
   primary?: boolean
   danger?: boolean
   warning?: boolean
@@ -12,7 +13,7 @@ export interface IBadgeProps extends React.HTMLProps<HTMLSpanElement> {
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
-  (
+  function Badge(
     {
       children,
       className,
@@ -26,7 +27,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
       ...props
     },
     ref
-  ) => {
+  ) {
     if (
       children === null ||
       children === undefined ||
@@ -34,7 +35,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
     )
       return null
     return (
-      <span
+      <Box
         className={classNames(
           "badge",
           {
@@ -50,6 +51,7 @@ export const Badge = React.forwardRef<HTMLSpanElement, IBadgeProps>(
         )}
         ref={ref}
         children={children}
+        as="span"
         {...props}
       />
     )
@@ -72,7 +74,8 @@ export function BadgeList({
   ...props
 }: IBadgeProps) {
   return (
-    <span
+    <Box
+      as="span"
       className={classNames(
         "badge-list",
         {

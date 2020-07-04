@@ -20,7 +20,7 @@
     "build:js": "node ../../shared/build",
     "build:css": "tailwind build tailwind.css -o styles/styles.css",
     "js:watch": "chokidar \"./src/**/*.(ts|tsx)\" -c \"npm run build:js\"",
-    "css:watch": "chokidar \"./src/styles.js\" -c \"npm run build:css\"",
+    "css:watch": "chokidar \"./src/**/styles.js\" -c \"npm run build:css\"",
     "build": "npm-run-all -l -p build:js build:css",
     "build:watch": "npm-run-all -l -p js:watch css:watch"
   },
@@ -36,6 +36,7 @@
   },
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
   "dependencies": {
+    "@tourepedia/box": "^0.1.7",
     "@tourepedia/css": "^0.25.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"

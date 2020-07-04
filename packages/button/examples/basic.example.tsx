@@ -23,6 +23,14 @@ stories.add("Full Width/Block Button", () => (
   </div>
 ))
 
+stories.add("Small Button", () => (
+  <div className="p-4 max-w-lg mx-auto">
+    <Button primary sm>
+      Me Small
+    </Button>
+  </div>
+))
+
 stories.add("Buttons with Semantics/Context/Colors", () => (
   <div className="p-4">
     <div className="mb-8">

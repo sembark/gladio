@@ -54,6 +54,10 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       )}`,
       willChange: "background, border-color, color",
       transition: "all .15s ease-in-out",
+      "&-sm": {
+        padding: `${theme("padding.ie-y-sm")} ${theme("padding.ie-x-sm")}`,
+        fontSize: `${theme("fontSize.sm")}`,
+      },
       "&:hover": {
         textDecoration: "none",
       },

@@ -88,7 +88,7 @@ describe("Inputs", () => {
     })
   })
   describe("FormGroup", () => {
-    it("renders a div element and passes props to div", () => {
+    it("renders an element and passes props to the element", () => {
       const { getByTestId } = render(
         <FormGroup data-testid="group">
           <Input type="text" data-testid="input" />
@@ -102,7 +102,7 @@ describe("Inputs", () => {
     })
   })
   describe("InputGroup", () => {
-    it("renders a div element and passes props to div", () => {
+    it("renders an element and passes props to element", () => {
       const { getByTestId } = render(
         <InputGroup data-testid="group">
           <Input type="text" data-testid="input" />
@@ -111,7 +111,6 @@ describe("Inputs", () => {
 
       const group = getByTestId("group")
       expect(group).not.toBeNull()
-      expect(group.tagName.toLowerCase()).toBe("div")
       const input = getByTestId("input")
       expect(input).not.toBeNull()
     })
@@ -126,7 +125,6 @@ describe("Inputs", () => {
 
       const group = getByTestId("group")
       expect(group).not.toBeNull()
-      expect(group.tagName.toLowerCase()).toBe("span")
       const input = getByTestId("child")
       expect(input).not.toBeNull()
       expect(input.innerHTML).toBe("INR")

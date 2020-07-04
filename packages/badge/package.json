@@ -36,6 +36,7 @@
   ],
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
   "dependencies": {
+    "@tourepedia/box": "^0.1.7",
     "@tourepedia/css": "^0.25.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
