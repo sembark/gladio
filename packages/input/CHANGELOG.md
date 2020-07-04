@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.1...@tourepedia/input@0.4.2) (2020-07-04)
+
+
+### Bug Fixes
+
+* **textarea:** make 100% as default width ([d5c4dd6](https://github.com/tourepedia/tp-ui/commit/d5c4dd6))
+
+
+
+
+
 ## [0.4.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.0...@tourepedia/input@0.4.1) (2020-07-04)
 
 **Note:** Version bump only for package @tourepedia/input
