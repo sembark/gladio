@@ -10,6 +10,7 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       "textarea&": {
         minHeight: "100px",
         minWidth: "200px",
+        width: "100%",
       },
       "select&": select,
       "&.has-error": {
