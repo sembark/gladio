@@ -1,9 +1,12 @@
 import * as React from "react"
 import { Omit } from "utility-types"
 import classNames from "classnames"
+import Box, { MergeWithBoxProps } from "@tourepedia/box"
 
 export interface TableProps
-  extends Omit<React.HTMLProps<HTMLTableElement>, "headers" | "rows"> {
+  extends MergeWithBoxProps<
+    Omit<React.HTMLProps<HTMLTableElement>, "headers" | "rows">
+  > {
   /**
    * Table has a fixed layout
    * @default false
@@ -71,8 +74,10 @@ export const Table = React.forwardRef(
     }: TableProps,
     ref: React.Ref<HTMLTableElement>
   ) => {
+    const TableComponent = Box as React.ComponentType<TableProps>
     const $table = (
-      <table
+      <TableComponent
+        as="table"
         cellSpacing={0}
         ref={ref}
         className={classNames(
@@ -124,10 +129,10 @@ export const Table = React.forwardRef(
           </tbody>
         ) : null}
         {children}
-      </table>
+      </TableComponent>
     )
     if (responsive) {
-      return <div className="table-responsive">{$table}</div>
+      return <Box className="table-responsive">{$table}</Box>
     }
     return $table
   }

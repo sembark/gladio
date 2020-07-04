@@ -182,3 +182,11 @@ stories.add("Table with row containing header", () => (
     </div>
   </div>
 ))
+
+stories.add("Width Outside Border", () => (
+  <div className="p-10">
+    <div className=" max-w-3xl mx-auto">
+      <Table border>{child}</Table>
+    </div>
+  </div>
+))
