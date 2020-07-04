@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/paginate",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "description": "Paginate Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,8 +38,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/button": "^0.6.0",
-    "@tourepedia/css": "^0.26.0",
+    "@tourepedia/button": "^0.6.1",
+    "@tourepedia/css": "^0.27.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
