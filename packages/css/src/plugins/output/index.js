@@ -5,17 +5,19 @@ const backgroundPosition = require("./background-position")
 const backgroundSize = require("./background-size")
 const borderColor = require("./border-color")
 const borderRadius = require("./border-radius")
-const borderWidth = require("./border-width")
 const borderStyle = require("./border-style")
+const borderWidth = require("./border-width")
 const boxShadow = require("./box-shadow")
 const container = require("./container")
 const cursor = require("./cursor")
 const display = require("./display")
 const fill = require("./fill")
 const flex = require("./flex")
+const flexDirection = require("./flex-direction")
 const flexGrow = require("./flex-grow")
 const flexShrink = require("./flex-shrink")
 const flexWrap = require("./flex-wrap")
+const float = require("./float")
 const fontFamily = require("./font-family")
 const fontSize = require("./font-size")
 const fontStyle = require("./font-style")
@@ -48,9 +50,8 @@ const textTranform = require("./text-transform")
 const verticalAlign = require("./vertical-align")
 const whiteSpace = require("./white-space")
 const width = require("./width")
-const zIndex = require("./z-index")
-const float = require("./float")
 const wordBreak = require("./word-break")
+const zIndex = require("./z-index")
 
 module.exports = [
   alignItems,
@@ -68,9 +69,11 @@ module.exports = [
   display,
   fill,
   flex,
+  flexDirection,
   flexGrow,
   flexShrink,
   flexWrap,
+  float,
   fontFamily,
   fontSize,
   fontStyle,
@@ -78,6 +81,8 @@ module.exports = [
   height,
   inset,
   justifyContent,
+  letterSpacing,
+  lineHeight,
   listStyleType,
   margin,
   maxHeight,
@@ -85,11 +90,15 @@ module.exports = [
   minHeight,
   minWidth,
   objectPosition,
+  opacity,
+  order,
   outline,
   overflow,
   padding,
+  placeholderColor,
   position,
   scrolling,
+  stroke,
   textAlign,
   textColor,
   textDecoration,
@@ -97,13 +106,6 @@ module.exports = [
   verticalAlign,
   whiteSpace,
   width,
-  zIndex,
-  letterSpacing,
-  lineHeight,
-  opacity,
-  order,
-  placeholderColor,
-  stroke,
-  float,
   wordBreak,
+  zIndex,
 ]

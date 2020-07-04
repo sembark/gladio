@@ -170,6 +170,13 @@ describe("getClassName", () => {
     expect(className).toBe("flex-no-wrap")
   })
 
+  it("handles flex direction", () => {
+    const className = getClassName({
+      flexDirection: "col",
+    })
+    expect(className).toBe("flex-col")
+  })
+
   it("handles word breaks", () => {
     const className = getClassName({
       wordBreak: "all",
