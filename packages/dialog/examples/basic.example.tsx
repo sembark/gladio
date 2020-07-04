@@ -2,8 +2,12 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Dialog, { useDialog } from "./../src/index"
-import Button from "./../../button/src"
-import "./../../button/styles/styles.css"
+import Button from "@tourepedia/button"
+import { Input } from "@tourepedia/input"
+
+import "@tourepedia/input/styles/styles.css"
+import "@tourepedia/button/styles/styles.css"
+
 import "./../styles/styles.css"
 
 const stories = storiesOf("Components/Dialog", module)
@@ -93,13 +97,9 @@ stories.add("Dialog within Dialog", () => {
           <Dialog.Body>
             <h3>Some content</h3>
             <p>some content here and some more suff</p>
-            <input
-              type="text"
-              className="input"
-              placeholder="Input for tab navigation"
-            />
+            <Input type="text" placeholder="Input for tab navigation" />
             <br />
-            <input type="text" className="input" placeholder="Another Input" />
+            <Input type="text" placeholder="Another Input" />
             <br />
             <Button primary branded onClick={open2}>
               Anothre One
@@ -111,17 +111,9 @@ stories.add("Dialog within Dialog", () => {
               <Dialog.Body>
                 <p>Here is some text</p>
                 <br />
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Input for tab navigation"
-                />
+                <Input type="text" placeholder="Input for tab navigation" />
                 <br />
-                <input
-                  type="text"
-                  className="input"
-                  placeholder="Another Input"
-                />
+                <Input type="text" placeholder="Another Input" />
                 <br />
               </Dialog.Body>
               <Dialog.Footer>
@@ -232,7 +224,7 @@ stories.add("Focus Enforced", () => {
             </p>
             <div className="form-group">
               <label>Name</label>
-              <input className="input" type="text" autoFocus />
+              <Input type="text" autoFocus />
             </div>
           </Dialog.Body>
           <Dialog.Footer>

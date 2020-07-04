@@ -4,10 +4,11 @@ import classNames from "classnames"
 import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
 import { Transition } from "react-spring/renderprops.cjs"
 import { Omit } from "utility-types"
+import Box from "@tourepedia/box"
 
 import DialogManager from "./DialogManager"
 
-const { useRef, useState, useEffect, forwardRef } = React
+const { useRef, useState, useEffect } = React
 export function useDialog(
   initialOpen: boolean = false
 ): [boolean, () => void, () => void] {
@@ -34,19 +35,17 @@ const DialogProvider = DialogContext.Provider
 const DIALOG_BASE_CLASS_NAME = "dialog"
 const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
 
-export function DialogDocument({
-  className,
-  children,
-  style,
-}: React.HTMLProps<HTMLElement>) {
+type BoxProps = React.ComponentProps<typeof Box>
+
+export function DialogDocument({ className, children, ...props }: BoxProps) {
   return (
-    <div
+    <Box
       role="document"
-      style={style}
       className={classNames(`${DIALOG_BASE_CLASS_NAME}-document`, className)}
+      {...props}
     >
       {children}
-    </div>
+    </Box>
   )
 }
 
@@ -75,97 +74,74 @@ export function DialogCloseButton({
   )
 }
 
-export const DialogHeader = forwardRef(
-  (
-    {
-      className,
-      closeButton = true,
-      children,
-      title,
-      ...props
-    }: Omit<React.HTMLProps<HTMLDivElement>, "title"> & {
-      closeButton?: boolean
-      title?: React.ReactNode
-    },
-    ref: React.Ref<HTMLDivElement>
-  ) => {
-    return (
-      <div
-        ref={ref}
-        className={classNames(
-          `${DIALOG_BASE_CLASS_NAME}-header`,
-          {
-            "has-close-btn": closeButton,
-          },
-          className
-        )}
-        {...props}
-      >
-        {closeButton ? <DialogCloseButton /> : null}
-        {title ? <DialogTitle>{title}</DialogTitle> : null}
-        {children}
-      </div>
-    )
-  }
-)
+export function DialogHeader({
+  className,
+  closeButton = true,
+  children,
+  title,
+  ...props
+}: Omit<BoxProps, "title"> & {
+  closeButton?: boolean
+  title?: React.ReactNode
+}) {
+  return (
+    <Box
+      className={classNames(
+        `${DIALOG_BASE_CLASS_NAME}-header`,
+        {
+          "has-close-btn": closeButton,
+        },
+        className
+      )}
+      {...props}
+    >
+      {closeButton ? <DialogCloseButton /> : null}
+      {title ? <DialogTitle>{title}</DialogTitle> : null}
+      {children}
+    </Box>
+  )
+}
 DialogHeader.displayName = "DialogHeader"
 
-export const DialogTitle = forwardRef(
-  (
-    { className, ...props }: React.HTMLProps<HTMLDivElement>,
-    ref: React.Ref<HTMLHeadingElement>
-  ) => {
-    const { titleId } = React.useContext(DialogContext)
-    return (
-      <h3
-        ref={ref}
-        id={titleId}
-        className={classNames(`${DIALOG_BASE_CLASS_NAME}-title`, className)}
-        {...props}
-      />
-    )
-  }
-)
+export function DialogTitle({ className, ...props }: BoxProps) {
+  const { titleId } = React.useContext(DialogContext)
+  return (
+    <Box
+      as="h3"
+      id={titleId}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-title`, className)}
+      {...props}
+    />
+  )
+}
 
 DialogTitle.displayName = "DialogTitle"
 
-export const DialogBody = forwardRef(
-  (
-    { className, ...props }: React.HTMLProps<HTMLDivElement>,
-    ref: React.Ref<HTMLDivElement>
-  ) => {
-    const { contentId } = React.useContext(DialogContext)
-    return (
-      <div
-        id={contentId}
-        ref={ref}
-        className={classNames(`${DIALOG_BASE_CLASS_NAME}-body`, className)}
-        {...props}
-      />
-    )
-  }
-)
+export function DialogBody({ className, ...props }: BoxProps) {
+  const { contentId } = React.useContext(DialogContext)
+  return (
+    <Box
+      id={contentId}
+      className={classNames(`${DIALOG_BASE_CLASS_NAME}-body`, className)}
+      {...props}
+    />
+  )
+}
 DialogBody.displayName = "DialogBody"
 
-export const DialogFooter = forwardRef(
-  (
-    { className, ...props }: React.HTMLProps<HTMLDivElement>,
-    ref: React.Ref<HTMLDivElement>
-  ) => (
-    <div
-      ref={ref}
+export function DialogFooter({ className, ...props }: BoxProps) {
+  return (
+    <Box
       className={classNames(`${DIALOG_BASE_CLASS_NAME}-footer`, className)}
       {...props}
     />
   )
-)
+}
 DialogFooter.displayName = "DialogFooter"
 
-interface IBackdropProps extends React.HTMLProps<HTMLDivElement> {}
-
-function Backdrop({ className, ...props }: IBackdropProps) {
+function Backdrop({ className, ...props }: BoxProps) {
   return (
-    <div
+    <Box
       className={classNames(`${DIALOG_BASE_CLASS_NAME}__backdrop`, className)}
       {...props}
     />
@@ -253,7 +229,7 @@ function DialogContainer({
 }: DialogProps & {
   animation: any
 }) {
-  const wrapperRef = useRef<HTMLDivElement>(null)
+  const wrapperRef = useRef<HTMLElement>(null)
 
   const id = useId("dialog-")
 
@@ -309,10 +285,10 @@ function DialogContainer({
   }, [onClose, open, titleId, contentId])
   if (!container) return null
   return ReactDOM.createPortal(
-    <div
+    <Box
       id={id}
       ref={wrapperRef}
-      onKeyDown={event => {
+      onKeyDown={(event: React.KeyboardEvent<any>) => {
         if (!open || !closeOnEscape) return
         // handle the escape key
         if (event.keyCode === 27) {
@@ -339,7 +315,7 @@ function DialogContainer({
           {children}
         </DialogDocument>
       </DialogProvider>
-    </div>,
+    </Box>,
     container
   )
 }
