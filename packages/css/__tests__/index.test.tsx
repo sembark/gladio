@@ -192,6 +192,14 @@ describe("getClassName", () => {
     })
     expect(className).toBe("table-fixed")
   })
+
+  it("handles the visibility", () => {
+    const className = getClassName({
+      visibility: "hidden",
+      visibilitySm: "visible",
+    })
+    expect(className).toBe("hidden sm:visible")
+  })
 })
 
 describe("removeStyleProps", () => {

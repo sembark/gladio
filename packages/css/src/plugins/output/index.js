@@ -49,6 +49,7 @@ const textColor = require("./text-color")
 const textDecoration = require("./text-decoration")
 const textTranform = require("./text-transform")
 const verticalAlign = require("./vertical-align")
+const visibility = require("./visibility")
 const whiteSpace = require("./white-space")
 const width = require("./width")
 const wordBreak = require("./word-break")
@@ -106,6 +107,7 @@ module.exports = [
   textDecoration,
   textTranform,
   verticalAlign,
+  visibility,
   whiteSpace,
   width,
   wordBreak,
