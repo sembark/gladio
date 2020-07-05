@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/input",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Input Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,8 +38,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/box": "^0.2.3",
-    "@tourepedia/css": "^0.29.0",
+    "@tourepedia/box": "^0.2.4",
+    "@tourepedia/css": "^0.30.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

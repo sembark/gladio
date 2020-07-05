@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/box@0.2.3...@tourepedia/box@0.2.4) (2020-07-05)
+
+**Note:** Version bump only for package @tourepedia/box
+
+
+
+
+
 ## [0.2.3](https://github.com/tourepedia/tp-ui/compare/@tourepedia/box@0.2.2...@tourepedia/box@0.2.3) (2020-07-05)
 
 **Note:** Version bump only for package @tourepedia/box
