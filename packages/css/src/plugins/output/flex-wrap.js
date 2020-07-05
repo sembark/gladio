@@ -6,11 +6,7 @@
  *
  */
 const props = {
-  flexWrap: {
-    "no-wrap": "no-wrap",
-    wrap: "wrap",
-    "wrap-reverse": "wrap-reverse",
-  },
+  flexWrap: ["no-wrap", "wrap", "wrap-reverse"],
 }
 
 /**
@@ -31,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexWrap: "keyof typeof theme.flexWrap",
+  flexWrap: "typeof theme.flexWrap[number]",
 }
 
 module.exports = {

@@ -6,13 +6,7 @@
  *
  */
 const props = {
-  alignItems: {
-    stretch: "stretch",
-    start: "start",
-    center: "center",
-    end: "end",
-    baseline: "baseline",
-  },
+  alignItems: ["stretch", "start", "center", "end", "baseline"],
 }
 
 /**
@@ -33,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  alignItems: "keyof typeof theme.alignItems",
+  alignItems: "typeof theme.alignItems[number]",
 }
 
 module.exports = {

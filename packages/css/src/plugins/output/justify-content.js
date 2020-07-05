@@ -6,13 +6,7 @@
  *
  */
 const props = {
-  justifyContent: {
-    start: "start",
-    center: "center",
-    end: "end",
-    between: "between",
-    around: "around",
-  },
+  justifyContent: ["start", "center", "end", "between", "around"],
 }
 
 /**
@@ -33,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  justifyContent: "keyof typeof theme.justifyContent",
+  justifyContent: "typeof theme.justifyContent[number]",
 }
 
 module.exports = {

@@ -6,12 +6,7 @@
  *
  */
 const props = {
-  flexDirection: {
-    row: "row",
-    "row-reverse": "row-reverse",
-    col: "col",
-    "col-reverse": "col-reverse",
-  },
+  flexDirection: ["row", "row-reverse", "col", "col-reverse"],
 }
 
 /**
@@ -32,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexDirection: "keyof typeof theme.flexDirection",
+  flexDirection: "typeof theme.flexDirection[number]",
 }
 
 module.exports = {

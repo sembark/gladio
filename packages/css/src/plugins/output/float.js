@@ -6,11 +6,7 @@
  *
  */
 const props = {
-  float: {
-    right: "right",
-    left: "left",
-    none: "none",
-  },
+  float: ["right", "left", "none"],
   clearfix: true,
 }
 
@@ -36,7 +32,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  float: "keyof typeof theme.float",
+  float: "typeof theme.float[number]",
   clearfix: "typeof theme.clearfix",
 }
 

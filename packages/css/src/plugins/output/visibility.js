@@ -6,10 +6,7 @@
  *
  */
 const props = {
-  visibility: {
-    visible: "visible",
-    hidden: "hidden",
-  },
+  visibility: ["visible", "invisible"],
 }
 
 /**
@@ -32,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  visibility: "keyof typeof theme.visibility",
+  visibility: "typeof theme.visibility[number]",
 }
 
 module.exports = {

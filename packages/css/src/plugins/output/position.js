@@ -6,13 +6,7 @@
  *
  */
 const props = {
-  position: {
-    static: "static",
-    fixed: "fixed",
-    absolute: "absolute",
-    relative: "relative",
-    sticky: "sticky",
-  },
+  position: ["static", "fixed", "absolute", "relative", "sticky"],
 }
 
 /**
@@ -33,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  position: "keyof typeof theme.position",
+  position: "typeof theme.position[number]",
 }
 
 module.exports = {

@@ -195,10 +195,10 @@ describe("getClassName", () => {
 
   it("handles the visibility", () => {
     const className = getClassName({
-      visibility: "hidden",
+      visibility: "invisible",
       visibilitySm: "visible",
     })
-    expect(className).toBe("hidden sm:visible")
+    expect(className).toBe("invisible sm:visible")
   })
 })
 

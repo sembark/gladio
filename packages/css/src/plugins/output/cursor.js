@@ -7,10 +7,7 @@
  */
 const props = theme => ({
   cursor: theme.cursor,
-  pointerEvents: {
-    none: "none",
-    auto: "auto",
-  },
+  pointerEvents: ["none", "auto"],
 })
 
 /**
@@ -36,7 +33,7 @@ const classNames = {
  */
 const types = {
   cursor: "keyof typeof theme.cursor",
-  pointerEvents: "keyof typeof theme.pointerEvents",
+  pointerEvents: "typeof theme.pointerEvents[number]",
 }
 
 module.exports = {

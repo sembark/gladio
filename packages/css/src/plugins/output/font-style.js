@@ -6,10 +6,7 @@
  *
  */
 const props = {
-  fontStyle: {
-    italic: "italic",
-    "not-italic": "not-italic",
-  },
+  fontStyle: ["italic", "not-italic"],
 }
 
 /**
@@ -30,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  fontStyle: "keyof typeof theme.fontStyle",
+  fontStyle: "typeof theme.fontStyle[number]",
 }
 
 module.exports = {

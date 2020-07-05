@@ -6,17 +6,17 @@
  *
  */
 const props = {
-  display: {
-    inline: "inline",
-    "inline-block": "inline-block",
-    block: "block",
-    hidden: "hidden",
-    flex: "flex",
-    "inline-flex": "inline-flex",
-    table: "table",
-    "table-row": "table-row",
-    "table-cell": "table-cell",
-  },
+  display: [
+    "inline",
+    "inline-block",
+    "block",
+    "hidden",
+    "flex",
+    "inline-flex",
+    "table",
+    "table-row",
+    "table-cell",
+  ],
 }
 
 /**
@@ -37,7 +37,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  display: "keyof typeof theme.display",
+  display: "typeof theme.display[number]",
 }
 
 module.exports = {

@@ -6,11 +6,7 @@
  *
  */
 const props = {
-  wordBreak: {
-    normal: "normal",
-    words: "words",
-    all: "all",
-  },
+  wordBreak: ["normal", "words", "all"],
   wordTruncate: true,
 }
 
@@ -36,7 +32,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  wordBreak: "keyof typeof theme.wordBreak",
+  wordBreak: "typeof theme.wordBreak[number]",
   wordTruncate: "typeof theme.wordTruncate",
 }
 

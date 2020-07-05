@@ -6,12 +6,7 @@
  *
  */
 const props = {
-  textTransform: {
-    uppercase: "uppercase",
-    lowercase: "lowercase",
-    capitalize: "capitalize",
-    "normal-case": "normal-case",
-  },
+  textTransform: ["uppercase", "lowercase", "capitalize", "normal-case"],
 }
 
 /**
@@ -32,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textTransform: "keyof typeof theme.textTransform",
+  textTransform: "typeof theme.textTransform[number]",
 }
 
 module.exports = {

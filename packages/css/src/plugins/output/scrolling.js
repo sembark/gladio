@@ -6,10 +6,7 @@
  *
  */
 const props = {
-  scrolling: {
-    touch: "touch",
-    auto: "auto",
-  },
+  scrolling: ["touch", "auto"],
 }
 
 /**
@@ -30,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  scrolling: "keyof typeof theme.scrolling",
+  scrolling: "typeof theme.scrolling[number]",
 }
 
 module.exports = {

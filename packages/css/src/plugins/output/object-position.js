@@ -6,17 +6,17 @@
  *
  */
 const props = {
-  objectPosition: {
-    bottom: "bottom",
-    center: "center",
-    left: "left",
-    "left-bottom": "left-bottom",
-    "left-top": "left-top",
-    right: "right",
-    "right-bottom": "right-bottom",
-    "right-top": "right-top",
-    top: "top",
-  },
+  objectPosition: [
+    "bottom",
+    "center",
+    "left",
+    "left-bottom",
+    "left-top",
+    "right",
+    "right-bottom",
+    "right-top",
+    "top",
+  ],
 }
 
 /**
@@ -37,7 +37,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  objectPosition: "keyof typeof theme.objectPosition",
+  objectPosition: "typeof theme.objectPosition[number]",
 }
 
 module.exports = {

@@ -6,9 +6,7 @@
  *
  */
 const props = {
-  appearance: {
-    none: "none",
-  },
+  appearance: ["none"],
 }
 
 /**
@@ -31,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  appearance: "keyof typeof theme.appearance",
+  appearance: "typeof theme.appearance[number]",
 }
 
 module.exports = {

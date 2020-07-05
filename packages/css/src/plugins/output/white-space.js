@@ -6,13 +6,7 @@
  *
  */
 const props = {
-  whiteSpace: {
-    normal: "normal",
-    "no-wrap": "no-wrap",
-    pre: "pre",
-    "pre-line": "pre-line",
-    "pre-wrap": "pre-wrap",
-  },
+  whiteSpace: ["normal", "no-wrap", "pre", "pre-line", "pre-wrap"],
 }
 
 /**
@@ -33,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  whiteSpace: "keyof typeof theme.whiteSpace",
+  whiteSpace: "typeof theme.whiteSpace[number]",
 }
 
 module.exports = {

@@ -6,20 +6,20 @@
  *
  */
 const props = {
-  overflow: {
-    auto: "auto",
-    hidden: "hidden",
-    visible: "visible",
-    scroll: "scroll",
-    "x-auto": "x-auto",
-    "y-auto": "y-auto",
-    "x-hidden": "x-hidden",
-    "y-hidden": "y-hidden",
-    "x-visibile": "x-visibile",
-    "y-visibile": "y-visibile",
-    "x-scroll": "x-scroll",
-    "y-scroll": "y-scroll",
-  },
+  overflow: [
+    "auto",
+    "hidden",
+    "visible",
+    "scroll",
+    "x-auto",
+    "y-auto",
+    "x-hidden",
+    "y-hidden",
+    "x-visibile",
+    "y-visibile",
+    "x-scroll",
+    "y-scroll",
+  ],
 }
 
 /**
@@ -40,7 +40,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  overflow: "keyof typeof theme.overflow",
+  overflow: "typeof theme.overflow[number]",
 }
 
 module.exports = {

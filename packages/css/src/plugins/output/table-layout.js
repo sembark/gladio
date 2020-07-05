@@ -6,10 +6,7 @@
  *
  */
 const props = {
-  tableLayout: {
-    auto: "auto",
-    fixed: "fixed",
-  },
+  tableLayout: ["auto", "fixed"],
 }
 
 /**
@@ -30,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  tableLayout: "keyof typeof theme.tableLayout",
+  tableLayout: "typeof theme.tableLayout[number]",
 }
 
 module.exports = {

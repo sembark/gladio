@@ -6,14 +6,14 @@
  *
  */
 const props = {
-  verticalAlign: {
-    baseline: "baseline",
-    top: "top",
-    middle: "middle",
-    bottom: "bottom",
-    "text-top": "text-top",
-    "text-bottom": "text-bottom",
-  },
+  verticalAlign: [
+    "baseline",
+    "top",
+    "middle",
+    "bottom",
+    "text-top",
+    "text-bottom",
+  ],
 }
 
 /**
@@ -34,7 +34,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  verticalAlign: "keyof typeof theme.verticalAlign",
+  verticalAlign: "typeof theme.verticalAlign[number]",
 }
 
 module.exports = {

@@ -6,11 +6,7 @@
  *
  */
 const props = {
-  textDecoration: {
-    underline: "underline",
-    "line-through": "line-through",
-    "no-underline": "no-underline",
-  },
+  textDecoration: ["underline", "line-through", "no-underline"],
 }
 
 /**
@@ -31,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textDecoration: "keyof typeof theme.textDecoration",
+  textDecoration: "typeof theme.textDecoration[number]",
 }
 
 module.exports = {

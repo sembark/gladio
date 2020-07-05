@@ -6,12 +6,7 @@
  *
  */
 const props = {
-  textAlign: {
-    center: "center",
-    left: "left",
-    right: "right",
-    justify: "justify",
-  },
+  textAlign: ["center", "left", "right", "justify"],
 }
 
 /**
@@ -32,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textAlign: "keyof typeof theme.textAlign",
+  textAlign: "typeof theme.textAlign[number]",
 }
 
 module.exports = {

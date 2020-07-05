@@ -19,7 +19,8 @@
     "build:watch": "npm run css:watch js:watch",
     "build": "npm-run-all -l build:css  build:js",
     "prepublish": "npm run build:css",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest ---watch"
   },
   "jest": {
     "preset": "ts-jest"

@@ -6,13 +6,7 @@
  *
  */
 const props = {
-  borderStyle: {
-    solid: "solid",
-    dashed: "dashed",
-    dotted: "dotted",
-    double: "double",
-    none: "none",
-  },
+  borderStyle: ["solid", "dashed", "dotted", "double", "none"],
 }
 
 /**
@@ -35,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  borderStyle: "keyof typeof theme.borderStyle",
+  borderStyle: "typeof theme.borderStyle[number]",
 }
 
 module.exports = {

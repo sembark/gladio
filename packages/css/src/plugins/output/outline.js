@@ -6,9 +6,7 @@
  *
  */
 const props = {
-  outline: {
-    none: "none",
-  },
+  outline: ["none"],
 }
 
 /**
@@ -29,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  outline: "keyof typeof theme.outline",
+  outline: "typeof theme.outline[number]",
 }
 
 module.exports = {
