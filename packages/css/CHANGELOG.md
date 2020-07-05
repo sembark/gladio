@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.30.0...@tourepedia/css@0.31.0) (2020-07-05)
+
+
+### Features
+
+* **css:** added sr-only utils ([5e15ce6](https://github.com/tourepedia/tp-ui/commit/5e15ce6))
+
+
+
+
+
 # [0.30.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.29.0...@tourepedia/css@0.30.0) (2020-07-05)
 
 

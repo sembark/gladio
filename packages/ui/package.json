@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/ui",
-  "version": "1.11.20",
+  "version": "1.11.21",
   "description": "UI Components for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -27,21 +27,21 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/alert": "^0.5.6",
-    "@tourepedia/badge": "^0.7.4",
-    "@tourepedia/box": "^0.2.4",
-    "@tourepedia/button": "^0.6.4",
-    "@tourepedia/css": "^0.30.0",
-    "@tourepedia/datetime": "^0.7.13",
-    "@tourepedia/dialog": "^0.12.3",
+    "@tourepedia/alert": "^0.5.7",
+    "@tourepedia/badge": "^0.7.5",
+    "@tourepedia/box": "^0.2.5",
+    "@tourepedia/button": "^0.6.5",
+    "@tourepedia/css": "^0.31.0",
+    "@tourepedia/datetime": "^0.7.14",
+    "@tourepedia/dialog": "^0.12.4",
     "@tourepedia/dom-helpers": "^0.3.1",
     "@tourepedia/icons": "^0.11.0",
-    "@tourepedia/input": "^0.4.5",
-    "@tourepedia/paginate": "^0.2.19",
+    "@tourepedia/input": "^0.4.6",
+    "@tourepedia/paginate": "^0.2.20",
     "@tourepedia/react-hooks": "^0.5.4",
-    "@tourepedia/select": "^0.12.11",
-    "@tourepedia/snackbar": "^0.1.22",
-    "@tourepedia/table": "^0.8.3"
+    "@tourepedia/select": "^0.12.12",
+    "@tourepedia/snackbar": "^0.1.23",
+    "@tourepedia/table": "^0.8.4"
   },
   "devDependencies": {
     "node-sass-chokidar": "^1.3.5"
