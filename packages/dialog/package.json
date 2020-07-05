@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/dialog",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "Dialog Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -36,14 +36,14 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@tourepedia/button": "^0.6.2",
-    "@tourepedia/input": "^0.4.3",
+    "@tourepedia/button": "^0.6.3",
+    "@tourepedia/input": "^0.4.4",
     "react-spring": "^8.0.27",
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/box": "^0.2.2",
-    "@tourepedia/css": "^0.28.0",
+    "@tourepedia/box": "^0.2.3",
+    "@tourepedia/css": "^0.29.0",
     "@tourepedia/react-hooks": "^0.5.4",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
