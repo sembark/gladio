@@ -11,8 +11,9 @@ function getClassNameForKey(
   prefix?: string,
   value?: $Values<StyleProps>
 ): string | null {
-  if (!value) return null
+  if (value === undefined || value === null) return null
   if ((value === "default" || value === true) && prefix) return prefix
+  if (value === false) return `not-${prefix}`
   if (typeof value == "string") {
     let isNegativeValue = value.charAt(0) === "-"
     if (isNegativeValue) {

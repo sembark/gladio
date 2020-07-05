@@ -200,6 +200,25 @@ describe("getClassName", () => {
     })
     expect(className).toBe("invisible sm:visible")
   })
+
+  it("handles the visibility", () => {
+    const className = getClassName({
+      visibility: "invisible",
+      visibilitySm: "visible",
+    })
+    expect(className).toBe("invisible sm:visible")
+  })
+
+  it("handles screen reader only utils", () => {
+    let className = getClassName({
+      srOnly: false,
+    })
+    expect(className).toBe("not-sr-only")
+    className = getClassName({
+      srOnly: true,
+    })
+    expect(className).toBe("sr-only")
+  })
 })
 
 describe("removeStyleProps", () => {

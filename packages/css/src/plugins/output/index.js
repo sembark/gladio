@@ -42,6 +42,7 @@ const padding = require("./padding")
 const placeholderColor = require("./placeholder-color")
 const position = require("./position")
 const scrolling = require("./scrolling")
+const srOnly = require("./screen-reader-only")
 const stroke = require("./stroke")
 const tableLayout = require("./table-layout")
 const textAlign = require("./text-align")
@@ -100,6 +101,7 @@ module.exports = [
   placeholderColor,
   position,
   scrolling,
+  srOnly,
   stroke,
   tableLayout,
   textAlign,
