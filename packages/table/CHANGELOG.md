@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.8.0...@tourepedia/table@0.8.1) (2020-07-05)
+
+**Note:** Version bump only for package @tourepedia/table
+
+
+
+
+
 # [0.8.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/table@0.7.2...@tourepedia/table@0.8.0) (2020-07-04)
 
 

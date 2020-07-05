@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.28.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.27.0...@tourepedia/css@0.28.0) (2020-07-05)
+
+
+### Features
+
+* **css:** add table layout css ([b26439b](https://github.com/tourepedia/tp-ui/commit/b26439b))
+
+
+
+
+
 # [0.27.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.26.0...@tourepedia/css@0.27.0) (2020-07-04)
 
 
