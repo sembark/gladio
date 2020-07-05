@@ -185,6 +185,13 @@ describe("getClassName", () => {
     })
     expect(className).toBe("break-all md:break-normal truncate")
   })
+
+  it("handles table layout", () => {
+    const className = getClassName({
+      tableLayout: "fixed",
+    })
+    expect(className).toBe("table-fixed")
+  })
 })
 
 describe("removeStyleProps", () => {

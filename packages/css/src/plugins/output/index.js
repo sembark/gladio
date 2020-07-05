@@ -43,6 +43,7 @@ const placeholderColor = require("./placeholder-color")
 const position = require("./position")
 const scrolling = require("./scrolling")
 const stroke = require("./stroke")
+const tableLayout = require("./table-layout")
 const textAlign = require("./text-align")
 const textColor = require("./text-color")
 const textDecoration = require("./text-decoration")
@@ -99,6 +100,7 @@ module.exports = [
   position,
   scrolling,
   stroke,
+  tableLayout,
   textAlign,
   textColor,
   textDecoration,
