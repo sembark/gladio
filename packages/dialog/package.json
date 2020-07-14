@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/dialog",
-  "version": "0.12.4",
+  "version": "0.12.5",
   "description": "Dialog Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@tourepedia/button": "^0.6.5",
-    "@tourepedia/input": "^0.4.6",
+    "@tourepedia/input": "^0.4.7",
     "react-spring": "^8.0.27",
     "tailwindcss": "^1.1.2"
   },

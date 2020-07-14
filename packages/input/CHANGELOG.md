@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.6...@tourepedia/input@0.4.7) (2020-07-14)
+
+
+### Bug Fixes
+
+* **input-css:** select apearance not working properly ([ee28ce5](https://github.com/tourepedia/tp-ui/commit/ee28ce5))
+
+
+
+
+
 ## [0.4.6](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.5...@tourepedia/input@0.4.6) (2020-07-05)
 
 **Note:** Version bump only for package @tourepedia/input

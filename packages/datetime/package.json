@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/datetime",
-  "version": "0.7.14",
+  "version": "0.7.15",
   "description": "Datetime Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -38,7 +38,7 @@
   ],
   "dependencies": {
     "@tourepedia/css": "^0.31.0",
-    "@tourepedia/input": "^0.4.6",
+    "@tourepedia/input": "^0.4.7",
     "@tourepedia/react-hooks": "^0.5.4",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"

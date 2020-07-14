@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.12.12...@tourepedia/select@0.13.0) (2020-07-14)
+
+
+### Features
+
+* **select:** add disabled option feature to select ([bf34f73](https://github.com/tourepedia/tp-ui/commit/bf34f73))
+
+
+
+
+
 ## [0.12.12](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.12.11...@tourepedia/select@0.12.12) (2020-07-05)
 
 **Note:** Version bump only for package @tourepedia/select
