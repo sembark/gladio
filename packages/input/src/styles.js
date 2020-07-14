@@ -4,6 +4,8 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
       "backgroundColor.white"
     )} url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC') no-repeat right 8px center`,
     backgroundSize: "8px 10px",
+    appearance: "none",
+    paddingRight: theme("padding.5"),
   }
   const inputs = {
     ".input": {
@@ -11,6 +13,8 @@ module.exports = function addInputComponentPlugin({ addComponents, theme }) {
         minHeight: "100px",
         minWidth: "200px",
         width: "100%",
+        height: "auto",
+        lineHeight: "1.5",
       },
       "select&": select,
       "&.has-error": {

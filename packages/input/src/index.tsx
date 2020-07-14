@@ -66,8 +66,6 @@ export const Select = React.forwardRef(
       <Select
         as="select"
         ref={ref}
-        appearance="none"
-        paddingRight="5"
         className={classNames(
           "input",
           hasError ? "has-error" : undefined,
