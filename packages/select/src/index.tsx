@@ -3,13 +3,14 @@ import { Omit } from "utility-types"
 import { contains, ownerDocument, listen } from "@tourepedia/dom-helpers"
 import classNames from "classnames"
 import { Input } from "@tourepedia/input"
+import Box from "@tourepedia/box"
 
 import createCache from "./cache"
 
 const Cache = createCache()
 
 function Loader() {
-  return <div className="select__loader" />
+  return <Box className="select__loader" />
 }
 
 function defaultCreateOptionLabel(label: string): React.ReactNode {
@@ -28,7 +29,7 @@ function OptionItemRenderer({
   createOptionLabel: typeof defaultCreateOptionLabel
 }) {
   const label = getLabelForOption(option, labelKey)
-  return <span>{created ? createOptionLabel(label) : label}</span>
+  return <Box as="span">{created ? createOptionLabel(label) : label}</Box>
 }
 
 type TOption = any
@@ -61,6 +62,7 @@ export interface SelectProps {
     options?: Array<TOption>,
     query?: string
   ) => Array<TOption> | undefined
+  fullWidth?: boolean
 }
 
 export function Select({
@@ -88,6 +90,7 @@ export function Select({
   onCreateNew,
   createOptionLabel = defaultCreateOptionLabel,
   filterOptions,
+  fullWidth,
 }: SelectProps) {
   const groupRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -267,7 +270,8 @@ export function Select({
     [onChange, multiple, value, setIsFouced]
   )
   return (
-    <div
+    <Box
+      display="block"
       className={classNames(
         "select",
         {
@@ -278,11 +282,18 @@ export function Select({
       )}
       data-focused={isFocused}
     >
-      <div role="group" ref={groupRef}>
+      <Box
+        role="group"
+        ref={groupRef}
+        position="relative"
+        maxWidth={fullWidth ? "full" : "sm"}
+      >
         {label ? <label htmlFor={name}>{label}</label> : null}
         {inline && !searchable ? null : (
           <Input
             type="search"
+            width="full"
+            marginTop={label ? "1" : undefined}
             value={
               (isFocused
                 ? query
@@ -306,11 +317,35 @@ export function Select({
           />
         )}
         {isLoading ? !searchable && options.length ? null : <Loader /> : null}
-        <ol role="listbox" aria-multiselectable={multiple}>
+        <Box
+          as="ol"
+          role="listbox"
+          aria-multiselectable={multiple}
+          width="full"
+          maxWidth="full"
+          left="0"
+          margin="0"
+          padding="0"
+          zIndex="10"
+          borderColor="gray-300"
+          overflow="auto"
+          rounded
+          display={!inline && !isFocused ? "hidden" : "block"}
+          position={inline ? "relative" : "absolute"}
+          boxShadow={!searchable && inline ? undefined : true}
+          backgroundColor={!searchable && inline ? "transparent" : "white"}
+          border={!searchable && inline ? undefined : true}
+        >
           {isFocused && options.length === 0 ? (
-            <li role="option" aria-readonly={true}>
+            <Option
+              as="li"
+              role="option"
+              disabled
+              textColor="gray-600"
+              aria-readonly={true}
+            >
               Type to search...
-            </li>
+            </Option>
           ) : null}
           {options.map((option, i) => {
             const checked = value
@@ -320,6 +355,8 @@ export function Select({
                   )
                 : matchOptions(value, option)
               : false
+            const optionDisabled =
+              disabled || typeof option === "object" ? option.disabled : false
             return (
               <Option
                 key={getMatcherValueForOption(option)}
@@ -330,73 +367,100 @@ export function Select({
                     ? option.title || option.description
                     : getLabelForOption(option, labelKey)
                 }
-                disabled={disabled}
+                disabled={optionDisabled}
                 onClick={checked => {
+                  if (optionDisabled) return
                   handleOptionClick(option, checked)
                 }}
                 onMouseOver={() => {
                   changeFocusedOption(i)
                 }}
               >
-                <div className="flex items-center">
-                  <input
+                <Box display="flex" alignItems="center">
+                  <Box
+                    as="input"
                     readOnly
                     type={multiple ? "checkbox" : "radio"}
                     checked={checked}
-                    className="mr-2"
+                    disabled={optionDisabled}
+                    marginRight="2"
                     tabIndex={-1}
                   />
-                  <div>
+                  <Box flex="1" minWidth="0">
                     <OptionRenderer
                       option={option}
                       created={option.__created}
                       labelKey={labelKey}
                       createOptionLabel={createOptionLabel}
                     />
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               </Option>
             )
           })}
-        </ol>
-      </div>
+        </Box>
+      </Box>
       {value && multiple && !inline ? (
-        <ul className="selected-list">
-          {value.map((v: any) => (
-            <li
-              key={getMatcherValueForOption(v)}
-              title="Click to unselect"
-              role="button"
-              onClick={() =>
-                !disabled &&
-                onChange &&
-                onChange(
-                  value.filter(
-                    (val: any) => !matchOptions(val, v, labelKey)
-                  ) as any,
-                  name
-                )
-              }
-            >
-              <div className="flex items-center">
-                <input
-                  readOnly
-                  type="checkbox"
-                  checked
-                  className="mr-2"
-                  tabIndex={-1}
-                />
-                <div>{getLabelForOption(v, labelKey)}</div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <Box
+          as="ul"
+          className="selected-list"
+          display="block"
+          listStyleType="none"
+          padding="0"
+          margin="0"
+          marginTop="2"
+        >
+          {value.map((v: any) => {
+            const optionDisabled =
+              disabled || typeof v === "object" ? v.disabled : false
+            return (
+              <Box
+                as="li"
+                key={getMatcherValueForOption(v)}
+                title="Click to unselect"
+                role="button"
+                display="inline-block"
+                marginRight="2"
+                marginBottom="2"
+                paddingY="1"
+                paddingX="2"
+                rounded
+                fontSize="sm"
+                cursor={disabled ? "not-allowed" : "pointer"}
+                backgroundColor="gray-300"
+                onClick={() =>
+                  !optionDisabled &&
+                  onChange &&
+                  onChange(
+                    value.filter(
+                      (val: any) => !matchOptions(val, v, labelKey)
+                    ) as any,
+                    name
+                  )
+                }
+              >
+                <Box display="flex" alignItems="center">
+                  <Box
+                    as="input"
+                    readOnly
+                    type="checkbox"
+                    checked
+                    marginRight="2"
+                    tabIndex={-1}
+                  />
+                  <Box>{getLabelForOption(v, labelKey)}</Box>
+                </Box>
+              </Box>
+            )
+          })}
+        </Box>
       ) : null}
-    </div>
+    </Box>
   )
 }
 
-interface OptionProps extends Omit<React.HTMLProps<HTMLLIElement>, "onClick"> {
+interface OptionProps
+  extends Omit<React.ComponentProps<typeof Box>, "onClick"> {
   focused?: boolean
   checked?: boolean
   disabled?: boolean
@@ -421,12 +485,29 @@ function Option({
     }
   }, [focused, ref.current])
   return (
-    <li
+    <Box
+      as="li"
       ref={ref}
       role="option"
       aria-selected={checked}
       data-focused={focused}
+      opacity={disabled ? "75" : undefined}
+      backgroundColor={
+        checked
+          ? "gray-300"
+          : disabled
+          ? undefined
+          : focused
+          ? "gray-100"
+          : undefined
+      }
+      backgroundColorHover={disabled ? undefined : "gray-100"}
       tabIndex={-1}
+      display="block"
+      paddingY="ie-y"
+      paddingX="ie-x"
+      outline="none"
+      cursor={!disabled ? "pointer" : "not-allowed"}
       onClick={() => !disabled && onClick && onClick(!checked)}
       {...props}
     />

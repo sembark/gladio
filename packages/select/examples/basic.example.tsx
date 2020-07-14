@@ -376,3 +376,52 @@ stories.add("Multi Select with Strings", () => {
   }
   return <SelectRenderer />
 })
+
+stories.add("Full Width Select", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries>([])
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          multiple
+          value={value}
+          label="Select Places"
+          name="name"
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={countries}
+          fullWidth
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
+
+const optionWithSomeDisabled = countries.map((c, i, arr) => ({
+  ...c,
+  disabled: i > Math.random() * arr.length,
+}))
+
+stories.add("Disabled Options", () => {
+  function SelectRenderer() {
+    const [value, changeValue] = React.useState<typeof countries>([])
+    return (
+      <div className="max-w-lg mx-auto">
+        <Select
+          multiple
+          value={value}
+          label="Select Places"
+          name="name"
+          onChange={(value, name) => {
+            changeValue(value)
+          }}
+          options={optionWithSomeDisabled}
+          fullWidth
+        />
+      </div>
+    )
+  }
+  return <SelectRenderer />
+})
