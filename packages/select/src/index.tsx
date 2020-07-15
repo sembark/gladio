@@ -386,7 +386,7 @@ export function Select({
                     marginRight="2"
                     tabIndex={-1}
                   />
-                  <Box flex="1" minWidth="0">
+                  <Box flex="1" minWidth="0" pointerEvents="none">
                     <OptionRenderer
                       option={option}
                       created={option.__created}

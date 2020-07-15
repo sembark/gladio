@@ -1,5 +1,6 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
+import Box from "@tourepedia/box"
 
 import Select, { Async } from "./../src/index"
 import "./../styles/styles.css"
@@ -205,40 +206,47 @@ const hotels = [
   },
 ]
 
-stories.add("With Custom Option Renderer", () => (
-  <div className="max-w-lg mx-auto">
-    <Select
-      value={countries[1]}
-      label="Select Location"
-      options={countries}
-      optionRenderer={({ option }) => (
-        <span>
-          {option.flag} {option.name}
-        </span>
-      )}
-      onChange={(value, name) => {
-        alert(`You selected ` + JSON.stringify(value))
-      }}
-    />
-    <br />
-    <Select
-      value={hotels[1]}
-      label="Select hotel"
-      options={hotels}
-      optionRenderer={({ option }) => (
-        <div>
-          <div>{option.name}</div>
-          <small>
-            {option.location} • {option.stars} Star
-          </small>
-        </div>
-      )}
-      onChange={(value, name) => {
-        alert(`You selected ` + JSON.stringify(value))
-      }}
-    />
-  </div>
-))
+stories.add("With Custom Option Renderer", () => {
+  function SelectRenderer(props: React.ComponentProps<typeof Select>) {
+    const [value, changeValue] = React.useState<any>(undefined)
+    return (
+      <Select
+        value={value}
+        onChange={value => {
+          changeValue(value)
+        }}
+        {...props}
+      />
+    )
+  }
+  return (
+    <div className="max-w-lg mx-auto">
+      <SelectRenderer
+        label="Select Locations"
+        options={countries}
+        optionRenderer={({ option }) => (
+          <Box>
+            {option.flag} {option.name}
+          </Box>
+        )}
+        multiple
+      />
+      <br />
+      <SelectRenderer
+        label="Select hotel"
+        options={hotels}
+        optionRenderer={({ option }) => (
+          <div>
+            <div>{option.name}</div>
+            <small>
+              {option.location} • {option.stars} Star
+            </small>
+          </div>
+        )}
+      />
+    </div>
+  )
+})
 
 stories.add("Inline Select", () => {
   function SelectRenderer() {
