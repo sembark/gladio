@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.13.0...@tourepedia/select@0.13.1) (2020-07-15)
+
+
+### Bug Fixes
+
+* **select:** clicking on custom option render should not close ([9c5ad9f](https://github.com/tourepedia/tp-ui/commit/9c5ad9f))
+
+
+
+
+
 # [0.13.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/select@0.12.12...@tourepedia/select@0.13.0) (2020-07-14)
 
 
