@@ -41,13 +41,14 @@ const Button = React.forwardRef(function Button(
     accent,
     light,
     fullWidth,
-    type = "button",
+    type,
     sm,
     ...props
   }: ButtonProps,
   ref: React.Ref<HTMLButtonElement>
 ) {
   const Btn = Box as React.ComponentType<ButtonProps>
+  if (!type && !props.as) type = "button"
   return (
     <Btn
       as="button"

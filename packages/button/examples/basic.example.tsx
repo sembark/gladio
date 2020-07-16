@@ -146,3 +146,9 @@ stories.add("Button Toolbar", () => (
     <Button accent>accent</Button>
   </ButtonToolbar>
 ))
+
+stories.add("Link as Button", () => (
+  <Button as="a" href="#here" primary branded>
+    Link Here
+  </Button>
+))

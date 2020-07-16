@@ -50,8 +50,24 @@ describe("Button", () => {
       expect(buttonElm.classList).toContain("btn-primary")
     }
   })
+  it("when passing custom as, we don't see a type attribute", () => {
+    const { container } = render(
+      <Button as="a" href="#this">
+        Link
+      </Button>
+    )
+    const buttonElm = getButton(container, "Link", "a")
+    expect(buttonElm).not.toBeNull()
+    if (buttonElm) {
+      expect(buttonElm).not.toHaveAttribute("type", "button")
+    }
+  })
 })
 
-function getButton(container: HTMLElement, text: string = "") {
-  return queryByText(container, text, { selector: "button" })
+function getButton(
+  container: HTMLElement,
+  text: string = "",
+  selector = "button"
+) {
+  return queryByText(container, text, { selector })
 }
