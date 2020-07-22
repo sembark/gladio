@@ -144,9 +144,10 @@ describe("getClassName", () => {
   it("handles overflow", () => {
     const className = getClassName({
       overflow: "auto",
-      overflowLg: "x-auto",
+      overflowX: "auto",
+      overflowYLg: "scroll",
     })
-    expect(className).toBe("overflow-auto lg:overflow-x-auto")
+    expect(className).toBe("overflow-auto overflow-x-auto lg:overflow-y-scroll")
   })
 
   it("handles positions", () => {

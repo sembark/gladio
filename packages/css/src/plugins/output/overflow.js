@@ -6,26 +6,19 @@
  *
  */
 const props = {
-  overflow: [
-    "auto",
-    "hidden",
-    "visible",
-    "scroll",
-    "x-auto",
-    "y-auto",
-    "x-hidden",
-    "y-hidden",
-    "x-visibile",
-    "y-visibile",
-    "x-scroll",
-    "y-scroll",
-  ],
+  overflow: ["auto", "hidden", "visible", "scroll"],
+  overflowX: ["auto", "hidden", "visible", "scroll"],
+  overflowY: ["auto", "hidden", "visible", "scroll"],
 }
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ overflow: variants.overflow || ["responsive"] })
+const variants = variants => ({
+  overflow: variants.overflow || ["responsive"],
+  overflowX: variants.overflow || ["responsive"],
+  overflowY: variants.overflow || ["responsive"],
+})
 
 /**
  * Class name for each of props's key
@@ -34,6 +27,8 @@ const variants = variants => ({ overflow: variants.overflow || ["responsive"] })
  */
 const classNames = {
   overflow: "overflow",
+  overflowX: "overflow-x",
+  overflowY: "overflow-y",
 }
 
 /**
@@ -41,6 +36,8 @@ const classNames = {
  */
 const types = {
   overflow: "typeof theme.overflow[number]",
+  overflowX: "typeof theme.overflowX[number]",
+  overflowY: "typeof theme.overflowY[number]",
 }
 
 module.exports = {
