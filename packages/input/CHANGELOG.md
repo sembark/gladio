@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.8](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.7...@tourepedia/input@0.4.8) (2020-07-22)
+
+**Note:** Version bump only for package @tourepedia/input
+
+
+
+
+
 ## [0.4.7](https://github.com/tourepedia/tp-ui/compare/@tourepedia/input@0.4.6...@tourepedia/input@0.4.7) (2020-07-14)
 
 

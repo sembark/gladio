@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/button",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "description": "Button Component for Tourepedia Apps",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -36,8 +36,8 @@
   },
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
   "dependencies": {
-    "@tourepedia/box": "^0.2.5",
-    "@tourepedia/css": "^0.31.0",
+    "@tourepedia/box": "^0.2.6",
+    "@tourepedia/css": "^0.31.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

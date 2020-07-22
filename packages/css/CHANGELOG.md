@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.31.0...@tourepedia/css@0.31.1) (2020-07-22)
+
+
+### Bug Fixes
+
+* **css:** add missing overflow x,y props ([cdc789d](https://github.com/tourepedia/tp-ui/commit/cdc789d))
+
+
+
+
+
 # [0.31.0](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.30.0...@tourepedia/css@0.31.0) (2020-07-05)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/alert",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "description": "Alert ui component",
   "repository": "https://github.com/tourepedia/tp-ui",
   "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
@@ -32,7 +32,7 @@
     "types"
   ],
   "dependencies": {
-    "@tourepedia/box": "^0.2.5",
+    "@tourepedia/box": "^0.2.6",
     "@tourepedia/icons": "^0.11.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
