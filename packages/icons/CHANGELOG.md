@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.11.0...@tourepedia/icons@0.12.0) (2020-08-12)
+
+
+### Features
+
+* **icons:** add list view icon ([5f2d8c2](https://github.com/tourepedia/tp-ui/packages/icons/commit/5f2d8c2))
+
+
+
+
+
 # [0.11.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.10.1...@tourepedia/icons@0.11.0) (2020-04-25)
 
 
