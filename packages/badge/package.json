@@ -1,9 +1,9 @@
 {
   "name": "@tourepedia/badge",
   "version": "0.7.6",
-  "description": "Badge Component for Tourepedia Apps",
-  "repository": "https://github.com/tourepedia/tp-ui",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "description": "Badge Component",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",

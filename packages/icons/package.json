@@ -1,9 +1,9 @@
 {
   "name": "@tourepedia/icons",
   "version": "0.14.0",
-  "description": "Icons for Tourepedia Apps",
-  "repository": "https://github.com/tourepedia/tp-ui/packages/icons",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "description": "React SVG Icons",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",

@@ -1,9 +1,9 @@
 {
   "name": "@tourepedia/button",
   "version": "0.6.7",
-  "description": "Button Component for Tourepedia Apps",
-  "repository": "https://github.com/tourepedia/tp-ui",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "description": "Button Component",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "types/index.d.ts",

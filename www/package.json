@@ -1,7 +1,7 @@
 {
-  "name": "@tourepedia/design-system",
+  "name": "@sembark/shapes",
   "version": "1.0.0",
-  "description": "UI design system for Tourepedia",
+  "description": "Design system for Sembark",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,7 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tourepedia/tp-ui.git"
+    "url": "git+https://github.com/sembark/shapes.git",
+    "directory": "www"
   },
   "keywords": [
     "Design",
@@ -18,12 +19,12 @@
     "UI",
     "Components"
   ],
-  "author": "Sudhir Mitharwal <sudhir.mitharwal@tourepedia.com>",
+  "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tourepedia/tp-ui/issues"
+    "url": "https://github.com/sembark/shapes/issues"
   },
-  "homepage": "https://github.com/tourepedia/tp-ui#readme",
+  "homepage": "https://github.com/sembark/shapes#readme",
   "dependencies": {
     "@tourepedia/ui": "^1.11.11",
     "@types/mdx-js__react": "^1.5.0",

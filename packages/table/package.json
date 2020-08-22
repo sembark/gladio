@@ -1,9 +1,9 @@
 {
   "name": "@tourepedia/table",
   "version": "0.8.5",
-  "description": "Table Component for Tourepedia Apps",
-  "repository": "https://github.com/tourepedia/tp-ui",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "description": "Table Component",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",

@@ -1,9 +1,9 @@
 {
   "name": "@tourepedia/paginate",
   "version": "0.2.22",
-  "description": "Paginate Component for Tourepedia Apps",
-  "repository": "https://github.com/tourepedia/tp-ui",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "description": "Paginate Component",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
