@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.13.0...@tourepedia/icons@0.14.0) (2020-08-22)
+
+
+### Features
+
+* **icons:** add ban icons ([093f99c](https://github.com/tourepedia/tp-ui/packages/icons/commit/093f99c))
+
+
+
+
+
 # [0.13.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.12.0...@tourepedia/icons@0.13.0) (2020-08-19)
 
 
