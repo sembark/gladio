@@ -1,9 +1,9 @@
 {
-  "name": "@tourepedia/input",
+  "name": "@gladio/input",
   "version": "0.4.9",
   "description": "Form Input Component",
   "repository": "https://github.com/sembark/gladio",
-  "author": "Sudhir <sudhir.mitharwal@tourepedia.com>",
+  "author": "Sudhir <sudhir.mitharwal@gladio.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -38,8 +38,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/box": "^0.2.7",
-    "@tourepedia/css": "^0.31.2",
+    "@gladio/box": "^0.2.7",
+    "@gladio/css": "^0.31.2",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

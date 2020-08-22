@@ -1,6 +1,6 @@
 import * as React from "react"
 import { storiesOf } from "@storybook/react"
-import Box from "@tourepedia/box"
+import Box from "@gladio/box"
 
 import Select, { Async } from "./../src/index"
 import "./../styles/styles.css"
@@ -188,13 +188,13 @@ stories.add("Without searching", () => (
 const hotels = [
   {
     id: 1,
-    name: "Tourepedia Hotels",
+    name: "Gladio Hotels",
     location: "Jaipur",
     stars: 3,
   },
   {
     id: 2,
-    name: "Tourepedia Hotels",
+    name: "Gladio Hotels",
     location: "Bikaner",
     stars: 3,
   },

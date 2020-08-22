@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/dialog",
+  "name": "@gladio/dialog",
   "version": "0.12.8",
   "description": "Dialog/Modal component",
   "repository": "https://github.com/sembark/gladio",
@@ -36,15 +36,15 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@tourepedia/button": "^0.6.8",
-    "@tourepedia/input": "^0.4.9",
+    "@gladio/button": "^0.6.8",
+    "@gladio/input": "^0.4.9",
     "react-spring": "^8.0.27",
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/box": "^0.2.7",
-    "@tourepedia/css": "^0.31.2",
-    "@tourepedia/react-hooks": "^0.5.5",
+    "@gladio/box": "^0.2.7",
+    "@gladio/css": "^0.31.2",
+    "@gladio/react-hooks": "^0.5.5",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

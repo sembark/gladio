@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from "react"
 import { Omit } from "utility-types"
-import { contains, ownerDocument, listen } from "@tourepedia/dom-helpers"
+import { contains, ownerDocument, listen } from "@gladio/dom-helpers"
 import classNames from "classnames"
-import { Input } from "@tourepedia/input"
-import Box from "@tourepedia/box"
+import { Input } from "@gladio/input"
+import Box from "@gladio/box"
 
 import createCache from "./cache"
 

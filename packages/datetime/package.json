@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/datetime",
+  "name": "@gladio/datetime",
   "version": "0.7.17",
   "description": "Datetime Component",
   "repository": "https://github.com/sembark/gladio",
@@ -37,9 +37,9 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.31.2",
-    "@tourepedia/input": "^0.4.9",
-    "@tourepedia/react-hooks": "^0.5.5",
+    "@gladio/css": "^0.31.2",
+    "@gladio/input": "^0.4.9",
+    "@gladio/react-hooks": "^0.5.5",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

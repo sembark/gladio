@@ -1,7 +1,7 @@
 import { AllHTMLAttributes, createElement, forwardRef } from "react"
 import classNames from "classnames"
 import { Omit } from "utility-types"
-import { StyleProps, getClassName, removeStyleProps } from "@tourepedia/css"
+import { StyleProps, getClassName, removeStyleProps } from "@gladio/css"
 
 /**
  * The base Box props without any HTML/Platform Dependencies

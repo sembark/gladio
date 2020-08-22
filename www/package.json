@@ -1,7 +1,7 @@
 {
-  "name": "@sembark/shapes",
+  "name": "@gladio/ui",
   "version": "1.0.0",
-  "description": "Design system for Sembark",
+  "description": "Design system",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sembark/shapes.git",
+    "url": "git+https://github.com/sembark/gladio.git",
     "directory": "www"
   },
   "keywords": [
@@ -19,14 +19,14 @@
     "UI",
     "Components"
   ],
-  "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
+  "author": "Sudhir Mitharwal",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sembark/shapes/issues"
   },
   "homepage": "https://github.com/sembark/shapes#readme",
   "dependencies": {
-    "@tourepedia/ui": "^1.11.11",
+    "@gladio/ui": "^1.11.11",
     "@types/mdx-js__react": "^1.5.0",
     "@types/node": "^13.5.2",
     "moment": "^2.24.0",

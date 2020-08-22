@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/alert",
+  "name": "@gladio/alert",
   "version": "0.5.12",
   "description": "Alert ui component",
   "repository": "https://github.com/sembark/gladio",
@@ -32,8 +32,8 @@
     "types"
   ],
   "dependencies": {
-    "@tourepedia/box": "^0.2.7",
-    "@tourepedia/icons": "^0.14.1",
+    "@gladio/box": "^0.2.7",
+    "@gladio/icons": "^0.14.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

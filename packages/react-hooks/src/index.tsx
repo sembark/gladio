@@ -4,7 +4,7 @@ import {
   activeElement,
   contains,
   listen,
-} from "@tourepedia/dom-helpers"
+} from "@gladio/dom-helpers"
 
 export function useDidUpdate(fn: () => void, conditions: any = []): void {
   const didMountRef = useRef(false)

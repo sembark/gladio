@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/select",
+  "name": "@gladio/select",
   "version": "0.13.3",
   "description": "Single/Multe Select component with Async/Creatable support",
   "repository": "https://github.com/sembark/gladio",
@@ -38,9 +38,9 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/box": "^0.2.7",
-    "@tourepedia/dom-helpers": "^0.3.2",
-    "@tourepedia/input": "^0.4.9",
+    "@gladio/box": "^0.2.7",
+    "@gladio/dom-helpers": "^0.3.2",
+    "@gladio/input": "^0.4.9",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

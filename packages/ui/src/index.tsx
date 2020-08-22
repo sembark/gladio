@@ -1,7 +1,7 @@
-import Badge, { BadgeList } from "@tourepedia/badge"
-import Button, { ButtonGroup, ButtonToolbar } from "@tourepedia/button"
-import Dialog, { useDialog } from "@tourepedia/dialog"
-import theme from "@tourepedia/css"
+import Badge, { BadgeList } from "@gladio/badge"
+import Button, { ButtonGroup, ButtonToolbar } from "@gladio/button"
+import Dialog, { useDialog } from "@gladio/dialog"
+import theme from "@gladio/css"
 import {
   ownerDocument,
   activeElement,
@@ -12,7 +12,7 @@ import {
   addEventListener,
   optionsSupported,
   onceSupported,
-} from "@tourepedia/dom-helpers"
+} from "@gladio/dom-helpers"
 import {
   useDidMount,
   useDidUpdate,
@@ -21,7 +21,7 @@ import {
   useEnforceFocus,
   useRootClose,
   useId,
-} from "@tourepedia/react-hooks"
+} from "@gladio/react-hooks"
 import {
   Input,
   Select as SelectInput,
@@ -30,21 +30,21 @@ import {
   InputGroup,
   InputGroupAddon,
   ErrorMessage,
-} from "@tourepedia/input"
-import Icons from "@tourepedia/icons"
-import Table from "@tourepedia/table"
-import Select, { Async as AsyncSelect } from "@tourepedia/select"
-import Paginate from "@tourepedia/paginate"
-import DateTime, { DateTimeInput, DateTimePicker } from "@tourepedia/datetime"
-import Alert from "@tourepedia/alert"
+} from "@gladio/input"
+import Icons from "@gladio/icons"
+import Table from "@gladio/table"
+import Select, { Async as AsyncSelect } from "@gladio/select"
+import Paginate from "@gladio/paginate"
+import DateTime, { DateTimeInput, DateTimePicker } from "@gladio/datetime"
+import Alert from "@gladio/alert"
 import {
   Snackbar,
   showSnackbar,
   hideSnackbar,
   isOpenSnackbar,
   showSnackbarIfNot,
-} from "@tourepedia/snackbar"
-import Box from "@tourepedia/box"
+} from "@gladio/snackbar"
+import Box from "@gladio/box"
 
 export {
   Badge,

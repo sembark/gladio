@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useTransition, animated, config } from "react-spring"
-import Icons from "@tourepedia/icons"
-import { ownerDocument } from "@tourepedia/dom-helpers"
+import Icons from "@gladio/icons"
+import { ownerDocument } from "@gladio/dom-helpers"
 import { Optional, Omit } from "utility-types"
 
 type TId = number | string

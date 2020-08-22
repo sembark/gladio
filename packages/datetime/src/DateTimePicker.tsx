@@ -1,8 +1,8 @@
 import * as React from "react"
 import moment from "moment"
-import { useRootClose, useId } from "@tourepedia/react-hooks"
+import { useRootClose, useId } from "@gladio/react-hooks"
 import { useTransition, animated, config } from "react-spring"
-import { Input } from "@tourepedia/input"
+import { Input } from "@gladio/input"
 import classNames from "classnames"
 
 import DateTime from "./DateTime"

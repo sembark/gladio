@@ -1,8 +1,8 @@
 import React, { useMemo } from "react"
-import Icons from "@tourepedia/icons"
+import Icons from "@gladio/icons"
 import classNames from "classnames"
 import { Omit, $PropertyType } from "utility-types"
-import Box from "@tourepedia/box"
+import Box from "@gladio/box"
 
 type TBoxProps = React.ComponentProps<typeof Box>
 

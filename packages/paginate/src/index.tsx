@@ -1,5 +1,5 @@
 import * as React from "react"
-import Button from "@tourepedia/button"
+import Button from "@gladio/button"
 import classNames from "classnames"
 import { Omit } from "utility-types"
 

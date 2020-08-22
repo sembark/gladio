@@ -1,6 +1,6 @@
 import * as React from "react"
 import classNames from "classnames"
-import Box, { MergeWithBoxProps } from "@tourepedia/box"
+import Box, { MergeWithBoxProps } from "@gladio/box"
 
 type InputProps = MergeWithBoxProps<
   React.HTMLProps<HTMLInputElement> & {

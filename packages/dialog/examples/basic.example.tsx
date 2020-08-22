@@ -2,11 +2,11 @@ import * as React from "react"
 import { storiesOf } from "@storybook/react"
 
 import Dialog, { useDialog } from "./../src/index"
-import Button from "@tourepedia/button"
-import { Input } from "@tourepedia/input"
+import Button from "@gladio/button"
+import { Input } from "@gladio/input"
 
-import "@tourepedia/input/styles/styles.css"
-import "@tourepedia/button/styles/styles.css"
+import "@gladio/input/styles/styles.css"
+import "@gladio/button/styles/styles.css"
 
 import "./../styles/styles.css"
 

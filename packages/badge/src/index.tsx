@@ -1,6 +1,6 @@
 import * as React from "react"
 import classNames from "classnames"
-import Box from "@tourepedia/box"
+import Box from "@gladio/box"
 
 export interface IBadgeProps extends React.ComponentProps<typeof Box> {
   primary?: boolean

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Omit } from "utility-types"
 import classNames from "classnames"
-import Box, { MergeWithBoxProps } from "@tourepedia/box"
+import Box, { MergeWithBoxProps } from "@gladio/box"
 
 export interface TableProps
   extends MergeWithBoxProps<

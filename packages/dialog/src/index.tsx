@@ -1,10 +1,10 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
-import { useEnforceFocus, useId } from "@tourepedia/react-hooks"
+import { useEnforceFocus, useId } from "@gladio/react-hooks"
 import { Transition } from "react-spring/renderprops.cjs"
 import { Omit } from "utility-types"
-import Box from "@tourepedia/box"
+import Box from "@gladio/box"
 
 import DialogManager from "./DialogManager"
 

@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/react-hooks",
+  "name": "@gladio/react-hooks",
   "version": "0.5.5",
   "description": "Common utility react hooks",
   "repository": "https://github.com/sembark/gladio",
@@ -32,6 +32,6 @@
     "preset": "ts-jest"
   },
   "dependencies": {
-    "@tourepedia/dom-helpers": "^0.3.2"
+    "@gladio/dom-helpers": "^0.3.2"
   }
 }

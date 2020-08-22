@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/snackbar",
+  "name": "@gladio/snackbar",
   "version": "0.1.28",
   "description": "Snackbar/Notification utility",
   "repository": "https://github.com/sembark/gladio",
@@ -36,9 +36,9 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.31.2",
-    "@tourepedia/dom-helpers": "^0.3.2",
-    "@tourepedia/icons": "^0.14.1",
+    "@gladio/css": "^0.31.2",
+    "@gladio/dom-helpers": "^0.3.2",
+    "@gladio/icons": "^0.14.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@tourepedia/box",
+  "name": "@gladio/box",
   "version": "0.2.7",
   "description": "Box Component",
   "repository": "https://github.com/sembark/gladio",
@@ -33,7 +33,7 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.31.2",
+    "@gladio/css": "^0.31.2",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
