@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/paginate",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "description": "Paginate Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -38,8 +38,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@tourepedia/button": "^0.6.7",
-    "@tourepedia/css": "^0.31.1",
+    "@tourepedia/button": "^0.6.8",
+    "@tourepedia/css": "^0.31.2",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

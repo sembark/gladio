@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/react-hooks",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Common utility react hooks",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -32,6 +32,6 @@
     "preset": "ts-jest"
   },
   "dependencies": {
-    "@tourepedia/dom-helpers": "^0.3.1"
+    "@tourepedia/dom-helpers": "^0.3.2"
   }
 }

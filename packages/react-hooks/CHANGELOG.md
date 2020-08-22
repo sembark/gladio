@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.5](https://github.com/sembark/gladio/compare/@tourepedia/react-hooks@0.5.4...@tourepedia/react-hooks@0.5.5) (2020-08-22)
+
+**Note:** Version bump only for package @tourepedia/react-hooks
+
+
+
+
+
 ## [0.5.4](https://github.com/tourepedia/tp-ui/compare/@tourepedia/react-hooks@0.5.3...@tourepedia/react-hooks@0.5.4) (2019-11-06)
 
 

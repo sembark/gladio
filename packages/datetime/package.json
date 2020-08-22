@@ -1,6 +1,6 @@
 {
   "name": "@tourepedia/datetime",
-  "version": "0.7.16",
+  "version": "0.7.17",
   "description": "Datetime Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -37,9 +37,9 @@
     "styles"
   ],
   "dependencies": {
-    "@tourepedia/css": "^0.31.1",
-    "@tourepedia/input": "^0.4.8",
-    "@tourepedia/react-hooks": "^0.5.4",
+    "@tourepedia/css": "^0.31.2",
+    "@tourepedia/input": "^0.4.9",
+    "@tourepedia/react-hooks": "^0.5.5",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

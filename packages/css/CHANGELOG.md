@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.2](https://github.com/sembark/gladio/compare/@tourepedia/css@0.31.1...@tourepedia/css@0.31.2) (2020-08-22)
+
+**Note:** Version bump only for package @tourepedia/css
+
+
+
+
+
 ## [0.31.1](https://github.com/tourepedia/tp-ui/compare/@tourepedia/css@0.31.0...@tourepedia/css@0.31.1) (2020-07-22)
 
 

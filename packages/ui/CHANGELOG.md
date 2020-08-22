@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.11.29](https://github.com/sembark/gladio/compare/@tourepedia/ui@1.11.28...@tourepedia/ui@1.11.29) (2020-08-22)
+
+**Note:** Version bump only for package @tourepedia/ui
+
+
+
+
+
 ## [1.11.28](https://github.com/tourepedia/tp-ui/compare/@tourepedia/ui@1.11.27...@tourepedia/ui@1.11.28) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/ui

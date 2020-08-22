@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/sembark/gladio/compare/@tourepedia/icons@0.14.0...@tourepedia/icons@0.14.1) (2020-08-22)
+
+**Note:** Version bump only for package @tourepedia/icons
+
+
+
+
+
 # [0.14.0](https://github.com/tourepedia/tp-ui/packages/icons/compare/@tourepedia/icons@0.13.0...@tourepedia/icons@0.14.0) (2020-08-22)
 
 
