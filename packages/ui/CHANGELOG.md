@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.0.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **css:** css not building ([27645f3](https://github.com/sembark/gladio/commit/27645f3))
+* **icons:** update icons import in ui package ([ba9dc23](https://github.com/sembark/gladio/commit/ba9dc23))
+* **ui:** css utilities not working ([0d925c4](https://github.com/sembark/gladio/commit/0d925c4))
+* **ui:** export the theme from css ([5c3af56](https://github.com/sembark/gladio/commit/5c3af56))
+* **ui:** ui build should happen at the end all other builds ([5b0be6c](https://github.com/sembark/gladio/commit/5b0be6c))
+
+
+### Features
+
+* **alert:** use Box in Alert component and remove css ([4eff34b](https://github.com/sembark/gladio/commit/4eff34b))
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **box:** add box to ui ([7c636dc](https://github.com/sembark/gladio/commit/7c636dc))
+* **datetime-ui:** add datetime to ui components ([b04ca5c](https://github.com/sembark/gladio/commit/b04ca5c))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **package:** add alert package ([738b831](https://github.com/sembark/gladio/commit/738b831))
+* **package:** add snackbar package ([cce6896](https://github.com/sembark/gladio/commit/cce6896))
+* **ui:** add paginate component to ui components ([e4a17b0](https://github.com/sembark/gladio/commit/e4a17b0))
+* **ui:** add table component to ui package ([8c006ab](https://github.com/sembark/gladio/commit/8c006ab))
+* **ui:** add toolbar export ([dcc7a71](https://github.com/sembark/gladio/commit/dcc7a71))
+* **ui:** allow hooks and helpers to direct export ([8162531](https://github.com/sembark/gladio/commit/8162531))
+* **ui:** combine all packages in one ([a492db5](https://github.com/sembark/gladio/commit/a492db5))
+* **ui:** export the button group and badge list components ([dd87313](https://github.com/sembark/gladio/commit/dd87313))
+* **usage:** use newly created id hook ([a612dbf](https://github.com/sembark/gladio/commit/a612dbf))
+* **version:** version update ([083db66](https://github.com/sembark/gladio/commit/083db66))
+
+
+### BREAKING CHANGES
+
+* **ui:** Previously all the hooks and dom-helpers were exported with a key for each and now
+you can directly import them instead of accessing the property
+
+
+
+
+
 ## [1.11.29](https://github.com/sembark/gladio/compare/@tourepedia/ui@1.11.28...@tourepedia/ui@1.11.29) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/ui

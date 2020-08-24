@@ -3,6 +3,45 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.13.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **css:** modify css for better api and look ([88de18d](https://github.com/sembark/gladio/commit/88de18d))
+* **dialog:** add backdrop in dialog ([592591a](https://github.com/sembark/gladio/commit/592591a))
+* **dialog:** add export for dialog ([00ff458](https://github.com/sembark/gladio/commit/00ff458))
+* **dialog:** dialog not working ([5670de9](https://github.com/sembark/gladio/commit/5670de9))
+* **dialog:** document not availble in ssr ([f6cc0d9](https://github.com/sembark/gladio/commit/f6cc0d9))
+* **dialog:** fix size styles ([59095b6](https://github.com/sembark/gladio/commit/59095b6))
+* **dialog:** multiple dialogs not working properly ([2052230](https://github.com/sembark/gladio/commit/2052230))
+* **dialog:** return single child instead of array ([1ec8131](https://github.com/sembark/gladio/commit/1ec8131))
+* **enforce-hook:** focus not working properly back to last one ([dec0b11](https://github.com/sembark/gladio/commit/dec0b11))
+* **hook-dialog:** fix focus and remounting issue in dialog ([74f91c4](https://github.com/sembark/gladio/commit/74f91c4))
+* **module:** add module key for package ([0cc31c8](https://github.com/sembark/gladio/commit/0cc31c8))
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/sembark/gladio/commit/ab5d5b1))
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **css:** more corners more rounded ([8f94e31](https://github.com/sembark/gladio/commit/8f94e31))
+* **dialog:** add css classes and update the example ([ec4b4f8](https://github.com/sembark/gladio/commit/ec4b4f8))
+* **dialog:** add dialog component ([1be9c5a](https://github.com/sembark/gladio/commit/1be9c5a))
+* **dialog:** add installation and usage instructions ([22fe9e9](https://github.com/sembark/gladio/commit/22fe9e9))
+* **dialog:** add sizies to dialog ([8fde9d2](https://github.com/sembark/gladio/commit/8fde9d2))
+* **dialog:** add title prop to Dialog component ([0fd89df](https://github.com/sembark/gladio/commit/0fd89df))
+* **dialog:** use box as underlying component ([455e008](https://github.com/sembark/gladio/commit/455e008))
+* **dialog-animation:** add react-spring into dialogs ([f85ccf3](https://github.com/sembark/gladio/commit/f85ccf3))
+* **dialog-css:** add back arrow and close icon ([255ffa4](https://github.com/sembark/gladio/commit/255ffa4))
+* **dialog-css:** add full width-height dialog ([07e2112](https://github.com/sembark/gladio/commit/07e2112))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+
+
+
+
+
 ## [0.12.8](https://github.com/sembark/gladio/compare/@tourepedia/dialog@0.12.7...@tourepedia/dialog@0.12.8) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/dialog

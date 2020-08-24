@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.8.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **datetime:** dates cleared when select time ([ef19a17](https://github.com/sembark/gladio/commit/ef19a17))
+* **datetime:** not respecting props id ([30ae5e1](https://github.com/sembark/gladio/commit/30ae5e1))
+* **datetime:** picker not showing due to z index ([06f2cf6](https://github.com/sembark/gladio/commit/06f2cf6))
+* **datetime-build:** fix default import for moment ([89c9be0](https://github.com/sembark/gladio/commit/89c9be0))
+* **datetimepicker:** add name, id for input identification ([36a6744](https://github.com/sembark/gladio/commit/36a6744))
+* **gitignore:** add styles dir to gitignore ([cc3a9f1](https://github.com/sembark/gladio/commit/cc3a9f1))
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **dateinput:** add onBlur props validation ([261714d](https://github.com/sembark/gladio/commit/261714d))
+* **datetime:** add accessibility labels ([93b1f69](https://github.com/sembark/gladio/commit/93b1f69))
+* **datetime:** add date time component ([73a91e4](https://github.com/sembark/gladio/commit/73a91e4))
+* **datetime:** add readonly and disabled to picker ([3b160ae](https://github.com/sembark/gladio/commit/3b160ae))
+* **datetime:** allow clearance ([21d0681](https://github.com/sembark/gladio/commit/21d0681))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **usage:** use newly created id hook ([a612dbf](https://github.com/sembark/gladio/commit/a612dbf))
+
+
+
+
+
 ## [0.7.17](https://github.com/sembark/gladio/compare/@tourepedia/datetime@0.7.16...@tourepedia/datetime@0.7.17) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/datetime

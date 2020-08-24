@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **snackbar:** add min width to snackbar ([920b86d](https://github.com/sembark/gladio/commit/920b86d))
+* **snackbar:** use children instead of label ([487692e](https://github.com/sembark/gladio/commit/487692e))
+
+
+### Features
+
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **package:** add snackbar package ([cce6896](https://github.com/sembark/gladio/commit/cce6896))
+
+
+
+
+
 ## [0.1.28](https://github.com/sembark/gladio/compare/@tourepedia/snackbar@0.1.27...@tourepedia/snackbar@0.1.28) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/snackbar

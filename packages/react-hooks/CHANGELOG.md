@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.6.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **dialog:** dialog not working ([5670de9](https://github.com/sembark/gladio/commit/5670de9))
+* **enforce-focus-hook:** focusing not working for delayed renders ([61701c6](https://github.com/sembark/gladio/commit/61701c6))
+* **enforce-hook:** focus not working properly back to last one ([dec0b11](https://github.com/sembark/gladio/commit/dec0b11))
+* **fetch-hook:** take the intitial data from props ([4668a11](https://github.com/sembark/gladio/commit/4668a11))
+* **hook-dialog:** fix focus and remounting issue in dialog ([74f91c4](https://github.com/sembark/gladio/commit/74f91c4))
+* **hooks:** use callback for fetch hooks ([235a534](https://github.com/sembark/gladio/commit/235a534))
+* **hooks:** usefetchstate passing params as array ([61de0e4](https://github.com/sembark/gladio/commit/61de0e4))
+* **module:** add module key for package ([0cc31c8](https://github.com/sembark/gladio/commit/0cc31c8))
+* **react-hooks:** docs for react hooks ([1a2b06f](https://github.com/sembark/gladio/commit/1a2b06f))
+* **react-hooks:** handle where document may be null ([ff312e9](https://github.com/sembark/gladio/commit/ff312e9))
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/sembark/gladio/commit/ab5d5b1))
+
+
+### Features
+
+* **hooks:** add an id hook ([5457e65](https://github.com/sembark/gladio/commit/5457e65))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **react-hook:** add useRootClose hook for off interaction ([3c4d647](https://github.com/sembark/gladio/commit/3c4d647))
+* **react-hooks:** add fetch state hook for async data ([956a27e](https://github.com/sembark/gladio/commit/956a27e))
+* **react-hooks:** add some useful react hooks ([c91c5bb](https://github.com/sembark/gladio/commit/c91c5bb))
+
+
+
+
+
 ## [0.5.5](https://github.com/sembark/gladio/compare/@tourepedia/react-hooks@0.5.4...@tourepedia/react-hooks@0.5.5) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/react-hooks

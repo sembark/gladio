@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.9.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **table:** autowidth not working ([324fbbe](https://github.com/sembark/gladio/commit/324fbbe))
+* **table:** restrict styles ([2f4314c](https://github.com/sembark/gladio/commit/2f4314c))
+* **table:** whitespace pre not applying to header ([93a3871](https://github.com/sembark/gladio/commit/93a3871))
+* **table-css:** header in striped row not working ([fe9425a](https://github.com/sembark/gladio/commit/fe9425a))
+* **table-css:** header radius not working with caption ([b46de81](https://github.com/sembark/gladio/commit/b46de81))
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **datetime:** add date time component ([73a91e4](https://github.com/sembark/gladio/commit/73a91e4))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **table:** add table component module ([bcfecc0](https://github.com/sembark/gladio/commit/bcfecc0))
+* **table:** add tabular-nums to all table ([4851376](https://github.com/sembark/gladio/commit/4851376))
+* **table:** update css to add border radius ([7ab82d0](https://github.com/sembark/gladio/commit/7ab82d0))
+* **table:** use the box component ([d2c5bbd](https://github.com/sembark/gladio/commit/d2c5bbd))
+* **table-css:** add hover state to table ([294eeb6](https://github.com/sembark/gladio/commit/294eeb6))
+
+
+
+
+
 ## [0.8.6](https://github.com/sembark/gladio/compare/@tourepedia/table@0.8.5...@tourepedia/table@0.8.6) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/table

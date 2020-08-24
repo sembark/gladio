@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.3.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **types:** box prop type not working ([ee103f0](https://github.com/sembark/gladio/commit/ee103f0))
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **box:** use box in badge, button and inputs ([5c36f1c](https://github.com/sembark/gladio/commit/5c36f1c))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+
+
+
+
+
 ## [0.2.7](https://github.com/sembark/gladio/compare/@tourepedia/box@0.2.6...@tourepedia/box@0.2.7) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/box

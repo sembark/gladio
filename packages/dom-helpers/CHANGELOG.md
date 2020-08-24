@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.4.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **dom-helpers:** add docs for dom helpers ([0c205b2](https://github.com/sembark/gladio/commit/0c205b2)), closes [#1](https://github.com/sembark/gladio/issues/1)
+* **dom-helpers:** fix tests spells ([8df22ea](https://github.com/sembark/gladio/commit/8df22ea))
+* **dom-helpers:** need to handle ssr ([42bf960](https://github.com/sembark/gladio/commit/42bf960))
+* **module:** add module key for package ([0cc31c8](https://github.com/sembark/gladio/commit/0cc31c8))
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/sembark/gladio/commit/ab5d5b1))
+
+
+### Features
+
+* **dom-helper:** add-remove event listner utility ([40d7272](https://github.com/sembark/gladio/commit/40d7272))
+* **dom-helpers:** add dom helper utilities ([b86b760](https://github.com/sembark/gladio/commit/b86b760))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+
+
+
+
+
 ## [0.3.2](https://github.com/sembark/gladio/compare/@tourepedia/dom-helpers@0.3.1...@tourepedia/dom-helpers@0.3.2) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/dom-helpers

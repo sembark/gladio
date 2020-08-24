@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.5.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **input:** remove max width from inputs ([247dcee](https://github.com/sembark/gladio/commit/247dcee))
+* **input-css:** select apearance not working properly ([ee28ce5](https://github.com/sembark/gladio/commit/ee28ce5))
+* **textarea:** make 100% as default width ([d5c4dd6](https://github.com/sembark/gladio/commit/d5c4dd6))
+
+
+### Features
+
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **box:** use box in badge, button and inputs ([5c36f1c](https://github.com/sembark/gladio/commit/5c36f1c))
+* **input:** add disable and error states to the input component ([87dc090](https://github.com/sembark/gladio/commit/87dc090))
+* **input:** add input component module ([753eb68](https://github.com/sembark/gladio/commit/753eb68))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+
+
+
+
+
 ## [0.4.9](https://github.com/sembark/gladio/compare/@tourepedia/input@0.4.8...@tourepedia/input@0.4.9) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/input

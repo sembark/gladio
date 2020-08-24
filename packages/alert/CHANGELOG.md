@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.6.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **alert:** remove the title margin if not content ([833f290](https://github.com/sembark/gladio/commit/833f290))
+* **alert:** title not rendering when no children ([6c21cce](https://github.com/sembark/gladio/commit/6c21cce))
+* **alert:** types not working ([1db553c](https://github.com/sembark/gladio/commit/1db553c))
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+
+
+### Features
+
+* **alert:** add title support ([985eb47](https://github.com/sembark/gladio/commit/985eb47))
+* **alert:** make borders a bit darker ([86bd81d](https://github.com/sembark/gladio/commit/86bd81d))
+* **alert:** updated with new icons ([786060d](https://github.com/sembark/gladio/commit/786060d))
+* **alert:** use Box in Alert component and remove css ([4eff34b](https://github.com/sembark/gladio/commit/4eff34b))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **package:** add alert package ([738b831](https://github.com/sembark/gladio/commit/738b831))
+
+
+
+
+
 ## [0.5.12](https://github.com/sembark/gladio/compare/@tourepedia/alert@0.5.11...@tourepedia/alert@0.5.12) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/alert

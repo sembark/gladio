@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.8.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **badge:** accept all the props that a span can take ([8c1cef4](https://github.com/sembark/gladio/commit/8c1cef4))
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **css:** modify css for better api and look ([88de18d](https://github.com/sembark/gladio/commit/88de18d))
+* **entry:** fix the main entry for packages ([72dfa0b](https://github.com/sembark/gladio/commit/72dfa0b))
+* **module:** add module key for package ([0cc31c8](https://github.com/sembark/gladio/commit/0cc31c8))
+* **revert:** revert back to npm as 2FA is not working on yarn ([d4b6e01](https://github.com/sembark/gladio/commit/d4b6e01))
+* **tests:** fix tests for badge ([221a98d](https://github.com/sembark/gladio/commit/221a98d))
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/sembark/gladio/commit/ab5d5b1))
+
+
+### Features
+
+* **badge:** add accent and outlined styles ([a3eb4a1](https://github.com/sembark/gladio/commit/a3eb4a1))
+* **badge:** add list and rounded full props ([9f1aa2f](https://github.com/sembark/gladio/commit/9f1aa2f))
+* **badge:** add more states to badges ([d23f475](https://github.com/sembark/gladio/commit/d23f475))
+* **box:** add a box component ([9614509](https://github.com/sembark/gladio/commit/9614509))
+* **box:** use box in badge, button and inputs ([5c36f1c](https://github.com/sembark/gladio/commit/5c36f1c))
+* **components:** add buttons and badge components ([6f83c2d](https://github.com/sembark/gladio/commit/6f83c2d))
+* **css:** more corners more rounded ([8f94e31](https://github.com/sembark/gladio/commit/8f94e31))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+
+
+
+
+
 ## [0.7.7](https://github.com/sembark/gladio/compare/@tourepedia/badge@0.7.6...@tourepedia/badge@0.7.7) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/badge

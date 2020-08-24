@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.3.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **css:** add missing tests and fix missing props ([05ab815](https://github.com/sembark/gladio/commit/05ab815))
+* **paginate:** hide when not needd ([369bee8](https://github.com/sembark/gladio/commit/369bee8))
+* **pagination:** remove the number of items from pagination ([483fd3c](https://github.com/sembark/gladio/commit/483fd3c))
+* **pagination:** should not render when no items ([7a0e93d](https://github.com/sembark/gladio/commit/7a0e93d))
+
+
+### Features
+
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **paginate:** add pagination component ([6562010](https://github.com/sembark/gladio/commit/6562010))
+* **version:** version update ([083db66](https://github.com/sembark/gladio/commit/083db66))
+
+
+
+
+
 ## [0.2.23](https://github.com/sembark/gladio/compare/@tourepedia/paginate@0.2.22...@tourepedia/paginate@0.2.23) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/paginate

@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.15.0 (2020-08-24)
+
+
+### Bug Fixes
+
+* **icons:** align to text bottom ([9faf4f3](https://github.com/sembark/gladio/commit/9faf4f3))
+* **icons:** fill not working in icons ([59cfd01](https://github.com/sembark/gladio/commit/59cfd01))
+* **icons:** remove empty title element ([18c77d2](https://github.com/sembark/gladio/commit/18c77d2))
+* **icons:** size is not 24x24 for all icons ([2da085c](https://github.com/sembark/gladio/commit/2da085c))
+* **types:** types are not getting recognized by typescript ([ab5d5b1](https://github.com/sembark/gladio/commit/ab5d5b1))
+
+
+### Features
+
+* **icons:** add airplane icon ([f556863](https://github.com/sembark/gladio/commit/f556863))
+* **icons:** add ban icons ([093f99c](https://github.com/sembark/gladio/commit/093f99c))
+* **icons:** add calendar icon ([292e0bc](https://github.com/sembark/gladio/commit/292e0bc))
+* **icons:** add duplicate icon ([366f7fd](https://github.com/sembark/gladio/commit/366f7fd))
+* **icons:** add icons ([eeb2f85](https://github.com/sembark/gladio/commit/eeb2f85))
+* **icons:** add icons rotation ([f15c04e](https://github.com/sembark/gladio/commit/f15c04e))
+* **icons:** add info and slider icons ([a26c6bb](https://github.com/sembark/gladio/commit/a26c6bb))
+* **icons:** add lightling bolt icons ([4e57010](https://github.com/sembark/gladio/commit/4e57010))
+* **icons:** add list view icon ([5f2d8c2](https://github.com/sembark/gladio/commit/5f2d8c2))
+* **icons:** added light buld icon ([86b7eed](https://github.com/sembark/gladio/commit/86b7eed))
+* **icons:** added new icons ([a61bb48](https://github.com/sembark/gladio/commit/a61bb48))
+* **icons:** get icons from heroicons ([e4cefd4](https://github.com/sembark/gladio/commit/e4cefd4))
+* **migration:** namespace migration ([859c876](https://github.com/sembark/gladio/commit/859c876))
+* **version:** version update ([083db66](https://github.com/sembark/gladio/commit/083db66))
+
+
+
+
+
 ## [0.14.1](https://github.com/sembark/gladio/compare/@tourepedia/icons@0.14.0...@tourepedia/icons@0.14.1) (2020-08-22)
 
 **Note:** Version bump only for package @tourepedia/icons
