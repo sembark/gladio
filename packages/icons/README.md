@@ -5,13 +5,13 @@ We are using svgs for icons.
 ## Installation
 
 ```bash
-npm install --save @tourepedia/icons
+npm install --save @gladio/icons
 ```
 
 ## Usage
 
 ```typescript
-import { PhoneIcon } from "@tourepedia/icons"
+import { PhoneIcon } from "@gladio/icons"
 
 function MyComponent() {
   return (

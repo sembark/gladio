@@ -1,9 +1,9 @@
 {
-  "name": "shapes",
+  "name": "gladio",
   "description": "UI components library in React",
   "main": "index.js",
-  "repository": "https://github.com/sembark/shapes",
-  "author": "Sudhir Mitharwal <luckysud4@gmail.com>",
+  "repository": "https://github.com/sembark/gladio",
+  "author": "Sudhir Mitharwal",
   "license": "MIT",
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",

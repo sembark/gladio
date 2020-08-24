@@ -1,4 +1,4 @@
-# Shapes - Web UI Components library for Tourepedia
+# Shapes - Web UI Components library in React
 
 View the full documentation [here][docs].
 
@@ -19,7 +19,7 @@ It is a components library build in React with Tailwind css.
 
 ## Installation
 
-All the components are distributed under @tourepdia namespace on npm. Components can be installed one-by-one or you
+All the components are distributed under @gladio namespace on npm. Components can be installed one-by-one or you
 can install all the them at once
 
 **Install All**
@@ -27,24 +27,24 @@ can install all the them at once
 To install all the components at one, please execute following command in the terminal:
 
 ```sh
-npm i @tourepedia/ui --S
+npm i @gladio/ui --S
 ```
 
-It will install all the components under the `@tourepedia/ui` package. Following packages/components will be installed
+It will install all the components under the `@gladio/ui` package. Following packages/components will be installed
 
 ```js
-import { Button, Input, Dialog } from "@tourepedia/ui"
+import { Button, Input, Dialog } from "@gladio/ui"
 ```
 
-It will also install all the styles at `@tourepedia/ui/styles/index.css` so be sure to include the css in your bundle.
+It will also install all the styles at `@gladio/ui/styles/index.css` so be sure to include the css in your bundle.
 
 **Install what Needed**
 
 ```sh
-npm i @tourepedia/button @tourepedia/badge --S
+npm i @gladio/button @gladio/badge --S
 ```
 
-Each module has it's own styles which are placed at `@tourepedia/[module]/styles/index.css` so be sure to include these
+Each module has it's own styles which are placed at `@gladio/[module]/styles/index.css` so be sure to include these
 in your bundle.
 
 ## Contribution
@@ -98,13 +98,13 @@ npm run release # publish the updated packages to npm
 ```
 
 When you are working on a particular package say `packages/dialog`, you can pass the `--scope` flag to run these scripts
-only for `@tourepedia/dialog` module. For example,
+only for `@gladio/dialog` module. For example,
 
 ```sh
-npm run build:watch -- --scope=@tourepedia/dialog
+npm run build:watch -- --scope=@gladio/dialog
 ```
 
-This command will only watch for file changes within `@tourepedia/dialog` package only saving the memory for watchers.
+This command will only watch for file changes within `@gladio/dialog` package only saving the memory for watchers.
 
 ## FAQs
 
@@ -121,16 +121,16 @@ npx lerna
 Use `--scope` from lerna
 
 ```bash
-npm run test -- --scope=@tourepedia/button # to run the tests inside buton only
-npm run build -- --scope=@tourepedia/button # to build the button package
+npm run test -- --scope=@gladio/button # to run the tests inside buton only
+npm run build -- --scope=@gladio/button # to build the button package
 ```
 
 **Install a dependency for a package**
 Use `--scope` from lerna with `lerna add`
 
 ```bash
-npx lerna add @tourepedia/button --exact --scope=@tourepedia/button-group
+npx lerna add @gladio/button --exact --scope=@gladio/button-group
 ```
 
 [lerna]: https://github.com/lerna/lerna
-[docs]: https://design.tourepedia.com
+[docs]: https://design.gladio.com

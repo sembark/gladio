@@ -3,8 +3,8 @@ import Layout from "../../components/ComponentsLayout"
 export const meta = {
     title: "DateTime",
     description: "Show Date and Time in Calendary way or use as a Picker to select one",
-    name: "@tourepedia/datetime",
-    usage:`import DateTime from "@tourepedia/datetime"
+    name: "@gladio/datetime",
+    usage:`import DateTime from "@gladio/datetime"
 function App () {
   return <DateTime />
 }`
@@ -15,7 +15,7 @@ export default Layout
 
 ## Components
 
-Following components are exported from `@tourepedia/datetime` module.
+Following components are exported from `@gladio/datetime` module.
 
 ### DateTime
 
@@ -29,7 +29,7 @@ A string value can also be passed as the format for these props e.g. **dateForma
 A"**.
 
 ```jsx live=true
-// import DateTime from "@tourepedia/datetime"
+// import DateTime from "@gladio/datetime"
 function DateTimeInputFiel() {
   const [value, setValue] = useState()
   return <DateTime value={value} onChange={setValue} timeFormat />
@@ -44,7 +44,7 @@ the DateTime component. Native inputs have different UI/UX and are not will supp
 accepted by `DateTime` base component like formats, value, onChange etc.
 
 ```jsx live=true
-// import { DateTimeInput } from "@tourepedia/DateTimeInput"
+// import { DateTimeInput } from "@gladio/DateTimeInput"
 
 function Input() {
   const [value, setValue] = useState()
@@ -58,7 +58,7 @@ To have a fine control over what is rendered by the DateTimeInput, we can use th
 you render a customized component as the toggler. It default to rendering a button component.
 
 ```jsx live=true
-// import { DateTimePicker } from "@tourepedia/DateTimeInput"
+// import { DateTimePicker } from "@gladio/DateTimeInput"
 
 function CustomPicker() {
   const [value, setValue] = useState()

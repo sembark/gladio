@@ -1,4 +1,4 @@
-const package = require("@tourepedia/ui/package.json")
+const package = require("@gladio/ui/package.json")
 const version = package.version
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,

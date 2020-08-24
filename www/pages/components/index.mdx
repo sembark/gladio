@@ -2,7 +2,7 @@ import Layout from "../../components/ComponentsLayout"
 import ElementIcon from "./../../assets/undraw_elements.svg"
 
 export const meta = {
-    description: "Component library for Tourepedia Design.",
+    description: "Component library for gladio Design.",
 };
 
 export default Layout
@@ -11,7 +11,7 @@ export default Layout
   <ElementIcon />
 </div>
 
-This package is composed of all other components and provides a compact way to use all other components from tourepedia.
+This package is composed of all other components and provides a compact way to use all other components from gladio.
 Other components can be imported with there names only. Following components are exported:
 
 
@@ -22,21 +22,21 @@ Other components can be imported with there names only. Following components are
 ### Installation
 
 ```bash
-npm install --save @tourepedia/ui
+npm install --save @gladio/ui
 ```
 
 ### CSS
 
-CSS is included in `@tourepedia/ui/styles/index.css` that includes styles of all other components.
+CSS is included in `@gladio/ui/styles/index.css` that includes styles of all other components.
 
 ```css
-@include @tourepedia/ui/styles/index;
+@include @gladio/ui/styles/index;
 ```
 
 ### Usage
 
 ```jsx
-import { Button } from "@tourepedia/ui"
+import { Button } from "@gladio/ui"
 
 function App () {
   return <Button branded>
@@ -48,18 +48,18 @@ function App () {
 ### Playground
 
 ```jsx live=true
-// import { Button, Badge, Dialog, Input, FormGroup, Select } from "@tourepedia/ui"
+// import { Button, Badge, Dialog, Input, FormGroup, Select } from "@gladio/ui"
 
 function App () {
 const [isDialogOpen, changeDialogVisibility] = useState(false)
 return <form onSubmit={(e) => { e.preventDefault(); changeDialogVisibility(true)}}>
   <FormGroup>
     <label>Name</label>
-    <Input type="text" placeholder="Tourepedia Holidays" />
+    <Input type="text" placeholder="gladio Holidays" />
   </FormGroup>
   <FormGroup>
     <label>Select Email</label>
-    <Select options={[{ id:1, name: "developer@tourepedia.com"}, {id: 2, name: "support@tourepedia.com" }]} />
+    <Select options={[{ id:1, name: "developer@gladio.com"}, {id: 2, name: "support@gladio.com" }]} />
   </FormGroup>
   <Dialog open={isDialogOpen} onClose={() => changeDialogVisibility(false)}>
     <Dialog.Body>

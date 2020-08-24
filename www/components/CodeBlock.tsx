@@ -3,7 +3,7 @@ import moment from "moment"
 import * as ReactLive from "react-live"
 import Highlight, { defaultProps, Language } from "prism-react-renderer"
 import { github as theme } from "./themes"
-import * as UI from "@tourepedia/ui"
+import * as UI from "@gladio/ui"
 import * as HtmlLive from "./HtmlLive"
 
 export default function CodeBlock({

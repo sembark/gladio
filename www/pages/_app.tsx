@@ -3,7 +3,7 @@ import App from "next/app"
 import { MDXProvider } from "@mdx-js/react"
 
 import CodeBlock from "./../components/CodeBlock"
-import "@tourepedia/ui/styles/index.css"
+import "@gladio/ui/styles/index.css"
 
 // unregister serviceWorker worker
 if (typeof window !== "undefined")

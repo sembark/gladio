@@ -5,17 +5,16 @@ Show snackbars with ease
 ## Installation
 
 ```bash
-yarn add @tourepedia/snackbar
+yarn add @gladio/snackbar
 ```
 
 ## Usage
 
 ```js
 // import show/hide utility functions
-import { showSnackbar } from "@tourepedia/snackbar"
+import { showSnackbar } from "@gladio/snackbar"
 
 const MyComponent = () => {
   return <button onClick={() => showSnackbar("Success")}>Submit</button>
 }
 ```
-

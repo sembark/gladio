@@ -1,5 +1,5 @@
 import Layout from "../../../components/StylesLayout"
-import { theme, Box } from "@tourepedia/ui"
+import { theme, Box } from "@gladio/ui"
 
 const meta = {
   title: "Color System",

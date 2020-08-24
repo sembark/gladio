@@ -5,14 +5,14 @@ Use it to show `state` or `count` into the UI
 ## Installation
 
 ```bash
-yarn add @tourepedia/badge
+yarn add @gladio/badge
 ```
 
 ## Usage
 
 ```js
 // import the badge component
-import Badge from "@tourepedia/badge"
+import Badge from "@gladio/badge"
 
 const MyComponent = () => {
   return (

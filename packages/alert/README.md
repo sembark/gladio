@@ -5,14 +5,14 @@ Show alert message (errors, success, informations) in ui
 ## Installation
 
 ```bash
-yarn add @tourepedia/alert
+yarn add @gladio/alert
 ```
 
 ## Usage
 
 ```js
 // import the alert component
-import Alert from "@tourepedia/alert"
+import Alert from "@gladio/alert"
 
 const MyComponent = () => {
   return <Alert type="assertive">Something went wrong</Alert>

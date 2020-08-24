@@ -5,13 +5,13 @@ Use a custom select to enhance UX for input fields that requires selection of it
 ## Installation
 
 ```bash
-yarn add @tourepedia/select
+yarn add @gladio/select
 ```
 
 ## Usage
 
 ```js
-import Select, { Async } from "@tourepedia/select"
+import Select, { Async } from "@gladio/select"
 
 const MyComponent = () => {
   const [query, setQuery] = useState("")

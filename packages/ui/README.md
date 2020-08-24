@@ -5,7 +5,7 @@ All the Components and Helpers in one package
 ## Installation
 
 ```
-npm install --save @tourepedia/ui
+npm install --save @gladio/ui
 ```
 
 ## Usage
@@ -15,13 +15,13 @@ npm install --save @tourepedia/ui
 in `SASS` or `SCSS`
 
 ```scss
-@import "@tourepedia/ui/styles/index";
+@import "@gladio/ui/styles/index";
 ```
 
 in `js`
 
 ```js
-@import "@tourepedia/ui/styles/index.css";
+@import "@gladio/ui/styles/index.css";
 ```
 
 ### Using Components
@@ -30,7 +30,7 @@ This is a combined package for all the ui elements so works the same way as othe
 
 ```js
 // prefered
-import { Button } from @tourepedia/ui
+import { Button } from @gladio/ui
 // or
-import Button from "@tourepedia/button"
+import Button from "@gladio/button"
 ```

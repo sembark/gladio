@@ -1,4 +1,4 @@
-# Styles for Tourepedia
+# Styles for Gladio
 
 We are using tailwindcss for utility classes. You can use all the css classes defined on https://tailwindcss.com.
 
@@ -18,7 +18,7 @@ Components classes
 ## Install
 
 ```
-npm install --save @tourepedia/css
+npm install --save @gladio/css
 ```
 
 ## Usage
@@ -28,17 +28,17 @@ npm install --save @tourepedia/css
 **in sass**
 
 ```
-@include '@tourepedia/css/styles/styles.css'
+@include '@gladio/css/styles/styles.css'
 ```
 
 **in js**
 
 ```
-import '@tourepedia/css/styles/styles.css'
+import '@gladio/css/styles/styles.css'
 ```
 
 A JSON file for theme is also included
 
 ```js
-import theme from "@tourepedia/css/lib/theme.json"
+import theme from "@gladio/css/lib/theme.json"
 ```

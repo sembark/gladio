@@ -5,13 +5,13 @@ Use this component to show the pagination in your application
 ## Installation
 
 ```
-npm install --save @tourepedia/paginate
+npm install --save @gladio/paginate
 ```
 
 ## Usage
 
 ```js
-import Paginate from "@tourepedia/paginate"
+import Paginate from "@gladio/paginate"
 
 function App(props) {
   return (

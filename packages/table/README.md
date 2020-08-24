@@ -3,13 +3,13 @@
 ## Installation
 
 ```bash
-npm install --save @tourepedia/table
+npm install --save @gladio/table
 ```
 
 ## Usage
 
 ```js
-import Table from "@tourepedia/table"
+import Table from "@gladio/table"
 
 function App() {
   return (

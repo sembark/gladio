@@ -1,7 +1,7 @@
 {
   "name": "@gladio/ui",
   "version": "1.0.0",
-  "description": "Design system",
+  "description": "Design system for Sembark",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -22,9 +22,9 @@
   "author": "Sudhir Mitharwal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sembark/shapes/issues"
+    "url": "https://github.com/sembark/gladio/issues"
   },
-  "homepage": "https://github.com/sembark/shapes#readme",
+  "homepage": "https://github.com/sembark/gladio#readme",
   "dependencies": {
     "@gladio/ui": "^1.11.11",
     "@types/mdx-js__react": "^1.5.0",

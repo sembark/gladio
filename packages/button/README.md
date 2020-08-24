@@ -1,18 +1,18 @@
 # Button Component
 
-Use the render a button component
+Use to render a button component
 
 ## Installation
 
 ```bash
-yarn add @tourepedia/button
+yarn add @gladio/button
 ```
 
 ## Usage
 
 ```js
 // import the component
-import Button from "@tourepedia/button"
+import Button from "@gladio/button"
 
 // use it as you would use a simple button
 const MyComponent = () => {

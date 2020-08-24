@@ -5,13 +5,13 @@ Use dialog component to show ui element inside a dialog or popup
 ## Install
 
 ```bash
-npm install --save @tourepedia/dialog
+npm install --save @gladio/dialog
 ```
 
 ## Usage
 
 ```js
-import Dialog, { useDialog } from "@tourepedia/dialog"
+import Dialog, { useDialog } from "@gladio/dialog"
 
 function Continue({ onContinue }) {
   // helper react hook, (useState can also be used)

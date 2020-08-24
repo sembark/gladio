@@ -1,4 +1,4 @@
-const theme = require("@tourepedia/css")
+const theme = require("@gladio/css")
 
 const plugin = require("./src/styles.js")
 

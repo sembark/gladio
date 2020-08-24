@@ -7,10 +7,10 @@ for all available props with there values, removing any kind of typo errors in c
 ## Installation
 
 ```
-npm install --save @tourepedia/box
+npm install --save @gladio/box
 ```
 
-This package also installs the required css module `@tourepedia/css` which should be imported in your application.
+This package also installs the required css module `@gladio/css` which should be imported in your application.
 
 ## Usage
 
@@ -18,7 +18,7 @@ This component accepts almost all the props to add any styles that can be applie
 have responsive values which can be passed directly via props only.
 
 ```js
-import Box from "@tourepedia/box"
+import Box from "@gladio/box"
 
 function App() {
   return (

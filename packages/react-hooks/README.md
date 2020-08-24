@@ -5,7 +5,7 @@ Some helper react hooks
 ## Install
 
 ```
-npm install --save @tourepedia/react-hooks
+npm install --save @gladio/react-hooks
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install --save @tourepedia/react-hooks
 Call a function on component's didMount Lifecycle
 
 ```js
-import { useDidMount } from "@tourepedia/react-hooks"
+import { useDidMount } from "@gladio/react-hooks"
 
 function App() {
   useDidMount(() => {
@@ -30,7 +30,7 @@ function App() {
 Call a function only in component's didUpdate Lifecycle.
 
 ```js
-import { useDidUpdate } from "@tourepedia/react-hooks"
+import { useDidUpdate } from "@gladio/react-hooks"
 
 function App({ count }) {
   useDidUpdate(() => {
@@ -44,7 +44,7 @@ function App({ count }) {
 Only call a function once in a component's Lifecycle
 
 ```js
-import { useOnce } from "@tourepedia/react-hooks"
+import { useOnce } from "@gladio/react-hooks"
 
 function App() {
   useOnce(() => {
@@ -71,7 +71,7 @@ useEnforceFocus(
 
 ```js
 import { useRef, useState } from "react"
-import { useEnforceFocus } from "@tourepedia/react-hooks"
+import { useEnforceFocus } from "@gladio/react-hooks"
 
 function App() {
   const containerRef = useRef()

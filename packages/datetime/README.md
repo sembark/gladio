@@ -5,7 +5,7 @@ Use `DatePicker` to handle the date inputs
 ## Installation
 
 ```bash
-yarn add @tourepedia/datetime
+yarn add @gladio/datetime
 ```
 
 > momentjs is a peer dependency
@@ -14,7 +14,7 @@ yarn add @tourepedia/datetime
 
 ```js
 // import the date time component
-import DatePicker from "@tourepedia/time"
+import DatePicker from "@gladio/time"
 
 const MyComponent = () => {
   return <DatePicker />

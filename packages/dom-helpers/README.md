@@ -3,7 +3,7 @@
 ### Install
 
 ```
-npm install --save @tourepedia/dom-helpers
+npm install --save @gladio/dom-helpers
 ```
 
 ### Utilities
@@ -13,7 +13,7 @@ npm install --save @tourepedia/dom-helpers
 check if dom is available (generally used in univeral apps)
 
 ```js
-import { isDom } from "@tourepedia/dom-helpers"
+import { isDom } from "@gladio/dom-helpers"
 
 function App() {
   if (isDom) {
@@ -27,7 +27,7 @@ function App() {
 Return the current active element in the dom
 
 ```js
-import { activeElement } from "@tourepedia/dom-helpers"
+import { activeElement } from "@gladio/dom-helpers"
 
 const App () {
   const currentActiveElement = activeElement()
@@ -40,7 +40,7 @@ Checks whether or not a dom node is contains another given dom node. An usecase 
 element inside a container
 
 ```js
-import { contains } from "@tourepedia/dom-helpers"
+import { contains } from "@gladio/dom-helpers"
 
 function App() {
   // after mount
