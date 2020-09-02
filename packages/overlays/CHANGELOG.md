@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/sembark/gladio/compare/@gladio/overlays@0.2.0...@gladio/overlays@0.2.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* **overlays:** types not working ([0ec7d0b](https://github.com/sembark/gladio/commit/0ec7d0b))
+
+
+
+
+
 # 0.2.0 (2020-09-02)
 
 
