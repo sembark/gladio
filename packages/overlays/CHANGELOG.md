@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-09-02)
+
+
+### Features
+
+* **overlays:** add tooltips and overlays ([6ad93ec](https://github.com/sembark/gladio/commit/6ad93ec))
+
+
+
+
+
 # 0.8.0 (2020-08-24)
 
 

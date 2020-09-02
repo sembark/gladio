@@ -1,6 +1,6 @@
 {
   "name": "@gladio/dialog",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "Dialog/Modal component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -44,7 +44,7 @@
   "dependencies": {
     "@gladio/box": "^0.3.0",
     "@gladio/css": "^0.32.0",
-    "@gladio/react-hooks": "^0.6.0",
+    "@gladio/react-hooks": "^0.7.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
