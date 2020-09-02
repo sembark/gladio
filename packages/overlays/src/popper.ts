@@ -1,6 +1,6 @@
 import * as React from "react"
-import { createPopper } from "@popperjs/core"
 import {
+  createPopper,
   Instance,
   Placement,
   State,
@@ -8,7 +8,7 @@ import {
   VirtualElement,
   Modifier,
   Rect,
-} from "@popperjs/core/index.d"
+} from "@popperjs/core"
 
 export type Modifiers =
   | Options["modifiers"]
