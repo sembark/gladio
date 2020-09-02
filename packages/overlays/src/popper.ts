@@ -1,14 +1,14 @@
 import * as React from "react"
-import {
-  createPopper,
-  Instance,
-  Placement,
-  State,
-  Options,
-  VirtualElement,
-  Modifier,
-  Rect,
-} from "@popperjs/core"
+import { createPopper } from "@popperjs/core"
+import * as Popper from "@popperjs/core"
+
+export type Modifier<Name, Options> = Popper.Modifier<Name, Options>
+export type Options = Popper.Options
+export type Instance = Popper.Instance
+export type Placement = Popper.Placement
+export type VirtualElement = Popper.VirtualElement
+export type State = Popper.State
+export type Rect = Popper.Rect
 
 export type Modifiers =
   | Options["modifiers"]
@@ -20,8 +20,6 @@ export type OffsetFunction = (details: {
   reference: Rect
   placement: Placement
 }) => OffsetValue
-
-export { Placement, State }
 
 export type Offset = OffsetFunction | OffsetValue
 
