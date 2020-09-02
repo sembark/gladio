@@ -1,6 +1,6 @@
 {
   "name": "@gladio/overlays",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Tooltips/Popover (overlay) Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
