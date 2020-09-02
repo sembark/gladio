@@ -44,6 +44,7 @@ import {
   isOpenSnackbar,
   showSnackbarIfNot,
 } from "@gladio/snackbar"
+import { Tooltip, Popover } from "@gladio/overlays"
 import Box from "@gladio/box"
 
 export {
@@ -93,4 +94,6 @@ export {
   isOpenSnackbar,
   showSnackbarIfNot,
   Box,
+  Tooltip,
+  Popover,
 }

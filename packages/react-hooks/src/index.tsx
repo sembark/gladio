@@ -1,4 +1,11 @@
-import { useMemo, useRef, useEffect, useState, useCallback } from "react"
+import {
+  useMemo,
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  MutableRefObject,
+} from "react"
 import {
   ownerDocument,
   activeElement,
@@ -158,7 +165,7 @@ export function useFetchState<ReturnType, ParamsType = any>(
       })
 
       return fetchFn(...args)
-        .then(data => {
+        .then((data) => {
           changeData({
             isFetching: false,
             data,
@@ -166,7 +173,7 @@ export function useFetchState<ReturnType, ParamsType = any>(
           })
           return data
         })
-        .catch(error => {
+        .catch((error) => {
           changeData({
             isFetching: false,
             data,
@@ -198,25 +205,31 @@ function isModifiedEvent(event: KeyboardEvent) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
 }
 
+export type RootCloseOptions = {
+  disabled?: boolean
+  clickTrigger?: keyof HTMLElementEventMap
+}
+
+const getRefTarget = (
+  ref: React.RefObject<Element> | Element | null | undefined
+) => ref && ("current" in ref ? ref.current : ref)
+
 /**
  * This is used achieve modal style behavior where your
  * callback is triggered when the user tries to
  * interact with the rest of the document or hits the `esc` key.
  */
 export function useRootClose(
-  ref: React.RefObject<HTMLElement> | HTMLElement,
+  ref: React.RefObject<Element> | Element | null | undefined,
   onRootClose?: (e: any) => void,
-  {
-    disabled,
-    clickTrigger = "click",
-  }: { disabled?: boolean; clickTrigger?: keyof HTMLElementEventMap } = {}
+  { disabled, clickTrigger = "click" }: RootCloseOptions = {}
 ) {
   const preventMouseRootCloseRef = useRef(false)
   const onClose = onRootClose || noop
 
   const handleMouseCapture = useCallback(
-    e => {
-      const currentTarget = ref && ("current" in ref ? ref.current : ref)
+    (e) => {
+      const currentTarget = getRefTarget(ref)
       if (!currentTarget) {
         console.warn(
           "RootClose captured a close event but does not have a ref to compare it to. " +
@@ -228,7 +241,7 @@ export function useRootClose(
         !currentTarget ||
         isModifiedEvent(e) ||
         !isLeftClickEvent(e) ||
-        contains(currentTarget, e.target)
+        !!contains(currentTarget, e.target)
     },
     [ref]
   )
@@ -243,7 +256,7 @@ export function useRootClose(
   )
 
   const handleKeyUp = useCallback(
-    e => {
+    (e) => {
       if (e.keyCode === escapeKeyCode) {
         onClose(e)
       }
@@ -279,7 +292,7 @@ export function useRootClose(
       removeMouseCaptureListener()
       removeMouseListener()
       removeKeyupListener()
-      mobileSafariHackListeners.forEach(remove => remove())
+      mobileSafariHackListeners.forEach((remove) => remove())
     }
   }, [
     ref,
@@ -304,4 +317,96 @@ function genId(prefix: string = "") {
 export function useId(prefix: string = ""): string {
   const id = useRef(genId(prefix.trim()))
   return id.current
+}
+
+/**
+ * Hook to use the ref using `useState` designed to work with callback refs
+ *
+ * Callback refs are useful over `useRef()` when you need to respond to the ref being set
+ * instead of lazily accessing it in an effect.
+ */
+export function useCallbackRef<TValue = unknown>(): [
+  TValue | null,
+  (ref: TValue | null) => void
+] {
+  return useState<TValue | null>(null)
+}
+
+export type CallbackRef<T> = (ref: T | null) => void
+
+export type Ref<T> = MutableRefObject<T> | CallbackRef<T>
+
+function toFnRef<T>(ref?: Ref<T> | null): undefined | CallbackRef<T> {
+  return (!ref || typeof ref === "function"
+    ? ref || undefined
+    : (value: T) => {
+        ref.current = value
+      }) as CallbackRef<T> | undefined
+}
+
+export function mergeRefs<T>(refA?: Ref<T> | null, refB?: Ref<T> | null) {
+  const a = toFnRef(refA)
+  const b = toFnRef(refB)
+  return (value: T | null) => {
+    if (a) a(value)
+    if (b) b(value)
+  }
+}
+
+/**
+ * Create and returns a single callback ref composed from two other Refs.
+ *
+ * Usefull when setting multiple refs with a single call
+ */
+export function useMergedRefs<T>(refA?: Ref<T> | null, refB?: Ref<T> | null) {
+  return useMemo(() => mergeRefs(refA, refB), [refA, refB])
+}
+export type DOMContainer<T extends HTMLElement = HTMLElement> =
+  | T
+  | React.RefObject<T>
+  | null
+  | (() => T | React.RefObject<T> | null)
+
+export function resolveContainerRef<T extends HTMLElement>(
+  ref: DOMContainer<T> | undefined
+): T | HTMLBodyElement | null {
+  if (typeof document === "undefined") return null
+  if (ref == null) {
+    const doc = ownerDocument()
+    if (!doc) return null
+    return doc.body as HTMLBodyElement
+  }
+  if (typeof ref === "function") ref = ref()
+
+  if (ref && "current" in ref) ref = ref.current
+  if ((ref as any)?.nodeType) return ((ref as unknown) as T) || null
+
+  return null
+}
+
+export function useWaitForDOMRef<T extends HTMLElement = HTMLElement>(
+  ref: DOMContainer<T> | undefined,
+  onResolved?: (element: T | HTMLBodyElement) => void
+) {
+  const [resolvedRef, setRef] = useState(() => resolveContainerRef(ref))
+
+  if (!resolvedRef) {
+    const earlyRef = resolveContainerRef(ref)
+    if (earlyRef) setRef(earlyRef)
+  }
+
+  useEffect(() => {
+    if (onResolved && resolvedRef) {
+      onResolved(resolvedRef)
+    }
+  }, [onResolved, resolvedRef])
+
+  useEffect(() => {
+    const nextRef = resolveContainerRef(ref)
+    if (nextRef !== resolvedRef) {
+      setRef(nextRef)
+    }
+  }, [ref, resolvedRef])
+
+  return resolvedRef
 }

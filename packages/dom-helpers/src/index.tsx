@@ -8,12 +8,9 @@ export const isDom = !!(
 )
 
 // does context contains node element
-export function contains(
-  context: HTMLElement | null,
-  node: HTMLElement | null
-) {
+export function contains(context: Element | null, node: Element | null) {
   if (!node || !context) return false
-  function fallback(context: HTMLElement, node: Node | null) {
+  function fallback(context: Element, node: Node | null) {
     if (node) {
       do {
         if (node === context) return true
@@ -36,7 +33,7 @@ export function contains(
 }
 
 // get the container document
-export function ownerDocument(node?: HTMLElement): Document | null {
+export function ownerDocument(node?: HTMLElement | Element): Document | null {
   return (node && node.ownerDocument) || (isDom ? document : null)
 }
 
