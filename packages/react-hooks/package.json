@@ -1,6 +1,6 @@
 {
   "name": "@gladio/react-hooks",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Common utility react hooks",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",

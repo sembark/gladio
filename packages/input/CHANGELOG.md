@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/sembark/gladio/compare/@gladio/input@0.5.0...@gladio/input@0.6.0) (2020-09-03)
+
+
+### Features
+
+* **overlays:** allow interaction with tooltips ([ee39683](https://github.com/sembark/gladio/commit/ee39683))
+
+
+
+
+
 # 0.5.0 (2020-08-24)
 
 

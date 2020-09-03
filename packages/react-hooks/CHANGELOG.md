@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/sembark/gladio/compare/@gladio/react-hooks@0.7.0...@gladio/react-hooks@0.8.0) (2020-09-03)
+
+
+### Features
+
+* **overlays:** allow interaction with tooltips ([ee39683](https://github.com/sembark/gladio/commit/ee39683))
+
+
+
+
+
 # [0.7.0](https://github.com/sembark/gladio/compare/@gladio/react-hooks@0.6.0...@gladio/react-hooks@0.7.0) (2020-09-02)
 
 
