@@ -2,21 +2,24 @@ import * as React from "react"
 import Box from "@gladio/box"
 import classNames from "classnames"
 import { useId } from "@gladio/react-hooks"
-import { OverlayTrigger, OverlayProps } from "./Overlay"
-import { Offset } from "./popper"
+import { OverlayTrigger, OverlayDelay, OverlayTriggerProps } from "./Overlay"
 
-type CommonProps = Pick<OverlayProps, "placement"> & {
+type CommonProps = Pick<
+  OverlayTriggerProps,
+  "placement" | "trigger" | "interactive"
+> & {
   children: React.ReactNode
   content: React.ReactNode
 }
 
-const defaultPopperOffset: Offset = [0, 4]
+const defaultDelay: OverlayDelay = { show: 0, hide: 250 }
 
 export function Tooltip({ content, children, ...props }: CommonProps) {
   const id = useId("tooltip")
   return (
     <OverlayTrigger
-      offset={defaultPopperOffset}
+      delay={defaultDelay}
+      interactive
       {...props}
       overlay={({ props, show, arrowProps }) => (
         <Box
@@ -37,7 +40,7 @@ export function Tooltip({ content, children, ...props }: CommonProps) {
             paddingY="2"
             textColor="white"
             backgroundColor="gray-800"
-            rounded="lg"
+            rounded
           >
             {content}
           </Box>
@@ -53,7 +56,8 @@ export function Popover({ content, children, ...props }: CommonProps) {
   const id = useId("popover")
   return (
     <OverlayTrigger
-      offset={defaultPopperOffset}
+      delay={defaultDelay}
+      interactive
       {...props}
       overlay={({ props, show, arrowProps }) => (
         <Box
@@ -61,7 +65,6 @@ export function Popover({ content, children, ...props }: CommonProps) {
           role="tooltip"
           hidden={!show}
           display={show ? "block" : undefined}
-          margin="0"
           id={id}
           {...props}
         >

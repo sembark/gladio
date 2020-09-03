@@ -410,3 +410,92 @@ export function useWaitForDOMRef<T extends HTMLElement = HTMLElement>(
 
   return resolvedRef
 }
+
+export function useMounted(): () => boolean {
+  const mounted = useRef(true)
+  const isMounted = useRef(() => mounted.current)
+  useEffect(
+    () => () => {
+      mounted.current = false
+    },
+    []
+  )
+  return isMounted.current
+}
+
+/**
+ * Returns a ref that is immediately updated with the new value
+ *
+ * The returned "ref" won't change on re-rerenders, only the ref.current
+ * will be updated
+ *
+ * @param value The Ref value
+ */
+export function useUpdatedRef<T>(value: T) {
+  const valueRef = useRef<T>(value)
+  valueRef.current = value
+  return valueRef
+}
+
+/**
+ * Attach a callback that fires when a component unmounts
+ *
+ * @param fn Handler to run when the component unmounts
+ */
+export function useWillUnmount(fn: () => void) {
+  const onUnmount = useUpdatedRef(fn)
+  useEffect(() => () => onUnmount.current(), [])
+}
+
+/**
+ * Returns a controller object for setting a timeout that is properly cleaned up
+ * once the component unmounts. New timeouts cancel and replace existing ones.
+ */
+export function useTimeout() {
+  const isMounted = useMounted()
+  const handleRef = useRef<any>()
+  useWillUnmount(() => clearTimeout(handleRef.current))
+  return useMemo(() => {
+    const clear = () => clearTimeout(handleRef.current)
+    function set(fn: () => void, delayMs = 0): void {
+      if (!isMounted()) return
+      clear()
+      if (delayMs <= MAX_DELAY_MS) {
+        // For simplicity, if the timeout is short, just set a normal timeout.
+        handleRef.current = setTimeout(fn, delayMs)
+      } else {
+        setChainedTimeout(handleRef, fn, Date.now() + delayMs)
+      }
+    }
+    return {
+      set,
+      clear,
+    }
+  }, [])
+}
+
+/*
+ * Browsers including Internet Explorer, Chrome, Safari, and Firefox store the
+ * delay as a 32-bit signed integer internally. This causes an integer overflow
+ * when using delays larger than 2,147,483,647 ms (about 24.8 days),
+ * resulting in the timeout being executed immediately.
+ *
+ * via: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+ */
+const MAX_DELAY_MS = 2 ** 31 - 1
+
+function setChainedTimeout(
+  handleRef: MutableRefObject<any>,
+  fn: () => void,
+  timeoutAtMs: number
+) {
+  const delayMs = timeoutAtMs - Date.now()
+
+  handleRef.current =
+    delayMs <= MAX_DELAY_MS
+      ? setTimeout(fn, delayMs)
+      : setTimeout(
+          () => setChainedTimeout(handleRef, fn, timeoutAtMs),
+          MAX_DELAY_MS
+        )
+}

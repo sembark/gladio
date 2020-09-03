@@ -3,35 +3,20 @@ module.exports = function addComponent({ addComponents, theme }) {
     ".tooltip": {
       zIndex: "1070",
       "&__arrow": {
-        position: "absolute",
-        width: "8px",
-        height: "8px",
-        zIndex: "-1",
         "&:before": {
-          content: '""',
-          position: "absolute",
-          width: "8px",
-          height: "8px",
-          zIndex: "-1",
-          transform: "rotate(45deg)",
           background: theme("colors.gray-800"),
         },
-      },
-      "&[data-popper-placement^='bottom'] > &__arrow": {
-        top: "-4px",
-      },
-      "&[data-popper-placement^='top'] > &__arrow": {
-        bottom: "-4px",
-      },
-      "&[data-popper-placement^='left'] > &__arrow": {
-        right: "-4px",
-      },
-      "&[data-popper-placement^='right'] > &__arrow": {
-        left: "-4px",
       },
     },
     ".popover": {
       zIndex: "1060",
+      "&__arrow": {
+        "&:before": {
+          background: theme("colors.gray-100"),
+        },
+      },
+    },
+    ".tooltip, .popover": {
       "&__arrow": {
         position: "absolute",
         width: "8px",
@@ -44,20 +29,31 @@ module.exports = function addComponent({ addComponents, theme }) {
           height: "8px",
           zIndex: "-1",
           transform: "rotate(45deg)",
-          background: theme("colors.gray-200"),
         },
       },
+      "&[data-popper-placement^='bottom']": {
+        paddingTop: "4px",
+      },
+      "&[data-popper-placement^='top']": {
+        paddingBottom: "4px",
+      },
+      "&[data-popper-placement^='left']": {
+        paddingRight: "4px",
+      },
+      "&[data-popper-placement^='right']": {
+        paddingLeft: "4px",
+      },
       "&[data-popper-placement^='bottom'] > &__arrow": {
-        top: "-4px",
+        top: "0",
       },
       "&[data-popper-placement^='top'] > &__arrow": {
-        bottom: "-4px",
+        bottom: "0",
       },
       "&[data-popper-placement^='left'] > &__arrow": {
-        right: "-4px",
+        right: "0",
       },
-      "&[data-popper-placement^='right'] > &__arrow": {
-        left: "-4px",
+      "&[data-popper-placement^='right']>  &__arrow": {
+        left: "0",
       },
     },
   }

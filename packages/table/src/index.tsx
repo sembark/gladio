@@ -74,7 +74,7 @@ export const Table = React.forwardRef(
     }: TableProps,
     ref: React.Ref<HTMLTableElement>
   ) => {
-    const TableComponent = Box as React.ComponentType<TableProps>
+    const TableComponent = (Box as unknown) as React.ComponentType<TableProps>
     const $table = (
       <TableComponent
         as="table"

@@ -23,8 +23,9 @@ stories.add("Tooltip", () => (
 ))
 
 stories.add("Popover", () => (
-  <Box textAlign="center">
+  <Box textAlign="center" display="flex" justifyContent="between" paddingX="8">
     <Popover
+      trigger="click"
       content={
         <Box>
           <Box padding="2" backgroundColor="gray-100" roundedTop="lg">
@@ -34,7 +35,49 @@ stories.add("Popover", () => (
         </Box>
       }
     >
-      <Box as="button">More...</Box>
+      <Box as="button">Bottom...</Box>
+    </Popover>
+    <Popover
+      trigger="click"
+      placement="top"
+      content={
+        <Box>
+          <Box padding="2" backgroundColor="gray-100" roundedTop="lg">
+            Information Title
+          </Box>
+          <Box padding="2">Some details here..</Box>
+        </Box>
+      }
+    >
+      <Box as="button">Top...</Box>
+    </Popover>
+    <Popover
+      trigger="click"
+      placement="right"
+      content={
+        <Box>
+          <Box padding="2" backgroundColor="gray-100" roundedTop="lg">
+            Information Title
+          </Box>
+          <Box padding="2">Some details here..</Box>
+        </Box>
+      }
+    >
+      <Box as="button">Right...</Box>
+    </Popover>
+    <Popover
+      trigger="click"
+      placement="left"
+      content={
+        <Box>
+          <Box padding="2" backgroundColor="gray-100" roundedTop="lg">
+            Information Title
+          </Box>
+          <Box padding="2">Some details here..</Box>
+        </Box>
+      }
+    >
+      <Box as="button">Left...</Box>
     </Popover>
   </Box>
 ))

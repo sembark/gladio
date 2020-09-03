@@ -7,6 +7,7 @@ import {
   useRootClose,
   RootCloseOptions,
   DOMContainer,
+  useTimeout,
 } from "@gladio/react-hooks"
 import { usePopper, Offset, Placement, State } from "./popper"
 import { mergeOptionsWithPopperConfig } from "./utils"
@@ -24,6 +25,8 @@ export type OverlayProps = {
   onHide?: (e: Event) => void
   rootClose?: boolean
   rootCloseEvent?: RootCloseOptions["clickTrigger"]
+  onMouseOver?: (e: any) => void
+  onMouseOut?: (e: any) => void
   children: (value: {
     show: boolean
     placement: Placement
@@ -34,6 +37,8 @@ export type OverlayProps = {
       ref: React.RefCallback<HTMLElement>
       style: React.CSSProperties
       "aria-labelledby"?: string
+      onMouseOver?: (e: any) => void
+      onMouseOut?: (e: any) => void
     }
     arrowProps: Record<string, any> & {
       ref: React.RefCallback<HTMLElement>
@@ -47,6 +52,8 @@ export function Overlay({
   flip,
   offset,
   containerPadding,
+  onMouseOver,
+  onMouseOut,
   ...props
 }: OverlayProps) {
   const [rootElmRef, attachRootRef] = useCallbackRef<HTMLElement>()
@@ -85,6 +92,8 @@ export function Overlay({
       ...attributes.popper,
       style: styles.popper as any,
       ref: mergedRef,
+      onMouseOver,
+      onMouseOut,
     },
     arrowProps: {
       ...attributes.arrow,
@@ -94,6 +103,8 @@ export function Overlay({
   })
   return container ? ReactDOM.createPortal(child, container) : null
 }
+
+export type OverlayDelay = number | { show: number; hide: number }
 
 export type OverlayTriggerType = "hover" | "click" | "focus"
 export type OverlayInjectedProps = {
@@ -113,27 +124,50 @@ export interface OverlayTriggerProps
   overlay: $PropertyType<OverlayProps, "children">
   target?: never
   onHide?: never
+  delay?: OverlayDelay
+  interactive?: boolean
 }
 
 export function OverlayTrigger({
   overlay,
   children,
+  delay: propsDelay,
   trigger = ["hover", "focus"],
+  interactive,
   ...props
 }: OverlayTriggerProps) {
   const [show, setShow] = React.useState<boolean>(false)
   const hoverStateRef = React.useRef<string>("")
   const [targetRef, setTargetRef] = useCallbackRef<HTMLElement>()
+  const delay = normalizeDelay(propsDelay)
+  const timeout = useTimeout()
 
   const handleShow = React.useCallback(() => {
+    timeout.clear()
     hoverStateRef.current = "show"
-    setShow(true)
+    if (!delay.show) {
+      setShow(true)
+      return
+    }
+    timeout.set(() => {
+      if (hoverStateRef.current === "show") setShow(true)
+      // something is wrong with me or typescript
+    }, (delay.show as unknown) as number)
   }, [])
   const handleHide = React.useCallback(() => {
+    timeout.clear()
     hoverStateRef.current = "hide"
-    setShow(false)
+    if (!delay.hide) {
+      setShow(false)
+      return
+    }
+    timeout.set(() => {
+      if (hoverStateRef.current === "hide") setShow(false)
+      // something is wrong with me or typescript
+    }, (delay.hide as unknown) as number)
   }, [])
   const handleClick = React.useCallback(() => {
+    // click has the highest priority
     setShow(!show)
   }, [show])
   const handleFocus = React.useCallback(() => {
@@ -167,6 +201,11 @@ export function OverlayTrigger({
     triggerProps.onMouseOver = handleMouseOver
     triggerProps.onMouseOut = handleMouseOut
   }
+  if (interactive && triggers.indexOf("click") === -1) {
+    // pass the mouse over/out listener to the overlay container
+    props.onMouseOver = handleMouseOver
+    props.onMouseOut = handleMouseOut
+  }
   return (
     <>
       {children({ ...triggerProps, ref: setTargetRef })}
@@ -193,4 +232,13 @@ function handleMouseOverOut(
   if ((!related || related !== target) && !contains(target, related)) {
     handler(...args)
   }
+}
+
+function normalizeDelay(delay?: OverlayDelay) {
+  return delay && typeof delay === "object"
+    ? delay
+    : {
+        show: delay,
+        hide: delay,
+      }
 }
