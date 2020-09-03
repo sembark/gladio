@@ -103,7 +103,6 @@ function Children({
   props: OverlayTriggerRenderProps
   children: Children
 }) {
-  console.log(children?.toString(), typeof children)
   if (typeof children === "function") {
     return <>{children(props)}</>
   }
