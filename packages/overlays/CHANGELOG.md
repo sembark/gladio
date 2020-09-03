@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/sembark/gladio/compare/@gladio/overlays@0.4.0...@gladio/overlays@0.4.1) (2020-09-03)
+
+
+### Bug Fixes
+
+* **overlays:** remove console log ([35b5fac](https://github.com/sembark/gladio/commit/35b5fac))
+
+
+
+
+
 # [0.4.0](https://github.com/sembark/gladio/compare/@gladio/overlays@0.3.0...@gladio/overlays@0.4.0) (2020-09-03)
 
 
