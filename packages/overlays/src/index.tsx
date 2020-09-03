@@ -2,13 +2,22 @@ import * as React from "react"
 import Box from "@gladio/box"
 import classNames from "classnames"
 import { useId } from "@gladio/react-hooks"
-import { OverlayTrigger, OverlayDelay, OverlayTriggerProps } from "./Overlay"
+import {
+  OverlayTrigger,
+  OverlayDelay,
+  OverlayTriggerProps,
+  OverlayTriggerRenderProps,
+} from "./Overlay"
 
+type Children =
+  | ((props: OverlayTriggerRenderProps) => React.ReactNode)
+  | string
+  | React.ReactNode
 type CommonProps = Pick<
   OverlayTriggerProps,
   "placement" | "trigger" | "interactive"
 > & {
-  children: React.ReactNode
+  children: Children
   content: React.ReactNode
 }
 
@@ -47,7 +56,7 @@ export function Tooltip({ content, children, ...props }: CommonProps) {
         </Box>
       )}
     >
-      {(props) => <span {...props}>{children}</span>}
+      {(props) => <Children props={props} children={children} />}
     </OverlayTrigger>
   )
 }
@@ -82,7 +91,26 @@ export function Popover({ content, children, ...props }: CommonProps) {
         </Box>
       )}
     >
-      {(props) => <span {...props}>{children}</span>}
+      {(props) => <Children props={props} children={children} />}
     </OverlayTrigger>
+  )
+}
+
+function Children({
+  props,
+  children,
+}: {
+  props: OverlayTriggerRenderProps
+  children: Children
+}) {
+  console.log(children?.toString(), typeof children)
+  if (typeof children === "function") {
+    return <>{children(props)}</>
+  }
+  if (React.isValidElement(children)) return React.cloneElement(children, props)
+  return (
+    <Box as="span" {...props}>
+      {children}
+    </Box>
   )
 }

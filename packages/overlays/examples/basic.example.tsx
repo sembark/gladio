@@ -22,8 +22,28 @@ stories.add("Tooltip", () => (
   </Box>
 ))
 
+stories.add("Tooltip/String/Number", () => (
+  <Box textAlign="center" display="flex" justifyContent="around">
+    <Tooltip content="More information here">Simple String</Tooltip>
+    <Tooltip content="More information here">
+      The {` template ` + `string`}
+    </Tooltip>
+    <Tooltip content="More information here" placement="right">
+      1212
+    </Tooltip>
+  </Box>
+))
+
+stories.add("Tooltip/Functional Child", () => (
+  <Box textAlign="center" display="flex" justifyContent="around">
+    <Tooltip content="More information here" placement="right">
+      {(props) => <span {...props}>Functional Children</span>}
+    </Tooltip>
+  </Box>
+))
+
 stories.add("Popover", () => (
-  <Box textAlign="center" display="flex" justifyContent="between" paddingX="8">
+  <Box textAlign="center" display="flex" justifyContent="around" paddingX="8">
     <Popover
       trigger="click"
       content={
