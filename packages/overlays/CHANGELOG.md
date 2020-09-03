@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/sembark/gladio/compare/@gladio/overlays@0.3.0...@gladio/overlays@0.4.0) (2020-09-03)
+
+
+### Features
+
+* **ovelays:** remove the wrapping elements for valid elements ([6e6a33d](https://github.com/sembark/gladio/commit/6e6a33d))
+
+
+
+
+
 # [0.3.0](https://github.com/sembark/gladio/compare/@gladio/overlays@0.2.2...@gladio/overlays@0.3.0) (2020-09-03)
 
 
