@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/sembark/gladio/compare/@gladio/datetime@0.8.2...@gladio/datetime@0.8.3) (2020-09-08)
+
+
+### Bug Fixes
+
+* **datetime:** august 2020 going in two views ([0c5d3ef](https://github.com/sembark/gladio/commit/0c5d3ef))
+
+
+
+
+
 ## [0.8.2](https://github.com/sembark/gladio/compare/@gladio/datetime@0.8.1...@gladio/datetime@0.8.2) (2020-09-03)
 
 **Note:** Version bump only for package @gladio/datetime
