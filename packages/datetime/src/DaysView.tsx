@@ -114,14 +114,9 @@ function Days() {
 
   // go to the first day of week in which this month starts
   // e.g. if the month starts on Tuesday, we do the Sunday (prev month)
-  const currentDay = date
-    .clone()
-    .startOf("month")
-    .startOf("week")
+  const currentDay = date.clone().startOf("month").startOf("week")
 
-  const lastDay = currentDay
-    .clone()
-    .add(Math.ceil(date.daysInMonth() / 7) * 7, "d")
+  const lastDay = date.clone().endOf("month").endOf("week")
 
   while (currentDay.isBefore(lastDay)) {
     const isDisabled = !isValidDate(currentDay, selected)
