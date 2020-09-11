@@ -1,6 +1,6 @@
 {
   "name": "@gladio/ui",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "React Components Library",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -27,7 +27,7 @@
     "styles"
   ],
   "dependencies": {
-    "@gladio/alert": "^0.6.0",
+    "@gladio/alert": "^0.6.1",
     "@gladio/badge": "^0.9.0",
     "@gladio/box": "^0.3.0",
     "@gladio/button": "^0.7.0",
@@ -35,13 +35,13 @@
     "@gladio/datetime": "^0.8.3",
     "@gladio/dialog": "^0.13.2",
     "@gladio/dom-helpers": "^0.5.0",
-    "@gladio/icons": "^0.15.0",
+    "@gladio/icons": "^0.16.0",
     "@gladio/input": "^0.6.0",
     "@gladio/overlays": "^0.4.1",
     "@gladio/paginate": "^0.3.0",
     "@gladio/react-hooks": "^0.8.0",
     "@gladio/select": "^0.14.2",
-    "@gladio/snackbar": "^0.2.1",
+    "@gladio/snackbar": "^0.2.2",
     "@gladio/table": "^0.10.0"
   },
   "devDependencies": {
