@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/sembark/gladio/compare/@gladio/overlays@0.4.1...@gladio/overlays@0.4.2) (2020-09-13)
+
+
+### Bug Fixes
+
+* **overlays:** remove default interactivity from tooltips ([4071a6d](https://github.com/sembark/gladio/commit/4071a6d))
+
+
+
+
+
 ## [0.4.1](https://github.com/sembark/gladio/compare/@gladio/overlays@0.4.0...@gladio/overlays@0.4.1) (2020-09-03)
 
 
