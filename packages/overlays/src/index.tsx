@@ -15,7 +15,7 @@ type Children =
   | React.ReactNode
 type CommonProps = Pick<
   OverlayTriggerProps,
-  "placement" | "trigger" | "interactive"
+  "placement" | "trigger" | "interactive" | "delay"
 > & {
   children: Children
   content: React.ReactNode
@@ -23,12 +23,21 @@ type CommonProps = Pick<
 
 const defaultDelay: OverlayDelay = { show: 0, hide: 250 }
 
-export function Tooltip({ content, children, ...props }: CommonProps) {
+export function Tooltip({
+  content,
+  children,
+  interactive,
+  delay,
+  ...props
+}: CommonProps) {
   const id = useId("tooltip")
+  if (interactive && !delay) {
+    delay = defaultDelay
+  }
   return (
     <OverlayTrigger
-      delay={defaultDelay}
-      interactive
+      delay={delay}
+      interactive={interactive}
       {...props}
       overlay={({ props, show, arrowProps }) => (
         <Box
