@@ -9,7 +9,7 @@ function Home() {
     <div className="min-h-screen">
       <SEO
         title={appConfig.name}
-        description="Design System for building user interfaces for Tourepedia"
+        description="Design System for building user interfaces for Sembark"
       />
       <div className="px-8 py-16 md:p-16 lg:py-20">
         <div className="max-w-xs mx-auto lg:float-right lg:w-1/2 lg:max-w-lg">
@@ -22,7 +22,7 @@ function Home() {
           </h1>
           <h2 className="font-light text-lg sm:text-2xl md:text-2xl lg:text-3xl">
             Design guidelines and tooling for building user interfaces for
-            Tourepedia and it's properties
+            Sembark and it's properties
           </h2>
           <div className="text-sm md:text-lg sm:text-normal mt-8">
             <Link href="/styles">
@@ -38,7 +38,7 @@ function Home() {
             </Link>
             {" ・ "}
             <a
-              href="https://github.com/tourepedia/tp-ui"
+              href="https://github.com/sembark/gladio"
               className="text-blue-600 hover:text-blue-700 hover:underline"
             >
               Github

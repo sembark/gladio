@@ -1,10 +1,11 @@
 {
-  "name": "@gladio/ui",
+  "name": "@gladio/www",
   "version": "1.0.0",
-  "description": "Design system for Sembark",
+  "description": "Gladio Design System",
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +27,7 @@
   },
   "homepage": "https://github.com/sembark/gladio#readme",
   "dependencies": {
-    "@gladio/ui": "^1.11.11",
+    "@gladio/ui": "^2.1.8",
     "@types/mdx-js__react": "^1.5.0",
     "@types/node": "^13.5.2",
     "moment": "^2.24.0",
