@@ -31,5 +31,8 @@
   "gitHead": "7915c06b02d5fe40f2fc99a2bce33ef7a5ccbf01",
   "devDependencies": {
     "@svgr/cli": "^5.1.0"
+  },
+  "dependencies": {
+    "@gladio/css": "^0.32.0"
   }
 }

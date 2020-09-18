@@ -9,8 +9,8 @@ const stories = storiesOf("Components/Icons", module)
 stories.add("Icons", () => {
   const size = "50px"
   return (
-    <div className="text-xl text-primary-600">
-      {Object.keys(Icons).map(key => {
+    <div>
+      {Object.keys(Icons).map((key) => {
         const Icon = Icons[key]
         if (Icon.displayName) {
           return (
@@ -28,7 +28,7 @@ stories.add("Icons", () => {
   )
 })
 
-stories.add("Icon aside text", () => {
+stories.add("Aside text", () => {
   return (
     <div className="text-base text-center">
       <Icons.Home /> Home • <Icons.Star /> Star • <Icons.Share /> Share
@@ -36,10 +36,22 @@ stories.add("Icon aside text", () => {
   )
 })
 
-stories.add("Icon with rotation", () => {
+stories.add("With rotation", () => {
   return (
     <div className="text-base text-center">
       <Icons.ChevronDown rotate="90" />
+    </div>
+  )
+})
+
+stories.add("With Styles", () => {
+  return (
+    <div className="text-base text-center">
+      <Icons.Star textColor="yellow-600" marginRight="1" />
+      <Icons.Star textColor="yellow-600" marginRight="1" />
+      <Icons.Star textColor="yellow-600" marginRight="1" />
+      <Icons.Star textColor="gray-300" marginRight="1" />
+      <Icons.Star textColor="gray-300" />
     </div>
   )
 })

@@ -7,6 +7,9 @@ module.exports = {
     "aria-label": "{title}",
     "aria-hidden": "{!title ? 'true' : 'false'}",
   },
+  prettierConfig: {
+    parser: "typescript",
+  },
   template(
     { template },
     opts,
@@ -39,16 +42,27 @@ module.exports = {
         expression: classNameExpression,
       },
     })
+    /**
+     * const { className, ...restProps } = removeStyleProps(props)
+     * const boxStyles = getClassName(props)
+     * const classname = classNames(boxStyles, className)
+     */
     const ast = typeScriptTpl.ast`
     import * as React from 'react';
-		interface ISVGComponentProps extends React.SVGProps<SVGSVGElement> {
+    import { StyleProps, getClassName, removeStyleProps } from "@gladio/css"
+    interface ISVGComponentProps extends StyleProps, Omit<React.SVGProps<SVGSVGElement>, keyof StyleProps> {
 			title?: string
       rotate?: "90" | "180" | "270"
 		}
     const ${componentName} = ({ svgRef, title, className = "", rotate, titleId, ...props }: ISVGComponentProps & {
 	svgRef?: React.Ref<SVGSVGElement>,
   titleId?: string
-}) => ${jsx};
+}) => {
+  const boxClassName = getClassName(props)
+  props = removeStyleProps(props)
+  className = boxClassName && className ? (boxClassName + " " + className) : (boxClassName || className)
+  return ${jsx}
+};
 		const ForwardRef = React.forwardRef((props: ISVGComponentProps, ref: React.Ref<SVGSVGElement>) => (
 			React.createElement(${componentName}, {
 				svgRef: ref,
