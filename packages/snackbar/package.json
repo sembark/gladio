@@ -1,6 +1,6 @@
 {
   "name": "@gladio/snackbar",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Snackbar/Notification utility",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -38,7 +38,7 @@
   "dependencies": {
     "@gladio/css": "^0.32.0",
     "@gladio/dom-helpers": "^0.5.0",
-    "@gladio/icons": "^0.16.0",
+    "@gladio/icons": "^0.17.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

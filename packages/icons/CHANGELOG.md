@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.16.0...@gladio/icons@0.17.0) (2020-09-18)
+
+
+### Features
+
+* **icons:** add styles via props to icons ([22eb86d](https://github.com/sembark/gladio/commit/22eb86d))
+
+
+
+
+
 # [0.16.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.15.0...@gladio/icons@0.16.0) (2020-09-11)
 
 
