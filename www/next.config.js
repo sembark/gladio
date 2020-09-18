@@ -6,7 +6,7 @@ const withMDX = require("@next/mdx")({
 
 function compose(...funcs) {
   if (funcs.length === 0) {
-    return arg => arg
+    return (arg) => arg
   }
   if (funcs.length === 1) {
     return funcs[0]
@@ -17,7 +17,7 @@ function compose(...funcs) {
 module.exports = compose(withMDX)({
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   env: {
-    appName: "Shapes",
+    appName: "Gladio",
     version,
   },
   webpack(config) {

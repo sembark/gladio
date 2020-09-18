@@ -1,5 +1,5 @@
 import React from "react"
-import Document, { Head, Main, NextScript } from "next/document"
+import Document, { Head, Main, NextScript, Html } from "next/document"
 
 function Link({ href, ...props }: React.HTMLProps<HTMLLinkElement>) {
   return <link href={href} {...props} />
@@ -8,7 +8,7 @@ function Link({ href, ...props }: React.HTMLProps<HTMLLinkElement>) {
 export default class MyDocument extends Document {
   render() {
     return (
-      <html lang="en" className="bg-gray-100">
+      <Html lang="en" className="bg-gray-100">
         <Head>
           <meta name="theme-color" content="#000000" />
           <Link rel="manifest" href="/manifest.json" />
@@ -19,7 +19,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

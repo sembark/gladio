@@ -14,6 +14,7 @@ export function ComponentsLayoutSideBar() {
       </SidebarLinkList>
       <SidebarLinkList>
         <SidebarHeading>Components</SidebarHeading>
+        <SidebarLink href="/box">Box</SidebarLink>
         <SidebarLink href="/alert">Alert</SidebarLink>
         <SidebarLink href="/badge">Badge</SidebarLink>
         <SidebarLink href="/button">Button</SidebarLink>
@@ -24,6 +25,7 @@ export function ComponentsLayoutSideBar() {
         <SidebarLink href="/select">Select</SidebarLink>
         <SidebarLink href="/snackbar">Snackbar</SidebarLink>
         <SidebarLink href="/table">Table</SidebarLink>
+        <SidebarLink href="/tooltip">Tooltip</SidebarLink>
       </SidebarLinkList>
       <SidebarLinkList>
         <SidebarHeading>Icons</SidebarHeading>

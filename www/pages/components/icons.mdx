@@ -12,6 +12,51 @@ function App () {
 
 export default Layout
 
+## Playground
+
+```jsx live=true
+<Button primary branded>
+  <Icons.Cancel /> Cancel
+</Button>
+```
+
+## Props
+
+All the icons are SVG components and so accepts all the SVG props. Along with SVG props, following props are accepted
+as well:
+
+#### title
+type: string
+
+To make icons accessible when there is not text associated with the icon, you can provide a title prop to the icons.
+
+```jsx live=true
+<Icons.Cancel title="Cancel the procces" />
+```
+
+#### rotate
+oneOf: "90" | "180" | "270"
+
+You can rotate icons by passing a `rotate` prop for some use cases where icon is provided for only one direction e.g.
+`Icons.ChevronDown`
+
+
+```jsx live=true
+<Button primary branded>
+  Next <Icons.ChevronDown rotate="270" />
+</Button>
+```
+
+### Styles
+
+You can style the icons with our design system props as you would style any normal component.
+
+```jsx live=true
+<>
+  <Icons.Star textColor="yellow-600" marginRight="1" />
+  <Icons.Star textColor="gray-300" />
+</>
+```
 
 ## Available Icons
 
@@ -39,39 +84,3 @@ function () {
 }
 ```
 
-## Playground
-
-```jsx live=true
-<Button primary branded>
-  <Icons.Cancel /> Cancel
-</Button>
-```
-
-## Props
-
-All the icons are SVG components and so accepts all the SVG props. Along with SVG props, following props are accepted
-as well:
-
-#### title
-type: string
-
-To make icons accessible when there is not text associated with the icon, you can provide a title prop to the icons.
-
-```jsx live=true
-<Button primary branded>
-  <Icons.Cancel title="Cancel the procces" />
-</Button>
-```
-
-#### rotate
-oneOf: "90" | "180" | "270"
-
-You can rotate icons by passing a `rotate` prop for some use cases where icon is provided for only one direction e.g.
-`Icons.ChevronDown`
-
-
-```jsx live=true
-<Button primary branded>
-  Next <Icons.ChevronDown rotate="270" />
-</Button>
-```

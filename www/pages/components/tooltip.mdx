@@ -1,0 +1,65 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Tooltip",
+    description: "Show extra information for ui elements in overlay",
+    name: "@gladio/overlays",
+    usage:`import { Tooltip } from "@gladio/overlays"
+function App () {
+  return <Tooltip content="More information here"><Icons.Info /></Tooltip>
+}`
+};
+
+export default Layout
+
+## Playground
+
+```jsx live=true
+<Tooltip
+  content={<Box>user@domain.com <Icons.Duplicate /></Box>}
+  placement="right"
+  interactive
+  >
+  <Icons.Mail />
+</Tooltip>
+```
+
+## Props
+
+### content [required]
+
+The content/UI that we want to show in the tooltip. It can be a ReactNode or a string.
+
+```jsx live=true
+<Tooltip content="Internet Service Provider">
+  <Box display="inline-block">ISP</Box>
+</Tooltip>
+```
+
+### placement
+
+We can change the placement of the tooltip which defaults to "bottom". It will auto adjust with respect the container
+boundaries. Possible values are: `top`, `right`, `bottom`, `left`
+
+```jsx live=true
+<Tooltip
+  placement="right"
+  content="More information on right">
+  <Icons.Info />
+</Tooltip>
+```
+
+### interactive
+
+We can make the tooltip interactive by providing a boolean interactive prop. Can be useful when we want an interactive
+element in our tooltip.
+
+> Adding interactive prop will also cause a delay when tooltip closes
+
+```jsx live=true
+<Tooltip
+  content={<Box>email@domain.com <Icons.Duplicate /></Box>}
+  interactive>
+  Email here
+</Tooltip>
+```

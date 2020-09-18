@@ -1,0 +1,42 @@
+import Layout from "../../components/ComponentsLayout"
+
+export const meta = {
+    title: "Box",
+    description: "Base component for all design system styles",
+    name: "@gladio/box",
+    usage:`import Box from "@gladio/box"
+function App () {
+  return <Box>Content Here</Box>
+}`
+};
+
+export default Layout
+
+## Playground
+
+```jsx live=true
+<Box
+  padding="4"
+  marginTop="8"
+  marginX="4"
+  backgroundColor="gray-100"
+  border="2"
+  borderColor="gray-600"
+  rounded="lg"
+  boxShadow
+  boxShadowHover="lg"
+  backgroundColorHover="white"
+  cursor="pointer"
+>
+  <Box as="h3" fontSize="lg" fontWeight="medium" marginTop="0" marginBottom="2">
+    Support
+  </Box>
+  <Box as="p" fontSize="sm" textColor="gray-600">
+    Please contact our support team for any help
+  </Box>
+</Box>
+```
+
+## Props
+
+Coming soon...
