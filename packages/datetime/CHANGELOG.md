@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/sembark/gladio/compare/@gladio/datetime@0.8.3...@gladio/datetime@0.9.0) (2020-09-28)
+
+
+### Features
+
+* **datetime:** add min/max props ([5365aef](https://github.com/sembark/gladio/commit/5365aef))
+
+
+
+
+
 ## [0.8.3](https://github.com/sembark/gladio/compare/@gladio/datetime@0.8.2...@gladio/datetime@0.8.3) (2020-09-08)
 
 
