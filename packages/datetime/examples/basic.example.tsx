@@ -143,3 +143,22 @@ stories.add("Readonly Date Picker", () => {
   }
   return <DateTimeRenderer />
 })
+
+stories.add("With Min/Max Date", () => {
+  function DateTimeRenderer() {
+    const [value, changeValue] = React.useState<any>(moment())
+    const min = React.useRef(moment()).current
+    const max = React.useRef(moment().add(10, "days")).current
+    return (
+      <Container>
+        <DateTimeInput
+          value={value}
+          onChange={changeValue}
+          min={min}
+          max={max}
+        />
+      </Container>
+    )
+  }
+  return <DateTimeRenderer />
+})

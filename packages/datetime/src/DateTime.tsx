@@ -66,6 +66,9 @@ export function useDateTime(config: IDateTimeConfig) {
     onChange,
     value: configValue,
     clearable = true,
+    min,
+    max,
+    isValidDate: configIsValidDate,
     ...props
   } = config
 
@@ -95,13 +98,13 @@ export function useDateTime(config: IDateTimeConfig) {
 
   const setViewDate = React.useCallback<
     $PropertyType<IDateTimeHelpers, "setViewDate">
-  >(viewDate => {
+  >((viewDate) => {
     dispatch({ type: "SET_VIEW_DATE", payload: viewDate })
   }, [])
 
   const showView = React.useCallback<
     $PropertyType<IDateTimeHelpers, "showView">
-  >(view => {
+  >((view) => {
     dispatch({ type: "SET_VIEW", payload: view })
   }, [])
 
@@ -141,10 +144,35 @@ export function useDateTime(config: IDateTimeConfig) {
     }
   }, [value ? value.format(dateTimeFormat) : value])
 
+  const isValidDate: $PropertyType<
+    IDateTimeConfig,
+    "isValidDate"
+  > = React.useCallback(
+    (currentDay, selected) => {
+      if (configIsValidDate) {
+        return configIsValidDate(currentDay, selected)
+      }
+      if (!min && !max) {
+        return alwaysValidDate(currentDay, selected)
+      }
+      if (min && max) {
+        return moment(currentDay).isBetween(min, max, "day", "[]")
+      }
+      if (min) {
+        return moment(currentDay).isSameOrAfter(min, "day")
+      }
+      if (max) {
+        return moment(currentDay).isSameOrBefore(min, "day")
+      }
+      return true
+    },
+    [configIsValidDate, min, max]
+  )
+
   // THE CONTEXT
   const ctx = {
     ...props,
-    isValidDate: props.isValidDate || alwaysValidDate,
+    isValidDate,
     ...state,
     value,
     onChange: handleChange,

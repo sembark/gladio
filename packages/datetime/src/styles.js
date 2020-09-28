@@ -48,6 +48,11 @@ module.exports = function addDateTimeComponentPlugin({ addComponents, theme }) {
       "&-day&-today": {
         boxShadow: `0 0 0 1px ${theme("textColor.gray-600")} inset`,
       },
+      "&-day&-disabled": {
+        cursor: "not-allowed",
+        opacity: ".6",
+        background: theme("backgroundColor.gray-100"),
+      },
       "& &-active": {
         color: theme("textColor.white"),
         backgroundColor: theme("backgroundColor.gray-600"),

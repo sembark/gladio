@@ -26,6 +26,8 @@ export interface IDateTimeConfig {
   value?: Moment | string
   isValidDate?: (currentDate: Moment, selectedDate?: Moment | string) => boolean
   clearable?: boolean
+  min?: Moment | string
+  max?: Moment | string
 }
 
 export type TDateTimeContext = IDateTimeHelpers &

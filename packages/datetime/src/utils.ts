@@ -2,7 +2,6 @@ import moment from "moment"
 import { TViews } from "./types"
 
 type Locale = moment.Locale
-type Moment = moment.Moment
 
 export const VIEWS: { [key: string]: TViews } = {
   YEARS: "years",
@@ -16,23 +15,19 @@ export function getDaysOfWeek(locale: Locale) {
   const first = locale.firstDayOfWeek()
   const dow: Array<{ short: string; full: string }> = []
   let i = 0
-  weekdaysMin.forEach(function(day, index) {
+  weekdaysMin.forEach(function (day, index) {
     dow[(7 + i++ - first) % 7] = { short: day, full: weekdays[index] }
   })
   return dow
 }
 
-export function alwaysValidDate(_?: Moment, __?: Moment) {
+export function alwaysValidDate(..._: any) {
   return true
 }
 
-export const DEFAULT_TIME_FORMAT = moment()
-  .localeData()
-  .longDateFormat("LT")
+export const DEFAULT_TIME_FORMAT = moment().localeData().longDateFormat("LT")
 
-export const DEFAULT_DATE_FORMAT = moment()
-  .localeData()
-  .longDateFormat("LL")
+export const DEFAULT_DATE_FORMAT = moment().localeData().longDateFormat("LL")
 
 export function getDateTimeFormats(
   configDateFormat: string | boolean = true,
