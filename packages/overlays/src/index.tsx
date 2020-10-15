@@ -70,12 +70,15 @@ export function Tooltip({
   )
 }
 
-export function Popover({ content, children, ...props }: CommonProps) {
+export function Popover({
+  content,
+  children,
+  ...props
+}: CommonProps & Pick<OverlayTriggerProps, "rootClose">) {
   const id = useId("popover")
   return (
     <OverlayTrigger
-      delay={defaultDelay}
-      interactive
+      rootClose
       {...props}
       overlay={({ props, show, arrowProps }) => (
         <Box
