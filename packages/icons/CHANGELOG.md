@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.1](https://github.com/sembark/gladio/compare/@gladio/icons@0.19.0...@gladio/icons@0.19.1) (2020-10-15)
+
+
+### Bug Fixes
+
+* **icons:** remove circle from rupee icon ([e930333](https://github.com/sembark/gladio/commit/e930333))
+
+
+
+
+
 # [0.19.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.18.0...@gladio/icons@0.19.0) (2020-10-06)
 
 
