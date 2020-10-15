@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/sembark/gladio/compare/@gladio/overlays@0.4.2...@gladio/overlays@0.4.3) (2020-10-15)
+
+
+### Bug Fixes
+
+* **overlays:** add root close to popover ([51ef6a6](https://github.com/sembark/gladio/commit/51ef6a6))
+
+
+
+
+
 ## [0.4.2](https://github.com/sembark/gladio/compare/@gladio/overlays@0.4.1...@gladio/overlays@0.4.2) (2020-09-13)
 
 
