@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.21.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.20.0...@gladio/icons@0.21.0) (2020-10-27)
+
+
+### Features
+
+* **icons:** add support icon ([f53e15e](https://github.com/sembark/gladio/commit/f53e15e))
+
+
+
+
+
 # [0.20.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.19.1...@gladio/icons@0.20.0) (2020-10-27)
 
 
