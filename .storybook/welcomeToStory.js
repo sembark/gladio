@@ -21,7 +21,7 @@ storiesOf("Welcome", module)
         </h1>
         <p className="mb-3">
           Here we build clean, beautiful and accessible component which are used
-          accross the tourepedia organization.
+          accross the Sembark Organization.
         </p>
       </div>
       <hr className="h-1 bg-gray-200" />
