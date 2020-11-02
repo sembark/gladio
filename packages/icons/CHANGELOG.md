@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.22.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.21.0...@gladio/icons@0.22.0) (2020-11-02)
+
+
+### Features
+
+* **icons:** add clipboard and paper-airplane icons ([7fd0aad](https://github.com/sembark/gladio/commit/7fd0aad))
+
+
+
+
+
 # [0.21.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.20.0...@gladio/icons@0.21.0) (2020-10-27)
 
 
