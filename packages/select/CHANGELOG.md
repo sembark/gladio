@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/sembark/gladio/compare/@gladio/select@0.14.2...@gladio/select@0.14.3) (2020-11-03)
+
+
+### Bug Fixes
+
+* **select:** disable auto complete ([0fea264](https://github.com/sembark/gladio/commit/0fea264))
+
+
+
+
+
 ## [0.14.2](https://github.com/sembark/gladio/compare/@gladio/select@0.14.1...@gladio/select@0.14.2) (2020-09-03)
 
 **Note:** Version bump only for package @gladio/select
