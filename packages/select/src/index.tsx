@@ -135,8 +135,8 @@ export function Select({
     // only push the more options if they are not already present in
     // the options list
     moreOptions = moreOptions.filter(
-      moreOption =>
-        !options.some(option => matchOptions(option, moreOption, labelKey))
+      (moreOption) =>
+        !options.some((option) => matchOptions(option, moreOption, labelKey))
     )
     options = options.concat(moreOptions)
   }
@@ -177,7 +177,7 @@ export function Select({
       listen(document, "focus", handleClick),
     ]
     return () => {
-      removeListeners.forEach(fn => fn())
+      removeListeners.forEach((fn) => fn())
     }
   }, [isFocused, groupRef.current])
   // handle the keyboad navigation
@@ -194,9 +194,9 @@ export function Select({
       if (!value || (Array.isArray(value) && !value.length)) {
         changeFocusedOption(0)
       } else {
-        const selectedOptionIndex = options.findIndex(o =>
+        const selectedOptionIndex = options.findIndex((o) =>
           Array.isArray(value)
-            ? value.some(v => matchOptions(v, o, labelKey))
+            ? value.some((v) => matchOptions(v, o, labelKey))
             : matchOptions(value, o, labelKey)
         )
         changeFocusedOption(selectedOptionIndex)
@@ -223,7 +223,7 @@ export function Select({
           const option = options[focusedOption || 0]
           const checked = value
             ? Array.isArray(value)
-              ? value.some(v => matchOptions(v, option, labelKey))
+              ? value.some((v) => matchOptions(v, option, labelKey))
               : matchOptions(value, option, labelKey)
             : false
           handleOptionClick(option, !checked)
@@ -302,7 +302,7 @@ export function Select({
                 : "") || ""
             }
             disabled={disabled}
-            onChange={e => {
+            onChange={(e) => {
               onQuery && onQuery(e.currentTarget.value)
             }}
             id={name}
@@ -312,7 +312,7 @@ export function Select({
             placeholder={placeholder}
             aria-haspopup={true}
             aria-autocomplete={searchable ? "inline" : "list"}
-            autoComplete="off"
+            autoComplete="no_please"
             ref={inputRef}
           />
         )}
@@ -368,7 +368,7 @@ export function Select({
                     : getLabelForOption(option, labelKey)
                 }
                 disabled={optionDisabled}
-                onClick={checked => {
+                onClick={(checked) => {
                   if (optionDisabled) return
                   handleOptionClick(option, checked)
                 }}
@@ -547,7 +547,7 @@ export function Async({
 
   const fetchOptions = useCallback(
     (query: string) => {
-      setState(state => ({
+      setState((state) => ({
         ...state,
         isLoading: true,
         options: cacheKey ? Cache.get(cacheKey) : state.options,
@@ -556,18 +556,18 @@ export function Async({
       clearTimeout(lastDeboundeHandler.current)
       lastDeboundeHandler.current = window.setTimeout(() => {
         fetch(query)
-          .then(options => {
+          .then((options) => {
             if (cacheKey) {
               Cache.set(cacheKey, options)
             }
-            setState(state => ({
+            setState((state) => ({
               ...state,
               isLoading: false,
               options,
             }))
           })
-          .catch(error => {
-            setState(state => ({
+          .catch((error) => {
+            setState((state) => ({
               ...state,
               isLoading: false,
             }))
@@ -597,7 +597,7 @@ function withFilterManagement(Select: React.ComponentType<SelectProps>) {
       (options?: Array<TOption>, query?: string) => {
         if (!options || !query || searchable === false) return options
         const searchQuery: string = query.toLowerCase().trim()
-        return options.filter(o =>
+        return options.filter((o) =>
           (
             getLabelForOption(o, labelKey) ||
             getLabelForOption(o, "name") ||
