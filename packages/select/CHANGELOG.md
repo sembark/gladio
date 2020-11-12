@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/sembark/gladio/compare/@gladio/select@0.14.3...@gladio/select@0.15.0) (2020-11-12)
+
+
+### Features
+
+* **react17:** allow react 17 as peer ([4995e9b](https://github.com/sembark/gladio/commit/4995e9b))
+
+
+
+
+
 ## [0.14.3](https://github.com/sembark/gladio/compare/@gladio/select@0.14.2...@gladio/select@0.14.3) (2020-11-03)
 
 

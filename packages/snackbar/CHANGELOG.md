@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/sembark/gladio/compare/@gladio/snackbar@0.2.9...@gladio/snackbar@0.3.0) (2020-11-12)
+
+
+### Features
+
+* **react17:** allow react 17 as peer ([4995e9b](https://github.com/sembark/gladio/commit/4995e9b))
+
+
+
+
+
 ## [0.2.9](https://github.com/sembark/gladio/compare/@gladio/snackbar@0.2.8...@gladio/snackbar@0.2.9) (2020-11-02)
 
 **Note:** Version bump only for package @gladio/snackbar

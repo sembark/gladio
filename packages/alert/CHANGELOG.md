@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/sembark/gladio/compare/@gladio/alert@0.6.8...@gladio/alert@0.7.0) (2020-11-12)
+
+
+### Features
+
+* **react17:** allow react 17 as peer ([4995e9b](https://github.com/sembark/gladio/commit/4995e9b))
+
+
+
+
+
 ## [0.6.8](https://github.com/sembark/gladio/compare/@gladio/alert@0.6.7...@gladio/alert@0.6.8) (2020-11-02)
 
 **Note:** Version bump only for package @gladio/alert

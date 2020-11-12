@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/sembark/gladio/compare/@gladio/ui@2.1.18...@gladio/ui@2.2.0) (2020-11-12)
+
+
+### Features
+
+* **react17:** allow react 17 as peer ([4995e9b](https://github.com/sembark/gladio/commit/4995e9b))
+
+
+
+
+
 ## [2.1.18](https://github.com/sembark/gladio/compare/@gladio/ui@2.1.17...@gladio/ui@2.1.18) (2020-11-03)
 
 **Note:** Version bump only for package @gladio/ui
