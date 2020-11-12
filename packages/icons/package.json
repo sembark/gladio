@@ -12,8 +12,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.0 || ^17"
   },
   "scripts": {
     "prebuild:js": "svgr -d src/icons src/svgs --ext tsx && mkdir -p styles && cp src/icon.css styles/icon.css",
