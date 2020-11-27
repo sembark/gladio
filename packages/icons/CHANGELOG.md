@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.23.1](https://github.com/sembark/gladio/compare/@gladio/icons@0.23.0...@gladio/icons@0.23.1) (2020-11-27)
+
+**Note:** Version bump only for package @gladio/icons
+
+
+
+
+
 # [0.23.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.22.0...@gladio/icons@0.23.0) (2020-11-12)
 
 

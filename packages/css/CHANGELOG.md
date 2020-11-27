@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.1](https://github.com/sembark/gladio/compare/@gladio/css@0.32.0...@gladio/css@0.32.1) (2020-11-27)
+
+**Note:** Version bump only for package @gladio/css
+
+
+
+
+
 # 0.32.0 (2020-08-24)
 
 

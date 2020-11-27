@@ -1,6 +1,6 @@
 {
   "name": "@gladio/badge",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "description": "Badge Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -35,8 +35,8 @@
   ],
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
   "dependencies": {
-    "@gladio/box": "^0.4.0",
-    "@gladio/css": "^0.32.0",
+    "@gladio/box": "^0.4.1",
+    "@gladio/css": "^0.32.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

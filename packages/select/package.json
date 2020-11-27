@@ -1,6 +1,6 @@
 {
   "name": "@gladio/select",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "Single/Multe Select component with Async/Creatable support",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -37,10 +37,10 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@gladio/box": "^0.4.0",
-    "@gladio/css": "^0.32.0",
+    "@gladio/box": "^0.4.1",
+    "@gladio/css": "^0.32.1",
     "@gladio/dom-helpers": "^0.5.0",
-    "@gladio/input": "^0.7.0",
+    "@gladio/input": "^0.7.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
