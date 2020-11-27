@@ -629,7 +629,11 @@ function withQueryManagement(Select: React.ComponentType<SelectProps>) {
   }
 }
 
-export default withQueryManagement(withFilterManagement(Select))
+export const SelectWithQueryAndFilters = withQueryManagement(
+  withFilterManagement(Select)
+)
+
+export default SelectWithQueryAndFilters
 
 /**
  * Match two options and verify if they are equal or not

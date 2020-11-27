@@ -1,33 +1,40 @@
 import * as React from "react"
-import { storiesOf } from "@storybook/react"
+import { Story, Meta } from "@storybook/react"
 
 import { Snackbar, showSnackbar } from "./../src/index"
 import "./../styles/styles.css"
 
-const stories = storiesOf("Components/Snackbar", module)
+export default {
+  title: "Components/Overlays/Snackbar",
+  component: Snackbar,
+} as Meta
 
-stories.add("Basic", () => <Snackbar>This is something</Snackbar>)
+const Template: Story<React.ComponentProps<typeof Snackbar>> = (props) => (
+  <Snackbar {...props}>This is something</Snackbar>
+)
 
-stories.add("Always Visible", () => (
-  <Snackbar timeout={-1}>
-    I have a timeout of -1. Not auto closing =D. Click to close
-  </Snackbar>
-))
+export const Default = Template.bind({})
 
-stories.add("Custom Action", () => (
-  <Snackbar
-    timeout={-1}
-    actionText="Undo"
-    onClick={() => {
-      showSnackbar("Message sent undone.")
-    }}
-  >
-    Message sent
-  </Snackbar>
-))
+export const AlwaysVisible = Template.bind({})
+AlwaysVisible.args = {
+  timeout: -1,
+}
 
-stories.add("Show/Hide", () => (
-  <div className="max-w-sm mx-auto">
+export const CustomActionText = Template.bind({})
+CustomActionText.args = {
+  actionText: "Ok",
+  children: "Message Sent",
+}
+
+export const CustomAction = Template.bind({})
+CustomAction.args = {
+  actionText: "Undo",
+  children: "Message Sent",
+  onClick: () => showSnackbar("Undone"),
+}
+
+export function Utility() {
+  return (
     <button
       onClick={() => {
         showSnackbar("YO HO! How you doing?", "Great", {
@@ -37,5 +44,5 @@ stories.add("Show/Hide", () => (
     >
       Click here to see a message
     </button>
-  </div>
-))
+  )
+}

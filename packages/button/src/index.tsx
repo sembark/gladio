@@ -28,7 +28,7 @@ export type ButtonProps = MergeWithBoxProps<
   sm?: boolean
 }
 
-const Button = React.forwardRef(function Button(
+export const Button = React.forwardRef(function Button(
   {
     className,
     primary,

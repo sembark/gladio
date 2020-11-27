@@ -10,7 +10,7 @@ type TStatus = "info" | "error" | "success" | "warning"
 
 type TType = "assertive" | "polite"
 
-interface AlertProps
+export interface AlertProps
   extends Omit<
     TBoxProps,
     "status" | "children" | "type" | "role" | "aria-live"
@@ -22,7 +22,7 @@ interface AlertProps
   title?: string
 }
 
-export default function Alert({
+function Alert({
   status: statusProp,
   type: typeProp,
   children,
@@ -135,3 +135,5 @@ function getStylesForColor(
     textColor: (`${color}-800` as any) as $PropertyType<TBoxProps, "textColor">,
   }
 }
+
+export default Alert

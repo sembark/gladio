@@ -1,12 +1,28 @@
 import * as React from "react"
-import { storiesOf } from "@storybook/react"
+import { Story, Meta } from "@storybook/react"
 
 import Icons from "./../src/index"
 import "./../src/icon.css"
 
-const stories = storiesOf("Components/Icons", module)
+export default {
+  title: "Components/Icons",
+  component: Icons.Home,
+  argTypes: {},
+} as Meta
 
-stories.add("Icons", () => {
+const Template: Story<React.ComponentProps<typeof Icons.Home>> = (props) => (
+  <Icons.Home {...props} />
+)
+
+export const Icon = Template.bind({})
+Icon.args = {}
+
+export const Rotation = Template.bind({})
+Rotation.args = {
+  rotate: "90",
+}
+
+export function AllIcons() {
   const size = "50px"
   return (
     <div>
@@ -17,8 +33,9 @@ stories.add("Icons", () => {
             <span
               className="inline-block text-center"
               style={{ width: size, height: size }}
+              key={key}
             >
-              <Icon title={Icon.displayName} key={key} />
+              <Icon title={Icon.displayName} />
             </span>
           )
         }
@@ -26,32 +43,17 @@ stories.add("Icons", () => {
       })}
     </div>
   )
-})
+}
 
-stories.add("Aside text", () => {
+export function AsideText() {
   return (
     <div className="text-base text-center">
       <Icons.Home /> Home • <Icons.Star /> Star • <Icons.Share /> Share
     </div>
   )
-})
+}
 
-stories.add("With rotation", () => {
-  return (
-    <div className="text-base text-center">
-      <Icons.ChevronDown rotate="90" />
-    </div>
-  )
-})
-
-stories.add("With Styles", () => {
-  return (
-    <div className="text-base text-center">
-      <Icons.Star textColor="yellow-600" marginRight="1" />
-      <Icons.Star textColor="yellow-600" marginRight="1" />
-      <Icons.Star textColor="yellow-600" marginRight="1" />
-      <Icons.Star textColor="gray-300" marginRight="1" />
-      <Icons.Star textColor="gray-300" />
-    </div>
-  )
-})
+export const Styled = Template.bind({})
+Styled.args = {
+  textColor: "yellow-600",
+}

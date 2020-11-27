@@ -1,10 +1,18 @@
 import * as React from "react"
-import { storiesOf } from "@storybook/react"
+import { Story, Meta } from "@storybook/react"
 
 import Table from "./../src/index"
 import "./../styles/styles.css"
 
-const stories = storiesOf("Components/Table", module)
+export default {
+  title: "Components/Table",
+  component: Table,
+  argTypes: {},
+} as Meta
+
+const Template: Story<React.ComponentProps<typeof Table>> = (props) => (
+  <Table {...props} />
+)
 
 const head = (
   <thead>
@@ -65,128 +73,83 @@ const child = (
   </>
 )
 
-stories.add("Table", () => (
-  <div className="bg-gray-100 p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table caption="Here is the list of items that are related to your query">
-        {child}
-      </Table>
-    </div>
-  </div>
-))
-stories.add("Table Bordered", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table bordered caption="Some random caption">
-        {child}
-      </Table>
-    </div>
-  </div>
-))
-stories.add("Table Striped", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table striped>{child}</Table>
-    </div>
-  </div>
-))
+export const Default = Template.bind({})
+Default.args = {
+  children: child,
+}
 
-stories.add("Table Hover", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table hover>{child}</Table>
-    </div>
-  </div>
-))
+export const WithCaption = Template.bind({})
+WithCaption.args = {
+  caption: "Some table caption",
+  children: child,
+}
 
-stories.add("Table with borders and strips", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table striped bordered>
-        {child}
-      </Table>
-    </div>
-  </div>
-))
+export const Bordered = Template.bind({})
+Bordered.args = {
+  bordered: true,
+  children: child,
+}
 
-stories.add("Table with borders and hover", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table hover bordered>
-        {child}
-      </Table>
-    </div>
-  </div>
-))
+export const Striped = Template.bind({})
+Striped.args = {
+  striped: true,
+  children: child,
+}
 
-stories.add("Without heading", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table striped bordered>
-        {body}
-      </Table>
-    </div>
-  </div>
-))
+export const HoverStriped = Template.bind({})
+HoverStriped.args = {
+  hover: true,
+  children: child,
+}
 
-stories.add("Multiple Bodies", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table striped bordered>
-        {body}
-        {body}
-      </Table>
-    </div>
-  </div>
-))
+export const WithouHeader = Template.bind({})
+WithouHeader.args = {
+  children: body,
+}
 
-stories.add("Table Auto Width", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table autoWidth bordered striped>
-        {child}
-      </Table>
-    </div>
-  </div>
-))
+export const AutoWidth = Template.bind({})
+AutoWidth.args = {
+  autoWidth: true,
+  children: body,
+}
 
-stories.add("Table with row containing header", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table autoWidth bordered striped>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Inclusion</th>
-            <th>Exclusion</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>Meal Plan</th>
-            <td>MAP, CP</td>
-            <td>AP</td>
-          </tr>
-          <tr>
-            <th>Transport Service</th>
-            <td>Yes</td>
-            <td />
-          </tr>
-          <tr>
-            <th>Room Heater</th>
-            <td />
-            <td>Yes</td>
-          </tr>
-        </tbody>
-      </Table>
-    </div>
-  </div>
-))
+export const OutsideBorder = Template.bind({})
+OutsideBorder.args = {
+  border: true,
+  children: body,
+}
 
-stories.add("Width Outside Border", () => (
-  <div className="p-10">
-    <div className=" max-w-3xl mx-auto">
-      <Table border>{child}</Table>
+export function RowsWithHeader() {
+  return (
+    <div className="p-10">
+      <div className=" max-w-3xl mx-auto">
+        <Table autoWidth bordered striped>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Inclusion</th>
+              <th>Exclusion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Meal Plan</th>
+              <td>MAP, CP</td>
+              <td>AP</td>
+            </tr>
+            <tr>
+              <th>Transport Service</th>
+              <td>Yes</td>
+              <td />
+            </tr>
+            <tr>
+              <th>Room Heater</th>
+              <td />
+              <td>Yes</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
     </div>
-  </div>
-))
+  )
+}

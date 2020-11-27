@@ -1,95 +1,74 @@
 import * as React from "react"
-import { storiesOf } from "@storybook/react"
+import { Story, Meta } from "@storybook/react"
 
 import Badge, { BadgeList } from "./../src/index"
 import Icons from "./../../icons/src"
 import Button from "./../../button/src"
 import "./../styles/styles.css"
 
-const stories = storiesOf("Components/Badge", module)
+export default {
+  title: "Components/Badge",
+  component: Badge,
+  argTypes: {},
+} as Meta
 
-function Container({ children }: { children: React.ReactNode }) {
-  return <div className="max-w-lg mx-auto px-4" children={children} />
-}
-
-stories.add("Badges", () => (
-  <Container>
-    <Badge>In Progress</Badge>
-    <Badge primary>12,000</Badge>
-    <Badge success>Paid</Badge>
-    <Badge danger>Overdue</Badge>
-    <Badge warning>v1.0.0-alpha.1</Badge>
-    <Badge accent>New</Badge>
-  </Container>
-))
-
-stories.add("Outlined", () => (
-  <Container>
-    <Badge outlined>In Progress</Badge>
-    <Badge primary outlined>
-      12,000
-    </Badge>
-    <Badge success outlined>
-      Paid
-    </Badge>
-    <Badge danger outlined>
-      Overdue
-    </Badge>
-    <Badge warning outlined>
-      v1.0.0-alpha.1
-    </Badge>
-    <Badge accent outlined>
-      New
-    </Badge>
-  </Container>
-))
-
-stories.add("Rounded Badges", () => (
-  <Container>
-    <Badge fullRounded>12</Badge>
-    <Badge fullRounded primary>
-      43
-    </Badge>
-  </Container>
-))
-
-stories.add("List of badges", () => (
-  <Container>
-    <BadgeList primary fullRounded>
-      <Badge>12</Badge>
-      <Badge>43</Badge>
-    </BadgeList>
-  </Container>
-))
-
-stories.add(
-  "With Empty Children",
-  () => (
-    <Container>
-      <Badge />
-      <Badge fullRounded>0</Badge>
-    </Container>
-  ),
-  {
-    info: {
-      text:
-        "Passing `null` or `empty string` as children will render not render a badge element whereas passing other `falsy` as `0` will render it properly",
-    },
-  }
+const Template: Story<React.ComponentProps<typeof Badge>> = (args) => (
+  <Badge {...args} />
 )
 
-stories.add("With Icons Inside", () => (
-  <Container>
+export const Default = Template.bind({})
+Default.args = {
+  children: "Default",
+}
+
+export const Outlined = Template.bind({})
+Outlined.args = {
+  outlined: true,
+  children: "Primary",
+}
+
+export const Rounded = Template.bind({})
+Rounded.args = {
+  rounded: true,
+  children: "10",
+}
+
+export function Status() {
+  return (
+    <>
+      <Badge>In Progress</Badge>
+      <Badge primary>12,000</Badge>
+      <Badge success>Paid</Badge>
+      <Badge danger>Overdue</Badge>
+      <Badge warning>v1.0.0-alpha.1</Badge>
+      <Badge accent>New</Badge>
+    </>
+  )
+}
+
+export function List() {
+  return (
+    <>
+      <BadgeList primary fullRounded>
+        <Badge>12</Badge>
+        <Badge>43</Badge>
+      </BadgeList>
+    </>
+  )
+}
+
+export function WithIcon() {
+  return (
     <Badge>
       <Icons.Rupee /> 1,000
     </Badge>
-  </Container>
-))
+  )
+}
 
-stories.add("Within a Button", () => (
-  <Container>
+export function WithinButton() {
+  return (
     <Button>
       Stars <Badge fullRounded>10</Badge>
     </Button>
-  </Container>
-))
+  )
+}
