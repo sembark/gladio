@@ -14,7 +14,7 @@ function Loader() {
 }
 
 function defaultCreateOptionLabel(label: string): React.ReactNode {
-  return label
+  return `Add "${label}"`
 }
 
 function OptionItemRenderer({
