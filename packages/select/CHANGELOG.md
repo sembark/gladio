@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/sembark/gladio/compare/@gladio/select@0.15.1...@gladio/select@0.15.2) (2020-12-02)
+
+
+### Bug Fixes
+
+* **select:** change default create option ([07fef0e](https://github.com/sembark/gladio/commit/07fef0e))
+
+
+
+
+
 ## [0.15.1](https://github.com/sembark/gladio/compare/@gladio/select@0.15.0...@gladio/select@0.15.1) (2020-11-27)
 
 **Note:** Version bump only for package @gladio/select

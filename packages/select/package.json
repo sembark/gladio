@@ -1,6 +1,6 @@
 {
   "name": "@gladio/select",
-  "version": "0.15.1",
+  "version": "0.15.2",
   "description": "Single/Multe Select component with Async/Creatable support",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
