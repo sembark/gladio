@@ -547,19 +547,31 @@ export function Async({
 
   const fetchOptions = useCallback(
     (query: string) => {
+      const cacheKeyWithQuery = cacheKey
+        ? query.trim()
+          ? `${cacheKey}?q=${query.trim()}`
+          : cacheKey
+        : undefined
       setState((state) => ({
         ...state,
         isLoading: true,
-        options: cacheKey ? Cache.get(cacheKey) : state.options,
+        options: cacheKeyWithQuery
+          ? Cache.get(cacheKeyWithQuery)
+          : state.options,
         query,
       }))
       clearTimeout(lastDeboundeHandler.current)
       lastDeboundeHandler.current = window.setTimeout(() => {
-        fetch(query)
-          .then((options) => {
-            if (cacheKey) {
-              Cache.set(cacheKey, options)
+        Promise.resolve()
+          .then(() => {
+            const fetcher = () => fetch(query)
+            if (cacheKeyWithQuery) {
+              return Cache.resource(cacheKeyWithQuery, fetcher)
+            } else {
+              return fetcher()
             }
+          })
+          .then((options) => {
             setState((state) => ({
               ...state,
               isLoading: false,
