@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.3](https://github.com/sembark/gladio/compare/@gladio/select@0.15.2...@gladio/select@0.15.3) (2020-12-08)
+
+
+### Bug Fixes
+
+* **select:** better caching handling for async fetch ([1ecfa6a](https://github.com/sembark/gladio/commit/1ecfa6a))
+
+
+
+
+
 ## [0.15.2](https://github.com/sembark/gladio/compare/@gladio/select@0.15.1...@gladio/select@0.15.2) (2020-12-02)
 
 

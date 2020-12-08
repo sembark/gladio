@@ -1,6 +1,6 @@
 {
   "name": "@gladio/ui",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "React Components Library",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -41,7 +41,7 @@
     "@gladio/overlays": "^0.5.1",
     "@gladio/paginate": "^0.4.1",
     "@gladio/react-hooks": "^0.9.0",
-    "@gladio/select": "^0.15.2",
+    "@gladio/select": "^0.15.3",
     "@gladio/snackbar": "^0.3.1",
     "@gladio/table": "^0.11.1"
   },
