@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.4](https://github.com/sembark/gladio/compare/@gladio/ui@2.2.3...@gladio/ui@2.2.4) (2020-12-18)
+
+**Note:** Version bump only for package @gladio/ui
+
+
+
+
+
 ## [2.2.3](https://github.com/sembark/gladio/compare/@gladio/ui@2.2.2...@gladio/ui@2.2.3) (2020-12-08)
 
 **Note:** Version bump only for package @gladio/ui

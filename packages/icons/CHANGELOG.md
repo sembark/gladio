@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.24.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.23.1...@gladio/icons@0.24.0) (2020-12-18)
+
+
+### Features
+
+* **icons:** add driver icon ([f7f5220](https://github.com/sembark/gladio/commit/f7f5220))
+
+
+
+
+
 ## [0.23.1](https://github.com/sembark/gladio/compare/@gladio/icons@0.23.0...@gladio/icons@0.23.1) (2020-11-27)
 
 **Note:** Version bump only for package @gladio/icons
