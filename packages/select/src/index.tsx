@@ -120,6 +120,7 @@ export function Select({
         {
           id: query.trim(),
           name: query.trim(),
+          [labelKey]: query.trim(),
           __created: true,
         },
       ])
