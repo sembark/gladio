@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/sembark/gladio/compare/@gladio/select@0.15.3...@gladio/select@0.15.4) (2020-12-19)
+
+
+### Bug Fixes
+
+* **select:** respect labelKey in creatable ([91cf230](https://github.com/sembark/gladio/commit/91cf230))
+
+
+
+
+
 ## [0.15.3](https://github.com/sembark/gladio/compare/@gladio/select@0.15.2...@gladio/select@0.15.3) (2020-12-08)
 
 
