@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.25.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.24.0...@gladio/icons@0.25.0) (2020-12-28)
+
+
+### Features
+
+* **icons:** add login icon ([e4a1111](https://github.com/sembark/gladio/commit/e4a1111))
+
+
+
+
+
 # [0.24.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.23.1...@gladio/icons@0.24.0) (2020-12-18)
 
 
