@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/sembark/gladio/compare/@gladio/snackbar@0.3.3...@gladio/snackbar@0.3.4) (2021-02-19)
+
+**Note:** Version bump only for package @gladio/snackbar
+
+
+
+
+
 ## [0.3.3](https://github.com/sembark/gladio/compare/@gladio/snackbar@0.3.2...@gladio/snackbar@0.3.3) (2020-12-28)
 
 **Note:** Version bump only for package @gladio/snackbar

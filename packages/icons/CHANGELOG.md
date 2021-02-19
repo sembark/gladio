@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.26.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.25.0...@gladio/icons@0.26.0) (2021-02-19)
+
+
+### Features
+
+* **icons:** add flag icons ([27ab492](https://github.com/sembark/gladio/commit/27ab492))
+
+
+
+
+
 # [0.25.0](https://github.com/sembark/gladio/compare/@gladio/icons@0.24.0...@gladio/icons@0.25.0) (2020-12-28)
 
 

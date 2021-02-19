@@ -1,6 +1,6 @@
 {
   "name": "@gladio/alert",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Alert ui component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -32,7 +32,7 @@
   ],
   "dependencies": {
     "@gladio/box": "^0.4.1",
-    "@gladio/icons": "^0.25.0",
+    "@gladio/icons": "^0.26.0",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
