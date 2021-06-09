@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/sembark/gladio/compare/@gladio/datetime@0.10.1...@gladio/datetime@1.0.0) (2021-06-09)
+
+
+### Features
+
+* **deps:** update react-spring to version 9 ([fc0f56f](https://github.com/sembark/gladio/commit/fc0f56f))
+
+
+### BREAKING CHANGES
+
+* **deps:** updated react-spring to version 9. Now we are
+using @react-spring/web^9 which is also the peer dependency.
+
+
+
+
+
 ## [0.10.1](https://github.com/sembark/gladio/compare/@gladio/datetime@0.10.0...@gladio/datetime@0.10.1) (2020-11-27)
 
 **Note:** Version bump only for package @gladio/datetime

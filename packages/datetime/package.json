@@ -1,6 +1,6 @@
 {
   "name": "@gladio/datetime",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "description": "Datetime Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -12,9 +12,9 @@
     "access": "public"
   },
   "peerDependencies": {
+    "@react-spring/web": "^9.0",
     "moment": "^2.24.0",
-    "react": "^16.8.0 || ^17",
-    "@react-spring/web": "^9.0"
+    "react": "^16.8.0 || ^17"
   },
   "scripts": {
     "test": "jest",
@@ -43,8 +43,8 @@
     "utility-types": "^3.7.0"
   },
   "devDependencies": {
-    "moment": "^2.24.0",
     "@react-spring/web": "^9.0",
+    "moment": "^2.24.0",
     "tailwindcss": "^1.1.2"
   },
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3"

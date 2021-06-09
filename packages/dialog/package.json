@@ -1,6 +1,6 @@
 {
   "name": "@gladio/dialog",
-  "version": "0.14.1",
+  "version": "1.0.0",
   "description": "Dialog/Modal component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -12,9 +12,9 @@
     "access": "public"
   },
   "peerDependencies": {
+    "@react-spring/web": "^9.0",
     "react": "^16.8.0 || ^17",
-    "react-dom": "^16.8.0 || ^17",
-    "@react-spring/web": "^9.0"
+    "react-dom": "^16.8.0 || ^17"
   },
   "scripts": {
     "test": "jest",
