@@ -2,7 +2,7 @@ import * as React from "react"
 import * as ReactDOM from "react-dom"
 import classNames from "classnames"
 import { useEnforceFocus, useId } from "@gladio/react-hooks"
-import { Transition } from "react-spring/renderprops.cjs"
+import { useTransition, SpringValue, animated } from "@react-spring/web"
 import { Omit } from "utility-types"
 import Box from "@gladio/box"
 
@@ -35,17 +35,24 @@ const DialogProvider = DialogContext.Provider
 const DIALOG_BASE_CLASS_NAME = "dialog"
 const DIALOG_OPEN_CONTAINER_CLASS_NAME = `${DIALOG_BASE_CLASS_NAME}-is-open`
 
-type BoxProps = React.ComponentProps<typeof Box>
+const AnimatedBox = animated(Box)
 
-export function DialogDocument({ className, children, ...props }: BoxProps) {
+type BoxProps = React.ComponentProps<typeof Box>
+type AnimatedBoxProps = React.ComponentProps<typeof AnimatedBox>
+
+export function DialogDocument({
+  className,
+  children,
+  ...props
+}: AnimatedBoxProps) {
   return (
-    <Box
+    <AnimatedBox
       role="document"
       className={classNames(`${DIALOG_BASE_CLASS_NAME}-document`, className)}
       {...props}
     >
       {children}
-    </Box>
+    </AnimatedBox>
   )
 }
 
@@ -227,7 +234,7 @@ function DialogContainer({
   sm,
   title,
 }: DialogProps & {
-  animation: any
+  animation: { opacity: SpringValue<number>; transform: SpringValue<string> }
 }) {
   const wrapperRef = useRef<HTMLElement>(null)
 
@@ -284,8 +291,9 @@ function DialogContainer({
     }
   }, [onClose, open, titleId, contentId])
   if (!container) return null
+
   return ReactDOM.createPortal(
-    <Box
+    <AnimatedBox
       id={id}
       ref={wrapperRef}
       onKeyDown={(event: React.KeyboardEvent<any>) => {
@@ -300,7 +308,9 @@ function DialogContainer({
       aria-modal={true}
       aria-labelledby={titleId}
       aria-describedby={contentId}
-      style={{ opacity: animation.opacity }}
+      style={{
+        opacity: animation.opacity,
+      }}
       className={classNames(DIALOG_BASE_CLASS_NAME, className, {
         [`${DIALOG_BASE_CLASS_NAME}-fit-container`]: fitContainer,
         [`${DIALOG_BASE_CLASS_NAME}-lg`]: lg,
@@ -310,12 +320,16 @@ function DialogContainer({
     >
       {!fitContainer ? <Backdrop /> : null}
       <DialogProvider value={dialogContext}>
-        <DialogDocument style={{ transform: animation.transform }}>
+        <DialogDocument
+          style={{
+            transform: animation.transform,
+          }}
+        >
           {title ? <DialogHeader title={title} /> : null}
           {children}
         </DialogDocument>
       </DialogProvider>
-    </Box>,
+    </AnimatedBox>,
     container
   )
 }
@@ -335,18 +349,14 @@ export function Dialog(props: DialogProps) {
       },
     }
   }, [fitContainer])
+  const transitions = useTransition(open, transitionConfig)
   return (
-    <Transition
-      items={open}
-      from={transitionConfig.from}
-      enter={transitionConfig.enter}
-      leave={transitionConfig.leave}
-    >
-      {item => anim => {
+    <>
+      {transitions((style, item) => {
         if (!item) return null
-        return <DialogContainer {...props} animation={anim} />
-      }}
-    </Transition>
+        return <DialogContainer {...props} animation={style} />
+      })}
+    </>
   )
 }
 

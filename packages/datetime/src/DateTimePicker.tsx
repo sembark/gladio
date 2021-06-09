@@ -1,7 +1,7 @@
 import * as React from "react"
 import moment from "moment"
 import { useRootClose, useId } from "@gladio/react-hooks"
-import { useTransition, animated, config } from "react-spring"
+import { useTransition, animated, config } from "@react-spring/web"
 import { Input } from "@gladio/input"
 import classNames from "classnames"
 
@@ -80,7 +80,7 @@ export default function DateTimePicker({
     return () => {}
   }, [value ? moment(value).format(dateFormat) : value])
 
-  const transitions = useTransition(isDropdownOpen, null, {
+  const transitions = useTransition(isDropdownOpen, {
     config: config.stiff,
     from: { opacity: 0, transform: "translateY(-5px)" },
     enter: { opacity: 1, transform: "translateY(0)" },
@@ -108,10 +108,10 @@ export default function DateTimePicker({
           setDropdownVisibility(!isDropdownOpen)
         }}
       />
-      {transitions.map(({ item, key, props: style }) =>
+      {transitions((style, item) =>
         item ? (
           <animated.div
-            key={key}
+            key={Number(item)}
             style={style}
             className="tpdt-picker-dropdown"
           >
@@ -152,7 +152,7 @@ function DateInputMenu({
       value={value}
       readOnly
       placeholder={format}
-      onClick={e => {
+      onClick={(e) => {
         if (typeof document !== "undefined" && !readOnly && !disabled) {
           if (document.activeElement === e.target && !isVisible) {
             show()
@@ -180,7 +180,7 @@ export function DateTimeInput({
 }: IDateTimeInputProps) {
   return (
     <DateTimePicker
-      renderMenu={props => (
+      renderMenu={(props) => (
         <DateInputMenu
           {...props}
           onBlur={onBlur}

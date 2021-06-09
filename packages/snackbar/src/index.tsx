@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import ReactDOM from "react-dom"
 import classNames from "classnames"
-import { useTransition, animated, config } from "react-spring"
+import { useTransition, animated, config } from "@react-spring/web"
 import Icons from "@gladio/icons"
 import { ownerDocument } from "@gladio/dom-helpers"
 import { Optional, Omit } from "utility-types"
@@ -60,7 +60,7 @@ export function Snackbar({
   ...otherProps
 }: ISnackbarProps) {
   const [isOpen, setIsOpen] = useState(true)
-  const transitions = useTransition(isOpen, null, {
+  const transitions = useTransition(isOpen, {
     config: config.stiff,
     from: { opacity: 0, transform: "translateY(15px)" },
     enter: { opacity: 1, transform: "translateY(0)" },
@@ -79,11 +79,11 @@ export function Snackbar({
   }, [timeout])
   return (
     <>
-      {transitions.map(({ item, key, props: style }) =>
+      {transitions((style, item) =>
         item ? (
           <animated.div
             {...otherProps}
-            key={key}
+            key={Number(item)}
             style={style}
             className={classNames(
               "snackbar",
@@ -157,7 +157,12 @@ function createSnackbarElement(
   const body = document.body
   const snackbarContainer = findOrCreateSnackbarContainerElement()
   body.appendChild(snackbarContainer)
-  ReactDOM.render(<Snackbar {...config}>{label}</Snackbar>, snackbarContainer)
+  ReactDOM.render(
+    <Snackbar key={config.id} {...config}>
+      {label}
+    </Snackbar>,
+    snackbarContainer
+  )
   return snackbarContainer
 }
 
@@ -196,7 +201,7 @@ export function showSnackbar(
   const id = config.id || getId()
   if (lastVisibleSnackbarId !== undefined || lastVisibleSnackbarId === id) {
     // only push to the queue if not already present
-    if (!queue.some(s => s.id === id)) {
+    if (!queue.some((s) => s.id === id)) {
       queue.push({
         children: label,
         actionText,

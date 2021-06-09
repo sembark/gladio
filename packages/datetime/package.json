@@ -14,7 +14,7 @@
   "peerDependencies": {
     "moment": "^2.24.0",
     "react": "^16.8.0 || ^17",
-    "react-spring": "^8.0.27"
+    "@react-spring/web": "^9.0"
   },
   "scripts": {
     "test": "jest",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "moment": "^2.24.0",
-    "react-spring": "^8.0.27",
+    "@react-spring/web": "^9.0",
     "tailwindcss": "^1.1.2"
   },
   "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3"
