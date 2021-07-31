@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/sembark/gladio/compare/@gladio/datetime@1.0.3...@gladio/datetime@1.0.4) (2021-07-31)
+
+**Note:** Version bump only for package @gladio/datetime
+
+
+
+
+
 ## [1.0.3](https://github.com/sembark/gladio/compare/@gladio/datetime@1.0.2...@gladio/datetime@1.0.3) (2021-07-31)
 
 **Note:** Version bump only for package @gladio/datetime

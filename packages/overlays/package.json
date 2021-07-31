@@ -1,6 +1,6 @@
 {
   "name": "@gladio/overlays",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Tooltips/Popover (overlay) Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -36,8 +36,8 @@
   ],
   "gitHead": "b258ed024a1b76b71636423671affa9a9276c6c7",
   "dependencies": {
-    "@gladio/box": "^0.4.4",
-    "@gladio/css": "^0.32.4",
+    "@gladio/box": "^0.4.5",
+    "@gladio/css": "^0.32.5",
     "@gladio/dom-helpers": "^0.5.0",
     "@gladio/react-hooks": "^0.9.0",
     "@popperjs/core": "^2.4.4",

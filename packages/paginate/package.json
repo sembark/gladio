@@ -1,6 +1,6 @@
 {
   "name": "@gladio/paginate",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Paginate Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -37,8 +37,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@gladio/button": "^0.8.4",
-    "@gladio/css": "^0.32.4",
+    "@gladio/button": "^0.8.5",
+    "@gladio/css": "^0.32.5",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

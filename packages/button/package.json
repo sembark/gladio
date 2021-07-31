@@ -1,6 +1,6 @@
 {
   "name": "@gladio/button",
-  "version": "0.8.4",
+  "version": "0.8.5",
   "description": "Button Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -35,8 +35,8 @@
   },
   "gitHead": "b258ed024a1b76b71636423671affa9a9276c6c7",
   "dependencies": {
-    "@gladio/box": "^0.4.4",
-    "@gladio/css": "^0.32.4",
+    "@gladio/box": "^0.4.5",
+    "@gladio/css": "^0.32.5",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },
