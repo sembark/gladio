@@ -11,7 +11,7 @@ export function Palette({ value, shade }: { value: string; shade?: string }) {
     <Box
       display="inline-block"
       padding="3"
-      textColor="gray-700"
+      textColor="gray-800"
       fontSize="sm"
       style={{ minWidth: "100px" }}
     >
@@ -38,7 +38,7 @@ function groupColors(colors: typeof theme.colors) {
   return Object.keys(theme.colors).reduce<{
     [key: string]: Array<{ shade?: string; value: string }>
   }>((grouped, name) => {
-    const value = colors[(name as any) as keyof typeof theme.colors]
+    const value = colors[name as any as keyof typeof theme.colors]
     const parts = name.split("-")
     const [color, shade] = parts
     if (!grouped[color]) {
@@ -54,12 +54,12 @@ export default function ColorPalette() {
   return (
     <Layout meta={meta}>
       <Box>
-        {Object.keys(colors).map(name => {
-          const values = colors[(name as any) as keyof typeof colors]
+        {Object.keys(colors).map((name) => {
+          const values = colors[name as any as keyof typeof colors]
           return (
             <Box
               key={name}
-              display="inline-block"
+              display="block"
               verticalAlign="top"
               marginBottom="2"
               paddingY="6"

@@ -26,20 +26,20 @@ function Home() {
           </h2>
           <div className="text-sm md:text-lg sm:text-normal mt-8">
             <Link href="/styles">
-              <a className="text-blue-600 hover:text-blue-700 hover:underline">
+              <a className="text-primary-600 hover:text-primary-700 hover:underline">
                 Styles
               </a>
             </Link>
             {" ・ "}
             <Link href="/components">
-              <a className="text-blue-600 hover:text-blue-700 hover:underline">
+              <a className="text-primary-600 hover:text-primary-700 hover:underline">
                 Components
               </a>
             </Link>
             {" ・ "}
             <a
               href="https://github.com/sembark/gladio"
-              className="text-blue-600 hover:text-blue-700 hover:underline"
+              className="text-primary-600 hover:text-primary-700 hover:underline"
             >
               Github
             </a>
