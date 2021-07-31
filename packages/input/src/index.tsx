@@ -12,7 +12,7 @@ export const Input = React.forwardRef(
     { className, type, hasError, ...props }: InputProps,
     ref: React.Ref<HTMLInputElement>
   ) => {
-    const Input = (Box as unknown) as React.ComponentType<InputProps>
+    const Input = Box as unknown as React.ComponentType<InputProps>
     const isRadio = type === "radio"
     const isRadioOrCheckbox = type === "checkbox" || isRadio
     return (
@@ -61,7 +61,7 @@ export const Select = React.forwardRef(
     { className, hasError, ...props }: SelectProps,
     ref: React.Ref<HTMLSelectElement>
   ) => {
-    const Select = (Input as unknown) as React.ComponentType<SelectProps>
+    const Select = Input as unknown as React.ComponentType<SelectProps>
     return (
       <Select
         as="select"
@@ -88,7 +88,7 @@ export const TextArea = React.forwardRef(
     { className, hasError, ...props }: TextAreaProps,
     ref: React.Ref<HTMLTextAreaElement>
   ) => {
-    const TextArea = (Input as unknown) as React.ComponentType<TextAreaProps>
+    const TextArea = Input as unknown as React.ComponentType<TextAreaProps>
     return (
       <TextArea
         as="textarea"
@@ -169,7 +169,7 @@ export function ErrorMessage(props: React.ComponentProps<typeof Box>) {
   return (
     <Box
       backgroundColor="red-100"
-      textColor="red-700"
+      textColor="red-800"
       marginTop="2"
       display="block"
       rounded

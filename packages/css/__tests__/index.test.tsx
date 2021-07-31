@@ -69,13 +69,13 @@ describe("getClassName", () => {
   it("handles text color, alignment, decoration and transform", () => {
     const className = getClassName({
       textColor: "gray-400",
-      textColorLg: "pink-300",
+      textColorLg: "accent-300",
       textAlign: "left",
       textDecoration: "underline",
       textTransform: "uppercase",
     })
     expect(className).toBe(
-      "text-gray-400 lg:text-pink-300 text-left underline uppercase"
+      "text-gray-400 lg:text-accent-300 text-left underline uppercase"
     )
   })
 
