@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/sembark/gladio/compare/@gladio/table@0.11.2...@gladio/table@0.11.3) (2021-07-31)
+
+**Note:** Version bump only for package @gladio/table
+
+
+
+
+
 ## [0.11.2](https://github.com/sembark/gladio/compare/@gladio/table@0.11.1...@gladio/table@0.11.2) (2021-07-31)
 
 **Note:** Version bump only for package @gladio/table

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.3](https://github.com/sembark/gladio/compare/@gladio/css@0.32.2...@gladio/css@0.32.3) (2021-07-31)
+
+
+### Bug Fixes
+
+* **css:** add default anchor style ([5df7317](https://github.com/sembark/gladio/commit/5df7317))
+
+
+
+
+
 ## [0.32.2](https://github.com/sembark/gladio/compare/@gladio/css@0.32.1...@gladio/css@0.32.2) (2021-07-31)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@gladio/icons",
-  "version": "0.27.1",
+  "version": "0.27.2",
   "description": "React SVG Icons",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -32,6 +32,6 @@
     "@svgr/cli": "^5.1.0"
   },
   "dependencies": {
-    "@gladio/css": "^0.32.2"
+    "@gladio/css": "^0.32.3"
   }
 }

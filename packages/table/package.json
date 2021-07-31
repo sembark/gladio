@@ -1,6 +1,6 @@
 {
   "name": "@gladio/table",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "Table Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -37,8 +37,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@gladio/box": "^0.4.2",
-    "@gladio/css": "^0.32.2",
+    "@gladio/box": "^0.4.3",
+    "@gladio/css": "^0.32.3",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

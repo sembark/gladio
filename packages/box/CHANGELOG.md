@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/sembark/gladio/compare/@gladio/box@0.4.2...@gladio/box@0.4.3) (2021-07-31)
+
+**Note:** Version bump only for package @gladio/box
+
+
+
+
+
 ## [0.4.2](https://github.com/sembark/gladio/compare/@gladio/box@0.4.1...@gladio/box@0.4.2) (2021-07-31)
 
 **Note:** Version bump only for package @gladio/box
