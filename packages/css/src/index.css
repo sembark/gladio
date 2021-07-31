@@ -1,6 +1,4 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   a {
@@ -10,3 +8,6 @@
     @apply text-primary-800;
   }
 }
+
+@tailwind components;
+@tailwind utilities;
