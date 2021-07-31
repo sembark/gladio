@@ -33,7 +33,7 @@
     "types",
     "styles"
   ],
-  "gitHead": "ddeb83da0b5c0b7ab597098dc9ba561c711194d3",
+  "gitHead": "b258ed024a1b76b71636423671affa9a9276c6c7",
   "dependencies": {
     "@gladio/box": "^0.4.3",
     "@gladio/css": "^0.32.3",
