@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/sembark/gladio/compare/@gladio/input@0.7.3...@gladio/input@0.7.4) (2021-07-31)
+
+**Note:** Version bump only for package @gladio/input
+
+
+
+
+
 ## [0.7.3](https://github.com/sembark/gladio/compare/@gladio/input@0.7.2...@gladio/input@0.7.3) (2021-07-31)
 
 **Note:** Version bump only for package @gladio/input

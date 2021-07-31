@@ -1,6 +1,6 @@
 {
   "name": "@gladio/ui",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "React Components Library",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -28,22 +28,22 @@
     "styles"
   ],
   "dependencies": {
-    "@gladio/alert": "^0.7.7",
-    "@gladio/badge": "^0.10.3",
-    "@gladio/box": "^0.4.3",
-    "@gladio/button": "^0.8.3",
-    "@gladio/css": "^0.32.3",
-    "@gladio/datetime": "^1.0.2",
-    "@gladio/dialog": "^1.0.2",
+    "@gladio/alert": "^0.7.8",
+    "@gladio/badge": "^0.10.4",
+    "@gladio/box": "^0.4.4",
+    "@gladio/button": "^0.8.4",
+    "@gladio/css": "^0.32.4",
+    "@gladio/datetime": "^1.0.3",
+    "@gladio/dialog": "^1.0.3",
     "@gladio/dom-helpers": "^0.5.0",
-    "@gladio/icons": "^0.27.2",
-    "@gladio/input": "^0.7.3",
-    "@gladio/overlays": "^0.5.3",
-    "@gladio/paginate": "^0.4.3",
+    "@gladio/icons": "^0.27.3",
+    "@gladio/input": "^0.7.4",
+    "@gladio/overlays": "^0.5.4",
+    "@gladio/paginate": "^0.4.4",
     "@gladio/react-hooks": "^0.9.0",
-    "@gladio/select": "^0.15.6",
-    "@gladio/snackbar": "^1.0.2",
-    "@gladio/table": "^0.11.3"
+    "@gladio/select": "^0.15.7",
+    "@gladio/snackbar": "^1.0.3",
+    "@gladio/table": "^0.11.4"
   },
   "devDependencies": {
     "node-sass-chokidar": "^1.3.5"

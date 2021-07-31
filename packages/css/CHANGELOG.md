@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.32.4](https://github.com/sembark/gladio/compare/@gladio/css@0.32.3...@gladio/css@0.32.4) (2021-07-31)
+
+
+### Bug Fixes
+
+* **deps:** trying to publish again ([44fcb5b](https://github.com/sembark/gladio/commit/44fcb5b))
+
+
+
+
+
 ## [0.32.3](https://github.com/sembark/gladio/compare/@gladio/css@0.32.2...@gladio/css@0.32.3) (2021-07-31)
 
 
