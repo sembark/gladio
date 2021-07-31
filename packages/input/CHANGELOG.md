@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.2](https://github.com/sembark/gladio/compare/@gladio/input@0.7.1...@gladio/input@0.7.2) (2021-07-31)
+
+
+### Bug Fixes
+
+* **css:** reduce file size ([5fd297f](https://github.com/sembark/gladio/commit/5fd297f))
+
+
+
+
+
 ## [0.7.1](https://github.com/sembark/gladio/compare/@gladio/input@0.7.0...@gladio/input@0.7.1) (2020-11-27)
 
 **Note:** Version bump only for package @gladio/input
