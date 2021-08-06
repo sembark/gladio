@@ -1,6 +1,6 @@
 {
   "name": "@gladio/dialog",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Dialog/Modal component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -36,7 +36,7 @@
     "preset": "ts-jest"
   },
   "devDependencies": {
-    "@gladio/button": "^0.8.5",
+    "@gladio/button": "^0.8.6",
     "@gladio/input": "^0.7.5",
     "@react-spring/web": "^9.0",
     "tailwindcss": "^1.1.2"
