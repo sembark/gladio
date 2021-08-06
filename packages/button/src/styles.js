@@ -3,31 +3,31 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
     return {
       [`&-secondary.${label}, &.${label}`]: {
         backgroundColor: theme(`backgroundColor.transparent`),
-        borderColor: theme(`borderColor.${color}-400`),
-        color: theme(`textColor.${color}-700`),
+        borderColor: theme(`borderColor.${color}-300`),
+        color: theme(`textColor.${color}-600`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
-          borderColor: theme(`borderColor.${color}-500`),
-          color: theme(`textColor.${color}-900`),
+          borderColor: theme(`borderColor.${color}-300`),
+          color: theme(`textColor.${color}-800`),
         },
       },
       [`&-tertiary.${label}`]: {
         backgroundColor: theme(`backgroundColor.transparent`),
         borderColor: theme(`borderColor.transparent`),
-        color: theme(`textColor.${color}-800`),
+        color: theme(`textColor.${color}-600`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
           borderColor: theme(`borderColor.transparent`),
-          color: theme(`textColor.${color}-900`),
+          color: theme(`textColor.${color}-800`),
         },
       },
       [`&-primary.${label}`]: {
-        backgroundColor: theme(`backgroundColor.${color}-700`),
-        borderColor: theme(`borderColor.${color}-700`),
+        backgroundColor: theme(`backgroundColor.${color}-800`),
+        borderColor: theme(`borderColor.${color}-600`),
         color: theme(`textColor.white`),
         "&:hover": {
-          backgroundColor: theme(`backgroundColor.${color}-600`),
-          borderColor: theme(`borderColor.${color}-600`),
+          backgroundColor: theme(`backgroundColor.${color}-800`),
+          borderColor: theme(`borderColor.${color}-800`),
           color: theme(`textColor.white`),
         },
       },
@@ -66,32 +66,32 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       },
       "&, &&-secondary": {
         backgroundColor: theme(`backgroundColor.transparent`),
-        borderColor: theme(`borderColor.secondary-400`),
-        color: theme(`backgroundColor.secondary-700`),
+        borderColor: theme(`borderColor.gray-400`),
+        color: theme(`backgroundColor.gray-800`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
-          borderColor: theme(`borderColor.secondary-500`),
-          color: theme(`backgroundColor.secondary-900`),
+          borderColor: theme(`borderColor.gray-500`),
+          color: theme(`backgroundColor.gray-800`),
         },
       },
       "&&-primary": {
-        backgroundColor: theme(`backgroundColor.secondary-200`),
-        borderColor: theme(`borderColor.secondary-300`),
-        color: theme(`backgroundColor.secondary-700`),
+        backgroundColor: theme(`backgroundColor.gray-100`),
+        borderColor: theme(`borderColor.gray-200`),
+        color: theme(`backgroundColor.gray-600`),
         "&:hover": {
-          backgroundColor: theme(`backgroundColor.secondary-300`),
-          borderColor: theme(`borderColor.secondary-400`),
-          color: theme(`backgroundColor.secondary-800`),
+          backgroundColor: theme(`backgroundColor.gray-200`),
+          borderColor: theme(`borderColor.gray-300`),
+          color: theme(`backgroundColor.gray-800`),
         },
       },
       "&&-tertiary": {
         backgroundColor: theme(`backgroundColor.transparent`),
         borderColor: theme(`borderColor.transparent`),
-        color: theme(`backgroundColor.secondary-700`),
+        color: theme(`backgroundColor.gray-600`),
         "&:hover": {
           backgroundColor: theme(`backgroundColor.transparent`),
           borderColor: theme(`borderColor.transparent`),
-          color: theme(`backgroundColor.secondary-900`),
+          color: theme(`backgroundColor.gray-800`),
         },
       },
       "&-secondary.light, &.light": {
@@ -159,9 +159,10 @@ module.exports = function addButtonComponentPlugin({ addComponents, theme }) {
       "&-toolbar": {
         display: "inline-block",
       },
-      "&-toolbar > & + &, &-toolbar & + &-group, &-toolbar &-group + &-group, &-toolbar &-group + &, &-toolbar + &-toolbar, & + &-toolbar, &-group + &-toolbar, &-toolbar + &, &-toolbar + &-group": {
-        marginLeft: theme("margin.2"),
-      },
+      "&-toolbar > & + &, &-toolbar & + &-group, &-toolbar &-group + &-group, &-toolbar &-group + &, &-toolbar + &-toolbar, & + &-toolbar, &-group + &-toolbar, &-toolbar + &, &-toolbar + &-group":
+        {
+          marginLeft: theme("margin.2"),
+        },
     },
   }
   addComponents(buttons)
