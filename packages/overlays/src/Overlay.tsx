@@ -152,7 +152,7 @@ export function OverlayTrigger({
     timeout.set(() => {
       if (hoverStateRef.current === "show") setShow(true)
       // something is wrong with me or typescript
-    }, (delay.show as unknown) as number)
+    }, delay.show as unknown as number)
   }, [])
   const handleHide = React.useCallback(() => {
     timeout.clear()
@@ -164,7 +164,7 @@ export function OverlayTrigger({
     timeout.set(() => {
       if (hoverStateRef.current === "hide") setShow(false)
       // something is wrong with me or typescript
-    }, (delay.hide as unknown) as number)
+    }, delay.hide as unknown as number)
   }, [])
   const handleClick = React.useCallback(() => {
     // click has the highest priority

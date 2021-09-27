@@ -268,6 +268,10 @@ export function useRootClose(
     const document = ownerDocument()
     if (disabled || ref == null || !document) return undefined
 
+    // Store the current event to avoid triggering handlers immediately
+    // https://github.com/facebook/react/issues/20074
+    let currentEvent = window.event
+
     // Use capture for this listener so it fires before React's listener, to
     // avoid false positives in the contains() check below if the target DOM
     // element is removed in the React mouse callback.
@@ -278,8 +282,22 @@ export function useRootClose(
       true
     )
 
-    const removeMouseListener = listen(document, clickTrigger, handleMouse)
-    const removeKeyupListener = listen(document, "keyup", handleKeyUp)
+    const removeMouseListener = listen(document, clickTrigger, (e) => {
+      // skip if this event is the same as the one running when we added the handlers
+      if (e === currentEvent) {
+        currentEvent = undefined
+        return
+      }
+      handleMouse(e)
+    })
+    const removeKeyupListener = listen(document, "keyup", (e) => {
+      // skip if this event is the same as the one running when we added the handlers
+      if (e === currentEvent) {
+        currentEvent = undefined
+        return
+      }
+      handleKeyUp(e)
+    })
 
     let mobileSafariHackListeners: Array<() => any> = []
     if ("ontouchstart" in document.documentElement) {
@@ -337,11 +355,13 @@ export type CallbackRef<T> = (ref: T | null) => void
 export type Ref<T> = MutableRefObject<T> | CallbackRef<T>
 
 function toFnRef<T>(ref?: Ref<T> | null): undefined | CallbackRef<T> {
-  return (!ref || typeof ref === "function"
-    ? ref || undefined
-    : (value: T) => {
-        ref.current = value
-      }) as CallbackRef<T> | undefined
+  return (
+    !ref || typeof ref === "function"
+      ? ref || undefined
+      : (value: T) => {
+          ref.current = value
+        }
+  ) as CallbackRef<T> | undefined
 }
 
 export function mergeRefs<T>(refA?: Ref<T> | null, refB?: Ref<T> | null) {
@@ -379,7 +399,7 @@ export function resolveContainerRef<T extends HTMLElement>(
   if (typeof ref === "function") ref = ref()
 
   if (ref && "current" in ref) ref = ref.current
-  if ((ref as any)?.nodeType) return ((ref as unknown) as T) || null
+  if ((ref as any)?.nodeType) return (ref as unknown as T) || null
 
   return null
 }
