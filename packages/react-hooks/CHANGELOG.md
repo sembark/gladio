@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/sembark/gladio/compare/@gladio/react-hooks@0.9.0...@gladio/react-hooks@0.9.1) (2021-09-27)
+
+
+### Bug Fixes
+
+* **overlays:** fix event bubling in portals ([af20743](https://github.com/sembark/gladio/commit/af20743))
+
+
+
+
+
 # [0.9.0](https://github.com/sembark/gladio/compare/@gladio/react-hooks@0.8.0...@gladio/react-hooks@0.9.0) (2020-11-12)
 
 
