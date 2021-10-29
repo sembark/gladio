@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   appearance: variants.appearance || [],
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  appearance: "typeof theme.appearance[number]",
+  appearance: "$PropertyType<Theme ,'appearance'>[number]",
 }
 
 module.exports = {

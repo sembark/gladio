@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ flexWrap: variants.flexWrap || [] })
+const variants = (variants) => ({ flexWrap: variants.flexWrap || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexWrap: "typeof theme.flexWrap[number]",
+  flexWrap: "$PropertyType<Theme, 'flexWrap'>[number]",
 }
 
 module.exports = {

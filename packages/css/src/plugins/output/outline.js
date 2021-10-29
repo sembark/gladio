@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  outline: "typeof theme.outline[number]",
+  outline: "$PropertyType<Theme, 'outline'>[number]",
 }
 
 module.exports = {

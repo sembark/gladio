@@ -37,7 +37,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  objectPosition: "typeof theme.objectPosition[number]",
+  objectPosition: "$PropertyType<Theme, 'objectPosition'>[number]",
 }
 
 module.exports = {

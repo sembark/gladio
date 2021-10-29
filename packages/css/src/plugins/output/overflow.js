@@ -14,7 +14,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   overflow: variants.overflow || ["responsive"],
   overflowX: variants.overflow || ["responsive"],
   overflowY: variants.overflow || ["responsive"],
@@ -35,9 +35,9 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  overflow: "typeof theme.overflow[number]",
-  overflowX: "typeof theme.overflowX[number]",
-  overflowY: "typeof theme.overflowY[number]",
+  overflow: "$PropertyType<Theme, 'overflow'>[number]",
+  overflowX: "$PropertyType<Theme, 'overflow'>[number]",
+  overflowY: "$PropertyType<Theme, 'overflow'>[number]",
 }
 
 module.exports = {

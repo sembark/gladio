@@ -124,15 +124,15 @@ function getStylesForColor(
   color: string
 ): Pick<TBoxProps, "borderColor" | "backgroundColor" | "textColor"> {
   return {
-    borderColor: (`${color}-300` as any) as $PropertyType<
+    borderColor: `${color}-300` as any as $PropertyType<
       TBoxProps,
       "borderColor"
     >,
-    backgroundColor: (`${color}-100` as any) as $PropertyType<
+    backgroundColor: `${color}-100` as any as $PropertyType<
       TBoxProps,
       "backgroundColor"
     >,
-    textColor: (`${color}-800` as any) as $PropertyType<TBoxProps, "textColor">,
+    textColor: `${color}-800` as any as $PropertyType<TBoxProps, "textColor">,
   }
 }
 

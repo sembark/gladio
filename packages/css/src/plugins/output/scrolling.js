@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  scrolling: "typeof theme.scrolling[number]",
+  scrolling: "$PropertyType<Theme, 'scrolling'>[number]",
 }
 
 module.exports = {

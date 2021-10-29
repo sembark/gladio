@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   visibility: variants.visibility || [],
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  visibility: "typeof theme.visibility[number]",
+  visibility: "$PropertyType<Theme, 'visibility'>[number]",
 }
 
 module.exports = {

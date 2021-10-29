@@ -34,7 +34,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  verticalAlign: "typeof theme.verticalAlign[number]",
+  verticalAlign: "$PropertyType<Theme, 'verticalAlign'>[number]",
 }
 
 module.exports = {

@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   height: theme.height,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   height: variants.height,
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  height: "keyof typeof theme.height",
+  height: "keyof $PropertyType<Theme, 'height'>",
 }
 
 module.exports = {

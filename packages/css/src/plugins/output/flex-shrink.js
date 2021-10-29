@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   flexShrink: theme.flexShrink,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ flexShrink: variants.flexShrink })
+const variants = (variants) => ({ flexShrink: variants.flexShrink })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexShrink: "keyof typeof theme.flexShrink | true",
+  flexShrink: "keyof $PropertyType<Theme, 'flexShrink'> | true",
 }
 
 module.exports = {

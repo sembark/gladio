@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   rounded: theme.borderRadius,
   roundedTop: theme.borderRadius,
   roundedRight: theme.borderRadius,
@@ -20,7 +20,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   rounded: variants.borderRadius,
   roundedTop: variants.borderRadius,
   roundedRight: variants.borderRadius,
@@ -53,15 +53,15 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  rounded: "keyof typeof theme.borderRadius | true",
-  roundedTop: "keyof typeof theme.borderRadius | true",
-  roundedRight: "keyof typeof theme.borderRadius | true",
-  roundedBottom: "keyof typeof theme.borderRadius | true",
-  roundedLeft: "keyof typeof theme.borderRadius | true",
-  roundedTopLeft: "keyof typeof theme.borderRadius | true",
-  roundedTopRight: "keyof typeof theme.borderRadius | true",
-  roundedBottomLeft: "keyof typeof theme.borderRadius | true",
-  roundedBottomRight: "keyof typeof theme.borderRadius | true",
+  rounded: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedTop: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedRight: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedBottom: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedLeft: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedTopLeft: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedTopRight: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedBottomLeft: "keyof $PropertyType<Theme, 'borderRadius'> | true",
+  roundedBottomRight: "keyof $PropertyType<Theme, 'borderRadius'> | true",
 }
 
 module.exports = {

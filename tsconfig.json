@@ -4,7 +4,7 @@
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "rootDirs": ["src", "stories"],
     "baseUrl": "src",
@@ -19,15 +19,14 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "preserveSymlinks": true
   },
   "exclude": [
-    "node_modules",
     "build",
     "tasks",
     "**/*.test.js",
     "**/lib/**.js",
     "**/*.config.js"
-  ],
-  "include": ["./jest-setup.ts"]
+  ]
 }

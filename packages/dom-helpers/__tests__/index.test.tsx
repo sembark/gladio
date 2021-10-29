@@ -1,4 +1,3 @@
-import * as React from "react"
 import { render, cleanup } from "@testing-library/react"
 
 import { isDom, activeElement, contains, ownerDocument } from "./../src/index"

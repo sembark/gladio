@@ -1,8 +1,8 @@
 import classNames from "classnames"
 import { Subtract, $Values } from "utility-types"
-import theme, { classNamesForKeys, StyleProps as IStyleProps } from "./theme"
+import theme, { StyleProps, classNamesForKeys } from "./theme"
 
-export interface StyleProps extends IStyleProps {}
+export { StyleProps }
 
 /**
  * Get the classNames for the key
@@ -40,7 +40,7 @@ function getClassNameForKey(
 }
 
 export function getClassName(props: StyleProps) {
-  const classes = Object.keys(props).map(key => {
+  const classes = Object.keys(props).map((key) => {
     const prefix = classNamesForKeys[key]
     if (prefix !== undefined) {
       return getClassNameForKey(prefix, props[key])

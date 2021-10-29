@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ flexDirection: variants.flexDirection || [] })
+const variants = (variants) => ({ flexDirection: variants.flexDirection || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexDirection: "typeof theme.flexDirection[number]",
+  flexDirection: "$PropertyType<Theme, 'flexDirection'>[number]",
 }
 
 module.exports = {

@@ -37,7 +37,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  display: "typeof theme.display[number]",
+  display: "$PropertyType<Theme, 'display'>[number]",
 }
 
 module.exports = {

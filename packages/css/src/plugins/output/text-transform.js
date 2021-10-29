@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textTransform: "typeof theme.textTransform[number]",
+  textTransform: "$PropertyType<Theme, 'textTransform'>[number]",
 }
 
 module.exports = {

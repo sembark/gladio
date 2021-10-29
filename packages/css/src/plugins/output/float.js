@@ -13,7 +13,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   float: variants.float,
   clearfix: variants.float,
 })
@@ -32,8 +32,8 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  float: "typeof theme.float[number]",
-  clearfix: "typeof theme.clearfix",
+  float: "$PropertyType<Theme, 'float'>[number]",
+  clearfix: "$PropertyType<Theme, 'clearfix'>",
 }
 
 module.exports = {

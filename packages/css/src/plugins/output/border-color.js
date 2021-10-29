@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   borderColor: theme.borderColor,
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  borderColor: "keyof typeof theme.borderColor",
+  borderColor: "keyof $PropertyType<Theme, 'borderColor'>",
 }
 
 module.exports = {

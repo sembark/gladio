@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ fontWeight: variants.fontStyle || [] })
+const variants = (variants) => ({ fontWeight: variants.fontStyle || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  fontStyle: "typeof theme.fontStyle[number]",
+  fontStyle: "$PropertyType<Theme, 'fontStyle'>[number]",
 }
 
 module.exports = {

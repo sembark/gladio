@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textDecoration: "typeof theme.textDecoration[number]",
+  textDecoration: "$PropertyType<Theme, 'textDecoration'>[number]",
 }
 
 module.exports = {

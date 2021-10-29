@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   border: theme.borderWidth,
   borderTop: theme.borderWidth,
   borderRight: theme.borderWidth,
@@ -16,7 +16,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   border: variants.borderWidth,
   borderTop: variants.borderWidth,
   borderRight: variants.borderWidth,
@@ -41,11 +41,11 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  border: "keyof typeof theme.borderWidth | true",
-  borderTop: "keyof typeof theme.borderWidth | true",
-  borderRight: "keyof typeof theme.borderWidth | true",
-  borderBottom: "keyof typeof theme.borderWidth | true",
-  borderLeft: "keyof typeof theme.borderWidth | true",
+  border: "keyof $PropertyType<Theme, 'borderWidth'> | true",
+  borderTop: "keyof $PropertyType<Theme, 'borderWidth'> | true",
+  borderRight: "keyof $PropertyType<Theme, 'borderWidth'> | true",
+  borderBottom: "keyof $PropertyType<Theme, 'borderWidth'> | true",
+  borderLeft: "keyof $PropertyType<Theme, 'borderWidth'> | true",
 }
 
 module.exports = {

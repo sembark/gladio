@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   zIndex: theme.zIndex,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ zIndex: variants.zIndex || [] })
+const variants = (variants) => ({ zIndex: variants.zIndex || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  zIndex: "keyof typeof theme.zIndex",
+  zIndex: "keyof $PropertyType<Theme, 'zIndex'>",
 }
 
 module.exports = {

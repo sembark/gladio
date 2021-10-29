@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   margin: theme.margin,
   marginX: theme.margin,
   marginY: theme.margin,
@@ -18,7 +18,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   margin: variants.margin,
   marginX: variants.margin,
   marginY: variants.margin,
@@ -47,13 +47,13 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  margin: "keyof typeof theme.margin",
-  marginX: "keyof typeof theme.margin",
-  marginY: "keyof typeof theme.margin",
-  marginTop: "keyof typeof theme.margin",
-  marginRight: "keyof typeof theme.margin",
-  marginBottom: "keyof typeof theme.margin",
-  marginLeft: "keyof typeof theme.margin",
+  margin: "keyof $PropertyType<Theme, 'margin'>",
+  marginX: "keyof $PropertyType<Theme, 'margin'>",
+  marginY: "keyof $PropertyType<Theme, 'margin'>",
+  marginTop: "keyof $PropertyType<Theme, 'margin'>",
+  marginRight: "keyof $PropertyType<Theme, 'margin'>",
+  marginBottom: "keyof $PropertyType<Theme, 'margin'>",
+  marginLeft: "keyof $PropertyType<Theme, 'margin'>",
 }
 
 module.exports = {

@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  textAlign: "typeof theme.textAlign[number]",
+  textAlign: "$PropertyType<Theme, 'textAlign'>[number]",
 }
 
 module.exports = {

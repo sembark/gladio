@@ -1,4 +1,3 @@
-import * as React from "react"
 import { render, cleanup, findByTestId } from "@testing-library/react"
 
 import Alert from "./../src/index"

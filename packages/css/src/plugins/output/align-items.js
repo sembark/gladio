@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  alignItems: "typeof theme.alignItems[number]",
+  alignItems: "$PropertyType<Theme, 'alignItems'>[number]",
 }
 
 module.exports = {

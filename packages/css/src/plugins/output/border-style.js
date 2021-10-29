@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  borderStyle: "typeof theme.borderStyle[number]",
+  borderStyle: "$PropertyType<Theme, 'borderStyle'>[number]",
 }
 
 module.exports = {

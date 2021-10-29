@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  position: "typeof theme.position[number]",
+  position: "$PropertyType<Theme, 'position'>[number]",
 }
 
 module.exports = {

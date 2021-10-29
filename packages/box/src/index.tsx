@@ -1,12 +1,12 @@
-import { AllHTMLAttributes, createElement, forwardRef } from "react"
+import * as React from "react"
 import classNames from "classnames"
 import { Omit } from "utility-types"
-import { StyleProps, getClassName, removeStyleProps } from "@gladio/css"
+import * as CSS from "@gladio/css"
 
 /**
  * The base Box props without any HTML/Platform Dependencies
  */
-export type BoxBaseProps = StyleProps & {
+export type BoxBaseProps = CSS.StyleProps & {
   as?: React.ElementType
 }
 
@@ -40,15 +40,15 @@ export type MergeWithBoxProps<T> = BoxBaseProps &
  * Box props with HTML Element as Base
  */
 export type BoxProps = MergeWithBoxProps<
-  AllHTMLAttributes<HTMLElement> & React.SVGProps<SVGSVGElement>
+  React.AllHTMLAttributes<HTMLElement> & React.SVGProps<SVGSVGElement>
 >
 
-export const Box = forwardRef<HTMLElement, BoxProps>((props, ref) => {
-  const { as = "div", className, ...restProps } = removeStyleProps(props)
+export const Box = React.forwardRef<HTMLElement, BoxProps>((props, ref) => {
+  const { as = "div", className, ...restProps } = CSS.removeStyleProps(props)
   // create the class styles
-  const boxStyles = getClassName(props)
+  const boxStyles = CSS.getClassName(props)
   const classname = classNames(boxStyles, className)
-  const element = createElement(as, {
+  const element = React.createElement(as, {
     className: classname || undefined,
     ...restProps,
     ref,

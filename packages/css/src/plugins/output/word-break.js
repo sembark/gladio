@@ -13,7 +13,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   wordBreak: variants.wordBreak,
   wordTruncate: variants.wordBreak,
 })
@@ -32,8 +32,8 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  wordBreak: "typeof theme.wordBreak[number]",
-  wordTruncate: "typeof theme.wordTruncate",
+  wordBreak: "$PropertyType<Theme, 'wordBreak'>[number]",
+  wordTruncate: "$PropertyType<Theme, 'wordTruncate'>",
 }
 
 module.exports = {

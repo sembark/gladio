@@ -1,4 +1,3 @@
-import * as React from "react"
 import { render, cleanup, getByText } from "@testing-library/react"
 
 import { Tooltip } from "./../src/index"

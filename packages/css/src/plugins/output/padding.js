@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   padding: theme.padding,
   paddingX: theme.padding,
   paddingY: theme.padding,
@@ -18,7 +18,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   padding: variants.padding,
   paddingX: variants.padding,
   paddingY: variants.padding,
@@ -47,13 +47,13 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  padding: "keyof typeof theme.padding",
-  paddingX: "keyof typeof theme.padding",
-  paddingY: "keyof typeof theme.padding",
-  paddingTop: "keyof typeof theme.padding",
-  paddingRight: "keyof typeof theme.padding",
-  paddingBottom: "keyof typeof theme.padding",
-  paddingLeft: "keyof typeof theme.padding",
+  padding: "keyof $PropertyType<Theme, 'padding'>",
+  paddingX: "keyof $PropertyType<Theme, 'padding'>",
+  paddingY: "keyof $PropertyType<Theme, 'padding'>",
+  paddingTop: "keyof $PropertyType<Theme, 'padding'>",
+  paddingRight: "keyof $PropertyType<Theme, 'padding'>",
+  paddingBottom: "keyof $PropertyType<Theme, 'padding'>",
+  paddingLeft: "keyof $PropertyType<Theme, 'padding'>",
 }
 
 module.exports = {

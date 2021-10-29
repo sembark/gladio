@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   flexGrow: theme.flexGrow,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ flexGrow: variants.flexGrow })
+const variants = (variants) => ({ flexGrow: variants.flexGrow })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  flexGrow: "keyof typeof theme.flexGrow | true",
+  flexGrow: "keyof $PropertyType<Theme, 'flexGrow'> | true",
 }
 
 module.exports = {

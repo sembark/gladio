@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ tableLayout: variants.tableLayout || [] })
+const variants = (variants) => ({ tableLayout: variants.tableLayout || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  tableLayout: "typeof theme.tableLayout[number]",
+  tableLayout: "$PropertyType<Theme, 'tableLayout'>[number]",
 }
 
 module.exports = {

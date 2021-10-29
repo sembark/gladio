@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  justifyContent: "typeof theme.justifyContent[number]",
+  justifyContent: "$PropertyType<Theme, 'justifyContent'>[number]",
 }
 
 module.exports = {

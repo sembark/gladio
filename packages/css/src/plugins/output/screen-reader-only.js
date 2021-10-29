@@ -12,7 +12,7 @@ const props = {
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   srOnly: variants.srOnly || [],
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  srOnly: "typeof theme.srOnly[number]",
+  srOnly: "$PropertyType<Theme,'srOnly'>[number]",
 }
 
 module.exports = {

@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   inset: theme.inset,
   insetX: theme.inset,
   insetY: theme.inset,
@@ -18,7 +18,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   inset: variants.inset || [],
   insetX: variants.inset || [],
   insetY: variants.inset || [],
@@ -47,13 +47,13 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  inset: "keyof typeof theme.inset",
-  insetX: "keyof typeof theme.inset",
-  insetY: "keyof typeof theme.inset",
-  top: "keyof typeof theme.inset",
-  right: "keyof typeof theme.inset",
-  bottom: "keyof typeof theme.inset",
-  left: "keyof typeof theme.inset",
+  inset: "keyof $PropertyType<Theme, 'inset'>",
+  insetX: "keyof $PropertyType<Theme, 'inset'>",
+  insetY: "keyof $PropertyType<Theme, 'inset'>",
+  top: "keyof $PropertyType<Theme, 'inset'>",
+  right: "keyof $PropertyType<Theme, 'inset'>",
+  bottom: "keyof $PropertyType<Theme, 'inset'>",
+  left: "keyof $PropertyType<Theme, 'inset'>",
 }
 
 module.exports = {

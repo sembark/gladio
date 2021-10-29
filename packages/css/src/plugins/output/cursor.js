@@ -5,7 +5,7 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   cursor: theme.cursor,
   pointerEvents: ["none", "auto"],
 })
@@ -13,7 +13,7 @@ const props = theme => ({
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   cursor: variants.cursor,
   pointerEvents: variants.pointerEvents,
 })
@@ -32,8 +32,8 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  cursor: "keyof typeof theme.cursor",
-  pointerEvents: "typeof theme.pointerEvents[number]",
+  cursor: "keyof $PropertyType<Theme, 'cursor'>",
+  pointerEvents: "$PropertyType<Theme, 'pointerEvents'>[number]",
 }
 
 module.exports = {

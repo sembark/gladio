@@ -1,6 +1,7 @@
 import * as React from "react"
 import classNames from "classnames"
 import Box, { MergeWithBoxProps } from "@gladio/box"
+import "@gladio/css"
 
 export type InputProps = MergeWithBoxProps<
   React.HTMLProps<HTMLInputElement> & {

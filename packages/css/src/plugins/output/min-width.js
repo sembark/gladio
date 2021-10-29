@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   minWidth: theme.minWidth,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({
+const variants = (variants) => ({
   minWidth: variants.minWidth,
 })
 
@@ -29,7 +29,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  minWidth: "keyof typeof theme.minWidth",
+  minWidth: "keyof $PropertyType<Theme, 'minWidth'>",
 }
 
 module.exports = {

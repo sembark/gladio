@@ -1,4 +1,3 @@
-import * as React from "react"
 import { render, cleanup, queryByText } from "@testing-library/react"
 
 import Box from "./../src/index"

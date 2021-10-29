@@ -5,14 +5,14 @@
  * and values as what should be the tailwind class prefix
  *
  */
-const props = theme => ({
+const props = (theme) => ({
   letterSpacing: theme.letterSpacing,
 })
 
 /**
  * Variants for each of props's key
  */
-const variants = variants => ({ letterSpacing: variants.letterSpacing || [] })
+const variants = (variants) => ({ letterSpacing: variants.letterSpacing || [] })
 
 /**
  * Class name for each of props's key
@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  letterSpacing: "keyof typeof theme.letterSpacing",
+  letterSpacing: "keyof $PropertyType<Theme, 'letterSpacing'>",
 }
 
 module.exports = {

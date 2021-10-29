@@ -27,7 +27,7 @@ const classNames = {
  * Get the types for each of props keys
  */
 const types = {
-  whiteSpace: "typeof theme.whiteSpace[number]",
+  whiteSpace: "$PropertyType<Theme, 'whiteSpace'>[number]",
 }
 
 module.exports = {
