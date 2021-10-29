@@ -15,7 +15,8 @@ module.exports = function addDialog({ addComponents, theme }) {
       left: 0,
       width: "100%",
       height: "100%",
-      overflow: "hidden",
+      overflowX: "hidden",
+      overflowY: "auto",
       padding: 0,
       border: "none",
     },
@@ -26,13 +27,6 @@ module.exports = function addDialog({ addComponents, theme }) {
       width: "100%",
       height: "100%",
       background: "rgba(0, 0, 0, 0.5)",
-    },
-    [`${base}-is-open`]: {
-      overflow: "hidden",
-      [`& ${base}`]: {
-        overflowX: "hidden",
-        overflowY: "auto",
-      },
     },
     [`${base}-document`]: {
       position: "relative",

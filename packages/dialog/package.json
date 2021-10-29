@@ -38,6 +38,7 @@
   "devDependencies": {
     "@gladio/button": "^0.8.6",
     "@gladio/input": "^0.7.5",
+    "@gladio/select": "^0.15.8",
     "@react-spring/web": "^9.0",
     "tailwindcss": "^1.1.2"
   },
@@ -45,6 +46,7 @@
     "@gladio/box": "^0.4.5",
     "@gladio/css": "^0.32.5",
     "@gladio/react-hooks": "^0.9.1",
+    "@radix-ui/react-dialog": "^0.1.1",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

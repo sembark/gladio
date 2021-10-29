@@ -4,6 +4,7 @@ import { Story, Meta } from "@storybook/react"
 import Dialog, { useDialog } from "./../src/index"
 import Button from "@gladio/button"
 import { Input } from "@gladio/input"
+import Select from "@gladio/select"
 
 import "@gladio/input/styles/styles.css"
 import "@gladio/button/styles/styles.css"
@@ -70,6 +71,10 @@ const Template: Story<React.ComponentProps<typeof Dialog>> = ({
             dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
             ac consectetur ac, vestibulum at eros.
           </p>
+          <Select
+            options={["A", "B", "C", "D"]}
+            onChange={(v) => console.log(v)}
+          />
         </Dialog.Body>
         <Dialog.Footer>
           <Button onClick={close} primary branded>
@@ -124,27 +129,22 @@ export function DialogInDialog() {
         <Dialog.Body>
           <h3>Some content</h3>
           <p>some content here and some more suff</p>
-          <Input type="text" placeholder="Input for tab navigation" />
+          <Input type="text" placeholder="Input for tab navigation" autoFocus />
           <br />
           <Input type="text" placeholder="Another Input" />
           <br />
           <Button primary branded onClick={open2}>
-            Anothre One
+            Open Another Dialog
           </Button>
-          <Dialog open={isOpen2} onClose={close2}>
-            <Dialog.Header closeButton>
-              <Dialog.Title>Another Dialog</Dialog.Title>
-            </Dialog.Header>
+          <Dialog open={isOpen2} onClose={close2} title="Another Dialog" sm>
             <Dialog.Body>
-              <p>Here is some text</p>
-              <br />
-              <Input type="text" placeholder="Input for tab navigation" />
-              <br />
-              <Input type="text" placeholder="Another Input" />
-              <br />
+              <p>
+                Now everything is working as expected. This should auto focus
+                the next primary action (close in this case)
+              </p>
             </Dialog.Body>
             <Dialog.Footer>
-              <Button onClick={close2} primary branded>
+              <Button onClick={close2} primary branded autoFocus>
                 Okay
               </Button>
             </Dialog.Footer>
