@@ -1,6 +1,5 @@
 import * as React from "react"
-import { render, cleanup, fireEvent } from "react-testing-library"
-import "jest-dom/extend-expect"
+import { render, cleanup, fireEvent } from "@testing-library/react"
 
 import {
   useDidMount,
@@ -73,7 +72,7 @@ describe("react-hooks", () => {
     }
     it("should let us store the async data fetch state", async () => {
       const fetchFn = jest.fn(() => {
-        return new Promise<IData>(resolve => {
+        return new Promise<IData>((resolve) => {
           setTimeout(() => {
             resolve("hi")
           }, 0)

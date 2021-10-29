@@ -1,6 +1,5 @@
 import * as React from "react"
-import { render, cleanup, queryByText } from "react-testing-library"
-import "jest-dom/extend-expect"
+import { render, cleanup, queryByText } from "@testing-library/react"
 
 import Box from "./../src/index"
 

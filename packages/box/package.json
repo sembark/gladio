@@ -22,7 +22,7 @@
     "build:watch": "npm-run-all -l -p js:watch"
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "../../jest-preset.js"
   },
   "files": [
     "src",

@@ -1,6 +1,5 @@
 import * as React from "react"
-import { render, cleanup, getByText } from "react-testing-library"
-import "jest-dom/extend-expect"
+import { render, cleanup, getByText } from "@testing-library/react"
 
 import { Tooltip } from "./../src/index"
 

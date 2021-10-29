@@ -25,6 +25,6 @@
     "types"
   ],
   "jest": {
-    "preset": "ts-jest"
+    "preset": "../../jest-preset.js"
   }
 }

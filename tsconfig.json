@@ -28,5 +28,6 @@
     "**/*.test.js",
     "**/lib/**.js",
     "**/*.config.js"
-  ]
+  ],
+  "include": ["./jest-setup.ts"]
 }

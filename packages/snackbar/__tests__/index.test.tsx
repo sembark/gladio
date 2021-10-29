@@ -1,6 +1,5 @@
 import * as React from "react"
-import { render, cleanup, findByTestId } from "react-testing-library"
-import "jest-dom/extend-expect"
+import { render, cleanup, findByTestId } from "@testing-library/react"
 
 import { Snackbar } from "./../src/index"
 

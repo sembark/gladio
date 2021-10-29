@@ -4,13 +4,12 @@ import * as RadixDialogPrimitives from "@radix-ui/react-dialog"
 import Box from "@gladio/box"
 import { useTransition, animated } from "@react-spring/web"
 
-const { useState } = React
-
 type BoxProps = React.ComponentProps<typeof Box>
 
 const DIALOG_BASE_CLASS_NAME = "dialog"
+const { useState, useMemo, createContext, useContext } = React
 
-const DialogContext = React.createContext<{
+const DialogContext = createContext<{
   open?: boolean
   onClose?: () => void
   fitContainer: boolean
@@ -95,14 +94,14 @@ function Dialog({
   title,
   closeOnEscape = true,
 }: DialogProps) {
-  const dialogContext = React.useMemo(() => {
+  const dialogContext = useMemo(() => {
     return {
       open,
       onClose,
       fitContainer,
     }
-  }, [onClose, open])
-  const transitionConfig = React.useMemo(() => {
+  }, [onClose, open, fitContainer])
+  const transitionConfig = useMemo(() => {
     return {
       from: {
         opacity: 0,
@@ -219,7 +218,7 @@ export function DialogCloseButton({
   children,
   ...props
 }: RadixDialogPrimitives.DialogCloseProps) {
-  const { fitContainer } = React.useContext(DialogContext)
+  const { fitContainer } = useContext(DialogContext)
   return (
     <RadixDialogPrimitives.DialogClose
       className={classNames("dialog-close-btn", className)}

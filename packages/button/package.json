@@ -31,7 +31,7 @@
     "styles"
   ],
   "jest": {
-    "preset": "ts-jest"
+    "preset": "../../jest-preset.js"
   },
   "gitHead": "b258ed024a1b76b71636423671affa9a9276c6c7",
   "dependencies": {

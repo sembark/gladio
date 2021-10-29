@@ -33,7 +33,7 @@
     "styles"
   ],
   "jest": {
-    "preset": "ts-jest"
+    "preset": "../../jest-preset.js"
   },
   "devDependencies": {
     "@gladio/button": "^0.8.6",

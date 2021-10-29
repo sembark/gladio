@@ -23,7 +23,7 @@
     "test:watch": "jest ---watch"
   },
   "jest": {
-    "preset": "ts-jest"
+    "preset": "../../jest-preset.js"
   },
   "files": [
     "src",
