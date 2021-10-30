@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.9](https://github.com/sembark/gladio/compare/@gladio/select@0.15.8...@gladio/select@0.15.9) (2021-10-30)
+
+**Note:** Version bump only for package @gladio/select
+
+
+
+
+
 ## [0.15.8](https://github.com/sembark/gladio/compare/@gladio/select@0.15.7...@gladio/select@0.15.8) (2021-07-31)
 
 **Note:** Version bump only for package @gladio/select

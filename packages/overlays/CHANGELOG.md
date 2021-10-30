@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/sembark/gladio/compare/@gladio/overlays@0.5.6...@gladio/overlays@0.5.7) (2021-10-30)
+
+**Note:** Version bump only for package @gladio/overlays
+
+
+
+
+
 ## [0.5.6](https://github.com/sembark/gladio/compare/@gladio/overlays@0.5.5...@gladio/overlays@0.5.6) (2021-09-27)
 
 

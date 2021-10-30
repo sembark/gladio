@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/sembark/gladio/compare/@gladio/dialog@1.0.6...@gladio/dialog@1.0.7) (2021-10-30)
+
+
+### Bug Fixes
+
+* **dialog:** select componet scroll issue ([29d4d27](https://github.com/sembark/gladio/commit/29d4d2775b01c6cc24a785f66a7fb4d22beccc91))
+
+
+
+
+
 ## [1.0.6](https://github.com/sembark/gladio/compare/@gladio/dialog@1.0.5...@gladio/dialog@1.0.6) (2021-09-27)
 
 **Note:** Version bump only for package @gladio/dialog
