@@ -1,6 +1,7 @@
 import classNames from "classnames"
 import { Subtract, $Values } from "utility-types"
-import theme, { StyleProps, classNamesForKeys } from "./theme"
+import theme, { classNamesForKeys } from "./theme"
+import type { StyleProps } from "./theme"
 
 export { StyleProps }
 
