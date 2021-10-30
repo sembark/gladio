@@ -1,6 +1,6 @@
 {
   "name": "@gladio/box",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Box Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -32,7 +32,7 @@
     "styles"
   ],
   "dependencies": {
-    "@gladio/css": "^0.32.6",
+    "@gladio/css": "^0.32.7",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

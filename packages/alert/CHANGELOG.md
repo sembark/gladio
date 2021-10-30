@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.11](https://github.com/sembark/gladio/compare/@gladio/alert@0.7.10...@gladio/alert@0.7.11) (2021-10-30)
+
+**Note:** Version bump only for package @gladio/alert
+
+
+
+
+
 ## [0.7.10](https://github.com/sembark/gladio/compare/@gladio/alert@0.7.9...@gladio/alert@0.7.10) (2021-10-30)
 
 **Note:** Version bump only for package @gladio/alert

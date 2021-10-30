@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.7](https://github.com/sembark/gladio/compare/@gladio/box@0.4.6...@gladio/box@0.4.7) (2021-10-30)
+
+
+### Bug Fixes
+
+* **types:** correct css types ([9f277dd](https://github.com/sembark/gladio/commit/9f277ddce7614ad1aa58e3f22450146d868c7b65))
+
+
+
+
+
 ## [0.4.6](https://github.com/sembark/gladio/compare/@gladio/box@0.4.5...@gladio/box@0.4.6) (2021-10-30)
 
 **Note:** Version bump only for package @gladio/box

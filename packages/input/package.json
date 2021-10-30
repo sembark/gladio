@@ -1,6 +1,6 @@
 {
   "name": "@gladio/input",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "Form Input Component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir <sudhir.mitharwal@gladio.com>",
@@ -37,8 +37,8 @@
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@gladio/box": "^0.4.6",
-    "@gladio/css": "^0.32.6",
+    "@gladio/box": "^0.4.7",
+    "@gladio/css": "^0.32.7",
     "classnames": "^2.2.6",
     "utility-types": "^3.7.0"
   },

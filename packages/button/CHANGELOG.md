@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.8](https://github.com/sembark/gladio/compare/@gladio/button@0.8.7...@gladio/button@0.8.8) (2021-10-30)
+
+**Note:** Version bump only for package @gladio/button
+
+
+
+
+
 ## [0.8.7](https://github.com/sembark/gladio/compare/@gladio/button@0.8.6...@gladio/button@0.8.7) (2021-10-30)
 
 **Note:** Version bump only for package @gladio/button

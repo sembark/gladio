@@ -1,6 +1,6 @@
 {
   "name": "@gladio/dialog",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Dialog/Modal component",
   "repository": "https://github.com/sembark/gladio",
   "author": "Sudhir Mitharwal",
@@ -36,15 +36,15 @@
     "preset": "../../jest-preset.js"
   },
   "devDependencies": {
-    "@gladio/button": "^0.8.7",
-    "@gladio/input": "^0.7.6",
-    "@gladio/select": "^0.15.9",
+    "@gladio/button": "^0.8.8",
+    "@gladio/input": "^0.7.7",
+    "@gladio/select": "^0.15.10",
     "@react-spring/web": "^9.0",
     "tailwindcss": "^1.1.2"
   },
   "dependencies": {
-    "@gladio/box": "^0.4.6",
-    "@gladio/css": "^0.32.6",
+    "@gladio/box": "^0.4.7",
+    "@gladio/css": "^0.32.7",
     "@gladio/react-hooks": "^0.9.2",
     "@radix-ui/react-dialog": "^0.1.1",
     "classnames": "^2.2.6",

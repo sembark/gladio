@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.7](https://github.com/sembark/gladio/compare/@gladio/badge@0.10.6...@gladio/badge@0.10.7) (2021-10-30)
+
+**Note:** Version bump only for package @gladio/badge
+
+
+
+
+
 ## [0.10.6](https://github.com/sembark/gladio/compare/@gladio/badge@0.10.5...@gladio/badge@0.10.6) (2021-10-30)
 
 **Note:** Version bump only for package @gladio/badge
