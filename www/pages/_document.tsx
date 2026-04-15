@@ -11,6 +11,7 @@ export default class MyDocument extends Document {
       <Html lang="en" className="bg-gray-100">
         <Head>
           <meta name="theme-color" content="#000000" />
+          <meta name="robots" content="noindex" />
           <Link rel="manifest" href="/manifest.json" />
           <Link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
           <Link rel="icon" href="/favicon.ico" type="image/x-icon" />
